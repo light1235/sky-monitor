@@ -1,0 +1,196 @@
+
+
+
+header {
+   width: 100%;
+   padding: 20px 0 0 0;
+   background: linear-gradient(65deg, #5913b4 0%, #9a2de3 88.46%, rgba(169, 51, 238, 0.2) 99.99%, #be3bff 100%);
+   overflow: hidden;
+   & .navbar {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 20px;
+      position: relative;
+      & .header__top {
+         width: 100%;
+         display: grid;
+         grid-template-columns: min-content 1fr max-content;
+         & .logo {
+            width: auto;
+         }
+         & .left__menu {
+            display: grid;
+            grid-template-columns: max-content max-content 1fr;
+            grid-gap: 30px;
+            align-items: center;
+            justify-items: end;
+            & button {
+               position: relative;
+               border-radius: 10px;
+               width: 219px;
+               height: 50px;
+               background: #27ae60;
+               border-width: 0;
+               overflow: hidden;
+               z-index: 2;
+               &::after{
+                  display: block;
+                  content: '';
+                  position: relative;
+                  top: -500px;
+                  left: -20px;
+                  width: 120%;
+                  height: 2000px;
+                   //background: linear-gradient(145deg, #5335cf 0%, #de005e 25%, #f66e48 50%, #de005e 75%, #5335cf 100%);
+                  background: linear-gradient(145deg, #219653 0%, #27AE60 25%, #de005e 50%, #27AE60 75%, #219653 100%);
+                  -webkit-background-clip: border-box;
+                  animation: bgnew 35s ease-out infinite alternate;
+                  z-index: 5;
+               }
+               & a {
+                  position: relative;
+                  display: grid;
+                  grid-template-columns: min-content 1fr;
+                  width: 100%;
+                  height: 100%;
+                  place-items: center;
+                  text-decoration: none;
+                  padding-left: 5px;
+                  font-family: "Rubik", sans-serif;
+                  font-weight: bold;
+                  font-size: 20px;
+                  line-height: 100%;
+                  color: #fff;
+                  z-index: 200;
+               }
+            }
+            & .lang__menu {
+               display: grid;
+               grid-template-columns: 1fr 1fr;
+               justify-items: center;
+               align-items: center;
+               line-height: 3;
+
+               grid-gap: 10px;
+               font-family: "Ubuntu", sans-serif;
+               font-weight: 500;
+               font-size: 20px;
+               text-align: center;
+               color: #fff;
+               & .active-block {
+                  pointer-events: none;
+                  //cursor: not-allowed !important;
+               }
+               & .image-circle {
+                  cursor: pointer;
+               }
+
+               & img {
+                  //cursor: not-allowed;
+                  //cursor: pointer;
+               }
+            }
+            & .authentication {
+               display: grid;
+               grid-template-columns: max-content 1fr;
+               place-items: center;
+               grid-gap: 10px;
+               & .circle {
+                  width: 50px;
+                  height: 50px;
+                  border-radius: 50%;
+                  border: 2px solid white;
+                  display: grid;
+                  justify-items: center;
+                  align-items: center;
+               }
+               & div {
+                  display: grid;
+                  grid-template-columns: 1fr max-content max-content;
+                  & span {
+                     text-decoration: none;
+                     font-family: "Ubuntu", sans-serif;
+                     font-weight: 500;
+                     font-size: 20px;
+                     text-align: center;
+                     color: #fff;
+                     margin-right: 5px;
+                     margin-left: 5px;
+                  }
+                  & a {
+                     text-decoration: none;
+                     font-family: "Ubuntu", sans-serif;
+                     font-weight: 500;
+                     font-size: 20px;
+                     //text-align: center;
+                     color: #fff;
+                  }
+               }
+            }
+         }
+      }
+      & .header__bottom {
+         .navigation {
+            text-align: center;
+         }
+         .navigation ul {
+            padding: 0;
+            margin-bottom: 0;
+            & .active-color {
+               background: #F4F6F7;
+            }
+            & li {
+               display: inline-block;
+               margin-right: 21px;
+               border-radius: 10px 10px 0 0;
+               box-shadow: 1px -2px 4px 0 rgba(0, 0, 0, 0.25);
+               background: #d9dce0;
+               font-family: "Ubuntu", sans-serif;
+               font-weight:500;
+               font-size: 20px;
+               text-align: center;
+               color: #666c75;
+               text-transform:capitalize;
+               list-style-type:none;
+               vertical-align: bottom;
+               transition: all 300ms ease;
+               &:hover {
+                  transform: translate(0, 0.15em);
+                  transition: all 100ms ease;
+                  background: #E7E7E7;
+               }
+               & a {
+                  display: inline-flex;
+                  grid-template-columns: max-content min-content;
+                  align-items: center;
+                  height: 100%;
+                  margin: 0;
+                  text-decoration: none;
+                  color: #666c75;
+                  grid-gap: 10px;
+                  padding: 17px 71px 12px 20px;
+                  & img {
+                     display: block;
+                     margin: 0;
+                     width: 30px;
+                     height: 30px;
+                     line-height:2.5;
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+@keyframes bgnew {
+   0% {
+      top: -400px;
+   }
+   50% {
+      top: -1800px;
+   }
+   100% {
+      top: -400px;
+   }
+}
