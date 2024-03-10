@@ -13,9 +13,17 @@ import partnerIcon from '/src/assets/main/icons/partner.svg';
 import buttonIcon from '/src/assets/main/icons/button-+.svg';
 import LangButton from '/src/assets/main/icons/lang-panel.svg';
 import loginAva from '/src/assets/main/icons/login-ava.svg';
+// import localFont from 'next/font/local'
+// const myFont = localFont({ src: '../../../assets/fonts/Ubuntu-Bold.woff2' });
+//
+// const fontVariable = {
+//      '--font-inter': `"${myFont.className}"`,
+// };
+// console.log(myFont.className);
+
 
 const Header = () => {
-     const [state, setState] = useState(0);
+     const [state, setState] = useState(1);
      const [block, setBlock] = useState(false);
      const [value, setValue] = useState('EN');
 

@@ -57,7 +57,7 @@ header {
                   text-decoration: none;
                   padding-left: 5px;
                   font-family: "Rubik", sans-serif;
-                  font-weight: bold;
+                  font-weight: 500;
                   font-size: 20px;
                   line-height: 100%;
                   color: #fff;
@@ -194,3 +194,15 @@ header {
       top: -400px;
    }
 }
+
+
+//../../../assets/fonts/Ubuntu-Bold.woff2
+
+//@font-face {
+//   font-family: 'Ubuntu';
+//   src: url('../../../assets/fonts/Ubuntu-Bold.woff2') format('woff2'),
+//   url('../../../assets/fonts/Ubuntu-Bold.woff2') format('woff');
+//   font-weight: bold;
+//   font-style: normal;
+//   font-display: swap;
+//}
