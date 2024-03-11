@@ -1,0 +1,60 @@
+
+
+.hero-banner {
+   max-width: 1240px;
+   margin: 0 auto;
+   padding: 60px 20px;
+   position: relative;
+   & img {
+      border: none;
+      border-radius: 10px;
+   }
+
+}
+
+
+.main-content {
+   display: grid;
+   grid-template-columns: 312px 1fr 312px;
+   padding: 0 10px;
+   & .content__item{
+      & .ant-tabs-nav-list{
+         border-radius: 10px;
+         background: white;
+         & .ant-tabs-tab{
+            text-align: center;
+            width: 260px;
+            display: grid;
+            justify-items: center;
+            font-family: "Rubik", sans-serif;
+            font-weight: 500;
+            font-size: 22px;
+            line-height: 100%;
+            color: #97a7c9;
+            padding: 20px 0;
+            position: relative;
+            margin: 0;
+            &::after{
+               position: absolute;
+               content: '|';
+               right: 0;
+               //color: red;
+            }
+            &:nth-last-child(2)::after {
+               content: '';
+               display: none;
+            }
+
+         }
+      }
+      .ant-tabs-nav .ant-tabs-tab-active {
+         & .ant-tabs-tab-btn{
+            color: slateblue;
+         }
+      }
+      .ant-tabs-ink-bar{
+         height: 3px;
+         background:slateblue;
+      }
+   }
+}

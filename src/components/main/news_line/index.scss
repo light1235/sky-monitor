@@ -1,0 +1,62 @@
+//.news-information-line {
+//   width: 100%;
+//   border-bottom: 1px dashed #e9edf0;
+//   display: grid;
+//   grid-template-columns: max-content 1fr;
+//   padding-bottom: 5px;
+//   margin-top: 19px;
+//   text-decoration: none;
+//   white-space: nowrap;
+//   overflow: hidden;
+//   text-overflow: ellipsis;
+//
+//   & .line-items {
+//      display: grid;
+//      grid-template-columns: max-content 1fr;
+//      & .item-name {
+//         white-space: nowrap;
+//         width: 250px;
+//         overflow: hidden;
+//         text-overflow: ellipsis;
+//         //border: 1px solid #000000;
+//      }
+//   }
+//}
+
+
+.news-information-line {
+   width: 100%;
+   border-bottom: 1px dashed #e9edf0;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   padding-bottom: 5px;
+   margin-top: 19px;
+   text-decoration: none;
+   & .line-items {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      grid-gap: 10px;
+      align-items: center;
+      font-family: "Roboto", sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      color: #797979;
+      text-decoration: none;
+      & .item-name {
+                  white-space: nowrap;
+                  width: 250px;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+      }
+
+   }
+   & .line-items-one {
+      display: grid;
+      justify-items: end;
+      align-items: center;
+      font-family: "Ubuntu", sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      color: #969696;
+   }
+}

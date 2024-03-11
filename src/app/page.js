@@ -1,16 +1,120 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import { Carousel } from 'antd';
+import React from 'react';
+import { Tabs } from 'antd';
+import HeroBanner from '/src/assets/main/images/hero-banner-1.jpg';
+import './index.scss';
+import BlockSlat from "@/components/main/block_slat";
+import Info_block from "@/components/main/info_block";
+import Information_line from "@/components/main/information_line";
+import topProjectLogo from '/src/assets/main/icons/top-projects-block-logo.svg';
+import newListingLogo from '/src/assets/main/icons/leaf.svg';
+import scamIcon from '/src/assets/main/icons/scam-icon.svg';
+import NewsLine from "@/components/main/news_line";
+import NewsLineLogo from '/src/assets/main/icons/news-line-logo.svg';
 
 export default function Home() {
+     const contentStyle = {
+          height: '100px',
+          color: '#fff',
+          lineHeight: '160px',
+          textAlign: 'center',
+          background: '#364d79',
+
+     };
+
   return (
-    <main style={{background:'#F4F6F7',height:'500px'}}>
-      main content
-         <section className="hero-banner"></section>
-         <section className="main-content">
-              <div className="content__item">left-bar</div>
-              <div className="content__item">dashboard</div>
-              <div className="content__item">right-bar</div>
+    <main style={{background:'#F4F6F7'}}>
+         <section className="hero-banner">
+              <Carousel autoplay slidesToShow={3} draggable >
+                   <div style={{display:"grid"}}>
+                       <Image src={HeroBanner} alt="banner"></Image>
+                   </div>
+                   <div>
+                        <Image src={HeroBanner}  alt="banner"></Image>
+                   </div>
+                   <div>
+                        <Image src={HeroBanner}  alt="banner"></Image>
+                   </div>
+                   <div>
+                        <Image src={HeroBanner}  alt="banner"></Image>
+                   </div>
+              </Carousel>
          </section>
+         <section className="main-content">
+              <div className="content__item">
+                   <BlockSlat text={'TOP Projects'}/>
+                   <Info_block>
+                        <Information_line image={<Image src={topProjectLogo} height={29}></Image>} />
+                        <Information_line image={<Image src={topProjectLogo} height={29}></Image>} />
+                        <Information_line image={<Image src={topProjectLogo} height={29}></Image>} />
+                        <Information_line image={<Image src={topProjectLogo} height={29}></Image>} />
+                        <Information_line image={<Image src={topProjectLogo} height={29}></Image>} />
+                   </Info_block>
+                   <BlockSlat text={'New Listings'}/>
+                   <Info_block>
+                        <Information_line image={<Image src={newListingLogo} height={29}></Image>} />
+                        <Information_line  image={<Image src={newListingLogo} height={29}></Image>} />
+                        <Information_line image={<Image src={newListingLogo} height={29}></Image>} />
+                        <Information_line image={<Image src={newListingLogo} height={29}></Image>}/>
+                        <Information_line image={<Image src={newListingLogo} height={29}></Image>} />
+                   </Info_block>
+              </div>
+              <div className="content__item">
+                   <Tabs
+                        defaultActiveKey="1"
+                        centered
+                        items={[
+                             {
+                                  label: 'Overview',
+                                  key: '1',
+                                  children: 'Tab 1',
+                             },
+                             {
+                                  label: 'Premium',
+                                  key: '2',
+                                  children: 'Tab 2',
+                             },
+                             {
+                                  label: 'Normal',
+                                  key: '3',
+                                  children: 'Tab 3',
+                             },
+                             {
+                                  label: 'Trial',
+                                  key: '4',
+                                  children: 'Tab 4',
+                             },
+                             {
+                                  label: 'Scam',
+                                  key: '5',
+                                  children: 'tab5',
+                             },
+                        ]}
+                   />
+              </div>
+              <div className="content__item">
+                   <BlockSlat text={'Latest Hyip News'}/>
+                   <Info_block>
+                        <NewsLine image={<Image src={NewsLineLogo} height={29}></Image>} />
+                        <NewsLine image={<Image src={NewsLineLogo} height={29}></Image>} />
+                        <NewsLine image={<Image src={NewsLineLogo} height={29}></Image>} />
+                        <NewsLine image={<Image src={NewsLineLogo} height={29}></Image>} />
+                        <NewsLine image={<Image src={NewsLineLogo} height={29}></Image>} />
+                   </Info_block>
+                   <BlockSlat text={'Latest Scams'}/>
+                   <Info_block>
+                        <Information_line image={<Image src={scamIcon} height={29}></Image>} />
+                        <Information_line  image={<Image src={scamIcon} height={29}></Image>} />
+                        <Information_line image={<Image src={scamIcon} height={29}></Image>} />
+                        <Information_line image={<Image src={scamIcon} height={29}></Image>}/>
+                        <Information_line image={<Image src={scamIcon} height={29}></Image>} />
+                   </Info_block>
+              </div>
+         </section>
+         {/*добавить робото*/}
+
     </main>
   );
 }
