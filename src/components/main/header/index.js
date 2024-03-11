@@ -13,13 +13,7 @@ import partnerIcon from '/src/assets/main/icons/partner.svg';
 import buttonIcon from '/src/assets/main/icons/button-+.svg';
 import LangButton from '/src/assets/main/icons/lang-panel.svg';
 import loginAva from '/src/assets/main/icons/login-ava.svg';
-// import localFont from 'next/font/local'
-// const myFont = localFont({ src: '../../../assets/fonts/Ubuntu-Bold.woff2' });
-//
-// const fontVariable = {
-//      '--font-inter': `"${myFont.className}"`,
-// };
-// console.log(myFont.className);
+
 
 
 const Header = () => {
@@ -57,7 +51,8 @@ const Header = () => {
                         <div className="middle_menu"></div>
                         <div className="left__menu">
                              <button> <Link href='/'> <Image src={buttonIcon} alt={'logo'}></Image> Add programm</Link></button>
-                             <div className="lang__menu"><div className={block ? 'image-circle active-block' : 'image-circle'} onClick={isLangisChange}><Image src={LangButton} alt={'logo'}></Image> </div><span>{value}</span></div>
+                             <div className="lang__menu">
+                                  <div className={block ? 'image-circle active-block' : 'image-circle'} onClick={isLangisChange}><Image src={LangButton} alt={'logo'}></Image> </div><span>{value}</span></div>
                              <div className="authentication"><div className="circle"><Image src={loginAva}></Image></div> <div><Link href='/'>Login</Link><span>/</span><Link href='/'>Register</Link></div></div>
 
                         </div>
@@ -66,10 +61,10 @@ const Header = () => {
                         <nav className="navigation">
                              <ul className="navigation__list">
                                   <li onClick={() => setState(1)} className={state === 1 ? 'active-color': null}><Link href='/'><Image src={monIco} alt={'logo'}></Image> <span>monitoring</span></Link></li>
-                                  <li onClick={() => setState(2)}><Link href='/'><Image src={serviceIcon} alt={'logo'}></Image> services </Link></li>
-                                  <li><Link href='/'><Image src={projectIcon} alt={'logo'}></Image>projects</Link></li>
-                                  <li><Link href='/'><Image src={contactIcon} alt={'logo'}></Image>contacts</Link></li>
-                                  <li><Link href='/'><Image src={partnerIcon} alt={'logo'}></Image>partners</Link></li>
+                                  <li onClick={() => setState(2)} className={state === 2 ? 'active-color': null}><Link href='/services'><Image src={serviceIcon} alt={'logo'}></Image> services </Link></li>
+                                  <li onClick={() => setState(3)} className={state === 3 ? 'active-color': null}><Link href='/projects'><Image src={projectIcon} alt={'logo'}></Image>projects</Link></li>
+                                  <li onClick={() => setState(4)} className={state === 4 ? 'active-color': null}><Link href='/contacts'><Image src={contactIcon} alt={'logo'}></Image>contacts</Link></li>
+                                  <li onClick={() => setState(5)} className={state === 5 ? 'active-color': null}><Link href='/partners'><Image src={partnerIcon} alt={'logo'}></Image>partners</Link></li>
                              </ul>
                         </nav>
                     </div>
