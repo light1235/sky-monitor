@@ -13,6 +13,7 @@ import newListingLogo from '/src/assets/main/icons/leaf.svg';
 import scamIcon from '/src/assets/main/icons/scam-icon.svg';
 import NewsLine from "@/components/main/news_line";
 import NewsLineLogo from '/src/assets/main/icons/news-line-logo.svg';
+import Listing_card from "@/components/main/listing_card";
 
 export default function Home() {
      const contentStyle = {
@@ -69,7 +70,7 @@ export default function Home() {
                              {
                                   label: 'Overview',
                                   key: '1',
-                                  children: 'Tab 1',
+                                  children: <Listing_card/>,
                              },
                              {
                                   label: 'Premium',

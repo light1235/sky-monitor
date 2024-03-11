@@ -1,0 +1,88 @@
+
+
+.listing__card {
+   padding: 15px 20px;
+   border-radius: 9px;
+   width: 410px;
+   height: 260px;
+   box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.25);
+   background: #fff;
+   & .card-top_line{
+      display: grid;
+      grid-template-columns: 1fr min-content;
+      padding-bottom: 10px;
+      & .program_name {
+         font-family: "Lato", sans-serif;
+         font-weight: 400;
+         font-size: 16px;
+         color: #000;
+      }
+      & .details-button {
+         border-radius: 100%;
+         background: #c4c4c4;
+         width: 16px;
+         height: 16px;
+      }
+   }
+   & .card-middle_line{
+      display: grid;
+      grid-template-columns:  3fr 1fr;
+      & .left_side{
+         display: grid;
+         grid-template-columns: min-content 1fr;
+         grid-gap: 12px;
+         & .content_wrapper {
+            & .content-items {
+               font-family: "Lato", sans-serif;
+               font-weight: 100;
+               font-size: 11px;
+               color: #a1a1a4;
+               line-height: 1.5;
+               & span {
+                  font-family: "Lato", sans-serif;
+                  font-size: 11px;
+                  color: #a1a1a4;
+                  font-weight: bold;
+               }
+            }
+            & .status span {
+               font-family: "Lato", sans-serif;
+               font-weight: 700;
+               font-size: 11px;
+               color: #8bc643;
+            }
+         }
+      }
+      & .right_side {
+         & .description{
+            font-family: "Lato", sans-serif;
+            font-weight: 100;
+            font-size: 11px;
+            color: #a1a1a4;
+            line-height: 1.5;
+            padding-bottom: 6px;
+         }
+         & .payments-system{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            padding-left: 15px;
+            grid-gap: 5px;
+         }
+         & .info {
+            font-family: "Lato", sans-serif;
+            font-weight: 300;
+            font-size: 11px;
+            color: #a1a1a4;
+            padding-top: 5px;
+            padding-bottom: 5px;
+         }
+         & .project-info {
+            display: grid;
+            grid-template-columns: max-content 1fr;
+            padding-left: 15px;
+            grid-gap: 10px;
+
+         }
+      }
+   }
+}
