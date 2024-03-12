@@ -51,7 +51,7 @@ export default function Home() {
                         <Information_line image={<Image src={topProjectLogo} height={29}></Image>} />
                         <Information_line image={<Image src={topProjectLogo} height={29}></Image>} />
                         <Information_line image={<Image src={topProjectLogo} height={29}></Image>} />
-                        <Information_line image={<Image src={topProjectLogo} height={29}></Image>} />
+                        {/*<Information_line image={<Image src={topProjectLogo} height={29}></Image>} />*/}
                    </Info_block>
                    <BlockSlat text={'New Listings'}/>
                    <Info_block>
@@ -59,7 +59,7 @@ export default function Home() {
                         <Information_line  image={<Image src={newListingLogo} height={29}></Image>} />
                         <Information_line image={<Image src={newListingLogo} height={29}></Image>} />
                         <Information_line image={<Image src={newListingLogo} height={29}></Image>}/>
-                        <Information_line image={<Image src={newListingLogo} height={29}></Image>} />
+                        {/*<Information_line image={<Image src={newListingLogo} height={29}></Image>} />*/}
                    </Info_block>
               </div>
               <div className="content__item">
@@ -80,7 +80,7 @@ export default function Home() {
                              {
                                   label: 'Normal',
                                   key: '3',
-                                  children: 'Tab 3',
+                                  children: <Listing_card/>,
                              },
                              {
                                   label: 'Trial',
@@ -102,7 +102,7 @@ export default function Home() {
                         <NewsLine image={<Image src={NewsLineLogo} height={29}></Image>} />
                         <NewsLine image={<Image src={NewsLineLogo} height={29}></Image>} />
                         <NewsLine image={<Image src={NewsLineLogo} height={29}></Image>} />
-                        <NewsLine image={<Image src={NewsLineLogo} height={29}></Image>} />
+                        {/*<NewsLine image={<Image src={NewsLineLogo} height={29}></Image>} />*/}
                    </Info_block>
                    <BlockSlat text={'Latest Scams'}/>
                    <Info_block>
@@ -110,7 +110,7 @@ export default function Home() {
                         <Information_line  image={<Image src={scamIcon} height={29}></Image>} />
                         <Information_line image={<Image src={scamIcon} height={29}></Image>} />
                         <Information_line image={<Image src={scamIcon} height={29}></Image>}/>
-                        <Information_line image={<Image src={scamIcon} height={29}></Image>} />
+                        {/*<Information_line image={<Image src={scamIcon} height={29}></Image>} />*/}
                    </Info_block>
               </div>
          </section>

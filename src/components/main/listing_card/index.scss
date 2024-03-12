@@ -13,15 +13,35 @@
       padding-bottom: 10px;
       & .program_name {
          font-family: "Lato", sans-serif;
-         font-weight: 400;
+         font-weight: bold;
          font-size: 16px;
          color: #000;
+         & span {
+            font-family: "Lato", sans-serif;
+            font-weight: bold;
+            font-size: 16px;
+            color: #4358c6;
+            margin-left: 10px;
+            border: 3px solid #ffd700;
+            border-radius: 7px;
+            padding: 0px 5px;
+            line-height: 0.5;
+         }
+      }
+      & .ant-tooltip-open {
+         color: red;
       }
       & .details-button {
          border-radius: 100%;
          background: #c4c4c4;
-         width: 16px;
-         height: 16px;
+         width: 22px;
+         height: 22px;
+         transition: all .6s ease-in-out;
+         &:hover {
+            cursor: pointer;
+            background: #8bc643;
+            transition: all .4s ease-in-out;
+         }
       }
    }
    & .card-middle_line{
@@ -33,21 +53,23 @@
          grid-gap: 12px;
          & .content_wrapper {
             & .content-items {
-               font-family: "Lato", sans-serif;
-               font-weight: 100;
-               font-size: 11px;
-               color: #a1a1a4;
                line-height: 1.5;
+               font-family: "Open Sans", sans-serif;
+               font-weight: 400;
+               font-size: 11px;
+               color: #747474;
                & span {
-                  font-family: "Lato", sans-serif;
-                  font-size: 11px;
-                  color: #a1a1a4;
+                  line-height: 1.5;
+                  font-family: "Open Sans", sans-serif;
                   font-weight: bold;
+                  font-size: 11px;
+                  color: #747474;
                }
             }
             & .status span {
-               font-family: "Lato", sans-serif;
-               font-weight: 700;
+               line-height: 1.5;
+               font-family: "Open Sans", sans-serif;
+               font-weight: bold;
                font-size: 11px;
                color: #8bc643;
             }
@@ -55,24 +77,24 @@
       }
       & .right_side {
          & .description{
-            font-family: "Lato", sans-serif;
-            font-weight: 100;
-            font-size: 11px;
-            color: #a1a1a4;
             line-height: 1.5;
+            font-family: "Open Sans", sans-serif;
+            font-weight: bold;
+            font-size: 11px;
+            color: #747474;
             padding-bottom: 6px;
          }
          & .payments-system{
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             padding-left: 15px;
-            grid-gap: 5px;
+            grid-gap: 8px;
          }
          & .info {
-            font-family: "Lato", sans-serif;
-            font-weight: 300;
+            font-family: "Open Sans", sans-serif;
+            font-weight: bold;
             font-size: 11px;
-            color: #a1a1a4;
+            color: #747474;
             padding-top: 5px;
             padding-bottom: 5px;
          }
@@ -83,6 +105,126 @@
             grid-gap: 10px;
 
          }
+      }
+   }
+   & .card-bottom_line {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      & .invested-description{
+         //display: grid;
+         & div {
+            font-family: "Open Sans", sans-serif;
+            font-weight: 400;
+            font-size: 11px;
+            color: #747474;
+         }
+         & span {
+            font-family: "Open Sans", sans-serif;
+            font-weight:600;
+            font-size: 14px;
+            color: #747474;
+         }
+      }
+      & .user-buttons{
+         display: grid;
+         justify-self: end;
+         & .button-forum{
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            justify-items: end;
+            & span {
+               padding-right: 5px;
+               font-family: "Open Sans", sans-serif;
+               font-weight:600;
+               font-size: 14px;
+               color: #747474;
+            }
+            & a {
+               position: relative;
+               display: grid;
+               align-items: start;
+               & img {
+                  position: absolute;
+                  top:2px;
+                  left: -23px;
+               }
+            }
+         }
+         & .button-vote {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            justify-items: end;
+            & span {
+               padding-right: 5px;
+               font-family: "Open Sans", sans-serif;
+               font-weight:600;
+               font-size: 14px;
+               color: #747474;
+            }
+            & a {
+               position: relative;
+               display: grid;
+               align-items: start;
+               & img {
+                  position: absolute;
+                  top:0;
+                  left: -23px;
+               }
+            }
+         }
+      }
+   }
+   & .card-vote-line {
+      width: 100%;
+      border-top: 1px solid #ededed;
+      margin-top: 5px;
+      display: grid;
+      grid-template-columns: 3fr min-content 1fr;
+      padding-top: 6px;
+      & .line {
+         width: 250px;
+         position: relative;
+         display: grid;
+         align-items: start;
+         & .line-a {
+            height: 2px;
+            border-radius: 1px;
+            width: 82%;
+            background: #8bc643;
+            position: absolute;
+            top: 10px;
+         }
+         & .line-b {
+            height: 2px;
+            border-radius: 1px;
+            position: absolute;
+            top: 10px;
+            width: 18%;
+            right: 0;
+            background-color: #CC0000;
+         }
+      }
+      & .counter {
+         width: 42px;
+         height: 22px;
+         border-radius: 2px;
+         background: rgba(39, 174, 96, 0.18);
+         font-family: "Lato", sans-serif;
+         font-weight: 700;
+         font-size: 11px;
+         color: #8bc643;
+         display: grid;
+         place-items: center;
+      }
+      & .amount-vote{
+         display: grid;
+         justify-items: end;
+         align-items: center;
+         font-family: "Lato", sans-serif;
+         font-weight: 400;
+         font-size: 11px;
+         color: #000;
+
       }
    }
 }
