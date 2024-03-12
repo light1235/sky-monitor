@@ -51,10 +51,14 @@ const ListingCard = () => {
                          <div className="info">Info</div>
                          <div className="project-info">
                               <Link target="_blank" href="https://www.similarweb.com/ru/">
+                                   <CustomToolTop text={'Seo information'}>
                               <Image src={simillarWeb} height="20" width="20"/>
+                                   </CustomToolTop>
                               </Link>
                               <Link target="_blank" href="https://whois.domaintools.com/">
+                                   <CustomToolTop text={'Whois information'}>
                               <Image src={whoIs} height="20" width="20"/>
+                                   </CustomToolTop>
                               </Link>
                          </div>
                     </div>

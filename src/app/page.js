@@ -4,7 +4,9 @@ import { Carousel } from 'antd';
 import React from 'react';
 import { Tabs } from 'antd';
 import HeroBanner from '/src/assets/main/images/hero-banner-1.jpg';
+// import './antd.min.css'
 import './index.scss';
+
 import BlockSlat from "@/components/main/block_slat";
 import Info_block from "@/components/main/info_block";
 import Information_line from "@/components/main/information_line";
