@@ -18,6 +18,7 @@ import NewsLine from "@/components/main/news_line";
 import NewsLineLogo from '/src/assets/main/icons/news-line-logo.svg';
 import Listing_card from "@/components/main/listing_card";
 import Link from "next/link";
+import Listing_card_mobile from "@/components/main/listing_card_mobile";
 
 export default function Home() {
      const contentStyle = {
@@ -83,7 +84,7 @@ export default function Home() {
                              {
                                   label: 'Overview',
                                   key: '1',
-                                  children: <Listing_card/>,
+                                  children: <div> <Listing_card/> <Listing_card_mobile /> </div>,
                              },
                              {
                                   label: 'Premium',
