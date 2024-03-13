@@ -6,6 +6,9 @@ header {
    padding: 20px 0 0 0;
    background: linear-gradient(65deg, #5913b4 0%, #9a2de3 88.46%, rgba(169, 51, 238, 0.2) 99.99%, #be3bff 100%);
    overflow: hidden;
+   & .mobile-navigation{
+      display: none;
+   }
    & .navbar {
       max-width: 1240px;
       margin: 0 auto;
@@ -17,6 +20,9 @@ header {
          grid-template-columns: min-content 1fr max-content;
          & .logo {
             width: auto;
+         }
+         & .menu-icon-wrapper{
+            display: none;
          }
          & .left__menu {
             display: grid;
@@ -195,6 +201,350 @@ header {
    }
 }
 
+@media only screen and (max-width : 1320px) {
+   header {
+      & .navbar {
+         & .header__bottom {
+            & .navigation {
+               & ul {
+                  & li a {
+                     padding: 17px 20px 12px 20px;
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+@media only screen and (max-width : 1020px) {
+   header {
+      & .navbar {
+         & .header__bottom {
+            & .navigation {
+               & ul {
+                  & li {
+                     font-size: 12px;
+                     & a {
+                        padding: 10px 10px;
+                        & img {
+                           width: 20px;
+                           height: 20px;
+                        }
+                     }
+                  }
+               }
+            }
+         }
+         & .header__top {
+            & .logo {
+              & img {
+                 width: 150px;
+              }
+            }
+            & .left__menu {
+               & .authentication {
+                  & div {
+                     a {
+                        font-size: 16px;
+                     }
+                  }
+                  & .circle {
+                     width: 35px;
+                     height: 35px;
+                     & img {
+                        width: 20px;
+                     }
+                  }
+               }
+               & .lang__menu {
+                  grid-template-columns: 1fr 1fr;
+                  font-size: 16px;
+                  & .image-circle {
+                     & img {
+                        width: auto;
+                        height: 22px;
+
+                     }
+                  }
+               }
+               & button  {
+                  width: 180px;
+                  height: 40px;
+                  & a {
+                     font-size: 16px;
+                     & img {
+                        width: 20px;
+                     }
+
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+@media only screen and (max-width : 700px) {
+   header {
+      padding:20px 0 20px 0;
+      .navbar{
+         .header__top {
+            grid-template-columns: min-content 1fr max-content;
+            place-items: center;
+            .logo {
+               & img {
+                  width:111px;
+                  height: auto;
+               }
+            }
+            & .menu-icon-wrapper {
+               display: block;
+               position: relative;
+               width: 36px;
+               height: 4px;
+               background: white;
+               border-radius: 10px;
+               margin-right: 25px;
+               z-index: 20;
+               &::after {
+                  position: absolute;
+                  top:-10px;
+                  left: 0;
+                  content: "";
+                  width: 36px;
+                  height: 4px;
+                  background: white;
+                  border-radius: 10px;
+                  transition: transform .2s ease-in, top .2s linear .2s;
+               }
+               &::before {
+                  position: absolute;
+                  top:10px;
+                  left: 0;
+                  content: "";
+                  width: 36px;
+                  height: 4px;
+                  background: white;
+                  border-radius: 10px;
+                  transition: transform .2s ease-in, top .2s linear .2s;
+               }
+            }
+            & .menu-icon-active {
+               background-color: transparent;
+               &::before {
+                  transform: rotate(45deg);
+                  top: 0;
+                  transition: top .2s linear, transform .2s ease-in .2s;
+               }
+               &::after {
+                  transform: rotate(-45deg);
+                  top: 0;
+                  transition: top .2s linear, transform .2s ease-in .2s;
+               }
+            }
+            & .left__menu {
+               display: none;
+            }
+         }
+         .header__bottom {
+            display: none;
+         }
+      }
+      & .mobile-navigation{
+         display: grid;
+         padding: 20px 20px;
+         background: linear-gradient(65deg, #5913b4 0%, #5913b4 0.01%, #5913b4 99.99%);
+         box-shadow: 12px 4px 17px 0 rgba(0, 0, 0, 0.25);
+         position: absolute;
+         z-index: 10;
+         width: 82%;
+         top: 0;
+         transition: all .4s ease-in-out;
+         transform: translateX(-110%);
+         & nav {
+            & .line-separator {
+               width: 100%;
+               height: 1px;
+               background-color: #3f0e7f;
+            }
+            & ul {
+               padding: 0;
+               margin: 0;
+               margin-top:20px;
+               li {
+                  font-family: "Ubuntu", sans-serif;
+                  font-weight: 500;
+                  font-size: 20px;
+                  color: #fff;
+                  text-decoration: none;
+                  list-style-type: none;
+                  text-transform: capitalize;
+                  padding-bottom: 30px;
+               }
+            }
+            & button {
+               position: relative;
+               border-radius: 10px;
+               width: 219px;
+               height: 50px;
+               background: #27ae60;
+               border-width: 0;
+               overflow: hidden;
+               z-index: 2;
+               &::after{
+                  display: block;
+                  content: '';
+                  position: relative;
+                  top: -500px;
+                  left: -20px;
+                  width: 120%;
+                  height: 2000px;
+                  //background: linear-gradient(145deg, #5335cf 0%, #de005e 25%, #f66e48 50%, #de005e 75%, #5335cf 100%);
+                  background: linear-gradient(145deg, #219653 0%, #27AE60 25%, #de005e 50%, #27AE60 75%, #219653 100%);
+                  -webkit-background-clip: border-box;
+                  animation: bgnew 35s ease-out infinite alternate;
+                  z-index: 5;
+               }
+               & a {
+                  position: relative;
+                  display: grid;
+                  grid-template-columns: min-content 1fr;
+                  width: 100%;
+                  height: 100%;
+                  place-items: center;
+                  text-decoration: none;
+                  padding-left: 5px;
+                  font-family: "Rubik", sans-serif;
+                  font-weight: 500;
+                  font-size: 20px;
+                  line-height: 100%;
+                  color: #fff;
+                  z-index: 200;
+               }
+            }
+            & .language-menu {
+               display: grid;
+               grid-template-columns: 1fr 2fr;
+               margin-top: 34px;
+               & span {
+                  display: grid;
+                  align-items: center;
+                  font-family: "Ubuntu", sans-serif;
+                  font-weight: 400;
+                  font-size: 16px;
+                  color: #d9c8ef;
+               }
+               & .wrap-language {
+                  display: grid;
+                  grid-template-columns: max-content max-content;
+                  grid-gap: 12px;
+                  div {
+                     display: grid;
+                     align-items: center;
+                     justify-items: center;
+                     width: 66px;
+                     height: 40px;
+                     border-radius: 10px;
+                     border: 1px solid white;
+                     font-family: "Rubik", sans-serif;
+                     font-weight: 500;
+                     font-size: 20px;
+                     line-height: 100%;
+                     color: #fff;
+                     transition: all .2s ease-in-out;
+                  }
+                  & .active-language{
+                     background: white;
+                     color: #9a2de3;
+                     transition: all .4s ease-in-out;
+                  }
+               }
+            }
+            & .social-menu{
+               display: grid;
+               grid-template-columns: max-content 2fr;
+               margin-top: 15px;
+               & span {
+                  display: grid;
+                  align-items: center;
+                  font-family: "Ubuntu", sans-serif;
+                  font-weight: 400;
+                  font-size: 16px;
+                  color: #d9c8ef;
+                  margin-right: 15px;
+               }
+               & .wrap-social {
+                  display: grid;
+                  grid-template-columns: max-content max-content max-content;
+                  justify-items: center;
+                  grid-gap: 12px;
+                  & .telegram {
+                     & img {
+                        position: absolute;
+                        top: 7px;
+                        left: 8px;
+                     }
+                  }
+                  & a {
+                     width: 40px;
+                     height: 40px;
+                     border-radius: 50%;
+                     background: transparent;
+                     border: 2px solid white;
+                     margin-right: 5px;
+                     display: grid;
+                     place-items: center;
+                     font-size: 30px;
+                     position: relative;
+                     overflow: hidden;
+                     transition: all 0.3s ease-in-out 0.1s;
+                     z-index: 8;
+                     &::before {
+                        content: "";
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        width: 120%;
+                        height: 120%;
+                        background: white;
+                        transition: 0.5s;
+                        z-index: 10;
+                     }
+                     &:hover{
+                        border: 2px solid transparent;
+                        &::before {
+                           top: 0;
+                        }
+                        & img {
+                           transform: rotateY(360deg);
+                        }
+                     }
+                     & img {
+                        width: 22px;
+                        z-index: 11;
+                        transition: 0.5s;
+                     }
+                  }
+               }
+            }
+            & .copyright{
+               display: grid;
+               justify-items: center;
+               font-family: "Open Sans", sans-serif;
+               font-weight: 400;
+               font-size: 16px;
+               color: #d9c8ef;
+               margin-top: 20px;
+            }
+         }
+
+      }
+      & .mobile-show {
+         transform: translateX(0%);
+      }
+   }
+}
 
 //../../../assets/fonts/Ubuntu-Bold.woff2
 

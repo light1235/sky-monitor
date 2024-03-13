@@ -42,7 +42,7 @@ footer {
                 position: relative;
                 overflow: hidden;
                 transition: all 0.3s ease-in-out 0.1s;
-                z-index: 50;
+                z-index: 8;
                 &::before {
                    content: "";
                    position: absolute;
@@ -52,7 +52,7 @@ footer {
                    height: 120%;
                    background: white;
                    transition: 0.5s;
-                   z-index: 66;
+                   z-index: 8;
                 }
                 &:hover{
                    border: 2px solid transparent;
@@ -64,7 +64,7 @@ footer {
                    }
                 }
                 & img {
-                   z-index: 91;
+                   z-index: 9;
                    transition: 0.5s;
                 }
              }
