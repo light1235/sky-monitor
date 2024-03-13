@@ -111,18 +111,22 @@
       display: grid;
       grid-template-columns: 2fr 1fr;
       & .invested-description{
+
          //display: grid;
          & div {
             font-family: "Open Sans", sans-serif;
             font-weight: 400;
             font-size: 11px;
             color: #747474;
+
          }
          & span {
             font-family: "Open Sans", sans-serif;
-            font-weight:600;
+            font-weight:400;
             font-size: 14px;
-            color: #747474;
+            //color: #747474;
+            //color: #CCCCFF;
+            color: #97a7c9;
          }
       }
       & .user-buttons{
@@ -168,7 +172,7 @@
                & img {
                   position: absolute;
                   top:0;
-                  left: -23px;
+                  left: -18px;
                }
             }
          }
@@ -221,7 +225,7 @@
          justify-items: end;
          align-items: center;
          font-family: "Lato", sans-serif;
-         font-weight: 400;
+         font-weight: 600;
          font-size: 11px;
          color: #000;
 

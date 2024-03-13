@@ -1,8 +1,8 @@
+'use client'
 import React from 'react';
 import './index.scss'
 import Image from "next/image";
 import Link from "next/link";
-import { Tooltip } from 'antd';
 import projectImage from '/src/assets/main/images/project-image.png';
 import bitcoinLogo from '/src/assets/main/icons/payments-system/bitcoin.svg';
 import advLogo from '/src/assets/main/icons/payments-system/adv-cash.svg'
@@ -16,17 +16,60 @@ import forumIocn from '/src/assets/main/icons/forum-icon.svg';
 import voteIcon from '/src/assets/main/icons/vote-icon.svg';
 import CustomToolTop from "@/components/main/tooltip_custom";
 
+
+
 const ListingCard = () => {
+
+     let ListingData = {
+          category:'scam,premium or tp',
+          id:'',
+          name:'',
+          longTerm:true,
+          detailsLink:'http',
+          projectImage:'1.png',
+          projectInformation: {
+               status:'',
+               ourInvestments:'',
+               payoutRate:'',
+               lastPaid:'',
+               created:'',
+               minimalSpend:'',
+               withdrawal:'',
+               daysOnline:'',
+               investedPlans:'',
+          },
+          paymentSystem:{
+               bitcoin:true,
+               neteller:true,
+               kiwi:true,
+               webMoney:true,
+               perfectMoney:true,
+          },
+          info:{
+               similarWeb:'http',
+               whoIs:'http',
+          },
+          forum:'http',
+          vote:{
+               totalVote:'',
+               votePercent:'',
+               greenLine:'',
+               redLine:'',
+          }
+
+     };
+
+
      return (
           <div className="listing__card">
                <div className="card-top_line">
                     <div className="program_name">BitMugnet <CustomToolTop text={'Long-term investment \n' +
                          'project'}><span>Long Term</span></CustomToolTop></div>
-                    <div className="program_details"><CustomToolTop text={'Program details'}> <div className="details-button"></div></CustomToolTop></div>
+                    <div className="program_details"><Link target="_blank" href='/'><CustomToolTop text={'Program details'}> <div className="details-button"></div></CustomToolTop></Link></div>
                </div>
                <div className="card-middle_line">
                     <div className="left_side">
-                         <Image src={projectImage} width="124" height="124" ></Image>
+                         <Image src={projectImage} width="124" height="124" alt="project-image" ></Image>
                          <div className="content_wrapper">
                               <div className="content-items status">Status:<span> Paying</span></div>
                               <div className="content-items">Our investments:<span> 400$</span></div>
@@ -41,23 +84,23 @@ const ListingCard = () => {
                     <div className="right_side">
                          <div className="description">Accepted:</div>
                          <div className="payments-system">
-                              <Image src={advLogo} height="20" width="20"/>
-                              <Image src={bitcoinLogo} height="20" width="20"/>
-                              <Image src={perfectMoneyLogo} height="20" width="20"/>
-                              <Image src={netellerLogo} height="20" width="20"/>
-                              <Image src={qiwiLogo} height="20" width="20"/>
-                              <Image src={webMoney} height="20" width="20"/>
+                              <Image src={advLogo} height="20" width="20" alt="payment-system-logo"/>
+                              <Image src={bitcoinLogo} height="20" width="20" alt="payment-system-logo" />
+                              <Image src={perfectMoneyLogo} height="20" width="20" alt="payment-system-logo" />
+                              <Image src={netellerLogo} height="20" width="20" alt="payment-system-logo"/>
+                              <Image src={qiwiLogo} height="20" width="20" alt="payment-system-logo"/>
+                              <Image src={webMoney} height="20" width="20" alt="payment-system-logo"/>
                          </div>
                          <div className="info">Info</div>
                          <div className="project-info">
                               <Link target="_blank" href="https://www.similarweb.com/ru/">
                                    <CustomToolTop text={'Seo information'}>
-                              <Image src={simillarWeb} height="20" width="20"/>
+                              <Image src={simillarWeb} height="20" width="20" alt="simillar_web_logo"/>
                                    </CustomToolTop>
                               </Link>
                               <Link target="_blank" href="https://whois.domaintools.com/">
                                    <CustomToolTop text={'Whois information'}>
-                              <Image src={whoIs} height="20" width="20"/>
+                              <Image src={whoIs} height="20" width="20" alt="who_is_logo"/>
                                    </CustomToolTop>
                               </Link>
                          </div>
@@ -70,8 +113,8 @@ const ListingCard = () => {
 150% after 15 buisness days</span>
                     </div>
                     <div className="user-buttons">
-                         <div className="button-forum"><span>Forum</span><Link href='/'> <Image width="22" src={forumIocn}/></Link></div>
-                         <div className="button-vote"><span>Vote now</span><Link href='/'><CustomToolTop text={'Only for registered users'}> <Image width="22" src={voteIcon}/></CustomToolTop></Link></div>
+                         <div className="button-forum"><span>Forum</span><Link href='/'> <Image width="22" src={forumIocn} alt="forum_logo"/></Link></div>
+                         <div className="button-vote"><span>Vote now</span><Link href='/'><CustomToolTop text={'Only for registered users'}> <Image width="22" src={voteIcon} alt="vote_logo"/></CustomToolTop></Link></div>
                     </div>
                </div>
                <div className="card-vote-line">

@@ -4,6 +4,7 @@ import { Carousel } from 'antd';
 import React from 'react';
 import { Tabs } from 'antd';
 import HeroBanner from '/src/assets/main/images/hero-banner-1.jpg';
+import testBanner from '/src/assets/main/images/122.jpg';
 // import './antd.min.css'
 import './index.scss';
 
@@ -16,6 +17,7 @@ import scamIcon from '/src/assets/main/icons/scam-icon.svg';
 import NewsLine from "@/components/main/news_line";
 import NewsLineLogo from '/src/assets/main/icons/news-line-logo.svg';
 import Listing_card from "@/components/main/listing_card";
+import Link from "next/link";
 
 export default function Home() {
      const contentStyle = {
@@ -26,22 +28,31 @@ export default function Home() {
           background: '#364d79',
 
      };
+     console.log("123");
 
   return (
     <main style={{background:'#F4F6F7'}}>
          <section className="hero-banner">
               <Carousel autoplay slidesToShow={3} draggable >
                    <div style={{display:"grid"}}>
+                        <Link target="_blank" href='/'>
                        <Image src={HeroBanner} alt="banner"></Image>
+                        </Link>
                    </div>
                    <div>
-                        <Image src={HeroBanner}  alt="banner"></Image>
+                        <Link target="_blank" href='/'>
+                        <Image src={testBanner} width="369" height="170" alt="banner"></Image>
+                        </Link>
                    </div>
                    <div>
+                        <Link target="_blank" href='/'>
                         <Image src={HeroBanner}  alt="banner"></Image>
+                        </Link>
                    </div>
                    <div>
+                        <Link target="_blank" href='/'>
                         <Image src={HeroBanner}  alt="banner"></Image>
+                        </Link>
                    </div>
               </Carousel>
          </section>
