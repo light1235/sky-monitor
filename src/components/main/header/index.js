@@ -16,6 +16,7 @@ import loginAva from '/src/assets/main/icons/login-ava.svg';
 import teleGramIcon from "@/assets/main/icons/telegram.svg";
 import youTubeIcon from "@/assets/main/icons/youtub.svg";
 import tikTokIcon from "@/assets/main/icons/tik-tok.svg";
+import Custom_modal from "@/components/main/custom_modal";
 
 
 
@@ -25,6 +26,13 @@ const Header = () => {
      const [langValue, setLangValue] = useState('EN');
      const [activeMenu, setActiveMenu] = useState(true);
      const [changeLanguage, setChangeLanguage] = useState(true);
+
+     const [activeProgram, setActiveProgram] = useState(false);
+
+     const showModal = () => {
+          setActiveProgram(!activeProgram);
+     };
+     console.log(activeProgram);
 
      const isLangisChange =() => {
           setBlock(true);
@@ -56,7 +64,7 @@ const Header = () => {
                         </div>
                         <div className="middle_menu"></div>
                         <div className="left__menu">
-                             <button> <Link href='/'> <Image src={buttonIcon} alt={'logo'}></Image> Add programm</Link></button>
+                             <button onClick={showModal}> <Link href='/'> <Image src={buttonIcon} alt={'logo'}></Image> Add programm</Link></button>
                              <div className="lang__menu">
                                   <div className={block ? 'image-circle active-block' : 'image-circle'} onClick={isLangisChange}><Image src={LangButton} alt={'logo'}></Image> </div><span>{langValue}</span></div>
                              <div className="authentication"><div className="circle"><Image src={loginAva}></Image></div> <div><Link href='/'>Login</Link><span>/</span><Link href='/'>Register</Link></div></div>
@@ -90,7 +98,7 @@ const Header = () => {
                               <li>about us</li>
                               <li>support</li>
                          </ul>
-                         <button><Link href='/'> <Image src={buttonIcon} alt={'logo'}></Image> Add programm</Link>
+                         <button ><Link href='/'> <Image src={buttonIcon} alt={'logo'}></Image> Add programm</Link>
                          </button>
                          <div className="language-menu">
                               <span>Language</span>
@@ -112,7 +120,7 @@ const Header = () => {
                               </div>
                          </div>
                          <div className="copyright"> © 2024 All Rights Reserved</div>
-
+                         <Custom_modal open={activeProgram} close={showModal} />
                     </nav>
                </div>
 
