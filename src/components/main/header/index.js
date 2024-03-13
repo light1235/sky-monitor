@@ -17,11 +17,11 @@ import teleGramIcon from "@/assets/main/icons/telegram.svg";
 import youTubeIcon from "@/assets/main/icons/youtub.svg";
 import tikTokIcon from "@/assets/main/icons/tik-tok.svg";
 import Custom_modal from "@/components/main/custom_modal";
-
+import Listing_card from "@/components/main/listing_card";
+import { usePathname } from 'next/navigation'
 
 
 const Header = () => {
-     const [activeLink, setActiveLink] = useState(1);
      const [block, setBlock] = useState(false);
      const [langValue, setLangValue] = useState('EN');
      const [activeMenu, setActiveMenu] = useState(true);
@@ -32,7 +32,6 @@ const Header = () => {
      const showModal = () => {
           setActiveProgram(!activeProgram);
      };
-     console.log(activeProgram);
 
      const isLangisChange =() => {
           setBlock(true);
@@ -53,7 +52,10 @@ const Header = () => {
           }
 
      },[block])
-          // .mobile-show
+
+     const pathname = usePathname();
+     console.log(pathname);
+
 
      return (
           <header>
@@ -75,11 +77,12 @@ const Header = () => {
                     <div className="header__bottom">
                         <nav className="navigation">
                              <ul className="navigation__list">
-                                  <li onClick={() => setActiveLink(1)} className={activeLink === 1 ? 'active-color': null}><Link href='/'><Image src={monIco} alt={'logo'}></Image> <span>monitoring</span></Link></li>
-                                  <li onClick={() => setActiveLink(2)} className={activeLink === 2 ? 'active-color': null}><Link href='/services'><Image src={serviceIcon} alt={'logo'}></Image> services </Link></li>
-                                  <li onClick={() => setActiveLink(3)} className={activeLink === 3 ? 'active-color': null}><Link href='/projects'><Image src={projectIcon} alt={'logo'}></Image>projects</Link></li>
-                                  <li onClick={() => setActiveLink(4)} className={activeLink === 4 ? 'active-color': null}><Link href='/contacts'><Image src={contactIcon} alt={'logo'}></Image>contacts</Link></li>
-                                  <li onClick={() => setActiveLink(5)} className={activeLink === 5 ? 'active-color': null}><Link href='/partners'><Image src={partnerIcon} alt={'logo'}></Image>partners</Link></li>
+                                  <li className={`link ${pathname === '/' ? 'active-color' : ''}`}>
+                                       <Link href='/'><Image src={monIco} alt={'logo'}></Image> <span>monitoring</span></Link></li>
+                                  <li  className={`link ${pathname === '/services' ? 'active-color' : ''}`}><Link href='/services'><Image src={serviceIcon} alt={'logo'}></Image> services </Link></li>
+                                  <li  className={`link ${pathname === '/projects' ? 'active-color' : ''}`}><Link href='/projects'><Image src={projectIcon} alt={'logo'}></Image>projects</Link></li>
+                                  <li  className={`link ${pathname === '/contacts' ? 'active-color' : ''}`}><Link href='/contacts'><Image src={contactIcon} alt={'logo'}></Image>contacts</Link></li>
+                                  <li className={`link ${pathname === '/partners' ? 'active-color' : ''}`}><Link href='/partners'><Image src={partnerIcon} alt={'logo'}></Image>partners</Link></li>
                              </ul>
                         </nav>
                     </div>
@@ -120,7 +123,7 @@ const Header = () => {
                               </div>
                          </div>
                          <div className="copyright"> © 2024 All Rights Reserved</div>
-                         <Custom_modal open={activeProgram} close={showModal} />
+                         <Custom_modal open={activeProgram} close={showModal}><Listing_card/> </Custom_modal>
                     </nav>
                </div>
 

@@ -30,7 +30,7 @@ export default function Home() {
           background: '#364d79',
 
      };
-     console.log("123");
+
 
   return (
     <main style={{background:'#F4F6F7'}}>

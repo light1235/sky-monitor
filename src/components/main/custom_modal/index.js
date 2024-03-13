@@ -2,7 +2,7 @@
 import React, {useState} from 'react';
 import { Button, Modal } from 'antd';
 
-const CustomModal = ({open,close}) => {
+const CustomModal = ({open,close,children}) => {
      const [isModalOpen, setIsModalOpen] = useState(false);
 
      const showModal = () => {
@@ -22,10 +22,8 @@ const CustomModal = ({open,close}) => {
      };
      return (
           <>
-               <Modal title="Basic Modal" open={item}  onCancel={close} footer={false} styles={modalStyles}>
-                    <p>Some contents...</p>
-                    <p>Some contents...</p>
-                    <p>Some contents...</p>
+               <Modal  open={open}  onCancel={close} footer={false} styles={modalStyles} centered  closeIcon={null}>
+                    {children}
                </Modal>
           </>
      );
