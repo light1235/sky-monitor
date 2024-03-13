@@ -33,102 +33,101 @@ export default function Home() {
 
   return (
     <main style={{background:'#F4F6F7'}}>
-         <section className="hero-banner">
-              <Carousel autoplay slidesToShow={3} draggable >
-                   <div style={{display:"grid"}}>
-                        <Link target="_blank" href='/'>
-                       <Image src={HeroBanner} alt="banner"></Image>
-                        </Link>
-                   </div>
-                   <div>
-                        <Link target="_blank" href='/'>
-                        <Image src={testBanner} width="369" height="170" alt="banner"></Image>
-                        </Link>
-                   </div>
-                   <div>
-                        <Link target="_blank" href='/'>
-                        <Image src={HeroBanner}  alt="banner"></Image>
-                        </Link>
-                   </div>
-                   <div>
-                        <Link target="_blank" href='/'>
-                        <Image src={HeroBanner}  alt="banner"></Image>
-                        </Link>
-                   </div>
-              </Carousel>
-         </section>
-         <section className="main-content">
-              <div className="content__item">
-                   <BlockSlat text={'TOP Projects'}/>
-                   <Info_block>
-                        <Information_line image={<Image src={topProjectLogo} height={29}></Image>} />
-                        <Information_line image={<Image src={topProjectLogo} height={29}></Image>} />
-                        <Information_line image={<Image src={topProjectLogo} height={29}></Image>} />
-                        <Information_line image={<Image src={topProjectLogo} height={29}></Image>} />
-                        {/*<Information_line image={<Image src={topProjectLogo} height={29}></Image>} />*/}
-                   </Info_block>
-                   <BlockSlat text={'New Listings'}/>
-                   <Info_block>
-                        <Information_line image={<Image src={newListingLogo} height={29}></Image>} />
-                        <Information_line  image={<Image src={newListingLogo} height={29}></Image>} />
-                        <Information_line image={<Image src={newListingLogo} height={29}></Image>} />
-                        <Information_line image={<Image src={newListingLogo} height={29}></Image>}/>
-                        {/*<Information_line image={<Image src={newListingLogo} height={29}></Image>} />*/}
-                   </Info_block>
-              </div>
-              <div className="content__item">
-                   <Tabs
-                        defaultActiveKey="1"
-                        centered
-                        items={[
-                             {
-                                  label: 'Overview',
-                                  key: '1',
-                                  children: <div> <Listing_card/> <Listing_card_mobile /> </div>,
-                             },
-                             {
-                                  label: 'Premium',
-                                  key: '2',
-                                  children: 'Tab 2',
-                             },
-                             {
-                                  label: 'Normal',
-                                  key: '3',
-                                  children: <Listing_card/>,
-                             },
-                             {
-                                  label: 'Trial',
-                                  key: '4',
-                                  children: 'Tab 4',
-                             },
-                             {
-                                  label: 'Scam',
-                                  key: '5',
-                                  children: 'tab5',
-                             },
-                        ]}
-                   />
-              </div>
-              <div className="content__item">
-                   <BlockSlat text={'Latest Hyip News'}/>
-                   <Info_block>
-                        <NewsLine image={<Image src={NewsLineLogo} height={29}></Image>} />
-                        <NewsLine image={<Image src={NewsLineLogo} height={29}></Image>} />
-                        <NewsLine image={<Image src={NewsLineLogo} height={29}></Image>} />
-                        <NewsLine image={<Image src={NewsLineLogo} height={29}></Image>} />
-                        {/*<NewsLine image={<Image src={NewsLineLogo} height={29}></Image>} />*/}
-                   </Info_block>
-                   <BlockSlat text={'Latest Scams'}/>
-                   <Info_block>
-                        <Information_line image={<Image src={scamIcon} height={29}></Image>} />
-                        <Information_line  image={<Image src={scamIcon} height={29}></Image>} />
-                        <Information_line image={<Image src={scamIcon} height={29}></Image>} />
-                        <Information_line image={<Image src={scamIcon} height={29}></Image>}/>
-                        {/*<Information_line image={<Image src={scamIcon} height={29}></Image>} />*/}
-                   </Info_block>
-              </div>
-         </section>
-         {/*добавить робото*/}
+         {/*<section className="hero-banner">*/}
+         {/*     <Carousel autoplay slidesToShow={3} draggable >*/}
+         {/*          <div style={{display:"grid"}}>*/}
+         {/*               <Link target="_blank" href='/'>*/}
+         {/*              <Image src={HeroBanner} alt="banner"></Image>*/}
+         {/*               </Link>*/}
+         {/*          </div>*/}
+         {/*          <div>*/}
+         {/*               <Link target="_blank" href='/'>*/}
+         {/*               <Image src={testBanner} width="369" height="170" alt="banner"></Image>*/}
+         {/*               </Link>*/}
+         {/*          </div>*/}
+         {/*          <div>*/}
+         {/*               <Link target="_blank" href='/'>*/}
+         {/*               <Image src={HeroBanner}  alt="banner"></Image>*/}
+         {/*               </Link>*/}
+         {/*          </div>*/}
+         {/*          <div>*/}
+         {/*               <Link target="_blank" href='/'>*/}
+         {/*               <Image src={HeroBanner}  alt="banner"></Image>*/}
+         {/*               </Link>*/}
+         {/*          </div>*/}
+         {/*     </Carousel>*/}
+         {/*</section>*/}
+         {/*<section className="main-content">*/}
+         {/*     <div className="content__item">*/}
+         {/*          <BlockSlat text={'TOP Projects'}/>*/}
+         {/*          <Info_block>*/}
+         {/*               <Information_line image={<Image src={topProjectLogo} height={29}></Image>} />*/}
+         {/*               <Information_line image={<Image src={topProjectLogo} height={29}></Image>} />*/}
+         {/*               <Information_line image={<Image src={topProjectLogo} height={29}></Image>} />*/}
+         {/*               <Information_line image={<Image src={topProjectLogo} height={29}></Image>} />*/}
+         {/*               /!*<Information_line image={<Image src={topProjectLogo} height={29}></Image>} />*!/*/}
+         {/*          </Info_block>*/}
+         {/*          <BlockSlat text={'New Listings'}/>*/}
+         {/*          <Info_block>*/}
+         {/*               <Information_line image={<Image src={newListingLogo} height={29}></Image>} />*/}
+         {/*               <Information_line  image={<Image src={newListingLogo} height={29}></Image>} />*/}
+         {/*               <Information_line image={<Image src={newListingLogo} height={29}></Image>} />*/}
+         {/*               <Information_line image={<Image src={newListingLogo} height={29}></Image>}/>*/}
+         {/*               /!*<Information_line image={<Image src={newListingLogo} height={29}></Image>} />*!/*/}
+         {/*          </Info_block>*/}
+         {/*     </div>*/}
+         {/*     <div className="content__item">*/}
+         {/*          <Tabs*/}
+         {/*               defaultActiveKey="1"*/}
+         {/*               centered*/}
+         {/*               items={[*/}
+         {/*                    {*/}
+         {/*                         label: 'Overview',*/}
+         {/*                         key: '1',*/}
+         {/*                         children: <div> <Listing_card/> <Listing_card_mobile /> </div>,*/}
+         {/*                    },*/}
+         {/*                    {*/}
+         {/*                         label: 'Premium',*/}
+         {/*                         key: '2',*/}
+         {/*                         children: 'Tab 2',*/}
+         {/*                    },*/}
+         {/*                    {*/}
+         {/*                         label: 'Normal',*/}
+         {/*                         key: '3',*/}
+         {/*                         children: <Listing_card/>,*/}
+         {/*                    },*/}
+         {/*                    {*/}
+         {/*                         label: 'Trial',*/}
+         {/*                         key: '4',*/}
+         {/*                         children: 'Tab 4',*/}
+         {/*                    },*/}
+         {/*                    {*/}
+         {/*                         label: 'Scam',*/}
+         {/*                         key: '5',*/}
+         {/*                         children: 'tab5',*/}
+         {/*                    },*/}
+         {/*               ]}*/}
+         {/*          />*/}
+         {/*     </div>*/}
+         {/*     <div className="content__item">*/}
+         {/*          <BlockSlat text={'Latest Hyip News'}/>*/}
+         {/*          <Info_block>*/}
+         {/*               <NewsLine image={<Image src={NewsLineLogo} height={29}></Image>} />*/}
+         {/*               <NewsLine image={<Image src={NewsLineLogo} height={29}></Image>} />*/}
+         {/*               <NewsLine image={<Image src={NewsLineLogo} height={29}></Image>} />*/}
+         {/*               <NewsLine image={<Image src={NewsLineLogo} height={29}></Image>} />*/}
+         {/*               /!*<NewsLine image={<Image src={NewsLineLogo} height={29}></Image>} />*!/*/}
+         {/*          </Info_block>*/}
+         {/*          <BlockSlat text={'Latest Scams'}/>*/}
+         {/*          <Info_block>*/}
+         {/*               <Information_line image={<Image src={scamIcon} height={29}></Image>} />*/}
+         {/*               <Information_line  image={<Image src={scamIcon} height={29}></Image>} />*/}
+         {/*               <Information_line image={<Image src={scamIcon} height={29}></Image>} />*/}
+         {/*               <Information_line image={<Image src={scamIcon} height={29}></Image>}/>*/}
+         {/*               /!*<Information_line image={<Image src={scamIcon} height={29}></Image>} />*!/*/}
+         {/*          </Info_block>*/}
+         {/*     </div>*/}
+         {/*</section>*/}
 
     </main>
   );
