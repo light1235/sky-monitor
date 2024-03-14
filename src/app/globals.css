@@ -469,3 +469,12 @@ template {
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'HK Grotesk';
+  src: url('../assets/fonts/HKGrotesk-ExtraBold.woff2') format('woff2'),
+  url('../assets/fonts/HKGrotesk-ExtraBold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
