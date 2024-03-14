@@ -18,7 +18,7 @@ import CustomToolTop from "@/components/main/tooltip_custom";
 
 
 
-const ListingCard = () => {
+const ListingCardThin = () => {
 
      let ListingData = {
           category:'scam,premium or tp',
@@ -34,9 +34,9 @@ const ListingCard = () => {
                     scam:false,
                },
                ourInvestments: {
-                  our:'',
-                  traceable:'',
-                  without:'',
+                    our:'',
+                    traceable:'',
+                    without:'',
                },
                payoutRate:'',
                lastPaid:'',
@@ -69,7 +69,7 @@ const ListingCard = () => {
 
 
      return (
-          <div className="listing__card">
+          <div className="listing__card-thin">
                <div className="card-top_line">
                     <div className="program_name">BitMugnet <CustomToolTop text={'Long-term investment \n' +
                          'project'}><span>Long Term</span></CustomToolTop></div>
@@ -92,23 +92,23 @@ const ListingCard = () => {
                     <div className="right_side">
                          <div className="description">Accepted:</div>
                          <div className="payments-system">
-                              <Image src={advLogo} height="20" width="20" alt="payment-system-logo"/>
-                              <Image src={bitcoinLogo} height="20" width="20" alt="payment-system-logo" />
-                              <Image src={perfectMoneyLogo} height="20" width="20" alt="payment-system-logo" />
-                              <Image src={netellerLogo} height="20" width="20" alt="payment-system-logo"/>
-                              <Image src={qiwiLogo} height="20" width="20" alt="payment-system-logo"/>
-                              <Image src={webMoney} height="20" width="20" alt="payment-system-logo"/>
+                              <Image src={advLogo} height="15" width="15" alt="payment-system-logo"/>
+                              <Image src={bitcoinLogo} height="15" width="15" alt="payment-system-logo" />
+                              <Image src={perfectMoneyLogo} height="15" width="15" alt="payment-system-logo" />
+                              <Image src={netellerLogo} height="15" width="15" alt="payment-system-logo"/>
+                              <Image src={qiwiLogo} height="15" width="15" alt="payment-system-logo"/>
+                              <Image src={webMoney} height="15" width="15" alt="payment-system-logo"/>
                          </div>
                          <div className="info">Info</div>
                          <div className="project-info">
                               <Link target="_blank" href="https://www.similarweb.com/ru/">
                                    <CustomToolTop text={'Seo information'}>
-                              <Image src={simillarWeb} height="20" width="20" alt="simillar_web_logo"/>
+                                        <Image src={simillarWeb} height="15" width="15" alt="simillar_web_logo"/>
                                    </CustomToolTop>
                               </Link>
                               <Link target="_blank" href="https://whois.domaintools.com/">
                                    <CustomToolTop text={'Whois information'}>
-                              <Image src={whoIs} height="20" width="20" alt="who_is_logo"/>
+                                        <Image src={whoIs} height="15" width="15" alt="who_is_logo"/>
                                    </CustomToolTop>
                               </Link>
                          </div>
@@ -116,13 +116,13 @@ const ListingCard = () => {
                </div>
                <div className="card-bottom_line">
                     <div className="invested-description">
-                       <div>Invested plans:</div>
-                         <span>2.9%-3.1% daily for 15-15 working days
-150% after 15 buisness days</span>
+                         <div>Invested plans:</div>
+                         <div className="plans">2.9%-3.1% daily for 15-15 working days
+150% after 15 buisness days</div>
                     </div>
                     <div className="user-buttons">
-                         <div className="button-forum"><span>Forum</span><Link href='/'> <Image width="22" src={forumIocn} alt="forum_logo"/></Link></div>
-                         <div className="button-vote"><span>Vote now</span><Link href='/'><CustomToolTop text={'Only for registered users'}> <Image width="22" src={voteIcon} alt="vote_logo"/></CustomToolTop></Link></div>
+                         <div className="button-forum"><span>Forum</span><Link href='/'> <Image width="15" src={forumIocn} alt="forum_logo"/></Link></div>
+                         <div className="button-vote"><span>Vote now</span><Link href='/'><CustomToolTop text={'Only for registered users'}> <Image width="15" src={voteIcon} alt="vote_logo"/></CustomToolTop></Link></div>
                     </div>
                </div>
                <div className="card-vote-line">
@@ -138,4 +138,4 @@ const ListingCard = () => {
      );
 };
 
-export default ListingCard;
+export default ListingCardThin;

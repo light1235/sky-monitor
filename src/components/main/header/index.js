@@ -26,7 +26,6 @@ const Header = () => {
      const [langValue, setLangValue] = useState('EN');
      const [activeMenu, setActiveMenu] = useState(true);
      const [changeLanguage, setChangeLanguage] = useState(true);
-
      const [activeProgram, setActiveProgram] = useState(false);
 
      const showModal = () => {
@@ -54,8 +53,7 @@ const Header = () => {
      },[block])
 
      const pathname = usePathname();
-     console.log(pathname);
-
+     
 
      return (
           <header>
@@ -66,7 +64,7 @@ const Header = () => {
                         </div>
                         <div className="middle_menu"></div>
                         <div className="left__menu">
-                             <button onClick={showModal}> <Link href='/'> <Image src={buttonIcon} alt={'logo'}></Image> Add programm</Link></button>
+                             <button onClick={showModal}> <a> <Image src={buttonIcon} alt={'logo'}></Image> Add programm</a></button>
                              <div className="lang__menu">
                                   <div className={block ? 'image-circle active-block' : 'image-circle'} onClick={isLangisChange}><Image src={LangButton} alt={'logo'}></Image> </div><span>{langValue}</span></div>
                              <div className="authentication"><div className="circle"><Image src={loginAva}></Image></div> <div><Link href='/'>Login</Link><span>/</span><Link href='/'>Register</Link></div></div>

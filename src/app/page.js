@@ -20,6 +20,7 @@ import Listing_card from "@/components/main/listing_card";
 import Link from "next/link";
 import Listing_card_mobile from "@/components/main/listing_card_mobile";
 import Custom_modal from "@/components/main/custom_modal";
+import ListingCardThin from "@/components/main/listing_card-thin";
 
 export default function Home() {
      const contentStyle = {
@@ -85,12 +86,12 @@ export default function Home() {
                              {
                                   label: 'Overview',
                                   key: '1',
-                                  children: <div> <Listing_card/> <Listing_card_mobile /> </div>,
+                                  children: <div style={{display:'grid',gridTemplateColumns:'1fr 1fr 1fr'}}> <Listing_card/> <ListingCardThin/> <Listing_card_mobile /> </div>,
                              },
                              {
                                   label: 'Premium',
                                   key: '2',
-                                  children: '22' ,
+                                  children: '6',
                              },
                              {
                                   label: 'Normal',
