@@ -1,0 +1,112 @@
+
+
+.preview-card {
+   border-radius: 16px;
+   box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.25);
+   background: #fff;
+   padding: 20px 20px;
+   //display: grid;
+   //grid-template-columns: min-content 1fr;
+   //grid-gap: 30px;
+   transition: all .2s ease-in-out;
+   &:hover{
+      background: #dcdcdc;
+      transition: all .4s ease-in-out;
+      & .preview-card-wrapper {
+         .preview-card-title {
+            & h2 {
+               color:#9a2de3;
+            }
+         }
+      }
+   }
+   & a {
+      display: grid;
+      grid-template-columns: min-content 1fr;
+      grid-gap: 30px;
+      text-decoration: none;
+   }
+   & .preview-card-image {
+      & img {
+         border-radius: 10px;
+      }
+   }
+   & .preview-card-wrapper{
+      & .preview-card-title{
+         & h2 {
+            //font-family: "Ubuntu", sans-serif;
+            font-family: "Quicksand", sans-serif;
+            font-weight: 700;
+            font-size: 32px;
+            color: #101010;
+            text-decoration: none;
+         }
+      }
+      & .preview-card-description{
+         & p {
+            font-family: "Quicksand", sans-serif;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 160%;
+            color: #666c75;
+         }
+      }
+      & .preview-card-bottom-line {
+         display: grid;
+         grid-template-columns: 1fr 1fr;
+         & .line-item {
+            display: grid;
+            grid-template-columns: min-content min-content min-content;
+            align-items: center;
+            & span {
+               font-family: "Ubuntu", sans-serif;
+               font-weight: 400;
+               font-size: 16px;
+               color: #797979;
+               padding-left: 5px;
+            }
+         }
+         & .line-item:nth-child(2){
+           justify-content: end;
+         }
+      }
+   }
+}
+
+
+@media only screen and (max-width : 1062px) {
+  .preview-card{
+     box-sizing: border-box;
+
+     & a {
+        display: grid;
+        grid-template-columns: 1fr;
+        max-width: 330px;
+     }
+     & .preview-card-image {
+        & img {
+           width: 290px;
+           height: auto;
+        }
+     }
+     & .preview-card-wrapper{
+        & .preview-card-title{
+           & h2 {
+              //font-family: "Ubuntu", sans-serif;
+              font-family: "Quicksand", sans-serif;
+              font-weight: 700;
+              color: #101010;
+              margin: 0;
+              text-align: center;
+              font-size: 25px;
+           }
+        }
+        & .preview-card-description {
+           & p {
+              font-size: 14px;
+           }
+        }
+     }
+  }
+}
+

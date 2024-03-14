@@ -64,7 +64,7 @@ const Header = () => {
                         </div>
                         <div className="middle_menu"></div>
                         <div className="left__menu">
-                             <button onClick={showModal}> <a> <Image src={buttonIcon} alt={'logo'}></Image> Add programm</a></button>
+                             <button onClick={showModal}> <div> <Image src={buttonIcon} alt={'logo'}></Image> Add programm</div></button>
                              <div className="lang__menu">
                                   <div className={block ? 'image-circle active-block' : 'image-circle'} onClick={isLangisChange}><Image src={LangButton} alt={'logo'}></Image> </div><span>{langValue}</span></div>
                              <div className="authentication"><div className="circle"><Image src={loginAva}></Image></div> <div><Link href='/'>Login</Link><span>/</span><Link href='/'>Register</Link></div></div>

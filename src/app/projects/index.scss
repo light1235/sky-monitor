@@ -1,0 +1,22 @@
+
+
+.projects__page{
+   background-color: #F4F6F7;
+   padding: 100px 0 100px 0;
+   min-height: 50vh;
+   .projects__page-container{
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 20px;
+      .projects__page-content{
+         display: grid;
+         justify-items: center;
+      }
+   }
+}
+
+@media only screen and (max-width : 700px) {
+   .projects__page{
+      padding: 50px 0;
+   }
+}

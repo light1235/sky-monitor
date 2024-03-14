@@ -349,6 +349,11 @@ template {
   display: none;
 }
 
+:root {
+  --EN-language: #ff6f69;
+  --RU-language: #ff6f69;
+}
+
 
 @font-face {
   font-family: 'Ubuntu';
