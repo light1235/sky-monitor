@@ -11,7 +11,7 @@ const PartnersReview = () => {
                <div className="item-text-wrapper">
                     <div className="item-title"><Link href='/' rel="nofollow">Invest-tracing.com</Link></div>
                     <div className="item-description">Lorem Ipsum is simply dummy text of the printing and typesetting
-                         industry. Lorem Ipsum has been the industry's standard sadadasdasdsa sadasdasdsadasdasda asd
+                         industry. Lorem Ipsum has been the standard sadadasdasdsa sadasdasdsadasdasda asd
                          asd as as asd asdsadadsa sadada asd asdasdasd sadada rora oraor a
                     </div>
                </div>
@@ -20,4 +20,3 @@ const PartnersReview = () => {
 };
 
 export default PartnersReview;
-// <Link rel="nofollow" href="/">
