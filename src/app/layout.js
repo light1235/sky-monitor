@@ -4,6 +4,7 @@ import Header from "@/components/main/header";
 import Footer from "@/components/main/footer";
 import React from 'react';
 import { AntdRegistry } from '@ant-design/nextjs-registry';
+import ChangeNavigation from "@/components/change-navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,13 +14,16 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+
+
   return (
     <html lang="en">
       <body>
       <AntdRegistry>
-      <Header />
-      {children}
-      <Footer />
+      {/*<Header />*/}
+      {/*{children}*/}
+      {/*<Footer />*/}
+           <ChangeNavigation>{children}</ChangeNavigation>
       </AntdRegistry>
       </body>
     </html>

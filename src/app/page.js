@@ -86,22 +86,22 @@ export default function Home() {
                              {
                                   label: 'Overview',
                                   key: '1',
-                                  children: <div style={{display:'grid',gridTemplateColumns:'1fr 1fr 1fr'}}> <Listing_card/> <ListingCardThin/> <Listing_card_mobile /> </div>,
+                                  children: <div style={{display:'grid',gridTemplateColumns:'1fr 1fr 1fr'}}> <Listing_card/>  </div>,
                              },
                              {
                                   label: 'Premium',
                                   key: '2',
-                                  children: '6',
+                                  children: <ListingCardThin/> ,
                              },
                              {
                                   label: 'Normal',
                                   key: '3',
-                                  children: <Listing_card/>,
+                                  children:<Listing_card_mobile /> ,
                              },
                              {
                                   label: 'Trial',
                                   key: '4',
-                                  children: 'Tab 4',
+                                  children: <div style={{display:'grid',gridTemplateColumns:'1fr 1fr 1fr'}}> <Listing_card/>  <ListingCardThin/> </div>,
                              },
                              {
                                   label: 'Scam',

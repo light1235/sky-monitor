@@ -19,6 +19,8 @@ import tikTokIcon from "@/assets/main/icons/tik-tok.svg";
 import Custom_modal from "@/components/main/custom_modal";
 import Listing_card from "@/components/main/listing_card";
 import { usePathname } from 'next/navigation'
+import SelectedPopUp from "@/components/main/selected-pop-up";
+
 
 
 const Header = () => {
@@ -53,7 +55,7 @@ const Header = () => {
      },[block])
 
      const pathname = usePathname();
-     
+     // <UserPopUp />
 
      return (
           <header>
@@ -121,7 +123,7 @@ const Header = () => {
                               </div>
                          </div>
                          <div className="copyright"> © 2024 All Rights Reserved</div>
-                         <Custom_modal open={activeProgram} close={showModal}><Listing_card/> </Custom_modal>
+                         <Custom_modal open={activeProgram} close={showModal}><SelectedPopUp close={showModal}  /> </Custom_modal>
                     </nav>
                </div>
 

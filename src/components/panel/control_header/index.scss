@@ -1,0 +1,55 @@
+
+
+.control-header {
+   width: 100%;
+   height: 70px;
+   background: #d7dde4;
+   position: absolute;
+   top: 0;
+   left: 0;
+   display: grid;
+   justify-items: end;
+   align-items: center;
+   & .header-panel{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr max-content max-content;
+      padding-right: 35px;
+      align-items: center;
+      & .panel-notify{
+         position: relative;
+         width: 25px;
+         & .notify-amount{
+            position: absolute;
+            top: -5px;
+            right: -2px;
+            font-family: "Open Sans", sans-serif;
+            font-weight: bold;
+            font-size: 14px;
+            color: #85ce36;
+         }
+
+      }
+      & .panel-separator{
+         width: 2px;
+         height: 30px;
+         background: #4f5f6f;
+         margin-left: 15px;
+         margin-right: 16px;
+      }
+      & .panel-user-name{
+         font-family: "Open Sans", sans-serif;
+         font-weight: 700;
+         font-size: 16px;
+         color: #4f5f6f;
+         margin-left: 15px;
+      }
+      & .panel-menu-arrow {
+         & i {
+            font-size: 25px;
+           &::before {
+              transform: rotate(180deg);
+           }
+         }
+      }
+   }
+}

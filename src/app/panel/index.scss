@@ -1,0 +1,15 @@
+
+
+.main-control-page {
+   width: 100%;
+   height: 100vh;
+   background: #F0F3F6;
+   box-sizing: border-box;
+   padding: 110px 40px 40px 270px;
+   & .panel-block{
+      width: 650px;
+      height: 343px;
+      box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.25);
+      background: #fff;
+   }
+}

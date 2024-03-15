@@ -19,10 +19,21 @@ const CustomModal = ({open,close,children}) => {
           mask: {
                backdropFilter: 'blur(6px)',background: 'rgba(46, 56, 73, 0.5)',
           },
+          body: {
+               boxShadow: 'none',
+               padding: 0,
+               background: 'transparent',
+
+          },
+          content: {
+               boxShadow: 'none',
+               padding: 0,
+               background: 'transparent',
+          },
      };
      return (
           <>
-               <Modal  open={open}  onCancel={close} footer={false} styles={modalStyles} centered  closeIcon={null}>
+               <Modal  open={open}  onCancel={close} footer={false} styles={modalStyles} centered  width={'auto'} closeIcon={null} contentBg={'transparent'}>
                     {children}
                </Modal>
           </>
