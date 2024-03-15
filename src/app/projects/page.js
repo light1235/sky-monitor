@@ -8,7 +8,8 @@ const Projects = () => {
                <div className="projects__page-container">
                     <div className="projects__page-content">
                          <Project_preview />
-
+                         <Project_preview />
+                         <Project_preview />
                     </div>
                </div>
           </div>

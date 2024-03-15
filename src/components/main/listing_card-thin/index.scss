@@ -180,8 +180,9 @@
       border-top: 1px solid #ededed;
       margin-top: 5px;
       display: grid;
-      grid-template-columns: 3fr min-content 1fr;
+      grid-template-columns: 3fr 1fr min-content;
       padding-top: 6px;
+      justify-items: center;
       & .line {
          width: 250px;
          position: relative;
@@ -216,6 +217,7 @@
          color: #8bc643;
          display: grid;
          place-items: center;
+         //margin-left: 5px;
       }
       & .amount-vote{
          display: grid;

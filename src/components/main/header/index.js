@@ -115,9 +115,9 @@ const Header = () => {
                          <div className="social-menu">
                               <span>Social Media</span>
                               <div className="wrap-social">
-                                   <a href="#" className="telegram"><Image src={teleGramIcon}></Image></a>
-                                   <a href="#"><Image src={youTubeIcon}></Image></a>
-                                   <a href="#"><Image src={tikTokIcon}></Image></a>
+                                   <a href="#" className="telegram"><Image src={teleGramIcon} alt="telegram icon"></Image></a>
+                                   <a href="#"><Image src={youTubeIcon} alt="youtube icon"></Image></a>
+                                   <a href="#"><Image src={tikTokIcon} alt="tik-tok icon"></Image></a>
                               </div>
                          </div>
                          <div className="copyright"> © 2024 All Rights Reserved</div>

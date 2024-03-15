@@ -22,7 +22,7 @@ const Services = () => {
                          <div className="item-title">Listing Advertising</div>
                          <div className="item-description">описание пакетов услуг для листига и что в них входит
                          </div>
-                         <div className="item-link"><Link href='/'><Image src={linkLogo} alt='link-icon'></Image></Link>
+                         <div className="item-link"><Link href='/listing-advertising'><Image src={linkLogo} alt='link-icon'></Image></Link>
                          </div>
                     </div>
                     <div className="services-item">
@@ -70,7 +70,7 @@ const Services = () => {
                               <div className="logo-circle"><Image src={projectLogo} width="40" alt={'listing icon'}/></div>
                          </div>
                          <div className="item-title">Project pin to top</div>
-                         <div className="item-description">описание услуги "прекрепления в топ" описания проекта
+                         <div className="item-description">описание услуги "прикрепления в топ" описания проекта
                          </div>
                          <div className="item-link"><Link href='/'><Image src={linkLogo} alt='link-icon'></Image></Link>
                          </div>

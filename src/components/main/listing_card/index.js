@@ -1,5 +1,5 @@
 'use client'
-import React from 'react';
+import React, {useState} from 'react';
 import './index.scss'
 import Image from "next/image";
 import Link from "next/link";
@@ -15,6 +15,8 @@ import whoIs from '/src/assets/main/icons/who-is.svg';
 import forumIocn from '/src/assets/main/icons/forum-icon.svg';
 import voteIcon from '/src/assets/main/icons/vote-icon.svg';
 import CustomToolTop from "@/components/main/tooltip_custom";
+import VoteLikeIcon from '/src/assets/main/icons/vote-like.svg';
+import VoteUnlikeIcon from '/src/assets/main/icons/vote-unlike.svg';
 
 
 
@@ -65,6 +67,10 @@ const ListingCard = () => {
                redLine:'',
           }
 
+     };
+     const [vote, setVote] = useState(false);
+     const showVoteButtons = () => {
+          setVote(true);
      };
 
 
@@ -122,7 +128,25 @@ const ListingCard = () => {
                     </div>
                     <div className="user-buttons">
                          <div className="button-forum"><span>Forum</span><Link href='/'> <Image width="22" src={forumIocn} alt="forum_logo"/></Link></div>
-                         <div className="button-vote"><span>Vote now</span><Link href='/'><CustomToolTop text={'Only for registered users'}> <Image width="22" src={voteIcon} alt="vote_logo"/></CustomToolTop></Link></div>
+                         <div className="button-vote">
+                              {vote &&
+                                   <div className="vote-actions">
+                                        <div className="actions-content">
+                                             <div className="content-buttons">
+                                                  <div className="square-green">
+                                                       <Image src={VoteLikeIcon} alt="vote icon"/>
+                                                  </div>
+                                                  <div className="square-red">
+                                                       <Image src={VoteUnlikeIcon} alt="vote icon"/>
+                                                  </div>
+                                             </div>
+                                             <div className="content-decoration"></div>
+                                        </div>
+                                   </div>
+                              }
+                              <span>Vote now</span><div className="vote-link" onClick={showVoteButtons}><CustomToolTop
+                              text={'Only for registered users'}> <Image width="22" src={voteIcon}
+                                                                         alt="vote_logo"/></CustomToolTop></div></div>
                     </div>
                </div>
                <div className="card-vote-line">
@@ -132,7 +156,8 @@ const ListingCard = () => {
                     </div>
                     <div className="counter">88%</div>
                     <CustomToolTop text={'The number of users  ' +
-                         'who voted'}><div className="amount-vote">490/500</div></CustomToolTop>
+                         'who voted'}>
+                         <div className="amount-vote">490/500</div></CustomToolTop>
                </div>
           </div>
      );
