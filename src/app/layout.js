@@ -1,7 +1,5 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/main/header";
-import Footer from "@/components/main/footer";
 import React from 'react';
 import { AntdRegistry } from '@ant-design/nextjs-registry';
 import ChangeNavigation from "@/components/change-navigation";

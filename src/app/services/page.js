@@ -70,7 +70,7 @@ const Services = () => {
                               <div className="logo-circle"><Image src={projectLogo} width="40" alt={'listing icon'}/></div>
                          </div>
                          <div className="item-title">Project pin to top</div>
-                         <div className="item-description">описание услуги "прикрепления в топ" описания проекта
+                         <div className="item-description">описание услуги  описания проекта
                          </div>
                          <div className="item-link"><Link href='/'><Image src={linkLogo} alt='link-icon'></Image></Link>
                          </div>
