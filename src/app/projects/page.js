@@ -4,7 +4,7 @@ import Project_preview from "@/components/main/project_preview";
 
 const Projects = () => {
      return (
-          <div className="projects__page">
+          <section className="projects__page">
                <div className="projects__page-container">
                     <div className="projects__page-content">
                          <Project_preview />
@@ -12,7 +12,7 @@ const Projects = () => {
                          <Project_preview />
                     </div>
                </div>
-          </div>
+          </section>
      );
 };
 

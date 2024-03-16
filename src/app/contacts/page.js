@@ -1,10 +1,12 @@
+// noinspection JSValidateTypes
 import React from 'react';
 import './index.scss'
 import Image from "next/image";
 import contactPageImage from '/src/assets/main/images/contanct-page.svg'
 const Contacts = () => {
+     // noinspection JSValidateTypes
      return (
-          <div className="contact__page">
+          <section className="contact__page">
                <div className="contact__page-container">
                     <div className="contact__page-content">
                          <h1>Support@sky-finance.com</h1>
@@ -13,7 +15,7 @@ const Contacts = () => {
                          <Image src={contactPageImage} alt='contact image'/>
                     </div>
                </div>
-          </div>
+          </section>
      );
 };
 

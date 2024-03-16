@@ -17,7 +17,6 @@ import teleGramIcon from "@/assets/main/icons/telegram.svg";
 import youTubeIcon from "@/assets/main/icons/youtub.svg";
 import tikTokIcon from "@/assets/main/icons/tik-tok.svg";
 import Custom_modal from "@/components/main/custom_modal";
-import Listing_card from "@/components/main/listing_card";
 import { usePathname } from 'next/navigation'
 import SelectedPopUp from "@/components/main/selected-pop-up";
 
@@ -55,7 +54,6 @@ const Header = () => {
      },[block])
 
      const pathname = usePathname();
-     // <UserPopUp />
 
      return (
           <header>
@@ -66,10 +64,10 @@ const Header = () => {
                         </div>
                         <div className="middle_menu"></div>
                         <div className="left__menu">
-                             <button onClick={showModal}> <div> <Image src={buttonIcon} alt={'logo'}></Image> Add programm</div></button>
+                             <button onClick={showModal}> <div> <Image src={buttonIcon} alt={'logo'}></Image> Add program</div></button>
                              <div className="lang__menu">
-                                  <div className={block ? 'image-circle active-block' : 'image-circle'} onClick={isLangisChange}><Image src={LangButton} alt={'logo'}></Image> </div><span>{langValue}</span></div>
-                             <div className="authentication"><div className="circle"><Image src={loginAva}></Image></div> <div><Link href='/'>Login</Link><span>/</span><Link href='/'>Register</Link></div></div>
+                                  <div className={block ? 'image-circle active-block' : 'image-circle'} onClick={isLangisChange}><Image src={LangButton} alt="logo icon"></Image> </div><span>{langValue}</span></div>
+                             <div className="authentication"><div className="circle"><Image src={loginAva} alt="login icon"></Image></div> <div><Link href='/'>Login</Link><span>/</span><Link href='/'>Register</Link></div></div>
 
                         </div>
                         <div className={activeMenu ? 'menu-icon-wrapper': 'menu-icon-wrapper menu-icon-active'} onClick={() => setActiveMenu(!activeMenu)}></div>
@@ -101,7 +99,7 @@ const Header = () => {
                               <li>about us</li>
                               <li>support</li>
                          </ul>
-                         <button ><Link href='/'> <Image src={buttonIcon} alt={'logo'}></Image> Add programm</Link>
+                         <button ><Link href='/'> <Image src={buttonIcon} alt="add icon"></Image> Add program</Link>
                          </button>
                          <div className="language-menu">
                               <span>Language</span>

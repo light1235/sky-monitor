@@ -2,7 +2,8 @@
 
 .control-menu {
    width: 230px;
-   height: 100vh;
+   min-height: 100vh;
+   height: auto;
    background: #3a4651;
    position: absolute;
    left: 0;

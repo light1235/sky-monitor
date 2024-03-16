@@ -13,7 +13,7 @@ import projectLogo from '/src/assets/main/icons/services-project-icon.svg';
 
 const Services = () => {
      return (
-          <div className="Services-page">
+          <section className="Services-page">
                <div className="page-container">
                     <div className="services-item">
                          <div className="item-logo">
@@ -83,7 +83,7 @@ const Services = () => {
                          </div>
                     </div>
                </div>
-          </div>
+          </section>
      );
 };
 

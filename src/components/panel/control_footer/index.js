@@ -3,8 +3,11 @@ import './index.scss'
 import Image from "next/image";
 import menuLogo from '/src/assets/panel/icons/panel-logo.svg';
 import Link from "next/link";
+import {usePathname} from "next/navigation";
 
 const ControlMenu = () => {
+
+     const pathname = usePathname();
      return (
           <div className="control-menu">
                <div className="menu-top">
@@ -16,8 +19,8 @@ const ControlMenu = () => {
                <div className="main-menu">
                     <Link href='/panel'></Link>
                     <ul>
-                         <li className="active-menu"><Link href='/panel'><i className="icon-home"></i>Dashboard</Link></li>
-                         <li> <Link href='/panel'><i className="icon-chart-area"></i> Seo Statistics</Link></li>
+                         <li className={pathname === '/panel' ? 'active-menu' : ''}><Link href='/panel'><i className="icon-home"></i>Dashboard</Link></li>
+                         <li className={pathname === '/panel/seo-statistics' ? 'active-menu' : ''}> <Link href='/panel/seo-statistics'><i className="icon-chart-area"></i> Seo Statistics</Link></li>
                          <li><Link href='/panel'><i className="icon-listing"></i>Listing</Link></li>
                          <li><Link href='/panel'><i className="icon-info"></i>Information</Link></li>
                          <li><Link href='/panel'><i className="icon-newspaper"></i>News</Link></li>

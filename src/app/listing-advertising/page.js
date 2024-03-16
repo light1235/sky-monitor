@@ -10,7 +10,7 @@ import TrialImage from '/src/assets/main/images/trial.png';
 
 const ListingPackages = () => {
      return (
-          <div className="listing__page">
+          <section className="listing__page">
                <div className="listing__page-container">
                     <div className="listing__page-content">
                          <div className="listing-item">
@@ -278,7 +278,7 @@ const ListingPackages = () => {
                          </div>
                     </div>
                </div>
-          </div>
+          </section>
      );
 };
 
