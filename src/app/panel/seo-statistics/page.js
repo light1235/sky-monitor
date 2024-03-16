@@ -21,6 +21,13 @@ export const dataPage = [
      ["4", 1030],
 
 ];
+export const dataLine = [
+     ["Year", "users"],
+     ["09-01", 1000],
+     ["09-02", 1170],
+     ["09-03", 660],
+     ["09-04", 1030],
+];
 
 
 
@@ -47,6 +54,26 @@ const SeoStat = () => {
                                    }}
                               />
                          }
+                    </div>
+                    <div className="page-stat data-line">
+                         <Chart
+                              chartType="LineChart"
+                              width="100%"
+                              height="250px"
+                              data={dataLine}
+                              options={{
+                                   title: "Number of unique visitors",
+                                   curveType: "function",
+                                   chart: {
+                                        title: "Page View",
+                                        subtitle: "Number of page view last 4 weeks",
+                                   },
+                                   legend: { position: "none" },
+                                   colors: ["#85CE36"],
+                                   pointSize: 5, // Размер точек
+                                   pointShape: 'circle', // Форма точек (по умолчанию 'circle')
+                              }}
+                         />
                     </div>
                </div>
                <div className="geo-wrap">

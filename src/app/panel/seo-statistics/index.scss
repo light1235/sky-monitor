@@ -28,15 +28,20 @@
       display: grid;
       grid-template-columns:  1fr 1fr;
       margin-bottom: 40px;
+      grid-gap: 20px;
       & .page-stat{
          box-sizing: border-box;
-         width: 80%;
+         width: 90%;
          height: 300px;
          box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.25);
          background: #fff;
          display: grid;
          align-items: center;
          padding: 20px;
+      }
+      & .data-line {
+         display: grid;
+         justify-self: end;
       }
    }
 }
