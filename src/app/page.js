@@ -71,12 +71,12 @@ export default function Home() {
                              {
                                   label: 'Overview',
                                   key: '1',
-                                  children: <div style={{display:'grid',gridTemplateColumns:'1fr 1fr 1fr'}}> <Listing_card/>  </div>,
+                                  children: <div style={{display:'grid',gridTemplateColumns:'1fr 1fr 1fr',justifyItems:'center'}}>  <Listing_card/>  </div>,
                              },
                              {
                                   label: 'Premium',
                                   key: '2',
-                                  children: <ListingCardThin/> ,
+                                  children: <div style={{display:'grid',gridTemplateColumns:'1fr 1fr 1fr',justifyItems:'center'}}> <ListingCardThin/>   <ListingCardThin/>   <ListingCardThin/> </div>,
                              },
                              {
                                   label: 'Normal',

@@ -352,8 +352,10 @@ template {
 :root {
   --EN-language: #ff6f69;
   --RU-language: #ff6f69;
+  --Panel-font:"Open Sans", sans-serif;
+  --Main-front-font: Quicksand, sans-serif;
 }
-
+/*var()*/
 
 @font-face {
   font-family: 'Ubuntu';
@@ -475,6 +477,46 @@ template {
 }
 
 @font-face {
+  font-family: 'Quicksand';
+  src: url('../assets/fonts/Quicksand-Light.woff2') format('woff2'),
+  url('../assets/fonts/Quicksand-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Quicksand';
+  src: url('../assets/fonts/Quicksand-Regular.woff2') format('woff2'),
+  url('../assets/fonts/Quicksand-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Quicksand';
+  src: url('../assets/fonts/Quicksand-Medium.woff2') format('woff2'),
+  url('../assets/fonts/Quicksand-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: 'Quicksand';
+  src: url('../assets/fonts/Quicksand-SemiBold.woff2') format('woff2'),
+  url('../assets/fonts/Quicksand-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+
+@font-face {
   font-family: 'HK Grotesk';
   src: url('../assets/fonts/HKGrotesk-ExtraBold.woff2') format('woff2'),
   url('../assets/fonts/HKGrotesk-ExtraBold.woff') format('woff');
@@ -493,6 +535,8 @@ template {
   url('../assets/panel/font/fontello.svg?78185498#fontello') format('svg');
   font-weight: normal;
   font-style: normal;
+
+
 }
 /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
 /* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */

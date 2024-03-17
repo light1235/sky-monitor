@@ -16,6 +16,7 @@ const Services = () => {
           <section className="Services-page">
                <div className="page-container">
                     <div className="services-item">
+                         <Link href='/listing-advertising'>
                          <div className="item-logo">
                               <div className="logo-circle"><Image src={listingLogo} width='40' alt={'listing icon'}/></div>
                          </div>
@@ -23,10 +24,12 @@ const Services = () => {
                          <div className="item-description">
                               описание пакетов услуг для листига и что в них входит
                          </div>
-                         <div className="item-link"><Link href='/listing-advertising'><Image src={linkLogo} alt='link-icon'></Image></Link>
+                         <div className="item-link"><Image src={linkLogo} alt='link-icon'></Image>
                          </div>
+                         </Link>
                     </div>
                     <div className="services-item">
+                         <Link href='/'>
                          <div className="item-logo">
                               <div className="logo-circle"><Image src={bannerLogo}  width='40'alt={'listing icon'}/></div>
                          </div>
@@ -34,22 +37,25 @@ const Services = () => {
                          <div className="item-description">
                               детальное описание услуги баннера которую вы можете получить
                          </div>
-                         <div className="item-link"><Link href='/'><Image src={linkLogo} alt='link-icon'></Image></Link>
+                         <div className="item-link"><Image src={linkLogo} alt='link-icon'></Image>
                          </div>
+                         </Link>
                     </div>
                     <div className="services-item">
+                         <Link href='/'>
                          <div className="item-logo">
                               <div className="logo-circle"><Image src={popLogo} width='40' alt={'listing icon'}/></div>
                          </div>
-
                          <div className="item-title">Pop-up Advertising</div>
                          <div className="item-description">
                               как выглядит услуга поп ап и как она работает-
                          </div>
-                         <div className="item-link"><Link href='/'><Image src={linkLogo} alt='link-icon'></Image></Link>
+                         <div className="item-link"><Image src={linkLogo} alt='link-icon'></Image>
                          </div>
+                         </Link>
                     </div>
                     <div className="services-item">
+                         <Link href='/'>
                          <div className="item-logo">
                               <div className="logo-circle"><Image src={listingPin} width='40' alt={'listing icon'}/></div>
                          </div>
@@ -57,10 +63,12 @@ const Services = () => {
                          <div className="item-description">
                               описание самой услуги а так же ее приемуществ
                          </div>
-                         <div className="item-link"><Link href='/'><Image src={linkLogo} alt='link-icon'></Image></Link>
+                         <div className="item-link"><Image src={linkLogo} alt='link-icon'></Image>
                          </div>
+                         </Link>
                     </div>
                     <div className="services-item">
+                         <Link href='/'>
                          <div className="item-logo">
                               <div className="logo-circle"><Image src={listingRaise} width='40' alt={'listing icon'}/></div>
                          </div>
@@ -68,10 +76,12 @@ const Services = () => {
                          <div className="item-description">
                               дополнительная услуга для актуальных рекламодателей
                          </div>
-                         <div className="item-link"><Link href='/'><Image src={linkLogo} alt='link-icon'></Image></Link>
+                         <div className="item-link"><Image src={linkLogo} alt='link-icon'></Image>
                          </div>
+                         </Link>
                     </div>
                     <div className="services-item">
+                         <Link href='/'>
                          <div className="item-logo">
                               <div className="logo-circle"><Image src={projectLogo} width="40" alt={'listing icon'}/></div>
                          </div>
@@ -79,8 +89,9 @@ const Services = () => {
                          <div className="item-description">
                               описание услуги  описания проекта
                          </div>
-                         <div className="item-link"><Link href='/'><Image src={linkLogo} alt='link-icon'></Image></Link>
+                         <div className="item-link"><Image src={linkLogo} alt='link-icon'></Image>
                          </div>
+                         </Link>
                     </div>
                </div>
           </section>

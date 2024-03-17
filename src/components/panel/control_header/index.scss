@@ -10,6 +10,29 @@
    display: grid;
    justify-items: end;
    align-items: center;
+   grid-template-columns: 1fr min-content;
+   & .header-button {
+      display: grid;
+      justify-self: start;
+      margin-left: 280px;
+
+      background-color: #85CE36;
+      border-radius: 3px;
+      & a {
+         display: grid;
+         grid-template-columns: 1fr min-content;
+         font-family: "Open Sans", sans-serif;
+         font-weight: 700;
+         font-size: 16px;
+         color: white;
+         align-items: center;
+         padding: 5px 10px;
+         text-decoration: none;
+      }
+      & i {
+         font-size: 25px;
+      }
+   }
    & .header-panel{
       display: grid;
       grid-template-columns: 1fr 1fr 1fr max-content max-content;

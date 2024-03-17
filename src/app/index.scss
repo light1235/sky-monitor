@@ -15,7 +15,7 @@
 
 .main-content {
    display: grid;
-   grid-template-columns: 312px 1fr 312px;
+   grid-template-columns: 290px 1fr 312px;
    padding: 0 10px;
    & .content__item{
       & .ant-tabs-nav-list{
@@ -23,12 +23,12 @@
          background: white;
          & .ant-tabs-tab{
             text-align: center;
-            width: 260px;
+            width: 200px;
             display: grid;
             justify-items: center;
-            font-family: "Rubik", sans-serif;
-            font-weight: 500;
-            font-size: 22px;
+            font-family:var(--Main-front-font);
+            font-weight: 700;
+            font-size: 16px;
             line-height: 100%;
             color: #97a7c9;
             padding: 20px 0;
@@ -47,6 +47,7 @@
 
          }
       }
+
       .ant-tabs-nav .ant-tabs-tab-active {
          & .ant-tabs-tab-btn{
             color: slateblue;
@@ -59,6 +60,11 @@
    }
 }
 
+.ant-tabs-nav {
+   &::before {
+      display: none;
+   }
+}
 
 .ant-tabs-content-holder{
    padding: 20px 20px;

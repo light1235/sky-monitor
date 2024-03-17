@@ -13,8 +13,8 @@
       grid-template-columns: max-content 1fr;
       grid-gap: 10px;
       align-items: center;
-      font-family: "Roboto", sans-serif;
-      font-weight: 400;
+      font-family:  var(--Main-front-font);
+      font-weight: 500;
       font-size: 14px;
       color: #797979;
       text-decoration: underline;
@@ -24,7 +24,7 @@
       display: grid;
       justify-items: end;
       align-items: center;
-      font-family: "Ubuntu", sans-serif;
+      font-family: var(--Main-front-font);
       font-weight: 700;
       font-size: 14px;
       color: #969696;
