@@ -4,7 +4,7 @@
    padding: 15px 20px;
    border-radius: 9px;
    width: 410px;
-   height: 270px;
+   height: 280px;
    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.25);
    background: #fff;
    box-sizing: border-box;
@@ -51,10 +51,12 @@
          grid-gap: 12px;
          & .content_wrapper {
             & .content-items {
-               line-height: 1.5;
-               font-family: "Open Sans", sans-serif;
-               font-weight: 400;
-               font-size: 11px;
+               line-height: 1.2;
+               font-family: var(--Main-front-font);
+               font-weight: 500;
+               //font-family: "Open Sans", sans-serif;
+               //font-weight: 400;
+               font-size: 12px;
                color: #747474;
                & span {
                   line-height: 1.5;
@@ -118,12 +120,12 @@
             color: #747474;
          }
          & .plans{
-            font-family: "Open Sans", sans-serif;
-            font-weight:400;
-            font-size: 9px;
+            font-family: var(--Main-front-font);
+            font-weight:800;
+            font-size: 11px;
             //color: #747474;
             //color: #CCCCFF;
-            color: #97a7c9;
+            //color: #97a7c9;
          }
       }
       & .user-buttons{
@@ -181,7 +183,7 @@
       margin-top: 5px;
       display: grid;
       grid-template-columns: 3fr 1fr min-content;
-      padding-top: 6px;
+      padding-top: 8px;
       justify-items: center;
       & .line {
          width: 250px;
