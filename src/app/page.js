@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { Carousel } from 'antd';
 import React from 'react';
-import { Tabs } from 'antd';
 import HeroBanner from '/src/assets/main/images/hero-banner-1.jpg';
 import testBanner from '/src/assets/main/images/122.jpg';
 import './index.scss';
@@ -13,10 +12,8 @@ import newListingLogo from '/src/assets/main/icons/leaf.svg';
 import scamIcon from '/src/assets/main/icons/scam-icon.svg';
 import NewsLine from "@/components/main/news_line";
 import NewsLineLogo from '/src/assets/main/icons/news-line-logo.svg';
-import Listing_card from "@/components/main/listing_card";
 import Link from "next/link";
-import Listing_card_mobile from "@/components/main/listing_card_mobile";
-import ListingCardThin from "@/components/main/listing_card-thin";
+import MainTabs from "@/components/main/main-tabs";
 
 export default function Home() {
 
@@ -64,37 +61,7 @@ export default function Home() {
                    </Info_block>
               </div>
               <div className="content__item">
-                   <Tabs
-                        defaultActiveKey="1"
-                        centered
-                        items={[
-                             {
-                                  label: 'Overview',
-                                  key: '1',
-                                  children: <div style={{display:'grid',gridTemplateColumns:'1fr 1fr 1fr',justifyItems:'center'}}>  <Listing_card/>  </div>,
-                             },
-                             {
-                                  label: 'Premium',
-                                  key: '2',
-                                  children: <div style={{display:'grid',gridTemplateColumns:'1fr 1fr 1fr',justifyItems:'center'}}> <ListingCardThin/>   <ListingCardThin/>   <ListingCardThin/> </div>,
-                             },
-                             {
-                                  label: 'Normal',
-                                  key: '3',
-                                  children:<Listing_card_mobile /> ,
-                             },
-                             {
-                                  label: 'Trial',
-                                  key: '4',
-                                  children: <div style={{display:'grid',gridTemplateColumns:'1fr 1fr 1fr'}}> <Listing_card/>  <ListingCardThin/> </div>,
-                             },
-                             {
-                                  label: 'Scam',
-                                  key: '5',
-                                  children: 'tab5',
-                             },
-                        ]}
-                   />
+                   <MainTabs />
               </div>
               <div className="content__item">
                    <BlockSlat text={'Latest Hyip News'}/>

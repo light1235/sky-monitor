@@ -21,7 +21,7 @@ const ControlMenu = () => {
                     <ul>
                          <li className={pathname === '/panel' ? 'active-menu' : ''}><Link href='/panel'><i className="icon-home"></i>Dashboard</Link></li>
                          <li className={pathname === '/panel/seo-statistics' ? 'active-menu' : ''}> <Link href='/panel/seo-statistics'><i className="icon-chart-area"></i> Seo Statistics</Link></li>
-                         <li><Link href='/panel'><i className="icon-listing"></i>Listing</Link></li>
+                         <li className={pathname === '/panel/listing' ? 'active-menu' : ''}><Link href='/panel/listing'><i className="icon-listing"></i>Listing</Link></li>
                          <li><Link href='/panel'><i className="icon-info"></i>Information</Link></li>
                          <li><Link href='/panel'><i className="icon-newspaper"></i>News</Link></li>
                          <li><Link href='/panel'><i className="icon-thumbs-up-alt"></i>Vote</Link></li>

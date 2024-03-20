@@ -15,7 +15,7 @@
 
 .main-content {
    display: grid;
-   grid-template-columns: 290px 1fr 312px;
+   grid-template-columns: 290px 1fr 290px;
    padding: 0 10px;
    & .content__item{
       & .ant-tabs-nav-list{
