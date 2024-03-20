@@ -1,0 +1,94 @@
+{
+  "ListingData": {
+    "ProjectItem-1": {
+      "category": "scam,premium or tp",
+      "id": "1",
+      "name" : "gara",
+      "longTerm": true,
+      "detailsLink": "http",
+      "projectImage": "1png",
+      "projectInformation": {
+        "status": {
+          "paying":true,
+          "untraceable": false,
+          "scam": false
+        },
+        "ourInvestments": {
+          "our": "",
+          "traceable": "",
+          "without": ""
+        },
+        "payoutRate": "",
+        "lastPaid":"",
+        "created": "",
+        "minimalSpend": "",
+        "withdrawal": "",
+        "daysOnline": "",
+        "investedPlans": ""
+      },
+      "paymentSystem": {
+        "bitcoin": true,
+        "neteller": true,
+        "kiwi": true,
+        "webMoney": true,
+        "perfectMoney": true
+      },
+      "info": {
+        "similarWeb": "http",
+        "whoIs": "http"
+      },
+      "forum": "http",
+      "vote": {
+        "totalVote": "",
+        "votePercent": "",
+        "greenLine": 73,
+        "redLine": ""
+      }
+    },
+    "ProjectItem-2":{
+      "category": "scam,premium or tp",
+      "id": "1",
+      "name" : "fora",
+      "longTerm": true,
+      "detailsLink": "http",
+      "projectImage": "1png",
+      "projectInformation": {
+        "status": {
+          "paying":true,
+          "untraceable": false,
+          "scam": false
+        },
+        "ourInvestments": {
+          "our": "",
+          "traceable": "",
+          "without": ""
+        },
+        "payoutRate": "",
+        "lastPaid":"",
+        "created": "",
+        "minimalSpend": "",
+        "withdrawal": "",
+        "daysOnline": "",
+        "investedPlans": ""
+      },
+      "paymentSystem": {
+        "bitcoin": true,
+        "neteller": true,
+        "kiwi": true,
+        "webMoney": true,
+        "perfectMoney": true
+      },
+      "info": {
+        "similarWeb": "http",
+        "whoIs": "http"
+      },
+      "forum": "http",
+      "vote": {
+        "totalVote": "234",
+        "votePercent": "654",
+        "greenLine": 62,
+        "redLine": "324"
+      }
+    }
+  }
+}

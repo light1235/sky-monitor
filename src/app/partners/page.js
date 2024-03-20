@@ -1,12 +1,22 @@
+"use client"
 import React from 'react';
 import  './index.scss'
 import PartnersReview from "@/components/main/partners-review";
+import TestBlock from "@/components/main/test-block";
+import DATAJSON from '../../assets/DataProjects.json';
+
 
 const Partners = () => {
+
+     const keys = Object.keys(DATAJSON.ListingData);
+
      return (
           <section className="partners__page">
                <div className="partners__page-container">
                     <div className="partners__page-content">
+                         {/*{keys.map((key) =>*/}
+                         {/*     <TestBlock item={DATAJSON.ListingData[key]} key={key} />*/}
+                         {/*)}*/}
                          <h1>Our Partners</h1>
                          <div className="content-block">
                               <PartnersReview />

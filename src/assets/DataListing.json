@@ -1,0 +1,48 @@
+{
+  "ListingData": {
+    "category": "scam,premium or tp",
+    "id": "1",
+    "name" : "",
+    "longTerm": true,
+    "detailsLink": "http",
+    "projectImage": "1png",
+    "projectInformation": {
+      "status": {
+        "paying":true,
+        "untraceable": false,
+        "scam": false
+      },
+      "ourInvestments": {
+        "our": "",
+        "traceable": "",
+        "without": ""
+      },
+      "payoutRate": "",
+      "lastPaid":"",
+      "created": "",
+      "minimalSpend": "",
+      "withdrawal": "",
+      "daysOnline": "",
+      "investedPlans": ""
+    },
+    "paymentSystem": {
+      "bitcoin": true,
+      "neteller": true,
+      "kiwi": true,
+      "webMoney": true,
+      "perfectMoney": true
+    },
+    "info": {
+      "similarWeb": "http",
+      "whoIs": "http"
+    },
+    "forum": "http",
+    "vote": {
+      "totalVote": "",
+      "votePercent": "",
+      "greenLine": "",
+      "redLine": ""
+    }
+  }
+}
+

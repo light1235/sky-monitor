@@ -15,10 +15,13 @@ import whoIs from '/src/assets/main/icons/who-is.svg';
 import forumIocn from '/src/assets/main/icons/forum-icon.svg';
 import voteIcon from '/src/assets/main/icons/vote-icon.svg';
 import CustomToolTop from "@/components/main/tooltip_custom";
+import DATAJSON from '../../../assets/DataProjects.json';
 
 
 
 const ListingCard= () => {
+
+     // project item
 
      let ListingData = {
           category:'scam,premium or tp',
@@ -61,12 +64,17 @@ const ListingCard= () => {
           vote:{
                totalVote:'',
                votePercent:'',
-               greenLine:'',
+               greenLine:'22',
                redLine:'',
           }
 
      };
 
+     const keys = Object.keys(DATAJSON.ListingData);
+     //
+     // for (let i = 0; i < keys.length; i++) {
+     //      console.log(keys[i].id);
+     // }
 
      return (
           <div className="listing__card-thin">
