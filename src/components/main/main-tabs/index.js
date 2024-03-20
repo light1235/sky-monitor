@@ -38,7 +38,7 @@ const MainTabs = () => {
                          {
                               label: 'Premium',
                               key: '2',
-                              children: <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit, minmax( 410px, 1fr))',justifyItems:'center'}}> <Listing_card /><Listing_card /><Listing_card /> </div>,
+                              children: <div style={{display:'grid',gridTemplateColumns:'1fr 1fr 1fr',justifyItems:'center',gridRowGap:'10px'}}> <Listing_card /><Listing_card /><Listing_card /> <Listing_card /><Listing_card /><Listing_card /></div>,
                          },
                          {
                               label: 'Normal',
