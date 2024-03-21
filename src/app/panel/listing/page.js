@@ -9,6 +9,7 @@ import { Button, Divider, Flex, Radio } from 'antd';
 import TableLine from "@/components/panel/standard-table-line";
 import CustomDropDown1 from "@/components/panel/drop-down";
 import CustomPagination from "@/components/panel/pagination";
+import OptionTableLine from "@/components/panel/option-table-line";
 // eslint-disable-next-line react-hooks/rules-of-hooks
 // const [size, setSize] = useState('large');
 // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -49,10 +50,20 @@ const ListingPage = () => {
                     </div>
                </div>
                <div className="page-data-table">
-                    <div className="table-top"> <TableLine /></div>
-                    <div className="table-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab animi architecto blanditiis culpa deleniti deserunt dignissimos ea, error esse facere facilis fuga inventore ipsa molestiae mollitia nulla quam quis quos recusandae repellendus saepe sequi, vel vitae. Dignissimos distinctio eaque exercitationem illum ipsum laborum necessitatibus, omnis pariatur reprehenderit sequi similique suscipit.</div>
+                    <div className="table-top">
+                         <OptionTableLine />
+                    </div>
+                    <div className="table-content">
+                         <TableLine  />
+                         <TableLine background={'#FCFCFD'} />
+                         <TableLine  />
+                         <TableLine background={'#FCFCFD'} />
+                         <TableLine  />
+                         <TableLine background={'#FCFCFD'} />
+                         <TableLine  />
+                         <TableLine background={'#FCFCFD'} />
+                    </div>
                </div>
-               <CustomPagination />
 
           </div>
      );

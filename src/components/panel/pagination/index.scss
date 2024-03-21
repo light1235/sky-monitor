@@ -1,0 +1,30 @@
+
+
+
+
+.custom-pagination {
+   margin-top: 20px !important;
+   background: white;
+   width: 200px;
+   padding: 0 20px;
+   & li {
+      margin: 0 !important;
+      color: rgb(133, 206, 54) !important;
+   }
+}
+.ant-pagination-item {
+   border: 1px solid #E9EDF0 !important;
+   border-radius: 0px !important;
+  & a {
+     color: rgb(133, 206, 54) !important;
+  }
+
+}
+
+.ant-pagination-item-active{
+   background-color: rgb(133, 206, 54) !important;
+   //border: none !important;
+   & a {
+      color: white !important;
+   }
+}

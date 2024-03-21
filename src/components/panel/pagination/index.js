@@ -5,7 +5,7 @@ import "./index.scss"
 
 const itemRender = (_, type, originalElement) => {
      if (type === 'prev') {
-          return <a>Previous</a>;
+          return <a>Prev</a>;
      }
      if (type === 'next') {
           return <a>Next</a>;
@@ -15,7 +15,7 @@ const itemRender = (_, type, originalElement) => {
 const CustomPagination = () => {
      return (
           <>
-               <Pagination total={40} itemRender={itemRender} showLessItems={false} />
+               <Pagination size={'large'} total={40} itemRender={itemRender} showLessItems={false} className="custom-pagination" />
           </>
      );
 };
