@@ -12,9 +12,8 @@ const TableLine = ({background = 'white'}) => {
      useEffect(() => {
           // Функция-обработчик для закрытия меню при щелчке вне его области
           const handleClickOutsideMenu = (event) => {
-               if (!event.target.closest('.icon-gear-custom')) {// table-panel
-                    setActiveMenu(false);
-// table
+               if (activeMenu === true){
+                    setActiveMenu(false)
                }
           };
 
@@ -25,7 +24,7 @@ const TableLine = ({background = 'white'}) => {
           return () => {
                document.removeEventListener('click', handleClickOutsideMenu);
           };
-     }, []);
+     }, [activeMenu]);
 
      return (
           <div className="standard-table-line" style={{background:`${background}`}}>
