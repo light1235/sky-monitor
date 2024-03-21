@@ -9,22 +9,23 @@ const TableLine = ({background = 'white'}) => {
      const [activeMenu, setActiveMenu] = useState(false);
 
 
-     // useEffect(() => {
-     //      // Функция-обработчик для закрытия меню при щелчке вне его области
-     //      const handleClickOutsideMenu = (event) => {
-     //           if (!event.target.closest('.table-panel')) {
-     //                setActiveMenu(false);
-     //           }
-     //      };
-     //
-     //      // Добавляем обработчик при монтировании компонента
-     //      document.addEventListener('click', handleClickOutsideMenu);
-     //
-     //      // Убираем обработчик при размонтировании компонента
-     //      return () => {
-     //           document.removeEventListener('click', handleClickOutsideMenu);
-     //      };
-     // }, []);
+     useEffect(() => {
+          // Функция-обработчик для закрытия меню при щелчке вне его области
+          const handleClickOutsideMenu = (event) => {
+               if (!event.target.closest('.icon-gear-custom')) {// table-panel
+                    setActiveMenu(false);
+// table
+               }
+          };
+
+          // Добавляем обработчик при монтировании компонента
+          document.addEventListener('click', handleClickOutsideMenu);
+
+          // Убираем обработчик при размонтировании компонента
+          return () => {
+               document.removeEventListener('click', handleClickOutsideMenu);
+          };
+     }, []);
 
      return (
           <div className="standard-table-line" style={{background:`${background}`}}>
