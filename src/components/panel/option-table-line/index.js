@@ -9,7 +9,7 @@ const OptionTableLine = () => {
                     <CustomCheckBox /><p className="image-table">Image</p><p>Name</p>
                </div>
                <div className="table-right">
-                    <p>Type</p><p>Category</p><p>Field of activity</p><p>Project Description</p><p>Listing </p>
+                    <p>Type</p><p>Category</p><p>Field of activity</p><p>Status</p><p>Date</p>
                </div>
           </div>
      );
