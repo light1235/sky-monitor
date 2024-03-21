@@ -6,6 +6,9 @@ import { Input} from 'antd';
 const { Search } = Input;
 import { DownloadOutlined } from '@ant-design/icons';
 import { Button, Divider, Flex, Radio } from 'antd';
+import TableLine from "@/components/panel/standard-table-line";
+import CustomDropDown1 from "@/components/panel/drop-down";
+import CustomPagination from "@/components/panel/pagination";
 // eslint-disable-next-line react-hooks/rules-of-hooks
 // const [size, setSize] = useState('large');
 // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -31,6 +34,7 @@ const ListingPage = () => {
                          <Button type="primary" size={size} style={{background:'#85CE36',fontFamily:'Open Sans',fontWeight:'600'}}>
                               Add new
                          </Button>
+                         <CustomDropDown1 />
                     </div>
                     <div className="bar-search">
 
@@ -45,9 +49,10 @@ const ListingPage = () => {
                     </div>
                </div>
                <div className="page-data-table">
-                    <div className="table-top">Lorem ipsum dolor sit amet.</div>
+                    <div className="table-top"> <TableLine /></div>
                     <div className="table-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab animi architecto blanditiis culpa deleniti deserunt dignissimos ea, error esse facere facilis fuga inventore ipsa molestiae mollitia nulla quam quis quos recusandae repellendus saepe sequi, vel vitae. Dignissimos distinctio eaque exercitationem illum ipsum laborum necessitatibus, omnis pariatur reprehenderit sequi similique suscipit.</div>
                </div>
+               <CustomPagination />
 
           </div>
      );

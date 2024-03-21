@@ -1,0 +1,42 @@
+
+
+
+.ant-dropdown-trigger {
+   cursor: pointer ;
+}
+
+.ant-dropdown-trigger .and-dropdown-open {
+   cursor: pointer;
+}
+.ant-dropdown {
+   & ul {
+      & li {
+         & span {
+            font-family: "Open Sans", sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            color: #9ba8b5;
+            display: grid;
+            grid-template-columns: max-content 1fr;
+            align-items: center;
+            grid-gap: 12px;
+         }
+      }
+   }
+   & i {
+      font-size: 25px;
+      color: #9BA8B5;
+   }
+}
+.ant-space-item{
+   font-family: "Open Sans", sans-serif;
+   font-weight: 400;
+   font-size: 14px;
+   color: #969696;
+}
+.ant-dropdown-trigger {
+   box-sizing: border-box;
+   border-radius: 3px;
+   padding: 10px 10px 10px 10px;
+   background: white;
+}

@@ -1,0 +1,15 @@
+
+
+.custom-checkbox {
+   .ant-checkbox .ant-checkbox-inner {
+      background-color: #C8D0DA !important;
+      border: none !important;
+      transform: scale(1.25) !important;
+   }
+   .ant-checkbox-checked .ant-checkbox-inner {
+      background-color:  #85CE36  !important;
+      border: none;
+   }
+
+}
+
