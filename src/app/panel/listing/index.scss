@@ -15,7 +15,7 @@
       margin-bottom: 20px;
       & .bar-actions{
          display: grid;
-         grid-template-columns: min-content 1fr 1fr;
+         grid-template-columns: min-content min-content 1fr;
          width: max-content;
          grid-gap: 15px;
          align-items: center;

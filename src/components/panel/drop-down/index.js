@@ -76,6 +76,7 @@ const CustomDropDown1 = () => {
                          items,
                          onClick,
                     }}
+                    className="drop-menu"
                >
                     <a onClick={(e) => e.preventDefault()}>
                          <Space>

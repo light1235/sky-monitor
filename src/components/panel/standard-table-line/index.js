@@ -6,7 +6,7 @@ import CustomDropDown1 from "@/components/panel/drop-down";
 const TableLine = () => {
      return (
           <div className="standard-table-line">
-               1
+               12
           </div>
      );
 };

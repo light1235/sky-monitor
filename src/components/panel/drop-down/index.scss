@@ -34,9 +34,14 @@
    font-size: 14px;
    color: #969696;
 }
-.ant-dropdown-trigger {
+
+
+.drop-menu {
    box-sizing: border-box;
    border-radius: 3px;
    padding: 10px 10px 10px 10px;
    background: white;
+  & .ant-dropdown-trigger {
+
+   }
 }

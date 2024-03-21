@@ -31,7 +31,7 @@ const ListingPage = () => {
                <div className="page-top-bar">
                     <div className="bar-actions">
                          <h2>Listing</h2>
-                         <Button type="primary" size={size} style={{background:'#85CE36',fontFamily:'Open Sans',fontWeight:'600'}}>
+                         <Button type="primary" size={'large'} style={{background:'#85CE36',fontFamily:'Open Sans',fontWeight:'600',width:'120px'}}>
                               Add new
                          </Button>
                          <CustomDropDown1 />
