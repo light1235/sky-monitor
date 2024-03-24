@@ -11,6 +11,7 @@ import CustomDropDown1 from "@/components/panel/drop-down";
 import CustomPagination from "@/components/panel/pagination";
 import OptionTableLine from "@/components/panel/option-table-line";
 import CustomSearch from "@/components/panel/custom-search";
+import CustomButton from "@/components/panel/custom-button";
 
 
 const suffix = (
@@ -28,9 +29,7 @@ const ListingPage = () => {
                <div className="page-top-bar">
                     <div className="bar-actions">
                          <h2>Listing</h2>
-                         <Button type="primary" size={'large'} style={{background:'#85CE36',fontFamily:'Open Sans',fontWeight:'600',width:'120px'}}>
-                              Add new
-                         </Button>
+                         <CustomButton />
                          <CustomDropDown1 />
                     </div>
                     <div className="bar-search">
