@@ -3,16 +3,14 @@ import React, {useEffect, useState} from 'react';
 import './index.scss';
 import { AudioOutlined } from '@ant-design/icons';
 import { Input} from 'antd';
-const { Search } = Input;
+
 import { DownloadOutlined } from '@ant-design/icons';
 import { Button, Divider, Flex, Radio } from 'antd';
 import TableLine from "@/components/panel/standard-table-line";
 import CustomDropDown1 from "@/components/panel/drop-down";
 import CustomPagination from "@/components/panel/pagination";
 import OptionTableLine from "@/components/panel/option-table-line";
-// eslint-disable-next-line react-hooks/rules-of-hooks
-// const [size, setSize] = useState('large');
-// eslint-disable-next-line react-hooks/rules-of-hooks
+import CustomSearch from "@/components/panel/custom-search";
 
 
 const suffix = (
@@ -23,10 +21,8 @@ const suffix = (
           }}
      />
 );
-const onSearch = (value, _e, info) => console.log(info?.source, value);
 const ListingPage = () => {
 
-     const [size, setSize] = useState('large');
      return (
           <div className="listing-page">
                <div className="page-top-bar">
@@ -38,15 +34,7 @@ const ListingPage = () => {
                          <CustomDropDown1 />
                     </div>
                     <div className="bar-search">
-
-                         <Search
-                              placeholder="input search text"
-                              onSearch={onSearch}
-                              style={{
-                                   width: 300,
-                              }}
-                         />
-
+                         <CustomSearch />
                     </div>
                </div>
                <div className="page-data-table">
