@@ -33,6 +33,11 @@
 .ant-pagination-prev,.ant-pagination-next {
    padding: 0 10px;
   & a {
-     color: rgb(133, 206, 54)
+     color: rgb(133, 206, 54);
+     &::selection {
+        background-color:white;
+     }
   }
+
+
 }

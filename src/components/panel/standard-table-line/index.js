@@ -5,7 +5,7 @@ import CustomCheckBox from "@/components/panel/check-box";
 import CustomDropDown1 from "@/components/panel/drop-down";
 
 
-const TableLine = ({background = 'white'}) => {
+const TableLine = ({background = 'white',EditeM = 'Edite listing',DeleteM ='Mark delete',published = false}) => {
      const [activeMenu, setActiveMenu] = useState(false);
 
 
@@ -34,12 +34,12 @@ const TableLine = ({background = 'white'}) => {
                     <p>Razzelton</p>
                </div>
                <div className="table-right">
-                    <p>User</p><p>Scam</p><p>Crypto</p><p>Not published</p>
+                    <p>User</p><p>Scam</p><p>Crypto</p>{published ? <p>Published</p> : <p style={{color:'#CB4335'}}>Not published</p>}
                     <div className="table-panel">
                          {activeMenu &&
                               <div className="edit-menu">
-                                   <div><i className="icon-pencil"></i> <p>Edit listing</p></div>
-                                   <div><i className="icon-cancel"></i> <p>Mark delete</p></div>
+                                   <div><i className="icon-pencil"></i> <p>{EditeM}</p></div>
+                                   <div><i className="icon-cancel"></i> <p>{DeleteM}</p></div>
                               </div>
                          }
                          <p>21 SEP 10.45</p><i className="icon-gear-custom"

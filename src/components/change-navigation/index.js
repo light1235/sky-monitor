@@ -10,7 +10,7 @@ import ControlMenu from "@/components/panel/control_footer";
 const ChangeNavigation = ({children}) => {
 
      const pathname = usePathname();
-     const isCustomHeaderFooterPage = pathname === '/panel' || pathname === '/panel/seo-statistics' || pathname === '/panel/listing';
+     const isCustomHeaderFooterPage = pathname === '/panel' || pathname === '/panel/seo-statistics' || pathname === '/panel/listing' || pathname === '/panel/news' || pathname === '/panel/information';
 
      return (
           <>
