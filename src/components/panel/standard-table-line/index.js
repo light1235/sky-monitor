@@ -39,7 +39,7 @@ const TableLine = ({background = 'white'}) => {
                          {activeMenu &&
                               <div className="edit-menu">
                                    <div><i className="icon-pencil"></i> <p>Edit listing</p></div>
-                                   <div><i className="icon-cancel"></i> <p>Edit listing</p></div>
+                                   <div><i className="icon-cancel"></i> <p>Mark delete</p></div>
                               </div>
                          }
                          <p>21 SEP 10.45</p><i className="icon-gear-custom"
