@@ -5,7 +5,8 @@
 .custom-pagination {
    margin-top: 20px !important;
    background: white;
-   width: 200px;
+   //width: 200px;
+   width: max-content;
    padding: 0 20px;
    & li {
       margin: 0 !important;
@@ -27,4 +28,11 @@
    & a {
       color: white !important;
    }
+}
+
+.ant-pagination-prev,.ant-pagination-next {
+   padding: 0 10px;
+  & a {
+     color: rgb(133, 206, 54)
+  }
 }

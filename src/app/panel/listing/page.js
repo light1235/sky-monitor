@@ -51,6 +51,9 @@ const ListingPage = () => {
                          <TableLine background={'#FCFCFD'} />
                     </div>
                </div>
+               <div className="pagination-wrap" style={{display:'grid',justifyItems:'end'}}>
+                    <CustomPagination />
+               </div>
 
           </div>
      );
