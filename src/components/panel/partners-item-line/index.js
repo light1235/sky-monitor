@@ -1,9 +1,26 @@
 "use client"
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './index.scss'
 
 const PartnersItemLine = () => {
      const [showMenu, setShowMenu] = useState(false);
+
+     useEffect(() => {
+          // Функция-обработчик для закрытия меню при щелчке вне его области
+          const handleClickOutsideMenu = (event) => {
+               if (showMenu === true){
+                    setShowMenu(false)
+               }
+          };
+
+          // Добавляем обработчик при монтировании компонента
+          document.addEventListener('click', handleClickOutsideMenu);
+
+          // Убираем обработчик при размонтировании компонента
+          return () => {
+               document.removeEventListener('click', handleClickOutsideMenu);
+          };
+     }, [showMenu]);
 
 
      return (
