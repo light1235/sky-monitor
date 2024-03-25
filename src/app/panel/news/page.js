@@ -6,6 +6,7 @@ import CustomSearch from "@/components/panel/custom-search";
 import OptionTableLine from "@/components/panel/option-table-line";
 import TableLine from "@/components/panel/standard-table-line";
 import CustomPagination from "@/components/panel/pagination";
+import NewsStepper from "@/components/panel/news-stepper";
 
 
 const items = [
@@ -75,6 +76,7 @@ const NewsPage = () => {
                <div className="pagination-wrap" style={{display: 'grid', justifyItems: 'end'}}>
                     <CustomPagination/>
                </div>
+               {/*<NewsStepper />*/}
           </div>
      );
 };
