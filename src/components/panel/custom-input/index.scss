@@ -1,0 +1,11 @@
+
+
+.adm-input {
+
+   & .ant-input {
+      border-radius: 0;
+      border-color: var(--Main-color);
+      height: 40px;
+   }
+}
+

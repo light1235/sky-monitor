@@ -1,0 +1,13 @@
+
+
+
+.custom-load {
+   .ant-upload-select {
+      border-radius: 0 !important;
+      border: 1px solid var(--Main-color) !important;
+      margin-bottom: 0 !important;
+   }
+   & .ant-upload {
+
+   }
+}
