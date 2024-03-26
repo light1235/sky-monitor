@@ -47,7 +47,7 @@ export default function Home() {
               <div className="content__item">
                    <BlockSlat text={'TOP Projects'}/>
                    <Info_block>
-                        <Information_line image={<Image src={topProjectLogo} alt="chart icon" height={29}></Image>} />
+                        <Information_line domains="Bitmugnet.ro" image={<Image src={topProjectLogo} alt="chart icon" height={29}></Image>} />
                         <Information_line image={<Image src={topProjectLogo} alt="chart icon" height={29}></Image>} />
                         <Information_line image={<Image src={topProjectLogo} alt="chart icon" height={29}></Image>} />
                         <Information_line image={<Image src={topProjectLogo} alt="chart icon" height={29}></Image>} />

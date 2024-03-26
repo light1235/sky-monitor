@@ -1,7 +1,9 @@
+"use client"
 import React from 'react';
 
+
 const TestBlock = ({ item }) => {
-     // console.log(item.name);
+     // console.log(item);
      return (
           <div>
                 <div>{item.name}</div>

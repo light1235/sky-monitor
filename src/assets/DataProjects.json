@@ -1,12 +1,12 @@
 {
   "ListingData": {
     "ProjectItem-1": {
-      "category": "scam,premium or tp",
+      "category": "premium",
       "id": "1",
-      "name" : "gara",
-      "longTerm": true,
-      "detailsLink": "http",
-      "projectImage": "1png",
+      "name" : "Espino",
+      "longTerm": false,
+      "detailsLink": "https://trust-fx.com/",
+      "projectImage": "https://cdn.discordapp.com/attachments/1046398987659395152/1222292450446413854/lapaido120e.gif?ex=6615af8d&is=66033a8d&hm=8b406c9e742c71472175a68fe9be1646f8a14b383564bc141365f63077880446&",
       "projectInformation": {
         "status": {
           "paying":true,
@@ -14,30 +14,32 @@
           "scam": false
         },
         "ourInvestments": {
-          "our": "",
+          "our": "400$",
           "traceable": "",
-          "without": ""
+          "without": "",
+          "anotherInvestment": ""
         },
-        "payoutRate": "",
-        "lastPaid":"",
-        "created": "",
-        "minimalSpend": "",
-        "withdrawal": "",
+        "payoutRate": "208$",
+        "lastPaid":"Mar 26th, 2024",
+        "created": "2023-06-23",
+        "minimalSpend": "50$",
+        "withdrawal": "automatic",
         "daysOnline": "",
-        "investedPlans": ""
+        "investedPlans": "2.9%-3.1% daily for 15-15 working days\n150% after 15 buisness days after 15 buisness days"
       },
       "paymentSystem": {
         "bitcoin": true,
         "neteller": true,
-        "kiwi": true,
+        "qiwi": true,
         "webMoney": true,
-        "perfectMoney": true
+        "perfectMoney": true,
+        "adv": true
       },
       "info": {
         "similarWeb": "http",
         "whoIs": "http"
       },
-      "forum": "http",
+      "forum": "https://mmgp.com/threads/trust-fx-trust-fx-com.374690/?referrerid=190922&utm_source=InvestorsStartPage.com&utm_medium=referral&utm_campaign=partners",
       "vote": {
         "totalVote": "",
         "votePercent": "",
@@ -46,12 +48,106 @@
       }
     },
     "ProjectItem-2":{
-      "category": "scam,premium or tp",
+      "category": "normal",
       "id": "1",
-      "name" : "fora",
+      "name" : "Safeassets",
       "longTerm": true,
-      "detailsLink": "http",
-      "projectImage": "1png",
+      "detailsLink": "https://trust-fx.com/",
+      "projectImage": "https://cdn.discordapp.com/attachments/1046398987659395152/1222293079495676024/asignat120e.gif?ex=6615b023&is=66033b23&hm=e1d961ee392b16c3ef7447605ad4eb022e1f80ce72f1db8c6f36771cd2b541f3&",
+      "projectInformation": {
+        "status": {
+          "paying":false,
+          "untraceable": true,
+          "scam": false
+        },
+        "ourInvestments": {
+          "our": "",
+          "traceable": "none",
+          "without": "",
+          "anotherInvestment": ""
+        },
+        "payoutRate": "500$",
+        "lastPaid":" Apr 16th, 2023",
+        "created": "2024-02-23",
+        "minimalSpend": "20$",
+        "withdrawal": "manual",
+        "daysOnline": "",
+        "investedPlans": "\n100.5% - 350% after 1 day , 200% - 1000% after 3 days , 800% - 2000% after 5 days"
+      },
+      "paymentSystem": {
+        "bitcoin": true,
+        "neteller": true,
+        "qiwi": true,
+        "webMoney": true,
+        "perfectMoney": true,
+        "adv": false
+      },
+      "info": {
+        "similarWeb": "http",
+        "whoIs": "http"
+      },
+      "forum": "https://mmgp.com/threads/trust-fx-trust-fx-com.374690/?referrerid=190922&utm_source=InvestorsStartPage.com&utm_medium=referral&utm_campaign=partners",
+      "vote": {
+        "totalVote": "234",
+        "votePercent": "654",
+        "greenLine": 62,
+        "redLine": "324"
+      }
+    },
+    "ProjectItem-3":{
+      "category": "normal",
+      "id": "1",
+      "name" : "Trust-FX",
+      "longTerm": false,
+      "detailsLink": "https://trust-fx.com/",
+      "projectImage": "https://cdn.discordapp.com/attachments/1046398987659395152/1222292809739141203/wizerpeople120e.gif?ex=6615afe2&is=66033ae2&hm=8b5908a264034a55319c74b38695163456640a753652bcfbef19ec1f5a3fa82d&",
+      "projectInformation": {
+        "status": {
+          "paying":false,
+          "untraceable": false,
+          "scam": true
+        },
+        "ourInvestments": {
+          "our": "",
+          "traceable": "",
+          "without": "",
+          "anotherInvestment": ""
+        },
+        "payoutRate": "",
+        "lastPaid":"",
+        "created": "2023-02-6",
+        "minimalSpend": "",
+        "withdrawal": "",
+        "daysOnline": "",
+        "investedPlans": "\n5% - 8% - 10% monthly for 30-180 days (bonus: 1.5% - 4.5% - 12% at end if invest in tether)"
+      },
+      "paymentSystem": {
+        "bitcoin": true,
+        "neteller": true,
+        "qiwi": true,
+        "webMoney": true,
+        "perfectMoney": true,
+        "adv": false
+      },
+      "info": {
+        "similarWeb": "http",
+        "whoIs": "http"
+      },
+      "forum": "https://mmgp.com/threads/trust-fx-trust-fx-com.374690/?referrerid=190922&utm_source=InvestorsStartPage.com&utm_medium=referral&utm_campaign=partners",
+      "vote": {
+        "totalVote": "234",
+        "votePercent": "654",
+        "greenLine": 62,
+        "redLine": "324"
+      }
+    },
+    "ProjectItem-4": {
+      "category": "premium",
+      "id": "1",
+      "name" : "AFTER AI LTD",
+      "longTerm": false,
+      "detailsLink": "https://trust-fx.com/",
+      "projectImage": "https://cdn.discordapp.com/attachments/1046398987659395152/1222307588050522132/Bemarg-125.gif?ex=6615bda6&is=660348a6&hm=5483e3a0475a70ee61321fee47041b6c5a5bceb90ed1163e20071e5b21114ea4&",
       "projectInformation": {
         "status": {
           "paying":true,
@@ -59,35 +155,131 @@
           "scam": false
         },
         "ourInvestments": {
-          "our": "",
+          "our": "400$",
           "traceable": "",
-          "without": ""
+          "without": "",
+          "anotherInvestment":" Qmonitor"
         },
-        "payoutRate": "",
-        "lastPaid":"",
-        "created": "",
-        "minimalSpend": "",
-        "withdrawal": "",
+        "payoutRate": "208$",
+        "lastPaid":"Mar 26th, 2024",
+        "created": "2023-06-23",
+        "minimalSpend": "50$",
+        "withdrawal": "automatic",
         "daysOnline": "",
-        "investedPlans": ""
+        "investedPlans": "2.9%-3.1% daily for 15-15 working days\n150% after 15 buisness days after 15 buisness days"
       },
       "paymentSystem": {
         "bitcoin": true,
         "neteller": true,
-        "kiwi": true,
+        "qiwi": true,
         "webMoney": true,
-        "perfectMoney": true
+        "perfectMoney": true,
+        "adv": true
       },
       "info": {
         "similarWeb": "http",
         "whoIs": "http"
       },
-      "forum": "http",
+      "forum": "https://mmgp.com/threads/trust-fx-trust-fx-com.374690/?referrerid=190922&utm_source=InvestorsStartPage.com&utm_medium=referral&utm_campaign=partners",
       "vote": {
-        "totalVote": "234",
-        "votePercent": "654",
-        "greenLine": 62,
-        "redLine": "324"
+        "totalVote": "",
+        "votePercent": "",
+        "greenLine": 73,
+        "redLine": ""
+      }
+    },
+    "ProjectItem-5": {
+      "category": "premium",
+      "id": "1",
+      "name" : "Bemarg",
+      "longTerm": false,
+      "detailsLink": "https://trust-fx.com/",
+      "projectImage": "https://cdn.discordapp.com/attachments/1046398987659395152/1222308015030665277/espino-125.gif?ex=6615be0c&is=6603490c&hm=902bfb8950422a26e8e85413289076926f49a7dc64de24ba076cfda8a8b9093f&",
+      "projectInformation": {
+        "status": {
+          "paying":true,
+          "untraceable": false,
+          "scam": false
+        },
+        "ourInvestments": {
+          "our": "400$",
+          "traceable": "",
+          "without": "",
+          "anotherInvestment":" Luckymonitor"
+        },
+        "payoutRate": "208$",
+        "lastPaid":"Dec 12th, 2023",
+        "created": "2024-02-10",
+        "minimalSpend": "50$",
+        "withdrawal": "automatic",
+        "daysOnline": "",
+        "investedPlans": "2.9%-3.1% daily for 15-15 working days\n150% after 15 buisness days after 15 buisness days"
+      },
+      "paymentSystem": {
+        "bitcoin": true,
+        "neteller": true,
+        "qiwi": true,
+        "webMoney": true,
+        "perfectMoney": true,
+        "adv": true
+      },
+      "info": {
+        "similarWeb": "http",
+        "whoIs": "http"
+      },
+      "forum": "https://mmgp.com/threads/trust-fx-trust-fx-com.374690/?referrerid=190922&utm_source=InvestorsStartPage.com&utm_medium=referral&utm_campaign=partners",
+      "vote": {
+        "totalVote": "",
+        "votePercent": "",
+        "greenLine": 73,
+        "redLine": ""
+      }
+    },
+    "ProjectItem-6": {
+      "category": "premium",
+      "id": "1",
+      "name" : "Multicopytrade",
+      "longTerm": false,
+      "detailsLink": "https://trust-fx.com/",
+      "projectImage": "https://cdn.discordapp.com/attachments/1046398987659395152/1222308418857996328/mixli-125.gif?ex=6615be6c&is=6603496c&hm=ae74f5c24f3207d6efee0cd9e260fd7d80a1d6fbf85d51909c609fd462d5c04c&",
+      "projectInformation": {
+        "status": {
+          "paying":true,
+          "untraceable": false,
+          "scam": false
+        },
+        "ourInvestments": {
+          "our": "120$",
+          "traceable": "",
+          "without": "",
+          "anotherInvestment":""
+        },
+        "payoutRate": "208$",
+        "lastPaid":"Mar 26th, 2024",
+        "created": "2023-02-23",
+        "minimalSpend": "50$",
+        "withdrawal": "automatic",
+        "daysOnline": "",
+        "investedPlans": "2.9%-3.1% daily for 15-15 working days\n150% after 15 buisness days after 15 buisness days"
+      },
+      "paymentSystem": {
+        "bitcoin": true,
+        "neteller": true,
+        "qiwi": true,
+        "webMoney": true,
+        "perfectMoney": true,
+        "adv": true
+      },
+      "info": {
+        "similarWeb": "http",
+        "whoIs": "http"
+      },
+      "forum": "https://mmgp.com/threads/trust-fx-trust-fx-com.374690/?referrerid=190922&utm_source=InvestorsStartPage.com&utm_medium=referral&utm_campaign=partners",
+      "vote": {
+        "totalVote": "",
+        "votePercent": "",
+        "greenLine": 73,
+        "redLine": ""
       }
     }
   }

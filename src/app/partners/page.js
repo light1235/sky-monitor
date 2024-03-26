@@ -4,6 +4,8 @@ import  './index.scss'
 import PartnersReview from "@/components/main/partners-review";
 import TestBlock from "@/components/main/test-block";
 import DATAJSON from '../../assets/DataProjects.json';
+import Listing_card from "@/components/main/listing_card";
+import ContentBlock from "@/components/main/content-block";
 
 
 const Partners = () => {

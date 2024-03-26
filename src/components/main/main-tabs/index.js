@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react';
 import Listing_card_mobile from "@/components/main/listing_card_mobile";
 import {Tabs} from "antd";
 import Listing_card from "@/components/main/listing_card";
+import ContentBlock from "@/components/main/content-block";
 
 const MainTabs = () => {
 
@@ -33,22 +34,26 @@ const MainTabs = () => {
                          {
                               label: 'Overview',
                               key: '1',
-                              children: <div style={{display:'grid',gridTemplateColumns:'1fr 1fr 1fr',justifyItems:'center'}}><Listing_card /><Listing_card_mobile />   </div>,
+                              children: <div style={{
+                                   display: 'grid',
+                                   gridTemplateColumns: '1fr 1fr 1fr',
+                                   justifyItems: 'center'
+                              }}><Listing_card_mobile/></div>,
                          },
                          {
                               label: 'Premium',
                               key: '2',
-                              children:<div style={{display:'grid',justifyItems:'center'}}> <div style={{display:'grid',gridTemplateColumns:'1fr 1fr 1fr',gridGap:'10px'}}> <Listing_card /><Listing_card /><Listing_card /> <Listing_card /><Listing_card /><Listing_card /></div></div>,
+                              children: <><ContentBlock/> </>,
                          },
                          {
                               label: 'Normal',
                               key: '3',
-                              children:<Listing_card_mobile /> ,
+                              children:<div style={{display:'grid',gridTemplateColumns:'1fr 1fr',justifyItems:'center'}}> <Listing_card_mobile/> <Listing_card_mobile/></div> ,
                          },
                          {
                               label: 'Trial',
                               key: '4',
-                              children: <div style={{display:'grid',gridTemplateColumns:'1fr 1fr 1fr'}}>  </div>,
+                              children: <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr 1fr'}}></div>,
                          },
                          {
                               label: 'Scam',
@@ -62,3 +67,5 @@ const MainTabs = () => {
 };
 
 export default MainTabs;
+
+// <ContentBlock/>
