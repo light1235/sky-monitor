@@ -50,11 +50,7 @@ const MainTabs = ({itemsPerPage}) => {
                          {
                               label: 'Overview',
                               key: '1',
-                              children: <div style={{
-                                   display: 'grid',
-                                   gridTemplateColumns: '1fr 1fr 1fr',
-                                   justifyItems: 'center'
-                              }}>1</div>,
+                              children:1,
                          },
                          {
                               label: 'Premium',
