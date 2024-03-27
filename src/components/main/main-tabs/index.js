@@ -60,7 +60,11 @@ const MainTabs = ({itemsPerPage}) => {
                          {
                               label: 'Premium',
                               key: '2',
-                              children: 2,
+                              children: <div style={{
+                                   display: 'grid',
+                                   gridTemplateColumns: '1fr 1fr 1fr',
+                                   justifyItems: 'center'
+                              }}>1</div>,
                          },
                          {
                               label: 'Normal',
