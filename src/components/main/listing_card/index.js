@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react';
 import './index.scss'
 import Image from "next/image";
 import Link from "next/link";
-import projectImage from '/src/assets/main/images/project-image.png';
+// import projectImage from '/src/assets/main/images/project-image.png';
 import bitcoinLogo from '/src/assets/main/icons/payments-system/bitcoin.svg';
 import advLogo from '/src/assets/main/icons/payments-system/adv-cash.svg'
 import perfectMoneyLogo from '/src/assets/main/icons/payments-system/perfect-money.svg';

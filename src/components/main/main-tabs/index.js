@@ -102,9 +102,9 @@ const MainTabs = () => {
                               label: 'Overview',
                               key: '1',
                               children: (
-                                   <div>
+                                   <>
                                         {SearchBox}
-                                   </div>
+                                   </>
                               ),
                          },
                          {
