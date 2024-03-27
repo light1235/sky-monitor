@@ -59,12 +59,7 @@ const MainTabs = ({itemsPerPage}) => {
                          {
                               label: 'Premium',
                               key: '2',
-                              children: <>
-                                   {chunkedItems.slice(0, showBlocks).map((chunk, index) => (
-                                        <ContentBlock key={index} items={chunk}/>
-                                   ))}
-                                   <button onClick={handleClick}>Показать больше</button>
-                              </>,
+                              children: 2,
                          },
                          {
                               label: 'Normal',
