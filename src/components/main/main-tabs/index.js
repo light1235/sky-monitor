@@ -5,6 +5,7 @@ import {Tabs, Tooltip} from "antd";
 import Listing_card from "@/components/main/listing_card";
 import ContentBlock from "@/components/main/content-block";
 import DATAJSON from '../../../assets/DataProjects.json';
+import CustomToolTop from "@/components/main/tooltip_custom";
 
 const MainTabs = ({itemsPerPage}) => {
      const [showBlocks, setShowBlocks] = useState(1); // Состояние для отслеживания количества отображаемых блоков
@@ -48,7 +49,7 @@ const MainTabs = ({itemsPerPage}) => {
                          {
                               label: 'Overview',
                               key: '1',
-                              children: <Tooltip>1 </Tooltip>,
+                              children: <CustomToolTop text="213123">1</CustomToolTop>,
                          },
                          {
                               label: 'Premium',
