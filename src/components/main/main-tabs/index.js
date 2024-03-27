@@ -14,19 +14,7 @@ const MainTabs = () => {
      const [showBlocksNormal, setShowBlocksNormal] = useState(1);
      const [showBlocksTrial, setShowBlocksTrial] = useState(1);
      const [showBlocksScam, setShowBlocksScam] = useState(1);
-     const [itemsJ, setItems] = useState([]);
 
-     useEffect(() => {
-          // Убедитесь, что DATAJSON определён и содержит ListingData
-          if (DATAJSON && DATAJSON.ListingData) {
-               setItems(Object.values(DATAJSON.ListingData));
-          }
-     }, [DATAJSON]); // DATAJSON должен быть добавлен в зависимости, чтобы useEffect срабатывал при его изменении
-
-     // Ваш код компонента...
-     // if (DATAJSON) {
-     //
-     // }
 
      const items = Object.values(DATAJSON.ListingData);
      const chunkSize = 6;
@@ -108,7 +96,7 @@ const MainTabs = () => {
                          {
                               label: 'Overview',
                               key: '1',
-                              children: <ContentBlock items={itemsJ} />,
+                              children: <BlockSlat text={`${items}`}/>,
                          },
                          {
                               label: 'Premium',
