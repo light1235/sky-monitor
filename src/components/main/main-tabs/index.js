@@ -5,6 +5,7 @@ import {Tabs} from "antd";
 import Listing_card from "@/components/main/listing_card";
 import ContentBlock from "@/components/main/content-block";
 import DATAJSON from '../../../assets/DataProjects.json';
+import BlockSlat from "@/components/main/block_slat";
 
 const MainTabs = () => {
 
@@ -13,7 +14,7 @@ const MainTabs = () => {
      const [showBlocksNormal, setShowBlocksNormal] = useState(1);
      const [showBlocksTrial, setShowBlocksTrial] = useState(1);
      const [showBlocksScam, setShowBlocksScam] = useState(1);
-
+     const [itemsJ, setItems] = useState(Object.values(DATAJSON.ListingData));
 
      const items = Object.values(DATAJSON.ListingData);
      const chunkSize = 6;
@@ -93,8 +94,7 @@ const MainTabs = () => {
                          {
                               label: 'Overview',
                               key: '1',
-                              children: 1
-                              ,
+                              children: <BlockSlat text="fiona"/>,
                          },
                          {
                               label: 'Premium',
