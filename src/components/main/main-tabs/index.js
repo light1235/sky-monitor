@@ -16,6 +16,11 @@ const MainTabs = () => {
      const [showBlocksScam, setShowBlocksScam] = useState(1);
      const [itemsJ, setItems] = useState(Object.values(DATAJSON.ListingData));
 
+
+     if (DATAJSON) {
+
+     }
+
      const items = Object.values(DATAJSON.ListingData);
      const chunkSize = 6;
      const chunkedItems = [];
@@ -39,7 +44,7 @@ const MainTabs = () => {
      const handleClickScam = () => {
           setShowBlocksScam(showBlocksScam + 1);
      };
-     console.log(itemsJ);
+
 
 
 
@@ -96,7 +101,7 @@ const MainTabs = () => {
                          {
                               label: 'Overview',
                               key: '1',
-                              children: <ContentBlock items={nmpt} />,
+                              children: <ContentBlock items={itemsJ} />,
                          },
                          {
                               label: 'Premium',
