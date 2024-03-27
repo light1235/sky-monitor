@@ -1,7 +1,7 @@
 "use client"
 import React, {useEffect, useState} from 'react';
 import Listing_card_mobile from "@/components/main/listing_card_mobile";
-import {Tabs} from "antd";
+import {Tabs, Tooltip} from "antd";
 import Listing_card from "@/components/main/listing_card";
 import ContentBlock from "@/components/main/content-block";
 import DATAJSON from '../../../assets/DataProjects.json';
@@ -48,11 +48,7 @@ const MainTabs = ({itemsPerPage}) => {
                          {
                               label: 'Overview',
                               key: '1',
-                              children: (
-                                   <>
-                                        <ContentBlock key="overview" items={items} />
-                                   </>
-                              ),
+                              children: <Tooltip>1 </Tooltip>,
                          },
                          {
                               label: 'Premium',
