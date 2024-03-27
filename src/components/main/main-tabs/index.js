@@ -82,10 +82,12 @@ const MainTabs = () => {
      for (let i = 0; i < filteredArrayScam.length; i += chunkSize) {
           chunkedItems4.push(filteredArrayScam.slice(i, i + chunkSize));
      }
-     const getOverviewContent = () => {
-          return <ContentBlock items={items} />;
-     };
-
+     // const getOverviewContent = () => {
+     //      return <ContentBlock items={items} />;
+     // };
+     const SearchBox = (
+          <ContentBlock items={items} />
+     );
 
 
      return (
@@ -101,7 +103,7 @@ const MainTabs = () => {
                               key: '1',
                               children: (
                                    <>
-                                        {getOverviewContent()}
+                                        {SearchBox}
                                    </>
                               ),
                          },
