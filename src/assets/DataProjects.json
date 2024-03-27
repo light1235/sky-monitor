@@ -48,7 +48,7 @@
       }
     },
     "ProjectItem-2":{
-      "category": "normal",
+      "category": "trial",
       "id": "1",
       "name" : "Safeassets",
       "longTerm": true,
@@ -189,7 +189,7 @@
       }
     },
     "ProjectItem-5": {
-      "category": "premium",
+      "category": "normal",
       "id": "1",
       "name" : "Bemarg",
       "longTerm": false,

@@ -6,8 +6,13 @@ import Listing_card from "@/components/main/listing_card";
 import ContentBlock from "@/components/main/content-block";
 import DATAJSON from '../../../assets/DataProjects.json';
 
-const MainTabs = ({ itemsPerPage }) => {
-     const [showBlocks, setShowBlocks] = useState(1); // Состояние для отслеживания количества отображаемых блоков
+const MainTabs = () => {
+
+     const [showBlocks, setShowBlocks] = useState(1);
+     const [showBlocksPremium, setShowBlocksPremium] = useState(1);
+     const [showBlocksNormal, setShowBlocksNormal] = useState(1);
+     const [showBlocksTrial, setShowBlocksTrial] = useState(1);
+     const [showBlocksScam, setShowBlocksScam] = useState(1);
 
 
      const items = Object.values(DATAJSON.ListingData);
@@ -19,8 +24,22 @@ const MainTabs = ({ itemsPerPage }) => {
      }
 
      const handleClick = () => {
-          setShowBlocks(showBlocks + 1); // При клике на кнопку увеличиваем количество отображаемых блоков
+          setShowBlocks(showBlocks + 1);
      };
+     const handleClickPremium = () => {
+          setShowBlocksPremium(showBlocksPremium + 1);
+     };
+     const handleClickNormal = () => {
+          setShowBlocksNormal(showBlocksNormal + 1);
+     };
+     const handleClickTrial = () => {
+          setShowBlocksTrial(showBlocksTrial + 1);
+     };
+     const handleClickScam = () => {
+          setShowBlocksScam(showBlocksScam + 1);
+     };
+
+
 
 
 
@@ -41,6 +60,27 @@ const MainTabs = ({ itemsPerPage }) => {
      };
 
 
+     const filteredArrayPremium = items.filter(obj => obj.category === 'premium');
+     const filteredArrayNormal = items.filter(obj => obj.category === 'normal');
+     const filteredArrayTrial = items.filter(obj => obj.category === 'trial');
+     const filteredArrayScam = items.filter(obj => obj.category === 'scam');
+     const chunkedItems1 = [];
+     const chunkedItems2 = [];
+     const chunkedItems3 = [];
+     const chunkedItems4 = [];
+     for (let i = 0; i < filteredArrayPremium.length; i += chunkSize) {
+          chunkedItems1.push(filteredArrayPremium.slice(i, i + chunkSize));
+     }
+     for (let i = 0; i < filteredArrayNormal.length; i += chunkSize) {
+          chunkedItems2.push(filteredArrayNormal.slice(i, i + chunkSize));
+     }
+     for (let i = 0; i < filteredArrayTrial.length; i += chunkSize) {
+          chunkedItems3.push(filteredArrayTrial.slice(i, i + chunkSize));
+     }
+     for (let i = 0; i < filteredArrayScam.length; i += chunkSize) {
+          chunkedItems4.push(filteredArrayScam.slice(i, i + chunkSize));
+     }
+
 
      return (
           <>
@@ -53,15 +93,6 @@ const MainTabs = ({ itemsPerPage }) => {
                          {
                               label: 'Overview',
                               key: '1',
-                              children: <div style={{
-                                   display: 'grid',
-                                   gridTemplateColumns: '1fr 1fr 1fr',
-                                   justifyItems: 'center'
-                              }}>1</div>,
-                         },
-                         {
-                              label: 'Premium',
-                              key: '2',
                               children: <>
                                    {chunkedItems.slice(0, showBlocks).map((chunk, index) => (
                                         <ContentBlock key={index} items={chunk} />
@@ -70,19 +101,44 @@ const MainTabs = ({ itemsPerPage }) => {
                               </>,
                          },
                          {
+                              label: 'Premium',
+                              key: '2',
+                              children: <>
+                                   {chunkedItems1.slice(0, showBlocksPremium).map((chunk, index) => (
+                                        <ContentBlock key={index} items={chunk} />
+                                   ))}
+                                   <button onClick={handleClickPremium}>Показать больше</button>
+                              </>,
+                         },
+                         {
                               label: 'Normal',
                               key: '3',
-                              children:<div style={{display:'grid',gridTemplateColumns:'1fr 1fr',justifyItems:'center'}}> </div> ,
+                              children:<>
+                                   {chunkedItems2.slice(0, showBlocksNormal).map((chunk, index) => (
+                                        <ContentBlock key={index} items={chunk} />
+                                   ))}
+                                   <button onClick={handleClickNormal}>Показать больше</button>
+                              </>,
                          },
                          {
                               label: 'Trial',
                               key: '4',
-                              children: <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr 1fr'}}></div>,
+                              children: <>
+                                   {chunkedItems3.slice(0, showBlocksTrial).map((chunk, index) => (
+                                        <ContentBlock key={index} items={chunk} />
+                                   ))}
+                                   <button onClick={handleClickTrial}>Показать больше</button>
+                              </>,
                          },
                          {
                               label: 'Scam',
                               key: '5',
-                              children: 'tab5',
+                              children:<>
+                                   {chunkedItems4.slice(0, showBlocksScam).map((chunk, index) => (
+                                        <ContentBlock key={index} items={chunk} />
+                                   ))}
+                                   <button onClick={handleClickScam}>Показать больше</button>
+                              </>,
                          },
                     ]}
                />
@@ -92,4 +148,3 @@ const MainTabs = ({ itemsPerPage }) => {
 
 export default MainTabs;
 
-// <ContentBlock/>
