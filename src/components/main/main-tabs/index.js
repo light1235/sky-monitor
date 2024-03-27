@@ -6,7 +6,7 @@ import Listing_card from "@/components/main/listing_card";
 import ContentBlock from "@/components/main/content-block";
 import DATAJSON from '../../../assets/DataProjects.json';
 
-const MainTabs = ({ itemsPerPage }) => {
+const MainTabs = ({itemsPerPage}) => {
      const [showBlocks, setShowBlocks] = useState(1); // Состояние для отслеживания количества отображаемых блоков
 
 
@@ -21,7 +21,6 @@ const MainTabs = ({ itemsPerPage }) => {
      const handleClick = () => {
           setShowBlocks(showBlocks + 1); // При клике на кнопку увеличиваем количество отображаемых блоков
      };
-
 
 
      const [activeTab, setActiveTab] = useState('1');
@@ -40,8 +39,6 @@ const MainTabs = ({ itemsPerPage }) => {
           localStorage.setItem('activeTab', key);
      };
 
-// 1
-
      return (
           <>
                <Tabs
@@ -53,26 +50,26 @@ const MainTabs = ({ itemsPerPage }) => {
                          {
                               label: 'Overview',
                               key: '1',
-                              children: <div style={{
-                                   display: 'grid',
-                                   gridTemplateColumns: '1fr 1fr 1fr',
-                                   justifyItems: 'center'
-                              }}>1</div>,
-                         },
-                         {
-                              label: 'Premium',
-                              key: '2',
                               children: <>
                                    {chunkedItems.slice(0, showBlocks).map((chunk, index) => (
-                                        <ContentBlock key={index} items={chunk} />
+                                        <ContentBlock key={index} items={chunk}/>
                                    ))}
                                    <button onClick={handleClick}>Показать больше</button>
                               </>,
                          },
                          {
+                              label: 'Premium',
+                              key: '2',
+                              children: 2,
+                         },
+                         {
                               label: 'Normal',
                               key: '3',
-                              children:<div style={{display:'grid',gridTemplateColumns:'1fr 1fr',justifyItems:'center'}}> </div> ,
+                              children: <div style={{
+                                   display: 'grid',
+                                   gridTemplateColumns: '1fr 1fr',
+                                   justifyItems: 'center'
+                              }}></div>,
                          },
                          {
                               label: 'Trial',
@@ -93,3 +90,14 @@ const MainTabs = ({ itemsPerPage }) => {
 export default MainTabs;
 
 // <ContentBlock/>
+// children: <>
+//      {chunkedItems.slice(0, showBlocks).map((chunk, index) => (
+//           <ContentBlock key={index} items={chunk} />
+//      ))}
+//      <button onClick={handleClick}>Показать больше</button>
+// </>
+// <div style={{
+//      display: 'grid',
+//      gridTemplateColumns: '1fr 1fr 1fr',
+//      justifyItems: 'center'
+// }}>1</div>
