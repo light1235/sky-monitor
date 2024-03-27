@@ -104,6 +104,7 @@ const MainTabs = () => {
                               label: 'Premium',
                               key: '2',
                               children: <>
+                                   1
                                    {/*{chunkedItems1.slice(0, showBlocksPremium).map((chunk, index) => (*/}
                                    {/*     <ContentBlock key={index} items={chunk} />*/}
                                    {/*))}*/}
@@ -114,6 +115,7 @@ const MainTabs = () => {
                               label: 'Normal',
                               key: '3',
                               children:<>
+                                   3
                                    {/*{chunkedItems2.slice(0, showBlocksNormal).map((chunk, index) => (*/}
                                    {/*     <ContentBlock key={index} items={chunk} />*/}
                                    {/*))}*/}
@@ -124,6 +126,7 @@ const MainTabs = () => {
                               label: 'Trial',
                               key: '4',
                               children: <>
+                                   4666
                                    {/*{chunkedItems3.slice(0, showBlocksTrial).map((chunk, index) => (*/}
                                    {/*     <ContentBlock key={index} items={chunk} />*/}
                                    {/*))}*/}
@@ -134,6 +137,7 @@ const MainTabs = () => {
                               label: 'Scam',
                               key: '5',
                               children:<>
+                                   5
                                    {/*{chunkedItems4.slice(0, showBlocksScam).map((chunk, index) => (*/}
                                    {/*     <ContentBlock key={index} items={chunk} />*/}
                                    {/*))}*/}
