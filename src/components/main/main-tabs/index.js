@@ -4,8 +4,25 @@ import Listing_card_mobile from "@/components/main/listing_card_mobile";
 import {Tabs} from "antd";
 import Listing_card from "@/components/main/listing_card";
 import ContentBlock from "@/components/main/content-block";
+import DATAJSON from '../../../assets/DataProjects.json';
 
-const MainTabs = () => {
+const MainTabs = ({ itemsPerPage }) => {
+     const [showBlocks, setShowBlocks] = useState(1); // Состояние для отслеживания количества отображаемых блоков
+
+
+     const items = Object.values(DATAJSON.ListingData);
+     const chunkSize = 6;
+     const chunkedItems = [];
+
+     for (let i = 0; i < items.length; i += chunkSize) {
+          chunkedItems.push(items.slice(i, i + chunkSize));
+     }
+
+     const handleClick = () => {
+          setShowBlocks(showBlocks + 1); // При клике на кнопку увеличиваем количество отображаемых блоков
+     };
+
+
 
      const [activeTab, setActiveTab] = useState('1');
 
@@ -22,6 +39,8 @@ const MainTabs = () => {
           // Сохраняем активный таб в localStorage, чтобы сохранить его между переходами страниц
           localStorage.setItem('activeTab', key);
      };
+
+
 
      return (
           <>
@@ -44,8 +63,10 @@ const MainTabs = () => {
                               label: 'Premium',
                               key: '2',
                               children: <>
-                                   <ContentBlock/>
-                                   <button>Показать больше</button>
+                                   {chunkedItems.slice(0, showBlocks).map((chunk, index) => (
+                                        <ContentBlock key={index} items={chunk} />
+                                   ))}
+                                   <button onClick={handleClick}>Показать больше</button>
                               </>,
                          },
                          {

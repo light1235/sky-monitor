@@ -23,7 +23,6 @@ const MobileListing = ({ item}) => {
      const differenceMs = currentDate - startDate;
      const days = Math.floor(differenceMs / (1000 * 60 * 60 * 24));
 
-     // Определяем названия месяцев
      const months = [
           'Jan', 'Feb', 'Mar', 'April', 'May', 'June',
           'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'
@@ -36,8 +35,7 @@ const MobileListing = ({ item}) => {
 
      //
      const [truncatedText, setTruncatedText] = useState("");
-     const maxLength = 67; // Установите максимальное количество символов
-
+     const maxLength = 67;
      useEffect(() => {
           const text = item.projectInformation.investedPlans
           if (text.length > maxLength) {
@@ -47,7 +45,6 @@ const MobileListing = ({ item}) => {
           }
      }, []);
 
-     // item.projectInformation.status.scam ? "listing__card-mobile scam-status" : 'listing__card-mobile'
      return (
           <div className={item.projectInformation.status.scam ? "listing__card-mobile scam-status" : 'listing__card-mobile'}>
                <div className="card-top_line">

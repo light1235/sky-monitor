@@ -8,7 +8,7 @@ import DATAJSON from '../../../assets/DataProjects.json'
 import Link from "next/link";
 import Listing_card_mobile from "@/components/main/listing_card_mobile";
 
-const ContentBlock = () => {
+const ContentBlock = ({items}) => {
      const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
      useEffect(() => {
@@ -26,17 +26,18 @@ const ContentBlock = () => {
 
      const keys = Object.keys(DATAJSON.ListingData);
 
+
      return (
           <div className="content__block">
                <div className="content-list-items">
-                    {keys.map((key) => (
+                    {items.map((item, index) => (
+                         // console.log(item)
                          windowWidth > 1400 ? (
-                              <Listing_card item={DATAJSON.ListingData[key]} key={key} />
+                              <Listing_card  key={index} item={item} />
                          ) : (
-                              <Listing_card_mobile item={DATAJSON.ListingData[key]} key={key} />
+                              <Listing_card_mobile  key={index} item={item} />
                          )
                     ))}
-
                </div>
                <div className="content-banners">
                     <Link target="_blank" href="https://espino.ltd/">
