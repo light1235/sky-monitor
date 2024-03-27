@@ -104,40 +104,40 @@ const MainTabs = () => {
                               label: 'Premium',
                               key: '2',
                               children: <>
-                                   {chunkedItems1.slice(0, showBlocksPremium).map((chunk, index) => (
-                                        <ContentBlock key={index} items={chunk} />
-                                   ))}
-                                   <button onClick={handleClickPremium}>Показать больше</button>
+                                   {/*{chunkedItems1.slice(0, showBlocksPremium).map((chunk, index) => (*/}
+                                   {/*     <ContentBlock key={index} items={chunk} />*/}
+                                   {/*))}*/}
+                                   {/*<button onClick={handleClickPremium}>Показать больше</button>*/}
                               </>,
                          },
                          {
                               label: 'Normal',
                               key: '3',
                               children:<>
-                                   {chunkedItems2.slice(0, showBlocksNormal).map((chunk, index) => (
-                                        <ContentBlock key={index} items={chunk} />
-                                   ))}
-                                   <button onClick={handleClickNormal}>Показать больше</button>
+                                   {/*{chunkedItems2.slice(0, showBlocksNormal).map((chunk, index) => (*/}
+                                   {/*     <ContentBlock key={index} items={chunk} />*/}
+                                   {/*))}*/}
+                                   {/*<button onClick={handleClickNormal}>Показать больше</button>*/}
                               </>,
                          },
                          {
                               label: 'Trial',
                               key: '4',
                               children: <>
-                                   {chunkedItems3.slice(0, showBlocksTrial).map((chunk, index) => (
-                                        <ContentBlock key={index} items={chunk} />
-                                   ))}
-                                   <button onClick={handleClickTrial}>Показать больше</button>
+                                   {/*{chunkedItems3.slice(0, showBlocksTrial).map((chunk, index) => (*/}
+                                   {/*     <ContentBlock key={index} items={chunk} />*/}
+                                   {/*))}*/}
+                                   {/*<button onClick={handleClickTrial}>Показать больше</button>*/}
                               </>,
                          },
                          {
                               label: 'Scam',
                               key: '5',
                               children:<>
-                                   {chunkedItems4.slice(0, showBlocksScam).map((chunk, index) => (
-                                        <ContentBlock key={index} items={chunk} />
-                                   ))}
-                                   <button onClick={handleClickScam}>Показать больше</button>
+                                   {/*{chunkedItems4.slice(0, showBlocksScam).map((chunk, index) => (*/}
+                                   {/*     <ContentBlock key={index} items={chunk} />*/}
+                                   {/*))}*/}
+                                   {/*<button onClick={handleClickScam}>Показать больше</button>*/}
                               </>,
                          },
                     ]}

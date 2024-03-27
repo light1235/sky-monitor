@@ -16,10 +16,10 @@ const ContentBlock = ({items}) => {
                setWindowWidth(window.innerWidth);
           };
 
-          // window.addEventListener('resize', handleResize);
-          // return () => {
-          //      window.removeEventListener('resize', handleResize);
-          // };
+          window.addEventListener('resize', handleResize);
+          return () => {
+               window.removeEventListener('resize', handleResize);
+          };
      }, [windowWidth]);
 
 
@@ -31,7 +31,6 @@ const ContentBlock = ({items}) => {
           <div className="content__block">
                <div className="content-list-items">
                     {items.map((item, index) => (
-                         // console.log(item)
                          windowWidth > 1400 ? (
                               <Listing_card  key={index} item={item} />
                          ) : (
