@@ -64,11 +64,7 @@ const MainTabs = ({itemsPerPage}) => {
                          {
                               label: 'Normal',
                               key: '3',
-                              children: <div style={{
-                                   display: 'grid',
-                                   gridTemplateColumns: '1fr 1fr',
-                                   justifyItems: 'center'
-                              }}></div>,
+                              children:  <ContentBlock items={items} />,
                          },
                          {
                               label: 'Trial',
