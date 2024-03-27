@@ -93,9 +93,9 @@ const MainTabs = () => {
                          {
                               label: 'Overview',
                               key: '1',
-                              children:<>
+                              children:<div>
                                    <ContentBlock />
-                              </>
+                              </div>
 
                               //      <>
                               //      {chunkedItems.slice(0, showBlocks).map((chunk, index) => (
