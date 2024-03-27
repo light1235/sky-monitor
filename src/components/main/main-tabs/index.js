@@ -82,7 +82,10 @@ const MainTabs = () => {
      for (let i = 0; i < filteredArrayScam.length; i += chunkSize) {
           chunkedItems4.push(filteredArrayScam.slice(i, i + chunkSize));
      }
-     console.log(items[0].name);
+     const getOverviewContent = () => {
+          return <ContentBlock key="overview" items={items} />;
+     };
+
 
 
      return (
@@ -96,7 +99,7 @@ const MainTabs = () => {
                          {
                               label: 'Overview',
                               key: '1',
-                              children: <BlockSlat text={items[0].name}/>,
+                              children: getOverviewContent,
                          },
                          {
                               label: 'Premium',
