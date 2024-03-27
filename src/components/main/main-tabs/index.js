@@ -95,7 +95,7 @@ const MainTabs = () => {
                               key: '1',
                               children:<>
                                    <ContentBlock />
-                                   12313</>
+                              </>
 
                               //      <>
                               //      {chunkedItems.slice(0, showBlocks).map((chunk, index) => (
