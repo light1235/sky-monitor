@@ -51,7 +51,7 @@ const MainTabs = ({ itemsPerPage }) => {
                     centered
                     items={[
                          {
-                              label: 'Overview',
+                              label: 'Overview1',
                               key: '1',
                               children: <>
                                    {chunkedItems.slice(0, showBlocks).map((chunk, index) => (
