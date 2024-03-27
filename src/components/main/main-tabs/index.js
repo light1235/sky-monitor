@@ -51,14 +51,13 @@ const MainTabs = ({ itemsPerPage }) => {
                     centered
                     items={[
                          {
-                              label: 'Overview1',
+                              label: 'Overview',
                               key: '1',
-                              children: <>
-                                   {chunkedItems.slice(0, showBlocks).map((chunk, index) => (
-                                        <ContentBlock key={index} items={chunk} />
-                                   ))}
-                                   <button onClick={handleClick}>Показать больше</button>
-                              </>,
+                              children: <div style={{
+                                   display: 'grid',
+                                   gridTemplateColumns: '1fr 1fr 1fr',
+                                   justifyItems: 'center'
+                              }}>1</div>,
                          },
                          {
                               label: 'Premium',
