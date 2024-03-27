@@ -59,7 +59,7 @@ const MainTabs = ({itemsPerPage}) => {
                          {
                               label: 'Premium',
                               key: '2',
-                              children: 2,
+                              children: <ContentBlock items={items} />,
                          },
                          {
                               label: 'Normal',
