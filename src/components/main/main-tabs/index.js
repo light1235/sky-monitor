@@ -38,17 +38,20 @@ const MainTabs = () => {
                                    display: 'grid',
                                    gridTemplateColumns: '1fr 1fr 1fr',
                                    justifyItems: 'center'
-                              }}><Listing_card_mobile/></div>,
+                              }}>1</div>,
                          },
                          {
                               label: 'Premium',
                               key: '2',
-                              children: <><ContentBlock/> </>,
+                              children: <>
+                                   <ContentBlock/>
+                                   <button>Показать больше</button>
+                              </>,
                          },
                          {
                               label: 'Normal',
                               key: '3',
-                              children:<div style={{display:'grid',gridTemplateColumns:'1fr 1fr',justifyItems:'center'}}> <Listing_card_mobile/> <Listing_card_mobile/></div> ,
+                              children:<div style={{display:'grid',gridTemplateColumns:'1fr 1fr',justifyItems:'center'}}> </div> ,
                          },
                          {
                               label: 'Trial',

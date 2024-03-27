@@ -1,22 +1,41 @@
 "use client"
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Listing_card from "@/components/main/listing_card";
 import './index.scss'
 import BannerImage from '../../../assets/main/images/content-banner.jpg';
 import Image from "next/image";
 import DATAJSON from '../../../assets/DataProjects.json'
 import Link from "next/link";
+import Listing_card_mobile from "@/components/main/listing_card_mobile";
 
 const ContentBlock = () => {
+     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+     useEffect(() => {
+          const handleResize = () => {
+               setWindowWidth(window.innerWidth);
+          };
+
+          window.addEventListener('resize', handleResize);
+          return () => {
+               window.removeEventListener('resize', handleResize);
+          };
+     }, [windowWidth]);
+
+
 
      const keys = Object.keys(DATAJSON.ListingData);
 
      return (
           <div className="content__block">
                <div className="content-list-items">
-                    {keys.map((key) =>
-                         <Listing_card item={DATAJSON.ListingData[key]} key={key} />
-                    )}
+                    {keys.map((key) => (
+                         windowWidth > 1400 ? (
+                              <Listing_card item={DATAJSON.ListingData[key]} key={key} />
+                         ) : (
+                              <Listing_card_mobile item={DATAJSON.ListingData[key]} key={key} />
+                         )
+                    ))}
 
                </div>
                <div className="content-banners">

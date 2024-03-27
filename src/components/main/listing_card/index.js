@@ -75,8 +75,6 @@ const ListingCard = ({ item }) => {
                                              style={{color: '#8bc643'}}>:{item.projectInformation.ourInvestments.anotherInvestment}</span>
                                         </div>
                                    }
-
-
                               </div>
                               <div className="content-items">Payout rate:<span> {item.projectInformation.payoutRate}</span></div>
                               <div className="content-items">Last paid: <span> {item.projectInformation.lastPaid}</span></div>

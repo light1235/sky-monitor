@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import './index.scss'
 import Image from "next/image";
 import advLogo from "@/assets/main/icons/payments-system/adv-cash.svg";
@@ -14,13 +14,50 @@ import whoIs from "@/assets/main/icons/who-is.svg";
 import forumIocn from "@/assets/main/icons/forum-icon.svg";
 import voteIcon from "@/assets/main/icons/vote-icon.svg";
 
-const MobileListing = () => {
+const MobileListing = ({ item}) => {
+
+
+     //days online
+     const startDate = new Date(item.projectInformation.created);
+     const currentDate = new Date();
+     const differenceMs = currentDate - startDate;
+     const days = Math.floor(differenceMs / (1000 * 60 * 60 * 24));
+
+     // Определяем названия месяцев
+     const months = [
+          'Jan', 'Feb', 'Mar', 'April', 'May', 'June',
+          'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'
+     ];
+
+     const day = startDate.getDate();
+     const month = months[startDate.getMonth()];
+     const year = startDate.getFullYear();
+     const formattedString = `${month} ${day}st ${year}`;
+
+     //
+     const [truncatedText, setTruncatedText] = useState("");
+     const maxLength = 67; // Установите максимальное количество символов
+
+     useEffect(() => {
+          const text = item.projectInformation.investedPlans
+          if (text.length > maxLength) {
+               setTruncatedText(text.substring(0, maxLength) + "…");
+          } else {
+               setTruncatedText(text);
+          }
+     }, []);
+
+     // item.projectInformation.status.scam ? "listing__card-mobile scam-status" : 'listing__card-mobile'
      return (
-          <div className="listing__card-mobile">
+          <div className={item.projectInformation.status.scam ? "listing__card-mobile scam-status" : 'listing__card-mobile'}>
                <div className="card-top_line">
-                    <div className="program_name">BitMugnet <CustomToolTop text={'Long-term investment \n' +
-                         'project'}><span>Long Term</span></CustomToolTop></div>
-                    <div className="program_details"><Link target="_blank" href='/'><CustomToolTop
+                    <div className="program_name">{item.name}
+                         {item.longTerm &&
+                              <CustomToolTop text={'Long-term investment \n' +
+                                   'project'}><span>Long Term</span></CustomToolTop>
+                         }
+                    </div>
+                    <div className="program_details"><Link target="_blank" href={item.detailsLink}><CustomToolTop
                          text={'Program details'}>
                          <div className="details-button"></div>
                     </CustomToolTop></Link></div>
@@ -28,24 +65,40 @@ const MobileListing = () => {
                <div className="card-middle_line">
                     <div className="left_side">
                          <div className="content_wrapper">
-                         <div className="content-items status">Status:<span> Paying</span></div>
-                              <div className="content-items">Our investments:<span> 400$</span></div>
-                              <div className="content-items">Payout rate:<span> 1033$</span></div>
-                              <div className="content-items">Last paid: <span> June 25st 2017</span></div>
-                              <div className="content-items">Created:<span> Jule 25st  2016</span></div>
-                              <div className="content-items">Minimal spend: <span> 10$</span></div>
-                              <div className="content-items">Withdrawal:<span> automatic</span></div>
+                              <div className="content-items status">Status:<span
+                                   style={{color: item.projectInformation.status.untraceable && '#DF5BD2'}}>{item.projectInformation.status.paying && ' Paying' || item.projectInformation.status.untraceable && ' Untraceable' || item.projectInformation.status.scam && ' Not Payed'}</span>
+                              </div>
+                              <div className="content-items">
+                                   {!item.projectInformation.ourInvestments.anotherInvestment ?
+                                        <div>Our
+                                             investments:<span> {item.projectInformation.ourInvestments.our || item.projectInformation.ourInvestments.traceable}</span>
+                                        </div>
+                                        :
+                                        <div>Investing<span
+                                             style={{color: '#8bc643'}}>:{item.projectInformation.ourInvestments.anotherInvestment}</span>
+                                        </div>
+                                   }
+                              </div>
+                              <div className="content-items">Payout
+                                   rate:<span> {item.projectInformation.payoutRate}</span></div>
+                              <div className="content-items">Last paid: <span> {item.projectInformation.lastPaid}</span>
+                              </div>
+                              <div className="content-items">Created:<span> {formattedString}</span></div>
+                              <div className="content-items">Minimal
+                                   spend: <span> {item.projectInformation.minimalSpend}</span></div>
+                              <div className="content-items">Withdrawal:<span> {item.projectInformation.withdrawal}</span>
+                              </div>
                          </div>
                     </div>
                     <div className="right_side">
-                         <div className="description">Accepted:</div>
+                    <div className="description">Accepted:</div>
                          <div className="payments-system">
-                              <Image src={advLogo} height="15" width="15" alt="payment-system-logo"/>
-                              <Image src={bitcoinLogo} height="15" width="15" alt="payment-system-logo"/>
-                              <Image src={perfectMoneyLogo} height="15" width="15" alt="payment-system-logo"/>
-                              <Image src={netellerLogo} height="15" width="15" alt="payment-system-logo"/>
-                              <Image src={qiwiLogo} height="15" width="15" alt="payment-system-logo"/>
-                              <Image src={webMoney} height="15" width="15" alt="payment-system-logo"/>
+                              {item.paymentSystem.adv && <Image src={advLogo} height="15" width="15" alt="payment-system-logo"/>}
+                              {item.paymentSystem.bitcoin && <Image src={bitcoinLogo} height="15" width="15" alt="payment-system-logo" />}
+                              {item.paymentSystem.perfectMoney && <Image src={perfectMoneyLogo} height="15" width="15" alt="payment-system-logo" />}
+                              {item.paymentSystem.neteller && <Image src={netellerLogo} height="15" width="15" alt="payment-system-logo"/>}
+                              {item.paymentSystem.qiwi && <Image src={qiwiLogo} height="15" width="15" alt="payment-system-logo"/>}
+                              {item.paymentSystem.webMoney && <Image src={webMoney} height="15" width="15" alt="payment-system-logo"/>}
                          </div>
                          <div className="info">Info</div>
                          <div className="project-info">
@@ -65,11 +118,10 @@ const MobileListing = () => {
                <div className="card-bottom_line">
                     <div className="invested-description">
                          <div>Invested plans:</div>
-                         <div className="plan-description">2.9%-3.1% daily for 15-15 working days
-150% after 15 buisness days</div>
+                         <div className="plan-description">{truncatedText}</div>
                     </div>
                     <div className="user-buttons">
-                         <div className="button-forum"><span>Forum</span><Link href='/'> <Image width="15"
+                         <div className="button-forum"><span>Forum</span><Link target="_blank"  href={item.forum}> <Image width="15"
                                                                                                 src={forumIocn}
                                                                                                 alt="forum_logo"/></Link>
                          </div>
