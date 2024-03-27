@@ -50,21 +50,21 @@ const MainTabs = ({itemsPerPage}) => {
                          {
                               label: 'Overview',
                               key: '1',
+                              children: <div style={{
+                                   display: 'grid',
+                                   gridTemplateColumns: '1fr 1fr 1fr',
+                                   justifyItems: 'center'
+                              }}>1</div>,
+                         },
+                         {
+                              label: 'Premium',
+                              key: '2',
                               children: <>
                                    {chunkedItems.slice(0, showBlocks).map((chunk, index) => (
                                         <ContentBlock key={index} items={chunk}/>
                                    ))}
                                    <button onClick={handleClick}>Показать больше</button>
                               </>,
-                         },
-                         {
-                              label: 'Premium',
-                              key: '2',
-                              children: <div style={{
-                                   display: 'grid',
-                                   gridTemplateColumns: '1fr 1fr 1fr',
-                                   justifyItems: 'center'
-                              }}>1</div>,
                          },
                          {
                               label: 'Normal',
