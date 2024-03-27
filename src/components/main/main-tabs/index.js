@@ -39,6 +39,7 @@ const MainTabs = () => {
      const handleClickScam = () => {
           setShowBlocksScam(showBlocksScam + 1);
      };
+     console.log(itemsJ);
 
 
 
@@ -81,6 +82,7 @@ const MainTabs = () => {
      for (let i = 0; i < filteredArrayScam.length; i += chunkSize) {
           chunkedItems4.push(filteredArrayScam.slice(i, i + chunkSize));
      }
+     let nmpt = [1,2]
 
 
      return (
@@ -94,7 +96,7 @@ const MainTabs = () => {
                          {
                               label: 'Overview',
                               key: '1',
-                              children: <BlockSlat text="fiona"/>,
+                              children: <ContentBlock items={nmpt} />,
                          },
                          {
                               label: 'Premium',
