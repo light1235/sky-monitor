@@ -93,20 +93,15 @@ const MainTabs = () => {
                          {
                               label: 'Overview',
                               key: '1',
-                              children:
+                              children:<>12313</>
+
                               //      <>
                               //      {chunkedItems.slice(0, showBlocks).map((chunk, index) => (
                               //           <ContentBlock key={index} items={chunk} />
                               //      ))}
                               //      <button onClick={handleClick}>Показать больше</button>
                               // </>
-                                   <>
-                                        {/*{chunkedItems.slice(0, showBlocks).map((chunk, index) => (*/}
-                                        {/*     <ContentBlock key={index} items={chunk} />*/}
-                                        {/*))}*/}
-                                        <ContentBlock/>
-                                        {/*<button onClick={handleClick}>Показать больше</button>*/}
-                                   </>
+
                               ,
                          },
                          {
