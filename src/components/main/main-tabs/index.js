@@ -100,10 +100,12 @@ const MainTabs = () => {
                               //      ))}
                               //      <button onClick={handleClick}>Показать больше</button>
                               // </>
-                                   <>
+                                   <><div>
                                         {chunkedItems.slice(0, showBlocks).map((chunk, index) => (
                                              <ContentBlock key={index} items={chunk} />
                                         ))}
+                                   </div>
+
                                         {/*<button onClick={handleClick}>Показать больше</button>*/}
                                    </>
                               ,
