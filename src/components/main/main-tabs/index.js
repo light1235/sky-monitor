@@ -9,7 +9,6 @@ import DATAJSON from '../../../assets/DataProjects.json';
 const MainTabs = ({itemsPerPage}) => {
      const [showBlocks, setShowBlocks] = useState(1); // Состояние для отслеживания количества отображаемых блоков
 
-
      const items = Object.values(DATAJSON.ListingData);
      const chunkSize = 6;
      const chunkedItems = [];
@@ -21,7 +20,6 @@ const MainTabs = ({itemsPerPage}) => {
      const handleClick = () => {
           setShowBlocks(showBlocks + 1); // При клике на кнопку увеличиваем количество отображаемых блоков
      };
-
 
      const [activeTab, setActiveTab] = useState('1');
 
@@ -64,7 +62,7 @@ const MainTabs = ({itemsPerPage}) => {
                          {
                               label: 'Normal',
                               key: '3',
-                              children:  <ContentBlock items={items} />,
+                              children: <ContentBlock items={items} />,
                          },
                          {
                               label: 'Trial',
