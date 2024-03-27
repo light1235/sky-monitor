@@ -50,7 +50,7 @@ const MainTabs = ({itemsPerPage}) => {
                          {
                               label: 'Overview',
                               key: '1',
-                              children:116666,
+                              children:<ContentBlock items={items} />,
                          },
                          {
                               label: 'Premium',
