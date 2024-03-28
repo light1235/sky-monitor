@@ -8,6 +8,9 @@ import DATAJSON from '../../../assets/DataProjects.json';
 import BlockSlat from "@/components/main/block_slat";
 
 const MainTabs = () => {
+     // if (window){
+     //      console.log('777');
+     // }
 
      const [showBlocks, setShowBlocks] = useState(1);
      const [showBlocksPremium, setShowBlocksPremium] = useState(1);
@@ -87,7 +90,8 @@ const MainTabs = () => {
                label: 'Overview',
                children: (
                     <>
-                         <ContentBlock items={items} />
+                         {/*<ContentBlock items={items} />*/}
+                         {window && <ContentBlock items={items} />}
                     </>
                ),
           },

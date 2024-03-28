@@ -8,7 +8,10 @@ import DATAJSON from '../../../assets/DataProjects.json'
 import Link from "next/link";
 import Listing_card_mobile from "@/components/main/listing_card_mobile";
 
+
+
 const ContentBlock = ({items}) => {
+
      const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
      useEffect(() => {
@@ -20,7 +23,7 @@ const ContentBlock = ({items}) => {
           return () => {
                window.removeEventListener('resize', handleResize);
           };
-     }, [windowWidth]);
+     }, [window]);
 
 
 
