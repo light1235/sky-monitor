@@ -24,7 +24,6 @@ const ContentBlock = ({items}) => {
 
 
 
-     // const keys = Object.keys(DATAJSON.ListingData);
 
 
      return (

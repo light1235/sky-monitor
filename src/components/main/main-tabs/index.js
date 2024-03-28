@@ -99,7 +99,7 @@ const MainTabs = () => {
           {
                key: 'Trial',
                label: 'Tab 3',
-               children: 'Content of Tab Pane 3',
+               children: 'Content of Tab Pane 33',
           },
      ]);
      // (
