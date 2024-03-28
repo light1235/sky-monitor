@@ -5,11 +5,9 @@ import {Tabs} from "antd";
 import Listing_card from "@/components/main/listing_card";
 import ContentBlock from "@/components/main/content-block";
 import DATAJSON from '../../../assets/DataProjects.json';
-import BlockSlat from "@/components/main/block_slat";
+import CustomWrapper from "@/components/main/custom-wrapper";
 
 const MainTabs = () => {
-
-
 
      const [showBlocks, setShowBlocks] = useState(1);
      const [showBlocksPremium, setShowBlocksPremium] = useState(1);
@@ -45,17 +43,16 @@ const MainTabs = () => {
 
 
 
+
      const [activeTab, setActiveTab] = useState('1');
 
      useEffect(() => {
-
-          // setWindowBug(true);
           // Получаем активный таб из localStorage при первом монтировании компонента
           const savedTab = localStorage.getItem('activeTab');
           if (savedTab) {
                setActiveTab(savedTab);
           }
-     }, [window]);
+     }, []);
 
      const handleTabChange = key => {
           setActiveTab(key);
@@ -85,28 +82,6 @@ const MainTabs = () => {
           chunkedItems4.push(filteredArrayScam.slice(i, i + chunkSize));
      }
 
-     const [items7, setItems] = useState([
-          {
-               key: '1',
-               label: 'Overview',
-               children: (
-                    <>
-                         { <ContentBlock items={items} /> }
-                    </>
-               ),
-          },
-          {
-               key: '2',
-               label: 'Premium',
-               children: 'Content of Tab Pane 2',
-          },
-          {
-               key: 'Trial',
-               label: 'Tab 3',
-               children: 'Content of Tab Pane 33',
-          },
-     ]);
-
 
      return (
           <>
@@ -115,7 +90,57 @@ const MainTabs = () => {
                     activeKey={activeTab}
                     onChange={handleTabChange}
                     centered
-                    items={items7}
+                    items={[
+                         {
+                              label: 'Overview',
+                              key: '1',
+                              children:  <CustomWrapper />
+                              ,
+                         },
+                         {
+                              label: 'Premium',
+                              key: '2',
+                              children: <>
+                                   {chunkedItems1.slice(0, showBlocksPremium).map((chunk, index) => (
+                                        <ContentBlock key={index} items={chunk} />
+                                   ))}
+                                   <button onClick={handleClickPremium}>Показать больше</button>
+                              </>,
+                         },
+                         {
+                              label: 'Normal',
+                              key: '3',
+                              children:<>
+
+                                   {chunkedItems2.slice(0, showBlocksNormal).map((chunk, index) => (
+                                        <ContentBlock key={index} items={chunk} />
+                                   ))}
+                                   <button onClick={handleClickNormal}>Показать больше</button>
+                              </>,
+                         },
+                         {
+                              label: 'Trial',
+                              key: '4',
+                              children: <>
+
+                                   {chunkedItems3.slice(0, showBlocksTrial).map((chunk, index) => (
+                                        <ContentBlock key={index} items={chunk} />
+                                   ))}
+                                   <button onClick={handleClickTrial}>Показать больше</button>
+                              </>,
+                         },
+                         {
+                              label: 'Scam',
+                              key: '5',
+                              children:<>
+
+                                   {chunkedItems4.slice(0, showBlocksScam).map((chunk, index) => (
+                                        <ContentBlock key={index} items={chunk} />
+                                   ))}
+                                   <button onClick={handleClickScam}>Показать больше</button>
+                              </>,
+                         },
+                    ]}
                />
           </>
      );
