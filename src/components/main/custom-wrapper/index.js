@@ -2,6 +2,8 @@
 import React, {useState} from 'react';
 import DATAJSON from '../../../assets/DataProjects.json';
 import ContentBlock from "@/components/main/content-block";
+import ArrowButton from '../../../assets/main/icons/arrow-button.svg';
+import Image from "next/image";
 
 const CustomWrapper = () => {
      const [showBlocks, setShowBlocks] = useState(1);
@@ -23,7 +25,11 @@ const CustomWrapper = () => {
                {chunkedItems.slice(0, showBlocks).map((chunk, index) => (
                     <ContentBlock key={index} items={chunk} />
                ))}
-               <button onClick={handleClick}>Показать больше</button>
+               <div className="full-wrap" style={{display:'grid',width:'100%',justifyItems:'center'}}>
+                    <button className="show-more" onClick={handleClick}>
+                         <div className="inner-button"><Image src={ArrowButton} alt="arrow-icon"/></div>
+                    </button>
+               </div>
           </>
      );
 };

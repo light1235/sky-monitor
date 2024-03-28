@@ -1,11 +1,12 @@
 "use client"
 import React, {useEffect, useState} from 'react';
-import Listing_card_mobile from "@/components/main/listing_card_mobile";
 import {Tabs} from "antd";
-import Listing_card from "@/components/main/listing_card";
 import ContentBlock from "@/components/main/content-block";
 import DATAJSON from '../../../assets/DataProjects.json';
 import CustomWrapper from "@/components/main/custom-wrapper";
+import  './index.scss'
+import ArrowButton from '../../../assets/main/icons/arrow-button.svg';
+import Image from "next/image";
 
 const MainTabs = () => {
 
@@ -104,7 +105,10 @@ const MainTabs = () => {
                                    {chunkedItems1.slice(0, showBlocksPremium).map((chunk, index) => (
                                         <ContentBlock key={index} items={chunk} />
                                    ))}
-                                   <button onClick={handleClickPremium}>Показать больше</button>
+                                   <div className="full-wrap" style={{display:'grid',width:'100%',justifyItems:'center'}}>
+                                   <button className="show-more" onClick={handleClickPremium}>  <div className="inner-button"><Image src={ArrowButton} alt="arrow-icon"/></div></button>
+                                   </div>
+                                   {/*{showBlocks < chunkedItems.length && <button onClick={handleClick}>Показать больше</button>}*/}
                               </>,
                          },
                          {
@@ -115,7 +119,9 @@ const MainTabs = () => {
                                    {chunkedItems2.slice(0, showBlocksNormal).map((chunk, index) => (
                                         <ContentBlock key={index} items={chunk} />
                                    ))}
-                                   <button onClick={handleClickNormal}>Показать больше</button>
+                                   <div className="full-wrap" style={{display:'grid',width:'100%',justifyItems:'center'}}>
+                                   <button className="show-more" onClick={handleClickNormal}>  <div className="inner-button"><Image src={ArrowButton} alt="arrow-icon"/></div></button>
+                                   </div>
                               </>,
                          },
                          {
@@ -126,7 +132,9 @@ const MainTabs = () => {
                                    {chunkedItems3.slice(0, showBlocksTrial).map((chunk, index) => (
                                         <ContentBlock key={index} items={chunk} />
                                    ))}
-                                   <button onClick={handleClickTrial}>Показать больше</button>
+                                   <div className="full-wrap" style={{display:'grid',width:'100%',justifyItems:'center'}}>
+                                   <button className="show-more" onClick={handleClickTrial}>  <div className="inner-button"><Image src={ArrowButton} alt="arrow-icon"/></div></button>
+                                   </div>
                               </>,
                          },
                          {
@@ -137,7 +145,9 @@ const MainTabs = () => {
                                    {chunkedItems4.slice(0, showBlocksScam).map((chunk, index) => (
                                         <ContentBlock key={index} items={chunk} />
                                    ))}
-                                   <button onClick={handleClickScam}>Показать больше</button>
+                                   <div className="full-wrap" style={{display:'grid',width:'100%',justifyItems:'center'}}>
+                                   <button className="show-more" onClick={handleClickScam}>  <div className="inner-button"><Image src={ArrowButton} alt="arrow-icon"/></div></button>
+                                   </div>
                               </>,
                          },
                     ]}
