@@ -2,9 +2,7 @@
 import React, {useEffect, useState} from 'react';
 import Listing_card from "@/components/main/listing_card";
 import './index.scss'
-import BannerImage from '../../../assets/main/images/content-banner.jpg';
 import Image from "next/image";
-import DATAJSON from '../../../assets/DataProjects.json'
 import Link from "next/link";
 import Listing_card_mobile from "@/components/main/listing_card_mobile";
 
@@ -23,7 +21,7 @@ const ContentBlock = ({items}) => {
           return () => {
                window.removeEventListener('resize', handleResize);
           };
-     }, [window]);
+     }, [windowWidth]);
 
 
 
