@@ -12,7 +12,7 @@ import Listing_card_mobile from "@/components/main/listing_card_mobile";
 
 const ContentBlock = ({items}) => {
 
-     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+     const [windowWidth, setWindowWidth] = useState(1420);
 
      useEffect(() => {
           const handleResize = () => {
@@ -24,8 +24,6 @@ const ContentBlock = ({items}) => {
                window.removeEventListener('resize', handleResize);
           };
      }, [window]);
-
-
 
 
 

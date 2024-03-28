@@ -106,11 +106,7 @@ const MainTabs = () => {
                children: 'Content of Tab Pane 33',
           },
      ]);
-     // (
-     //      <>
-     //           <i className="icon-up-circle"></i> Mark a top
-     //      </>
-     // ),
+
 
      return (
           <>
