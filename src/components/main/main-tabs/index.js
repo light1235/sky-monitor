@@ -43,8 +43,6 @@ const MainTabs = () => {
 
 
 
-
-
      const [activeTab, setActiveTab] = useState('1');
 
      useEffect(() => {
@@ -82,12 +80,6 @@ const MainTabs = () => {
      for (let i = 0; i < filteredArrayScam.length; i += chunkSize) {
           chunkedItems4.push(filteredArrayScam.slice(i, i + chunkSize));
      }
-     // const getOverviewContent = () => {
-     //      return <ContentBlock items={items} />;
-     // };
-     const SearchBox = (
-          <ContentBlock items={items} />
-     );
 
 
      return (
@@ -101,7 +93,11 @@ const MainTabs = () => {
                          {
                               label: 'Overview',
                               key: '1',
-                              children: 1,
+                              children: (
+                                   <div>
+                                        1111
+                                   </div>
+                              ),
                          },
                          {
                               label: 'Premium',
