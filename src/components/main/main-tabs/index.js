@@ -85,7 +85,11 @@ const MainTabs = () => {
           {
                key: '1',
                label: 'Overview',
-               children: 'Content of Tab Pane 1',
+               children: (
+                    <>
+                         <ContentBlock items={items} />
+                    </>
+               ),
           },
           {
                key: '2',
