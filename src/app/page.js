@@ -63,7 +63,7 @@ export default function Home() {
               <div className="content__item">
                    <MainTabs />
               </div>
-              <div className="content__item">
+              <div className="content__item item--bottom">
                    <BlockSlat text={'Latest Hyip News'}/>
                    <Info_block>
                         <NewsLine image={<Image src={NewsLineLogo} alt="fire icon" height={29}></Image>} />
