@@ -30,10 +30,21 @@
       "paymentSystem": {
         "bitcoin": true,
         "neteller": true,
-        "qiwi": true,
+        "qiwi": false,
         "webMoney": true,
         "perfectMoney": true,
-        "adv": true
+        "adv": true,
+        "bnb": true,
+        "dodgeCoin": false,
+        "eth": false,
+        "liteCoin": false,
+        "payoneer": false,
+        "payPall": true,
+        "payza": false,
+        "ripple": false,
+        "skrill": false,
+        "tether": true,
+        "tron" : true
       },
       "info": {
         "similarWeb": "http",
