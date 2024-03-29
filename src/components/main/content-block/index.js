@@ -39,18 +39,24 @@ const ContentBlock = ({items}) => {
      };
 
 
-     const [windowWidth, setWindowWidth] = useState(1480);
+     const [windowWidth, setWindowWidth] = useState(() => {
+          // Get windowWidth from localStorage or set a default value
+          return parseInt(localStorage.getItem('windowWidth')) || 1480;
+     });
 
      useEffect(() => {
           const handleResize = () => {
-               setWindowWidth(window.innerWidth);
+               const width = window.innerWidth;
+               setWindowWidth(width);
+               // Store the window width in localStorage
+               localStorage.setItem('windowWidth', width.toString());
           };
 
           window.addEventListener('resize', handleResize);
           return () => {
                window.removeEventListener('resize', handleResize);
           };
-     }, [windowWidth]);
+     }, []);
 
 
 
