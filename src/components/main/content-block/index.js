@@ -39,18 +39,37 @@ const ContentBlock = ({items}) => {
      };
 
 
-     // const [windowWidth, setWindowWidth] = useState(1480);
-     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+     const [windowWidth, setWindowWidth] = useState(1480);
+     const [widthState, setWidthState] = useState(1480);
+
      const handleResize = () => {
-          setWindowWidth(window.innerWidth);
+          // setWindowWidth(window.innerWidth);
+        setWidthState(window.innerWidth)
      };
 
+
      useEffect(() => {
+          window.addEventListener('resize', function() {
+               const isLessThan1480px = window.matchMedia("(max-width: 1480px)").matches;
+
+               if (isLessThan1480px) {
+                    // setWidthState(false)
+
+                    // Ваш код, выполняемый при ширине окна меньше чем 1480px
+               } else {
+                    // setWidthState(true)
+                    // Ваш код, выполняемый при ширине окна больше или равной 1480px
+               }
+          });
+          setWidthState(window.innerWidth)
+
           window.addEventListener('resize', handleResize);
           return () => {
                window.removeEventListener('resize', handleResize);
           };
-     }, [windowWidth]);
+
+     }, []);
 
 
 
@@ -58,10 +77,11 @@ const ContentBlock = ({items}) => {
           <div className="content__block">
                <div className="content-list-items">
                     {items.map((item, index) => (
-                         windowWidth > 1470 ? (
-                              <Listing_card  key={index} item={item} />
-                         ) : (
+                         widthState < 1480 ? (
                               <Listing_card_mobile  key={index} item={item} />
+                         ) : (
+
+                         <Listing_card  key={index} item={item} />
                          )
                     ))}
 
@@ -77,3 +97,9 @@ const ContentBlock = ({items}) => {
 
 export default ContentBlock;
 
+// {items.map((item, index) => {
+//      const isMobileWidth = window.matchMedia("(max-width: 768px)").matches;
+//      const ComponentToRender = isMobileWidth ? Listing_card_mobile : Listing_card;
+//
+//      return <ComponentToRender key={index} item={item} />;
+// })}
