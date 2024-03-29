@@ -111,11 +111,14 @@
    .news-information-line .line-items .item-name {
       
    }
-   .content__item {
-      padding: 0 15px;
+   //.content__item {
+   //   padding: 0 15px;
+   //}
+   .main-content {
+      padding: 0 20px;
    }
    .item--bottom {
-      display: none;
+      //display: none;
    }
    .ant-tabs .ant-tabs-content-holder {
       padding: 0 !important;
