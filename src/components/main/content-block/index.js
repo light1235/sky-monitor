@@ -39,7 +39,7 @@ const ContentBlock = ({items}) => {
      };
 
 
-     const [windowWidth, setWindowWidth] = useState(1420);
+     const [windowWidth, setWindowWidth] = useState(1480);
 
      useEffect(() => {
           const handleResize = () => {
@@ -58,7 +58,7 @@ const ContentBlock = ({items}) => {
           <div className="content__block">
                <div className="content-list-items">
                     {items.map((item, index) => (
-                         windowWidth > 1400 ? (
+                         windowWidth > 1470 ? (
                               <Listing_card  key={index} item={item} />
                          ) : (
                               <Listing_card_mobile  key={index} item={item} />
