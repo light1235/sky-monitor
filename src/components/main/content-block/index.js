@@ -39,29 +39,14 @@ const ContentBlock = ({items}) => {
      };
 
 
-
-     const [windowWidth, setWindowWidth] = useState(1480);
      const [widthState, setWidthState] = useState(1480);
 
-     const handleResize = () => {
-          // setWindowWidth(window.innerWidth);
-        setWidthState(window.innerWidth)
-     };
-
-
      useEffect(() => {
-          window.addEventListener('resize', function() {
-               const isLessThan1480px = window.matchMedia("(max-width: 1480px)").matches;
 
-               if (isLessThan1480px) {
-                    // setWidthState(false)
+          const handleResize = () => {
+               setWidthState(window.innerWidth)
+          };
 
-                    // Ваш код, выполняемый при ширине окна меньше чем 1480px
-               } else {
-                    // setWidthState(true)
-                    // Ваш код, выполняемый при ширине окна больше или равной 1480px
-               }
-          });
           setWidthState(window.innerWidth)
 
           window.addEventListener('resize', handleResize);
@@ -72,7 +57,6 @@ const ContentBlock = ({items}) => {
      }, []);
 
 
-
      return (
           <div className="content__block">
                <div className="content-list-items">
@@ -80,7 +64,6 @@ const ContentBlock = ({items}) => {
                          widthState < 1480 ? (
                               <Listing_card_mobile  key={index} item={item} />
                          ) : (
-
                          <Listing_card  key={index} item={item} />
                          )
                     ))}
@@ -97,9 +80,3 @@ const ContentBlock = ({items}) => {
 
 export default ContentBlock;
 
-// {items.map((item, index) => {
-//      const isMobileWidth = window.matchMedia("(max-width: 768px)").matches;
-//      const ComponentToRender = isMobileWidth ? Listing_card_mobile : Listing_card;
-//
-//      return <ComponentToRender key={index} item={item} />;
-// })}
