@@ -23,7 +23,7 @@ const ContentBlock = ({items}) => {
      useEffect(() => {
           const intervalId = setInterval(() => {
                shuffleBlocks();
-          }, 12000);
+          }, 6000);
 
           return () => clearInterval(intervalId);
      }, []);
@@ -74,7 +74,7 @@ const ContentBlock = ({items}) => {
                </div>
                <div className="content-banners">
                          {[blocks[0].banners[0], blocks[0].banners[1]].map((banner, bannerIndex) => (
-                              <ContentBanner key={bannerIndex} url={banner}/>
+                              <ContentBanner key={bannerIndex} image={banner}/>
                          ))}
                </div>
           </div>
