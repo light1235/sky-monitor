@@ -106,9 +106,10 @@ const MainTabs = () => {
                                         <ContentBlock key={index} items={chunk} />
                                    ))}
                                    <div className="full-wrap" style={{display:'grid',width:'100%',justifyItems:'center'}}>
-                                   <button className="show-more" onClick={handleClickPremium}>  <div className="inner-button"><Image src={ArrowButton} alt="arrow-icon"/></div></button>
+                                   {/*<button className="show-more" onClick={handleClickPremium}>  <div className="inner-button"><Image src={ArrowButton} alt="arrow-icon"/></div></button>*/}
+                                        {showBlocksPremium < chunkedItems1.length &&  <button className="show-more" onClick={handleClickPremium}>  <div className="inner-button"><Image src={ArrowButton} alt="arrow-icon"/></div></button>}
                                    </div>
-                                   {/*{showBlocks < chunkedItems.length && <button onClick={handleClick}>Показать больше</button>}*/}
+
                               </>,
                          },
                          {
