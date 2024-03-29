@@ -39,24 +39,18 @@ const ContentBlock = ({items}) => {
      };
 
 
-     const [windowWidth, setWindowWidth] = useState(() => {
-          // Get windowWidth from localStorage or set a default value
-          return parseInt(localStorage.getItem('windowWidth')) || 1480;
-     });
+     // const [windowWidth, setWindowWidth] = useState(1480);
+     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+     const handleResize = () => {
+          setWindowWidth(window.innerWidth);
+     };
 
      useEffect(() => {
-          const handleResize = () => {
-               const width = window.innerWidth;
-               setWindowWidth(width);
-               // Store the window width in localStorage
-               localStorage.setItem('windowWidth', width.toString());
-          };
-
           window.addEventListener('resize', handleResize);
           return () => {
                window.removeEventListener('resize', handleResize);
           };
-     }, []);
+     }, [windowWidth]);
 
 
 
@@ -70,6 +64,7 @@ const ContentBlock = ({items}) => {
                               <Listing_card_mobile  key={index} item={item} />
                          )
                     ))}
+
                </div>
                <div className="content-banners">
                          {[blocks[0].banners[0], blocks[0].banners[1]].map((banner, bannerIndex) => (
