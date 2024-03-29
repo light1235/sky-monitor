@@ -26,9 +26,6 @@ const CustomWrapper = () => {
                     <ContentBlock key={index} items={chunk} />
                ))}
                <div className="full-wrap" style={{display:'grid',width:'100%',justifyItems:'center'}}>
-                    {/*<button className="show-more" onClick={handleClick}>*/}
-                    {/*     <div className="inner-button"><Image src={ArrowButton} alt="arrow-icon"/></div>*/}
-                    {/*</button>*/}
                     {showBlocks < chunkedItems.length &&  <button className="show-more" onClick={handleClick}>  <div className="inner-button"><Image src={ArrowButton} alt="arrow-icon"/></div></button>}
                </div>
           </>

@@ -88,10 +88,21 @@
       "paymentSystem": {
         "bitcoin": true,
         "neteller": true,
-        "qiwi": true,
+        "qiwi": false,
         "webMoney": true,
-        "perfectMoney": true,
-        "adv": false
+        "perfectMoney": false,
+        "adv": false,
+        "bnb": true,
+        "dodgeCoin": false,
+        "eth": false,
+        "liteCoin": false,
+        "payoneer": false,
+        "payPall": true,
+        "payza": false,
+        "ripple": false,
+        "skrill": false,
+        "tether": true,
+        "tron" : false
       },
       "info": {
         "similarWeb": "http",
@@ -133,12 +144,23 @@
         "investedPlans": "\n5% - 8% - 10% monthly for 30-180 days (bonus: 1.5% - 4.5% - 12% at end if invest in tether)"
       },
       "paymentSystem": {
-        "bitcoin": true,
+        "bitcoin": false,
         "neteller": true,
-        "qiwi": true,
-        "webMoney": true,
-        "perfectMoney": true,
-        "adv": false
+        "qiwi": false,
+        "webMoney": false,
+        "perfectMoney": false,
+        "adv": false,
+        "bnb": true,
+        "dodgeCoin": false,
+        "eth": true,
+        "liteCoin": false,
+        "payoneer": false,
+        "payPall": true,
+        "payza": false,
+        "ripple": false,
+        "skrill": false,
+        "tether": true,
+        "tron" : true
       },
       "info": {
         "similarWeb": "http",
@@ -180,12 +202,23 @@
         "investedPlans": "2.9%-3.1% daily for 15-15 working days\n150% after 15 buisness days after 15 buisness days"
       },
       "paymentSystem": {
-        "bitcoin": true,
-        "neteller": true,
-        "qiwi": true,
-        "webMoney": true,
-        "perfectMoney": true,
-        "adv": true
+        "bitcoin": false,
+        "neteller": false,
+        "qiwi": false,
+        "webMoney": false,
+        "perfectMoney": false,
+        "adv": false,
+        "bnb": true,
+        "dodgeCoin": false,
+        "eth": true,
+        "liteCoin": false,
+        "payoneer": true,
+        "payPall": true,
+        "payza": true,
+        "ripple": false,
+        "skrill": false,
+        "tether": true,
+        "tron" : true
       },
       "info": {
         "similarWeb": "http",
@@ -227,12 +260,23 @@
         "investedPlans": "2.9%-3.1% daily for 15-15 working days\n150% after 15 buisness days after 15 buisness days"
       },
       "paymentSystem": {
-        "bitcoin": true,
-        "neteller": true,
-        "qiwi": true,
-        "webMoney": true,
-        "perfectMoney": true,
-        "adv": true
+        "bitcoin": false,
+        "neteller": false,
+        "qiwi": false,
+        "webMoney": false,
+        "perfectMoney": false,
+        "adv": false,
+        "bnb": true,
+        "dodgeCoin": true,
+        "eth": true,
+        "liteCoin": true,
+        "payoneer": true,
+        "payPall": true,
+        "payza": true,
+        "ripple": false,
+        "skrill": false,
+        "tether": true,
+        "tron" : true
       },
       "info": {
         "similarWeb": "http",

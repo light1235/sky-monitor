@@ -106,7 +106,6 @@ const MainTabs = () => {
                                         <ContentBlock key={index} items={chunk} />
                                    ))}
                                    <div className="full-wrap" style={{display:'grid',width:'100%',justifyItems:'center'}}>
-                                   {/*<button className="show-more" onClick={handleClickPremium}>  <div className="inner-button"><Image src={ArrowButton} alt="arrow-icon"/></div></button>*/}
                                         {showBlocksPremium < chunkedItems1.length &&  <button className="show-more" onClick={handleClickPremium}>  <div className="inner-button"><Image src={ArrowButton} alt="arrow-icon"/></div></button>}
                                    </div>
 
@@ -121,7 +120,7 @@ const MainTabs = () => {
                                         <ContentBlock key={index} items={chunk} />
                                    ))}
                                    <div className="full-wrap" style={{display:'grid',width:'100%',justifyItems:'center'}}>
-                                   <button className="show-more" onClick={handleClickNormal}>  <div className="inner-button"><Image src={ArrowButton} alt="arrow-icon"/></div></button>
+                                        {showBlocksNormal < chunkedItems2.length &&  <button className="show-more" onClick={handleClickNormal}>  <div className="inner-button"><Image src={ArrowButton} alt="arrow-icon"/></div></button>}
                                    </div>
                               </>,
                          },
@@ -134,7 +133,7 @@ const MainTabs = () => {
                                         <ContentBlock key={index} items={chunk} />
                                    ))}
                                    <div className="full-wrap" style={{display:'grid',width:'100%',justifyItems:'center'}}>
-                                   <button className="show-more" onClick={handleClickTrial}>  <div className="inner-button"><Image src={ArrowButton} alt="arrow-icon"/></div></button>
+                                        {showBlocksTrial < chunkedItems3.length &&  <button className="show-more" onClick={handleClickTrial}>  <div className="inner-button"><Image src={ArrowButton} alt="arrow-icon"/></div></button>}
                                    </div>
                               </>,
                          },
@@ -147,7 +146,7 @@ const MainTabs = () => {
                                         <ContentBlock key={index} items={chunk} />
                                    ))}
                                    <div className="full-wrap" style={{display:'grid',width:'100%',justifyItems:'center'}}>
-                                   <button className="show-more" onClick={handleClickScam}>  <div className="inner-button"><Image src={ArrowButton} alt="arrow-icon"/></div></button>
+                                        {showBlocksScam < chunkedItems4.length &&  <button className="show-more" onClick={handleClickScam}>  <div className="inner-button"><Image src={ArrowButton} alt="arrow-icon"/></div></button>}
                                    </div>
                               </>,
                          },
