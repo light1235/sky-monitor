@@ -2,7 +2,7 @@
 import React, {useEffect, useState} from 'react';
 import './index.scss'
 import Image from 'next/image'
-import LOGO from '/src/assets/logo.svg'
+import LOGO from '/src/assets/logo-1.svg'
 import Link from "next/link";
 import anime from 'animejs';
 import monIco from '/src/assets/main/icons/monitor.svg';
@@ -88,16 +88,16 @@ const Header = () => {
                <div className={activeMenu ? 'mobile-navigation' : 'mobile-navigation mobile-show'}>
                     <nav className="navigation">
                          <ul>
-                              <li>monitoring</li>
-                              <li>services</li>
-                              <li>projects</li>
-                              <li>contacts</li>
-                              <li>partners</li>
+                              <li><Link href='/'>monitoring</Link></li>
+                              <li><Link href='/services'>services</Link></li>
+                              <li><Link href='/projects'>projects</Link></li>
+                              <li><Link href='/contacts'>contacts</Link></li>
+                              <li><Link href='/partners'>partners</Link></li>
                          </ul>
                          <div className="line-separator"></div>
                          <ul>
-                              <li>about us</li>
-                              <li>support</li>
+                              <li><Link href='/'>about us</Link></li>
+                              <li><Link href='/'>support</Link></li>
                          </ul>
                          <button ><Link href='/'> <Image src={buttonIcon} alt="add icon"></Image> Add program</Link>
                          </button>
