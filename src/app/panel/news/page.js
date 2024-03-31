@@ -13,7 +13,7 @@ const items = [
      {
           label: (
                <>
-                    <i className="icon-up-circle" style={{color:'gold'}}></i> Mark a top
+                    <i className="icon-up-circle" style={{color:'gold'}}></i> Pin to top
                </>
           ),
           key: '1',
@@ -21,7 +21,7 @@ const items = [
      {
           label: (
                <>
-                    <i className="icon-pencil" ></i> Edit News
+                    <i className="icon-stop" style={{color:'red'}} ></i> Un pin
                </>
           ),
           key: '2',
@@ -29,7 +29,8 @@ const items = [
      {
           label: (
                <>
-                    <i className="icon-window-close-o" ></i> Delete News
+                    <i className="icon-pencil" ></i> Edit News
+
                </>
           ),
           key: '3',
@@ -37,10 +38,18 @@ const items = [
      {
           label: (
                <>
-                    <i className="icon-play" style={{color:'black'}}></i> Published
+                    <i className="icon-window-close-o" ></i> Delete News
                </>
           ),
           key: '4',
+     },
+     {
+          label: (
+               <>
+                    <i className="icon-play" style={{color:'black'}}></i> Published
+               </>
+          ),
+          key: '5',
      },
 
 ];

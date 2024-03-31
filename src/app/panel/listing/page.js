@@ -47,7 +47,7 @@ const items = [
      {
           label: (
                <>
-                    <i className="icon-ok"></i> Mark scam
+                    <i className="icon-ok"></i> Mark Trial
                </>
           ),
           key: '4',
@@ -55,7 +55,7 @@ const items = [
      {
           label: (
                <>
-                    <i className="icon-edit"></i> Mark normal
+                    <i className="icon-edit"></i> Mark scam
                </>
           ),
           key: '5',
