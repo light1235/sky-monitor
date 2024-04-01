@@ -2,7 +2,7 @@
 import React, {useEffect, useState} from 'react';
 import './index.scss'
 import Image from 'next/image'
-import LOGO from '/src/assets/logo-1.svg'
+import LOGO from '/src/assets/lofo-ff.svg'
 import Link from "next/link";
 import anime from 'animejs';
 import monIco from '/src/assets/main/icons/monitor.svg';
