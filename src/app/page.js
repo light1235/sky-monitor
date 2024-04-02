@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Carousel } from 'antd';
 import React from 'react';
-import HeroBanner from '/src/assets/main/images/head-b-6.jpg';
+import HeroBanner from '/src/assets/main/images/head-b-7.jpg';
 import HeroBanner1 from '/src/assets/main/images/head-b-5.jpg';
 import './index.scss';
 import BlockSlat from "@/components/main/block_slat";
