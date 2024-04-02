@@ -15,6 +15,7 @@ import NewsLineLogo from '/src/assets/main/icons/news-line-logo.svg';
 import Link from "next/link";
 import MainTabs from "@/components/main/main-tabs";
 
+
 export default function Home() {
 
   return (
