@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { Carousel } from 'antd';
 import React from 'react';
-import HeroBanner from '/src/assets/main/images/hero-banner-1.jpg';
-import testBanner from '/src/assets/main/images/122.jpg';
+import HeroBanner from '/src/assets/main/images/head-b-6.jpg';
+import HeroBanner1 from '/src/assets/main/images/head-b-5.jpg';
 import './index.scss';
 import BlockSlat from "@/components/main/block_slat";
 import Info_block from "@/components/main/info_block";
@@ -35,7 +35,7 @@ export default function Home() {
                    </div>
                    <div>
                         <Link target="_blank" href='/'>
-                        <Image src={testBanner} width="369" height="170" alt="banner"></Image>
+                        <Image src={HeroBanner1} width="369" height="170" alt="banner"></Image>
                         </Link>
                    </div>
                    <div>
@@ -45,7 +45,7 @@ export default function Home() {
                    </div>
                    <div>
                         <Link target="_blank" href='/'>
-                        <Image src={HeroBanner}  alt="banner"></Image>
+                        <Image src={HeroBanner1}  alt="banner"></Image>
                         </Link>
                    </div>
               </Carousel>
