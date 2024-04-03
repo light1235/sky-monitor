@@ -17,7 +17,6 @@ import MainTabs from "@/components/main/main-tabs";
 
 
 export default function Home() {
-
   return (
     <main style={{background:'#F4F6F7'}}>
          <section className="hero-banner">

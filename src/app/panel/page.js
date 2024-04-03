@@ -18,6 +18,7 @@ export const options = {
 };
 
 const ControlPanel = () => {
+
      return (
           <section className="main-control-page">
                <div className="panel-block">

@@ -106,6 +106,7 @@ const ListingCard = ({ item }) => {
                          <div className="payments-system">
                               {displayedPaymentSystems.map(system => (
                                    <div key={system} className="payment-system-icon">
+                                        <CustomToolTop  text={system}>
                                         {system === "bitcoin" && <Image src={bitcoinLogo} height="15" width="15" alt="Bitcoin Logo" />}
                                         {system === "neteller" && <Image src={netellerLogo} height="15" width="15" alt="Neteller Logo" />}
                                         {system === "qiwi" && <Image src={qiwiLogo} height="15" width="15" alt="Qiwi Logo" />}
@@ -123,6 +124,7 @@ const ListingCard = ({ item }) => {
                                         {system === "skrill" && <Image src={skrill} height="15" width="15" alt="Skrill Logo" />}
                                         {system === "tether" && <Image src={tether} height="15" width="15" alt="Tether Logo" />}
                                         {system === "tron" && <Image src={tron} height="15" width="15" alt="Tron Logo" />}
+                                        </CustomToolTop>
                                    </div>
                               ))}
                          </div>
