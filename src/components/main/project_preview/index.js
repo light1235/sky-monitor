@@ -1,34 +1,50 @@
-import React from 'react';
+"use client"
+import React, {useEffect, useState} from 'react';
 import './index.scss'
-import  projectPreviewImage from '/src/assets/main/images/projects-preview.jpg';
 import Image from "next/image";
 import pinIcon from '/src/assets/main/icons/pin-icon.svg';
 import calendarIcon from '/src/assets/main/icons/calendar-icon.svg';
 import Link from "next/link";
 import CustomToolTop from "@/components/main/tooltip_custom";
+import {usePathname} from "next/navigation";
 
-const ProjectPreview = () => {
+const ProjectPreview = ({item,link}) => {
+
+     const pathname = usePathname();
+
+
+     const [truncatedText, setTruncatedText] = useState("");
+     const maxLength = 322; // Установите максимальное количество символов
+
+     useEffect(() => {
+          const text = item.preview.description
+          if (text.length > maxLength) {
+               setTruncatedText(text.substring(0, maxLength) + "…");
+          } else {
+               setTruncatedText(text);
+          }
+     }, []);
+
      return (
           <div className="preview-card">
-               <Link href="/" >
+               <Link href={link} >
                <div className="preview-card-image">
-                    <Image src={projectPreviewImage} alt='project image'/>
+                    <Image src={item.preview.image} width="455" height="266" alt='project image'/>
                </div>
                <div className="preview-card-wrapper">
                     <div className="preview-card-title">
-                         <h2><CustomToolTop text='go to project overview'>Zetbull.com</CustomToolTop></h2>
+                         <h2><CustomToolTop text='go to project overview'> {item.preview.title}</CustomToolTop></h2>
                     </div>
                     <div className="preview-card-description">
-                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab commodi cumque, cupiditate distinctio eum facere ipsam quasi reprehenderit sequi ullam. Aspernatur
-                              Lorem ipsum dolor sit amet, consectetur adipisicing e Lorem ipsum dolor sit amet, consectetur adipisicing e onsectetur adipisicing e
+                         <p>{truncatedText}
                          </p>
                     </div>
                     <div className="preview-card-bottom-line">
                          <div className="line-item">
-                              <Image src={pinIcon} alt='pin icon'/><span>Investition,</span> <span>Liders</span>
+                              <Image src={pinIcon} alt='pin icon'/><span>{item.preview.tags}</span>
                          </div>
                          <div className="line-item">
-                              <Image src={calendarIcon} alt='pin icon'/> <span>01.11.2021</span>
+                              <Image src={calendarIcon} alt='pin icon'/> <span>{item.preview.postDate}</span>
                          </div>
                     </div>
                </div>

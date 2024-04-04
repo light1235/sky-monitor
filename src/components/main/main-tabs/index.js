@@ -9,6 +9,7 @@ import ArrowButton from '../../../assets/main/icons/arrow-button.svg';
 import Image from "next/image";
 
 const MainTabs = () => {
+     const [searchTerm, SetSearchTerm] = useState('');
 
      const [showBlocks, setShowBlocks] = useState(1);
      const [showBlocksPremium, setShowBlocksPremium] = useState(1);
@@ -83,9 +84,17 @@ const MainTabs = () => {
           chunkedItems4.push(filteredArrayScam.slice(i, i + chunkSize));
      }
 
-
      return (
           <>
+               <div className="input-wrapper">
+                    <div className="input-inner">
+                         <input type="text" placeholder="search" onChange={event => {
+                              SetSearchTerm(event.target.value);
+                              setActiveTab('1');
+                         }}/>
+                         <i className="icon-search"></i>
+                    </div>
+               </div>
                <Tabs
                     defaultActiveKey={activeTab}
                     activeKey={activeTab}
@@ -95,7 +104,7 @@ const MainTabs = () => {
                          {
                               label: 'Overview',
                               key: '1',
-                              children:  <CustomWrapper />
+                              children: <CustomWrapper termState={searchTerm} />
                               ,
                          },
                          {
@@ -103,10 +112,15 @@ const MainTabs = () => {
                               key: '2',
                               children: <>
                                    {chunkedItems1.slice(0, showBlocksPremium).map((chunk, index) => (
-                                        <ContentBlock key={index} items={chunk} />
+                                        <ContentBlock key={index} items={chunk}/>
                                    ))}
-                                   <div className="full-wrap" style={{display:'grid',width:'100%',justifyItems:'center'}}>
-                                        {showBlocksPremium < chunkedItems1.length &&  <button className="show-more" onClick={handleClickPremium}>  <div className="inner-button"><Image src={ArrowButton} alt="arrow-icon"/></div></button>}
+                                   <div className="full-wrap"
+                                        style={{display: 'grid', width: '100%', justifyItems: 'center'}}>
+                                        {showBlocksPremium < chunkedItems1.length &&
+                                             <button className="show-more" onClick={handleClickPremium}>
+                                                  <div className="inner-button"><Image src={ArrowButton}
+                                                                                       alt="arrow-icon"/></div>
+                                             </button>}
                                    </div>
 
                               </>,
@@ -114,13 +128,18 @@ const MainTabs = () => {
                          {
                               label: 'Normal',
                               key: '3',
-                              children:<>
+                              children: <>
 
                                    {chunkedItems2.slice(0, showBlocksNormal).map((chunk, index) => (
-                                        <ContentBlock key={index} items={chunk} />
+                                        <ContentBlock key={index} items={chunk}/>
                                    ))}
-                                   <div className="full-wrap" style={{display:'grid',width:'100%',justifyItems:'center'}}>
-                                        {showBlocksNormal < chunkedItems2.length &&  <button className="show-more" onClick={handleClickNormal}>  <div className="inner-button"><Image src={ArrowButton} alt="arrow-icon"/></div></button>}
+                                   <div className="full-wrap"
+                                        style={{display: 'grid', width: '100%', justifyItems: 'center'}}>
+                                        {showBlocksNormal < chunkedItems2.length &&
+                                             <button className="show-more" onClick={handleClickNormal}>
+                                                  <div className="inner-button"><Image src={ArrowButton}
+                                                                                       alt="arrow-icon"/></div>
+                                             </button>}
                                    </div>
                               </>,
                          },
@@ -130,23 +149,33 @@ const MainTabs = () => {
                               children: <>
 
                                    {chunkedItems3.slice(0, showBlocksTrial).map((chunk, index) => (
-                                        <ContentBlock key={index} items={chunk} />
+                                        <ContentBlock key={index} items={chunk}/>
                                    ))}
-                                   <div className="full-wrap" style={{display:'grid',width:'100%',justifyItems:'center'}}>
-                                        {showBlocksTrial < chunkedItems3.length &&  <button className="show-more" onClick={handleClickTrial}>  <div className="inner-button"><Image src={ArrowButton} alt="arrow-icon"/></div></button>}
+                                   <div className="full-wrap"
+                                        style={{display: 'grid', width: '100%', justifyItems: 'center'}}>
+                                        {showBlocksTrial < chunkedItems3.length &&
+                                             <button className="show-more" onClick={handleClickTrial}>
+                                                  <div className="inner-button"><Image src={ArrowButton}
+                                                                                       alt="arrow-icon"/></div>
+                                             </button>}
                                    </div>
                               </>,
                          },
                          {
                               label: 'Scam',
                               key: '5',
-                              children:<>
+                              children: <>
 
                                    {chunkedItems4.slice(0, showBlocksScam).map((chunk, index) => (
-                                        <ContentBlock key={index} items={chunk} />
+                                        <ContentBlock key={index} items={chunk}/>
                                    ))}
-                                   <div className="full-wrap" style={{display:'grid',width:'100%',justifyItems:'center'}}>
-                                        {showBlocksScam < chunkedItems4.length &&  <button className="show-more" onClick={handleClickScam}>  <div className="inner-button"><Image src={ArrowButton} alt="arrow-icon"/></div></button>}
+                                   <div className="full-wrap"
+                                        style={{display: 'grid', width: '100%', justifyItems: 'center'}}>
+                                        {showBlocksScam < chunkedItems4.length &&
+                                             <button className="show-more" onClick={handleClickScam}>
+                                                  <div className="inner-button"><Image src={ArrowButton}
+                                                                                       alt="arrow-icon"/></div>
+                                             </button>}
                                    </div>
                               </>,
                          },
