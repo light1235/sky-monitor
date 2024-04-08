@@ -1,6 +1,6 @@
 "use client"
 import React from 'react';
-import DATAART from '/src/assets/DataArticle.json';
+import DATAART from '../../../db/articleData.json';
 
 const PostComp = ({params}) => {
 

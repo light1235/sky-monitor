@@ -2,7 +2,7 @@
 import React from 'react';
 import './index.scss';
 import Project_preview from "@/components/main/project_preview";
-import DATAART from '/src/assets/DataArticle.json';
+import DATAART from '../../db/articleData.json';
 
 //simple-article
 //additional-article

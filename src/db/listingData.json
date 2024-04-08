@@ -1,8 +1,8 @@
-{
-  "ListingData": {
-    "ProjectItem-1": {
+[
+
+    {
       "category": "premium",
-      "id": "2",
+      "id": "1",
       "name" : "Espino",
       "longTerm": false,
       "detailsLink": "https://trust-fx.com/",
@@ -58,7 +58,7 @@
         "redLine": ""
       }
     },
-    "ProjectItem-2":{
+    {
       "category": "trial",
       "id": "2",
       "name" : "Safeassets",
@@ -116,9 +116,9 @@
         "redLine": "324"
       }
     },
-    "ProjectItem-3":{
+    {
       "category": "scam",
-      "id": "1",
+      "id": "3",
       "name" : "Trust-FX",
       "longTerm": false,
       "detailsLink": "https://trust-fx.com/",
@@ -174,9 +174,9 @@
         "redLine": "324"
       }
     },
-    "ProjectItem-4": {
+    {
       "category": "premium",
-      "id": "1",
+      "id": "4",
       "name" : "AFTER AI LTD",
       "longTerm": false,
       "detailsLink": "https://trust-fx.com/",
@@ -232,9 +232,9 @@
         "redLine": ""
       }
     },
-    "ProjectItem-5": {
+    {
       "category": "normal",
-      "id": "1",
+      "id": "5",
       "name" : "Bemarg",
       "longTerm": false,
       "detailsLink": "https://trust-fx.com/",
@@ -290,9 +290,9 @@
         "redLine": ""
       }
     },
-    "ProjectItem-6": {
+    {
       "category": "premium",
-      "id": "1",
+      "id": "6",
       "name" : "Multicopytrade",
       "longTerm": false,
       "detailsLink": "https://trust-fx.com/",
@@ -337,9 +337,9 @@
         "redLine": ""
       }
     },
-    "ProjectItem-7": {
+    {
       "category": "premium",
-      "id": "1",
+      "id": "7",
       "name" : "To-To Trade",
       "longTerm": false,
       "detailsLink": "https://trust-fx.com/",
@@ -384,9 +384,9 @@
         "redLine": ""
       }
     },
-    "ProjectItem-8": {
+    {
       "category": "premium",
-      "id": "1",
+      "id": "8",
       "name" : "Newbond",
       "longTerm": false,
       "detailsLink": "https://trust-fx.com/",
@@ -431,9 +431,9 @@
         "redLine": ""
       }
     },
-    "ProjectItem-9": {
+    {
       "category": "premium",
-      "id": "1",
+      "id": "9",
       "name" : "Earnlikeking",
       "longTerm": false,
       "detailsLink": "https://trust-fx.com/",
@@ -478,9 +478,9 @@
         "redLine": ""
       }
     },
-    "ProjectItem-10": {
+    {
       "category": "premium",
-      "id": "1",
+      "id": "10",
       "name" : "Dalcas",
       "longTerm": false,
       "detailsLink": "https://trust-fx.com/",
@@ -525,9 +525,9 @@
         "redLine": ""
       }
     },
-    "ProjectItem-11": {
+    {
       "category": "premium",
-      "id": "1",
+      "id": "11",
       "name" : "ATM2024",
       "longTerm": false,
       "detailsLink": "https://trust-fx.com/",
@@ -572,9 +572,9 @@
         "redLine": ""
       }
     },
-    "ProjectItem-12": {
+    {
       "category": "premium",
-      "id": "1",
+      "id": "12",
       "name" : "Money-flow",
       "longTerm": false,
       "detailsLink": "https://trust-fx.com/",
@@ -619,9 +619,9 @@
         "redLine": ""
       }
     },
-    "ProjectItem-13": {
+    {
       "category": "premium",
-      "id": "1",
+      "id": "13",
       "name" : "Allerta",
       "longTerm": false,
       "detailsLink": "https://trust-fx.com/",
@@ -666,5 +666,4 @@
         "redLine": ""
       }
     }
-  }
-}
+]

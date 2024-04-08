@@ -2,7 +2,7 @@
 import React, {useEffect, useState} from 'react';
 import {Tabs} from "antd";
 import ContentBlock from "@/components/main/content-block";
-import DATAJSON from '../../../assets/DataProjects.json';
+import DATALIST from '../../../db/listingData.json';
 import CustomWrapper from "@/components/main/custom-wrapper";
 import  './index.scss'
 import ArrowButton from '../../../assets/main/icons/arrow-button.svg';
@@ -18,7 +18,7 @@ const MainTabs = () => {
      const [showBlocksScam, setShowBlocksScam] = useState(1);
 
 
-     const items = Object.values(DATAJSON.ListingData);
+     const items = DATALIST;
      const chunkSize = 6;
      const chunkedItems = [];
 
@@ -41,8 +41,6 @@ const MainTabs = () => {
      const handleClickScam = () => {
           setShowBlocksScam(showBlocksScam + 1);
      };
-
-
 
 
 
@@ -104,7 +102,7 @@ const MainTabs = () => {
                          {
                               label: 'Overview',
                               key: '1',
-                              children: <CustomWrapper termState={searchTerm} />
+                              children: <CustomWrapper itemsList={items} termState={searchTerm} />
                               ,
                          },
                          {

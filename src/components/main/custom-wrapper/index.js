@@ -1,14 +1,13 @@
 "use client"
 import React, {useState} from 'react';
-import DATAJSON from '../../../assets/DataProjects.json';
 import ContentBlock from "@/components/main/content-block";
 import ArrowButton from '../../../assets/main/icons/arrow-button.svg';
 import Image from "next/image";
 
-const CustomWrapper = ({termState}) => {
+const CustomWrapper = ({termState, itemsList}) => {
      const [showBlocks, setShowBlocks] = useState(1);
 
-     const items = Object.values(DATAJSON.ListingData);
+     const items = itemsList;
      const chunkSize = 6;
      const chunkedItems = [];
 
