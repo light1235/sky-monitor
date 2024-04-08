@@ -54,6 +54,9 @@ const Header = () => {
      },[block])
 
      const pathname = usePathname();
+     const CloseMenu = () => {
+          setActiveMenu(!activeMenu);
+     };
 
      return (
           <header>
@@ -88,11 +91,11 @@ const Header = () => {
                <div className={activeMenu ? 'mobile-navigation' : 'mobile-navigation mobile-show'}>
                     <nav className="navigation">
                          <ul>
-                              <li><Link href='/'>monitoring</Link></li>
-                              <li><Link href='/services'>services</Link></li>
-                              <li><Link href='/projects'>projects</Link></li>
-                              <li><Link href='/contacts'>contacts</Link></li>
-                              <li><Link href='/partners'>partners</Link></li>
+                              <li ><Link onClick={CloseMenu}  href='/'>monitoring</Link></li>
+                              <li ><Link onClick={CloseMenu} href='/services'>services</Link></li>
+                              <li><Link onClick={CloseMenu} href='/projects'>projects</Link></li>
+                              <li><Link onClick={CloseMenu} href='/contacts'>contacts</Link></li>
+                              <li><Link onClick={CloseMenu} href='/partners'>partners</Link></li>
                          </ul>
                          <div className="line-separator"></div>
                          <ul>

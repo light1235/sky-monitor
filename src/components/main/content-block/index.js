@@ -18,6 +18,14 @@ const ContentBlock = ({items}) => {
      }));
 
      const [blocks, setBlocks] = useState(BannersData);
+     const [wishList, setWishList] = useState(Array(items.length).fill(false));
+
+     const handleWishClick = (index) => {
+          const newWishList = [...wishList];
+          newWishList[index] = !newWishList[index];
+          setWishList(newWishList);
+     };
+
 
 
      useEffect(() => {
@@ -64,7 +72,7 @@ const ContentBlock = ({items}) => {
                          widthState < 1480 ? (
                               <Listing_card_mobile  key={index} item={item} />
                          ) : (
-                         <Listing_card  key={index} item={item} />
+                         <Listing_card  key={index} item={item}  wish={wishList[index]}  setWish={() => handleWishClick(index)}  ind={index}   />
                          )
                     ))}
 

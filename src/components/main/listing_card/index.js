@@ -3,7 +3,8 @@ import React, {useEffect, useState} from 'react';
 import './index.scss'
 import Image from "next/image";
 import Link from "next/link";
-
+import {AiFillHeart, AiOutlineHeart} from "react-icons/ai";
+import { Divider, Form, Radio, Skeleton, Space, Switch } from 'antd';
 
 import bitcoinLogo from '/src/assets/main/icons/payments-system/bitcoin.svg';
 import advLogo from '/src/assets/main/icons/payments-system/adv-cash.svg'
@@ -30,7 +31,12 @@ import CustomToolTop from "@/components/main/tooltip_custom";
 
 
 
-const ListingCard = ({ item }) => {
+const ListingCard = ({ item, wish,ind,setWish}) => {
+
+     const handleWishClick = (event) => {
+          event.stopPropagation(); // Предотвращаем всплытие события, чтобы оно не достигло родительского элемента
+          setWish(ind);
+     };
 
      //days online
      const startDate = new Date(item.projectInformation.created);
@@ -67,6 +73,15 @@ const ListingCard = ({ item }) => {
      // Ограничение длины массива до 6 элементов
      const displayedPaymentSystems = paymentSystems.slice(0, 6);
 
+     const [imageLoading, setImageLoading] = useState(false);
+
+     const handleImageLoad = () => {
+          setImageLoading(true);
+     };
+     useEffect(() => {
+          setImageLoading(true);
+     }, [paymentSystems]);
+
      return (
           <div className={ item.projectInformation.status.scam ? "listing__card-thin scam-status" : 'listing__card-thin'}>
                <div className="card-top_line">
@@ -76,11 +91,28 @@ const ListingCard = ({ item }) => {
                                    'project'}><span>Long Term</span></CustomToolTop>
                          }
                     </div>
+                    <div className="program-favorites" onClick={handleWishClick}>
+                         {wish ?  <AiFillHeart size="20px" color="#85CE36" />   : <CustomToolTop text="add to favorites">   <AiOutlineHeart color={'#85CE36'} size="20px" />  </CustomToolTop>}
+                    </div>
                     <div className="program_details"><Link target="_blank" href={item.detailsLink}><CustomToolTop text={'Program details'}> <div className="details-button"></div></CustomToolTop></Link></div>
                </div>
                <div className="card-middle_line">
                     <div className="left_side">
-                         <Image src={item.projectImage} width="124" height="124" alt="project-image" ></Image>
+                         {imageLoading ? (
+
+                              <Image
+                                   src={item.projectImage}
+                                   width="124"
+                                   height="124"
+                                   alt="project-image"
+                                   onLoad={handleImageLoad}
+                                   priority={true}
+                              />
+                         ) : (
+
+                              <Skeleton.Image style={{ width: 124, height: 124 }} active />
+                         )}
+                         {/*<Image src={item.projectImage} width="124" height="124" alt="project-image" ></Image>*/}
                          <div className="content_wrapper">
                               <div className="content-items status">Status:<span style={{ color: item.projectInformation.status.untraceable && '#DF5BD2'}}>{item.projectInformation.status.paying && ' Paying' ||item.projectInformation.status.untraceable && ' Untraceable' || item.projectInformation.status.scam && ' Not Payed'}</span></div>
                               <div className="content-items">
