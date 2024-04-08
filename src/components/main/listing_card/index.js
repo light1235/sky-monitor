@@ -99,7 +99,6 @@ const ListingCard = ({ item, wish,ind,setWish}) => {
                <div className="card-middle_line">
                     <div className="left_side">
                          {imageLoading ? (
-
                               <Image
                                    src={item.projectImage}
                                    width="124"

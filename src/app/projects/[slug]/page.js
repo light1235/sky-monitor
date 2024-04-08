@@ -5,7 +5,7 @@ import DATAART from '../../../db/articleData.json';
 const PostComp = ({params}) => {
 
 
-     const { slug } = params;
+     const {slug} = params;
 
      const filteredData = DATAART.filter(post => post.preview.title.replace(/\s+/g, '-') === slug);
 

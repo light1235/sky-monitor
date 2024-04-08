@@ -9,6 +9,7 @@ import NormalImage from '/src/assets/main/images/normal.png';
 import TrialImage from '/src/assets/main/images/trial.png';
 
 const ListingPackages = () => {
+
      return (
           <section className="listing__page">
                <div className="listing__page-container">

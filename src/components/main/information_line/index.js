@@ -1,20 +1,21 @@
-import React from 'react';
+"use client"
+import React, {useEffect, useState} from 'react';
 import './index.scss'
-import Image from "next/image";
-import topProjectLogo from '/src/assets/main/icons/top-projects-block-logo.svg';
 import Link from "next/link";
+import ModifiedStrings from "@/utils/hooks/modifiedString";
 
 const InformationLine = ({image,name,numbers,domains = 'Asignat.com' }) => {
     const domainStrings = [domains];
     const removeDomain = /\..*$/;
     const modifiedStrings = domainStrings.map((originalString) => originalString.replace(removeDomain, '') );
 
+
      return (
           <>
                <Link target="_blank" href='/' className="information-line">
                     <div className="line-items">
                          <div className="item-logo">{image}</div>
-                         <div className="item-name">{modifiedStrings}</div>
+                         <div className="item-name">{modifiedStrings }</div>
                     </div>
                     <div className="line-items-one">
                          <div className="item-numbers">401$</div>
