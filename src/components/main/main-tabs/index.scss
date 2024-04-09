@@ -33,13 +33,15 @@
 
 .input-wrapper {
    display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   grid-gap: 10px;
    justify-items: center;
    position: relative;
    width: 100%;
    & .input-inner {
       position: absolute;
       top: 70px;
-      left: 350px;
+      //left: 350px;
       & i {
          position: absolute;
          color: #C4C4C4;
@@ -48,7 +50,6 @@
       }
    }
    & input {
-
       border-radius: 9px;
       width: 370px;
       height: 35px;
@@ -67,4 +68,16 @@
          border: 2px solid var(--Main-color);
       }
    }
+}
+//1465
+
+@media only screen and (max-width : 1900px) {
+   .input-wrapper {
+      grid-template-columns: 1fr;
+      & input {
+         width: 320px;
+         box-sizing: border-box;
+      }
+   }
+
 }

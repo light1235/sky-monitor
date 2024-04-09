@@ -11,24 +11,29 @@ const ChangeNavigation = ({children}) => {
 
      const pathname = usePathname();
      const isCustomHeaderFooterPage = pathname === '/panel' || pathname === '/panel/seo-statistics' || pathname === '/panel/support' || pathname === '/panel/listing' || pathname === '/panel/partners-adm' || pathname === '/panel/news' || pathname === '/panel/information';
+     const isNoHeaderFooterPage  = pathname === '/login';
+
      return (
           <>
                {isCustomHeaderFooterPage ? (
-                 <>
-                      <Control_header />
-                      {children}
-                      <ControlMenu />
-                 </>
+                    <>
+                         <Control_header />
+                         {children}
+                         <ControlMenu />
+                    </>
                ) : (
-
-                 <>
-                      <Header />
-                      {children}
-                      <Footer />
-
-                 </>
-               ) }
-
+                    <>
+                         {isNoHeaderFooterPage ? (
+                              [children]
+                         ) : (
+                              <>
+                                   <Header />
+                                   {children}
+                                   <Footer />
+                              </>
+                         )}
+                    </>
+               )}
           </>
      );
 };

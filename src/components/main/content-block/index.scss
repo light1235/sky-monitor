@@ -123,4 +123,12 @@
    .ant-tabs .ant-tabs-content-holder {
       padding: 0 !important;
    }
+   .content__block {
+      &:nth-child(1){
+         margin-top: 55px;
+      }
+   }
+   .full-wrap {
+      margin-bottom: 20px;
+   }
 }

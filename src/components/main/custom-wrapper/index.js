@@ -17,6 +17,7 @@ const CustomWrapper = ({termState, itemsList}) => {
 
      const handleClick = () => {
           setShowBlocks(showBlocks + 1);
+          console.log(showBlocks);
      };
 
      return (
@@ -29,7 +30,7 @@ const CustomWrapper = ({termState, itemsList}) => {
                     .filter(chunk => chunk.length > 0) // Remove empty chunks
                     .slice(0, showBlocks)
                     .map((chunk, index) => (
-                         <ContentBlock key={index} items={chunk}/>
+                              <ContentBlock key={index} items={chunk}/>
                     ))}
 
                <div className="full-wrap" style={{display:'grid',width:'100%',justifyItems:'center'}}>
