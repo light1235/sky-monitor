@@ -20,24 +20,27 @@ const CustomWrapper = ({termState, itemsList}) => {
           console.log(showBlocks);
      };
 
+     const filteredChunks = chunkedItems
+          .map(chunk => chunk.filter(item =>
+               termState === "" || item.name.toLowerCase().includes(termState.toLowerCase())
+          ))
+          .filter(chunk => chunk.length > 0);
+
+     const shouldShowButton = showBlocks < filteredChunks.length && filteredChunks.length > 0;
+
      return (
           <>
-
-               {chunkedItems
-                    .map(chunk => chunk.filter(item =>
-                         termState === "" || item.name.toLowerCase().includes(termState.toLowerCase())
-                    ))
-                    .filter(chunk => chunk.length > 0) // Remove empty chunks
+               {filteredChunks
                     .slice(0, showBlocks)
                     .map((chunk, index) => (
-                              <ContentBlock key={index} items={chunk}/>
+                         <ContentBlock key={index} items={chunk}/>
                     ))}
-
                <div className="full-wrap" style={{display:'grid',width:'100%',justifyItems:'center'}}>
-                    {showBlocks < chunkedItems.length &&  <button className="show-more" onClick={handleClick}>  <div className="inner-button"><Image src={ArrowButton} alt="arrow-icon"/></div></button>}
+                    {shouldShowButton && <button className="show-more" onClick={handleClick}>  <div className="inner-button"><Image src={ArrowButton} alt="arrow-icon"/></div></button>}
                </div>
           </>
      );
 };
 
 export default CustomWrapper;
+

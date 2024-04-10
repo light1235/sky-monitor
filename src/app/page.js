@@ -14,41 +14,44 @@ import NewsLine from "@/components/main/news_line";
 import NewsLineLogo from '/src/assets/main/icons/news-line-logo.svg';
 import Link from "next/link";
 import MainTabs from "@/components/main/main-tabs";
+import TestBlock from "@/components/main/test-block";
 
 
 export default function Home() {
   return (
     <main style={{background:'#F4F6F7'}}>
+
          <section className="hero-banner">
-              <Carousel autoplay slidesToShow={3} responsive={[
-                   {
-                        breakpoint: 768,
-                        settings: {
-                             slidesToShow: 1,
+
+                   <Carousel autoplay slidesToShow={3} responsive={[
+                        {
+                             breakpoint: 768,
+                             settings: {
+                                  slidesToShow: 1,
+                             },
                         },
-                   },
-              ]}>
-                   <div style={{display:"grid"}}>
-                        <Link target="_blank" href='/'>
-                       <Image src={HeroBanner} alt="banner"></Image>
-                        </Link>
-                   </div>
-                   <div>
-                        <Link target="_blank" href='/'>
-                        <Image src={HeroBanner1} width="369" height="170" alt="banner"></Image>
-                        </Link>
-                   </div>
-                   <div>
-                        <Link target="_blank" href='/'>
-                        <Image src={HeroBanner}  alt="banner"></Image>
-                        </Link>
-                   </div>
-                   <div>
-                        <Link target="_blank" href='/'>
-                        <Image src={HeroBanner1}  alt="banner"></Image>
-                        </Link>
-                   </div>
-              </Carousel>
+                   ]}>
+                        <div style={{display:"grid"}}>
+                             <Link target="_blank" href='/'>
+                                  <Image src={HeroBanner} alt="banner"></Image>
+                             </Link>
+                        </div>
+                        <div>
+                             <Link target="_blank" href='/'>
+                                  <Image src={HeroBanner1} width="369" height="170" alt="banner"></Image>
+                             </Link>
+                        </div>
+                        <div>
+                             <Link target="_blank" href='/'>
+                                  <Image src={HeroBanner}  alt="banner"></Image>
+                             </Link>
+                        </div>
+                        <div>
+                             <Link target="_blank" href='/'>
+                                  <Image src={HeroBanner1}  alt="banner"></Image>
+                             </Link>
+                        </div>
+                   </Carousel>
          </section>
          <section className="main-content">
               <div className="content__item">
