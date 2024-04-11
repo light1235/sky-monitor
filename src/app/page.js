@@ -20,9 +20,7 @@ import TestBlock from "@/components/main/test-block";
 export default function Home() {
   return (
     <main style={{background:'#F4F6F7'}}>
-
          <section className="hero-banner">
-
                    <Carousel autoplay slidesToShow={3} responsive={[
                         {
                              breakpoint: 768,

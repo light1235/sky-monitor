@@ -1,6 +1,7 @@
 "use client"
 import React from 'react';
 import DATAART from '../../../db/articleData.json';
+import ArticlePage from "@/components/main/simple-article";
 
 const PostComp = ({params}) => {
 
@@ -11,12 +12,20 @@ const PostComp = ({params}) => {
 
      return (
           <div>
+               {/*{filteredData.map(post => (*/}
+               {/*     <div key={post.id}>*/}
+               {/*          <h1>{post.preview.title}</h1>*/}
+               {/*          <p>{post.preview.description}</p>*/}
+               {/*     </div>*/}
+               {/*))}*/}
                {filteredData.map(post => (
-                    <div key={post.id}>
-                         <h1>{post.preview.title}</h1>
-                         <p>{post.preview.description}</p>
-                    </div>
+                    <ArticlePage post={post} key={post.id} />
+                    // <div key={post.id}>
+                    //      <h1>{post.preview.title}</h1>
+                    //      <p>{post.preview.description}</p>
+                    // </div>
                ))}
+
           </div>
      );
 };
