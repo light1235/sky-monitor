@@ -1,0 +1,12 @@
+
+
+.front-input {
+   & .ant-input {
+      border: 2px solid #E9EDF0;
+      height: 60px;
+      &::placeholder {
+         color: #9A9B9B;
+         //font-size: 20px;
+      }
+   }
+}

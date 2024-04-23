@@ -3,6 +3,7 @@ import React from 'react';
 import './index.scss'
 import Image from "next/image";
 import contactPageImage from '/src/assets/main/images/contanct-page.svg'
+import CustomFrontButton from "@/components/main/cutom_front_button";
 const Contacts = () => {
      // noinspection JSValidateTypes
      return (

@@ -1,0 +1,23 @@
+.custom-load {
+  display: grid;
+   margin-top: 15px;
+   .ant-upload-select {
+      border-radius: 10px !important;
+      border: 3px solid #e9edf0 !important;
+      margin-bottom: 0 !important;
+      width: 75px !important;
+      height: 75px !important;
+   }
+
+   & .ant-upload {
+
+   }
+   & .ant-upload-list-item-container {
+      width: 75px !important;
+      height: 75px !important;
+      border-radius: 10px  !important;
+      stroke-width: 2px  !important;
+      stroke: #e9edf0  !important;
+      box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.25)  !important;
+   }
+}
