@@ -9,6 +9,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from 'react-hook-form';
 import {Input} from "antd";
 import PopUpForm from "@/components/main/pop-up-form";
+import Banner_form from "@/components/main/Banner_form";
+import BannerForm from "@/components/main/Banner_form";
 
 
 
@@ -28,7 +30,8 @@ const Add_pop_up = () => {
 
      return (
           <div className="pop-up__page">
-               <PopUpForm />
+               {/*<PopUpForm />*/}
+               <BannerForm/>
 {/*               <div className="pop-up__page-content">*/}
 {/*                    <div className="content-left">*/}
 {/*                         <div className="left-container">*/}
