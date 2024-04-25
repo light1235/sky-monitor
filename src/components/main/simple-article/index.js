@@ -3,6 +3,7 @@ import React from 'react';
 import './index.scss';
 import Image from "next/image";
 import { Flex, Progress, Slider, Typography } from 'antd';
+import Link from "next/link";
 
 
 const ArticlePage = ({post}) => {
@@ -16,7 +17,7 @@ const ArticlePage = ({post}) => {
                     <div className="article__content">
                          <div className="content__top">
                               <div className="content__date-published">{post.article.date}</div>
-                              <h1 className="content__title">{post.article.title}</h1>
+                              <h1 className="content__title">{post.article.title} <Link target="_blank" href={post.article.projectLink}>{post.slug}</Link> </h1>
                               <div className="content__separator"></div>
                          </div>
                          <div className="content__main-block">
@@ -38,18 +39,14 @@ const ArticlePage = ({post}) => {
                                    <div className="text-separator"></div>
                                    Investment Plans:
                               </div>
-                              <p className="text-description">Rewline is a leading provider of advanced trading
-                                   solutions that enable traders to unlock the potential of crypto and forex trading.
-                                   The company utilizes classic trading algorithms and cutting-edge artificial
-                                   intelligence to provide traders with real-time trading analytics, exclusive trading
-                                   tools and features that help them achieve their financial goals.</p>
+                              <p className="text-description">{post.article.description1}</p>
+                              <div className="text-title">
+                                   Conclusion:
+                              </div>
                               <p className="text-description">
-                                   Rewline's team of experts is committed to helping traders make informed trading
-                                   decisions by utilizing the power of artificial intelligence. Using artificial
-                                   intelligence-based algorithms, the company provides traders with insights into market
-                                   trends, volatility and risk management that help them stay on top of their trades.
+                                   {post.article.description2}
                               </p>
-                              <p style={{color:'black',fontWeight:'700'}}>Where the invested:</p>
+                              <p style={{color: 'black', fontWeight: '700'}}>Where the invested:</p>
                               <div className="invested-stats-item">
                                    <Progress
                                         type="dashboard"

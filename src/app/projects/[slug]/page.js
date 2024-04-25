@@ -8,7 +8,7 @@ const PostComp = ({params}) => {
 
      const {slug} = params;
 
-     const filteredData = DATAART.filter(post => post.preview.title.replace(/\s+/g, '-') === slug);
+     const filteredData = DATAART.filter(post => post.slug.replace(/\s+/g, '-') === slug);
 
      return (
           <div>

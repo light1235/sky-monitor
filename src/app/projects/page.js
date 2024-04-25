@@ -17,7 +17,7 @@ const Projects = () => {
                <div className="projects__page-container">
                     <div className="projects__page-content">
                          {DATAART.map((post, index) =>
-                              <Project_preview key={post.id} item={post} link={`/projects/${post.preview.title.replace(/\s+/g, '-')}`} />
+                              <Project_preview key={post.id} item={post} link={`/projects/${post.slug.replace(/\s+/g, '-')}`} />
                          )}
                     </div>
                </div>
