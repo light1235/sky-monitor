@@ -9,8 +9,8 @@ const AboutUs = () => {
             <div className="page-container">
               <Image src={AboutImage} alt="about us image"></Image>
               <h1>Our Team: Leaders in Financial Analytics</h1>
-              <div className="square">W</div>
-              <p>elcome to our international, in which coins meets innovation
+              {/*<div className="square">W</div>*/}
+              <p className="firstText">welcome to our international, in which coins meets innovation
                 and investments are evaluated with the finest of care. Our crew is on the frontier of economic
                 analytics, specialized in dissecting tasks and investments so we are able to provide crucial statistics
                 to our clients. Let's have a look at what makes us the move-to vicinity for people navigating the
