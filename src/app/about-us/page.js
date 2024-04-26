@@ -44,7 +44,7 @@ const AboutUs = () => {
               </h2>
               <h3>The Rise of Cryptocurrencies
               </h3>
-              <p>Cryptocurrency has transformed the financial environment, providing unprecedented prospects for
+              <p>Cryptocurrency has transformed the financial environment, providing unprecedented prospects for investors. However, navigating this volatile market requires expertise and caution.
               </p>
               <h3>Reports and Analytics for Finance</h3>
               <p>Making Informed Decisions with Data The backbone of our analytical process is data creation. We uncover
