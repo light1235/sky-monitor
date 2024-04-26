@@ -6,6 +6,7 @@ import Decoration from '/src/assets/main/icons/social-decoration.svg';
 import youTubeIcon from '/src/assets/main/icons/youtub.svg'
 import teleGramIcon from '/src/assets/main/icons/telegram.svg'
 import tikTokIcon from '/src/assets/main/icons/tik-tok.svg'
+import Link from "next/link";
 
 
 const Footer = () => {
@@ -35,7 +36,7 @@ const Footer = () => {
                          <li className="footer__navigation--item">
                               <ul>
                                    <li>Company</li>
-                                   <li><a href="#">About Us</a></li>
+                                   <li><Link href="/about-us" >About Us</Link></li>
                                    <li><a href="#">Affiliate</a></li>
                                    <li><a href="#">Faq</a></li>
                               </ul>
@@ -43,7 +44,7 @@ const Footer = () => {
                          <li className="footer__navigation--item">
                               <ul>
                                    <li>Info</li>
-                                   <li><a href="#">Support</a></li>
+                                   <li><Link href="/support">Support</Link></li>
                                    <li><a href="#">Rules</a></li>
                               </ul>
                          </li>
