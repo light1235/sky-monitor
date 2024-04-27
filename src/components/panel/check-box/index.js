@@ -3,10 +3,11 @@ import React from 'react';
 import { Checkbox } from 'antd';
 import './index.scss';
 
-const CustomCheckBox = ({label}) => {
+const     CustomCheckBox = ({label,onSelect}) => {
 
      const onChange = (e) => {
           console.log(`checked = ${e.target.checked}`);
+          onSelect(e.target.checked);
      };
 
      return (
