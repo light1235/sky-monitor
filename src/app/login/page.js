@@ -75,7 +75,7 @@ const LoginPage = () => {
                                              </label>
                                              <CustomFrontButton disblad={isSubmitting} name={'Get Started'}/>
                                              <label className="login-check">
-                                                  <CustomCheckBox onSelect={handleForgotChange} />Remember me
+                                                  <CustomCheckBox onSelect={handleForgotChange}  />Remember me
                                              </label>
                                              <div className="form-separator"></div>
                                              <div className="ps-reset"><Link href="">Forgot your password ?</Link></div>
