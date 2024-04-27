@@ -1,66 +1,70 @@
 "use client"
 import React, {useEffect, useState} from 'react';
-import './index.scss';
-import * as Yup from "yup";
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import CustomFrontButton from "@/components/main/cutom_front_button";
+import {ErrorMessage, Field, Form, Formik} from "formik";
 import CustomFrontInput from "@/components/main/custom-front-input";
-import Link from "next/link";
+import CustomFrontButton from "@/components/main/cutom_front_button";
 import CustomCheckBox from "@/components/panel/check-box";
+import Link from "next/link";
+import * as Yup from "yup";
+import './index.scss';
 
 
 const validationSchema = Yup.object().shape({
+     siteName: Yup.string().min(8, 'Site name must be at least 8 characters').required("Name should be required please"),
      email: Yup.string().email('Invalid email address').required('Email is required'),
      password: Yup.string().min(6, 'Password must be at least 6 characters long').required('Password is required'),
 });
 
-const LoginPage = () => {
-     const [isValidLogin, setIsValidLogin] = useState(false);
+const SignUp = () => {
+
+     const [isValidSingUp, setIsValidSingUp] = useState(false);
 
      const [formData, setFormData] = useState({
+          siteName:'',
           email: '',
           password: '',
-          forgot:'false',
      });
-
+     //
      useEffect(() => {
           console.log(formData, 'formData');
-          // isValidLogin && console.log('3333')
+          // isValidSingUp && console.log('3333')
      }, [formData]);
 
      const handleFormSubmit = (values,  { setSubmitting }) => {
           setFormData(values);
-          setFormData({ ...values, forgot: formData.forgot });
-     };
-     const handleForgotChange = (value) => {
-          setFormData({ ...formData, forgot: value });
      };
 
      return (
-          <section className="login__page">
-               <div className="login__content">
+          <section className="sing-up__page">
+               <div className="sing-up__content">
                     <div className="content__form">
                          <div className="form-container">
-                              <h1>Log in</h1>
-                              <h2>Dive into the abyss!</h2>
+                              <h1>Sing Up</h1>
+                              <h2>Find your Space</h2>
+
                               <Formik
-                                   initialValues={{ email: '', password: ''}}
+                                   initialValues={{siteName:'', email: '', password: ''}}
                                    validationSchema={validationSchema}
                                    onSubmit={(values, actions) => {
                                         actions.setSubmitting(true);
                                         actions.validateForm().then((errors) => {
                                              if (Object.keys(errors).length === 0) {
                                                   handleFormSubmit(values, actions);
-                                                  setIsValidLogin(true);
+                                                  setIsValidSingUp(true);
                                              } else {
                                                   actions.setSubmitting(false);
-                                                  setIsValidLogin(false);
+                                                  setIsValidSingUp(false);
                                              }
                                         });
                                    }}
                               >
-                                   {({ isSubmitting }) => (
+                                   {({isSubmitting}) => (
                                         <Form>
+                                             <label>
+                                                  <p>Name*</p>
+                                                  <Field as={CustomFrontInput} type="text" name="siteName"/>
+                                                  <ErrorMessage name="siteName" component="div" className="inputError"/>
+                                             </label>
                                              <label>
                                                   <p>Email*</p>
                                                   <Field as={CustomFrontInput} type="email" name="email"/>
@@ -71,12 +75,10 @@ const LoginPage = () => {
                                                   <Field as={CustomFrontInput} type="password" name="password"/>
                                                   <ErrorMessage name="password" component="div" className="inputError"/>
                                              </label>
-                                             <CustomFrontButton disblad={isSubmitting} name={'Get Started'}/>
-                                             <label className="login-check">
-                                                  <CustomCheckBox onSelect={handleForgotChange}  />Remember me
-                                             </label>
-                                             <div className="form-separator"></div>
-                                             <div className="ps-reset"><Link href="">Forgot your password ?</Link></div>
+                                             <CustomFrontButton disblad={isSubmitting} name={'Create Account'}/>
+                                             <div className="google-authorization">Sing up with Google</div>
+                                             <div className="ps-reset">Already have account ?<Link href="/login">Log in</Link>
+                                             </div>
                                         </Form>
                                    )}
                               </Formik>
@@ -88,4 +90,4 @@ const LoginPage = () => {
      );
 };
 
-export default LoginPage;
+export default SignUp;

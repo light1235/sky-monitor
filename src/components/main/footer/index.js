@@ -51,8 +51,8 @@ const Footer = () => {
                          <li className="footer__navigation--item">
                               <ul>
                                    <li>Customer Service</li>
-                                   <li><a href="#">Registration</a></li>
-                                   <li><a href="#">Login</a></li>
+                                   <li><Link href="/sign-up">Registration</Link></li>
+                                   <li><Link href="/login">Login</Link></li>
                                    <li><a href="#">Reset account</a></li>
                               </ul>
                          </li>
