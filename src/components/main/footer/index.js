@@ -38,7 +38,7 @@ const Footer = () => {
                                    <li>Company</li>
                                    <li><Link href="/about-us" >About Us</Link></li>
                                    <li><a href="#">Affiliate</a></li>
-                                   <li><a href="#">Faq</a></li>
+                                   <li><a href="/faq">Faq</a></li>
                               </ul>
                          </li>
                          <li className="footer__navigation--item">
