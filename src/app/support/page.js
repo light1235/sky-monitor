@@ -1,10 +1,13 @@
 import React from 'react';
 import './index.scss'
+import SupportImage from '../../assets/main/images/support.jpg';
+import Image from "next/image";
 
 const SupportPage = () => {
      return (
           <section className="support__page">
                <div className="page-container">
+                    <Image src={SupportImage} alt="support image"></Image>
                  <h1>Welcome to Our Support Center</h1>
                  <h2> How Can We Assist You Today?</h2>
                     <p>At [Your Advertising Platform], we are devoted to offering excellent aid to our users. Whether you've got questions about the usage of our platform, want help with your account, or encounter any issues, our support group is right here to assist. Browse thru the sections underneath to find solutions to normally requested questions or get in touch with our assist group at once.
