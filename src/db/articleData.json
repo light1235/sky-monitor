@@ -37,44 +37,7 @@
       "opinion": ""
     }
   },
-  {
-    "id": "4",
-    "slug": "Crypto News",
-    "program": true,
-    "preview": {
-      "additional": false,
-      "image": "https://cdn.discordapp.com/attachments/1046398987659395152/1234200543346294825/news.jpg?ex=662fde53&is=662e8cd3&hm=5ec49e83b67fb48e0d90e693c8bbc59f233a216444e17f7ba07f8d4441e61a90&",
-      "title": "Crypto Up",
-      "description": "The formation of the company began back in 2005, when the possibilities by brokers of transferring funds to individuals were very limited, and this kind of service was not particularly popular. Anthony Barnes founded the company, which was later dubbed TRADERS UNITED SYSTEM FOREX LIMITED.",
-      "postDate": "18.12.2011",
-      "tags": "crypto"
-    },
-    "article": {
-      "image": "https://cdn.discordapp.com/attachments/1046398987659395152/1234200543346294825/news.jpg?ex=662fde53&is=662e8cd3&hm=5ec49e83b67fb48e0d90e693c8bbc59f233a216444e17f7ba07f8d4441e61a90&",
-      "date": "10th august 2024",
-      "title": "Crypto News",
-      "projectLink": "",
-      "start": "08.09.2023",
-      "paymentSystem": "",
-      "yield": "up to 6% per day",
-      "payouts": "",
-      "refBack": "",
-      "investTerm": "",
-      "amountDeposit": "",
-      "outDeposit": "",
-      "description1": "Rewline is a leading provider of advanced trading solutions that enable traders to unlock the potential of crypto and forex trading. The company utilizes classic trading algorithms and cutting-edge artificial intelligence to provide traders with real-time trading analytics, exclusive trading tools and features that help them achieve their financial goals.",
-      "description2": "Rewline's team of experts is committed to helping traders make informed trading decisions by utilizing the power of artificial intelligence. Using artificial intelligence-based algorithms, the company provides traders with insights into market trends, volatility and risk management that help them stay on top of their trades."
-    },
-    "additional": {
-      "about": "",
-      "amountInvest": "",
-      "plans": "",
-      "registerPlan": "",
-      "youtubeRu": "",
-      "youTubeEU": "",
-      "opinion": ""
-    }
-  },
+
   {
     "id": "2",
     "slug": "Multicopytrade",
@@ -150,6 +113,43 @@
       "youTubeEU": "",
       "opinion": ""
     }
+  },
+  {
+    "id": "4",
+    "slug": "Crypto News",
+    "program": true,
+    "preview": {
+      "additional": false,
+      "image": "https://cdn.discordapp.com/attachments/1046398987659395152/1234200543346294825/news.jpg?ex=662fde53&is=662e8cd3&hm=5ec49e83b67fb48e0d90e693c8bbc59f233a216444e17f7ba07f8d4441e61a90&",
+      "title": "Crypto Up",
+      "description": "The formation of the company began back in 2005, when the possibilities by brokers of transferring funds to individuals were very limited, and this kind of service was not particularly popular. Anthony Barnes founded the company, which was later dubbed TRADERS UNITED SYSTEM FOREX LIMITED.",
+      "postDate": "18.12.2011",
+      "tags": "crypto"
+    },
+    "article": {
+      "image": "https://cdn.discordapp.com/attachments/1046398987659395152/1234200543346294825/news.jpg?ex=662fde53&is=662e8cd3&hm=5ec49e83b67fb48e0d90e693c8bbc59f233a216444e17f7ba07f8d4441e61a90&",
+      "date": "10th august 2024",
+      "title": "Crypto News",
+      "projectLink": "",
+      "start": "08.09.2023",
+      "paymentSystem": "",
+      "yield": "up to 6% per day",
+      "payouts": "",
+      "refBack": "",
+      "investTerm": "",
+      "amountDeposit": "",
+      "outDeposit": "",
+      "description1": "Rewline is a leading provider of advanced trading solutions that enable traders to unlock the potential of crypto and forex trading. The company utilizes classic trading algorithms and cutting-edge artificial intelligence to provide traders with real-time trading analytics, exclusive trading tools and features that help them achieve their financial goals.",
+      "description2": "Rewline's team of experts is committed to helping traders make informed trading decisions by utilizing the power of artificial intelligence. Using artificial intelligence-based algorithms, the company provides traders with insights into market trends, volatility and risk management that help them stay on top of their trades."
+    },
+    "additional": {
+      "about": "",
+      "amountInvest": "",
+      "plans": "",
+      "registerPlan": "",
+      "youtubeRu": "",
+      "youTubeEU": "",
+      "opinion": ""
+    }
   }
-
 ]

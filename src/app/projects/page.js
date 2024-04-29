@@ -12,11 +12,13 @@ const Projects = () => {
      let text = "open its me";
      let TextFormatted = text.replace(/\s+/g, '-');
 
+     const reversedData = [...DATAART].reverse();
+
      return (
           <section className="projects__page">
                <div className="projects__page-container">
                     <div className="projects__page-content">
-                         {DATAART.map((post, index) =>
+                         {reversedData.map((post, index) =>
                               <Project_preview key={post.id} item={post} link={`/projects/${post.slug.replace(/\s+/g, '-')}`} />
                          )}
                     </div>
