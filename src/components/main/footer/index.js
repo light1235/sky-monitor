@@ -38,14 +38,14 @@ const Footer = () => {
                                    <li>Company</li>
                                    <li><Link href="/about-us" >About Us</Link></li>
                                    <li><a href="#">Affiliate</a></li>
-                                   <li><a href="/faq">Faq</a></li>
+                                   <li><Link href="/faq">Faq</Link></li>
                               </ul>
                          </li>
                          <li className="footer__navigation--item">
                               <ul>
                                    <li>Info</li>
                                    <li><Link href="/support">Support</Link></li>
-                                   <li><a href="#">Rules</a></li>
+                                   <li><Link href="/rules">Rules</Link></li>
                               </ul>
                          </li>
                          <li className="footer__navigation--item">
