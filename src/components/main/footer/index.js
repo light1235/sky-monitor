@@ -53,7 +53,7 @@ const Footer = () => {
                                    <li>Customer Service</li>
                                    <li><Link href="/sign-up">Registration</Link></li>
                                    <li><Link href="/login">Login</Link></li>
-                                   <li><a href="#">Reset account</a></li>
+                                   <li><Link href="/reset">Reset account</Link></li>
                               </ul>
                          </li>
                     </ul>
