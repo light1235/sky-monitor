@@ -2,15 +2,17 @@
 
 .sing-up__page {
    width: 100%;
-   height: 100vh;
+   //height: 100vh;
    .sing-up__content {
       height: 100vh;
       display: grid;
       grid-template-columns: 1fr 1fr;
+      grid-template-areas: "content-left content-right ";
       & .content__form {
          width: 100%;
          display: grid;
          place-items: center;
+         grid-area: content-left;
          & .form-container {
             width: 350px;
             & h1 {
@@ -78,6 +80,34 @@
       & .content__image {
          background-image: url('../../assets/main/images/sing-up-image.jpg');
          background-size: cover;
+      }
+   }
+}
+
+@media only screen and (max-width : 1220px) {
+   .sing-up__page{
+      & .sing-up__content {
+         grid-template-rows: 1fr 1fr;
+         grid-template-columns: 1fr;
+         grid-template-areas:
+		"content-right"
+         "content-left"
+      ;
+      }
+   }
+}
+
+@media only screen and (max-width : 600px) {
+   .sing-up__page {
+      & .sing-up__content {
+         height: 100%;
+         & .content__form {
+            padding: 20px 20px;
+            box-sizing: border-box;
+            & .form-container {
+               width: 100%;
+            }
+         }
       }
    }
 }
