@@ -23,20 +23,18 @@ const AboutUs = () => {
               </p>
               <h3>The Role of Financial Advising</h3>
               <p>Navigating the financial panorama can be daunting without professional guidance. Our crew of seasoned
-                monetary advisors gives personalised strategies tailor-made to individual dreams and chance appetites.
+                monetary advisors gives reviews tailor-made to individual dreams and chance appetites.
               </p>
               <h3>Importance of funding management</h3>
               <p>Good funding control is vital for optimizing returns in addition to decreasing risks. We take delight
-                in our potential to create various portfolios that correspond with our customers' desires.
+                in our potential to create various review that correspond with our customers' desires.
               </p>
               <h2>Asset Management Company: Our Experience</h2>
               <h3>What separates us</h3>
-              <p>Our holistic method to asset control distinguishes us from the competitors. We prioritize lengthy-term
-                sustainability over brief-term rewards to make sure our clients' belongings can live to tell the tale
-                market volatility.
+              <p>We identify promising projects that will be innovative in the market, and we participate in such projects and make recommendations on their use to ensure that our clients' assets can be exposed to minimal risk.
               </p>
               <h3>Our Approach to Asset Management</h3>
-              <p>We create portfolios that maximize profits at the same time as proscribing risks via engaging in
+              <p>We create review of promising projects that maximize profits at the same time as proscribing risks via engaging in
                 thorough checks and staying updated on market movements. Our proactive technique allows us to quickly
                 modify to converting marketplace situations, protective our customers' hobbies.
               </p>
