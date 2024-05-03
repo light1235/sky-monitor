@@ -63,7 +63,7 @@ const Header = () => {
                <div className="navbar">
                    <div className="header__top">
                         <div className="logo">
-                             <Link href='/'> <Image src={LOGO}  alt={'logo'} ></Image></Link>
+                             <Link href='/'> <Image src={LOGO} priority={false} alt={'logo'} ></Image></Link>
                         </div>
                         <div className="middle_menu"></div>
                         <div className="left__menu">
