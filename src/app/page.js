@@ -33,7 +33,7 @@ export default function Home() {
                    ]}>
                         <div style={{display:"grid"}} aria-hidden="true">
                              <Link target="_blank" href='/' aria-label="program banner" aria-hidden="true">
-                                  <Image src={HeroBanner} priority alt="banner" aria-hidden="true"></Image>
+                                  <Image src={HeroBanner} priority width="369" height="170" alt="banner" aria-hidden="true"></Image>
                              </Link>
                         </div>
                         <div aria-hidden="true">
@@ -43,12 +43,12 @@ export default function Home() {
                         </div>
                         <div aria-hidden="true">
                              <Link target="_blank" href='/' aria-label="program banner" aria-hidden="true">
-                                  <Image src={HeroBanner} priority alt="banner" aria-hidden="true"></Image>
+                                  <Image src={HeroBanner} priority width="369" height="170" alt="banner" aria-hidden="true"></Image>
                              </Link>
                         </div>
                         <div aria-hidden="true">
                              <Link target="_blank" href='/' aria-label="program banner" aria-hidden="true">
-                                  <Image src={HeroBanner1} priority alt="banner" aria-hidden="true"></Image>
+                                  <Image src={HeroBanner1} priority width="369" height="170" alt="banner" aria-hidden="true"></Image>
                              </Link>
                         </div>
                    </Carousel>
