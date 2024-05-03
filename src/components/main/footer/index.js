@@ -61,7 +61,7 @@ const Footer = () => {
                <div className="footer__bottom-line">
                     <div className="bottom-line__inner">
                          <div className="copyright"> © 2024 All Rights Reserved</div>
-                         <div className="terms"><a href="#">Privacy Policy Terms &amp; Conditions</a></div>
+                         <div className="terms"><Link href="/privacy-policy">Privacy Policy Terms &amp; Conditions</Link></div>
                     </div>
                </div>
           </footer>
