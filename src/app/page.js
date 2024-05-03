@@ -15,12 +15,14 @@ import NewsLineLogo from '/src/assets/main/icons/news-line-logo.svg';
 import Link from "next/link";
 import MainTabs from "@/components/main/main-tabs";
 import TestBlock from "@/components/main/test-block";
+import {Suspense} from "react";
 
 
 export default function Home() {
   return (
     <main style={{background:'#F4F6F7'}}>
          <section className="hero-banner">
+              <Suspense>
                    <Carousel autoplay slidesToShow={3} responsive={[
                         {
                              breakpoint: 768,
@@ -31,25 +33,26 @@ export default function Home() {
                    ]}>
                         <div style={{display:"grid"}}>
                              <Link target="_blank" href='/'>
-                                  <Image src={HeroBanner} alt="banner"></Image>
+                                  <Image src={HeroBanner} priority alt="banner"></Image>
                              </Link>
                         </div>
                         <div>
                              <Link target="_blank" href='/'>
-                                  <Image src={HeroBanner1} width="369" height="170" alt="banner"></Image>
+                                  <Image src={HeroBanner1} priority width="369" height="170" alt="banner"></Image>
                              </Link>
                         </div>
                         <div>
                              <Link target="_blank" href='/'>
-                                  <Image src={HeroBanner}  alt="banner"></Image>
+                                  <Image src={HeroBanner} priority alt="banner"></Image>
                              </Link>
                         </div>
                         <div>
                              <Link target="_blank" href='/'>
-                                  <Image src={HeroBanner1}  alt="banner"></Image>
+                                  <Image src={HeroBanner1} priority alt="banner"></Image>
                              </Link>
                         </div>
                    </Carousel>
+              </Suspense>
          </section>
          <section className="main-content">
               <div className="content__item">

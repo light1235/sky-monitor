@@ -14,6 +14,7 @@ const Projects = () => {
 
      const reversedData = [...DATAART].reverse();
 
+
      return (
           <section className="projects__page">
                <div className="projects__page-container">
