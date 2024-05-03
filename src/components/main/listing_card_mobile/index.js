@@ -71,7 +71,7 @@ const MobileListing = ({ item}) => {
                                    'project'}><span>Long Term</span></CustomToolTop>
                          }
                     </div>
-                    <div className="program_details"><Link target="_blank" href={item.detailsLink}><CustomToolTop
+                    <div className="program_details"><Link target="_blank" aria-label="program details"  href={item.detailsLink}><CustomToolTop
                          text={'Program details'}>
                          <div className="details-button"></div>
                     </CustomToolTop></Link></div>
