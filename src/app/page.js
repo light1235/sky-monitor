@@ -32,22 +32,22 @@ export default function Home() {
                         },
                    ]}>
                         <div style={{display:"grid"}}>
-                             <Link target="_blank" href='/'>
+                             <Link target="_blank" href='/' aria-hidden="true">
                                   <Image src={HeroBanner} priority alt="banner"></Image>
                              </Link>
                         </div>
                         <div>
-                             <Link target="_blank" href='/'>
+                             <Link target="_blank" href='/' aria-hidden="true">
                                   <Image src={HeroBanner1} priority width="369" height="170" alt="banner"></Image>
                              </Link>
                         </div>
                         <div>
-                             <Link target="_blank" href='/'>
+                             <Link target="_blank" href='/' aria-hidden="true">
                                   <Image src={HeroBanner} priority alt="banner"></Image>
                              </Link>
                         </div>
                         <div>
-                             <Link target="_blank" href='/'>
+                             <Link target="_blank" href='/' aria-hidden="true">
                                   <Image src={HeroBanner1} priority alt="banner"></Image>
                              </Link>
                         </div>
