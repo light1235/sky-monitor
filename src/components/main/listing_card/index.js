@@ -94,7 +94,7 @@ const ListingCard = ({ item, wish,ind,setWish}) => {
                     <div className="program-favorites" onClick={handleWishClick}>
                          {wish ?  <AiFillHeart size="20px" color="#85CE36" />   : <CustomToolTop text="add to favorites">   <AiOutlineHeart color={'#85CE36'} size="20px" />  </CustomToolTop>}
                     </div>
-                    <div className="program_details"><Link target="_blank" href={item.detailsLink}><CustomToolTop text={'Program details'}> <div className="details-button"></div></CustomToolTop></Link></div>
+                    <div className="program_details"><Link target="_blank" aria-label="program details" href={item.detailsLink}><CustomToolTop text={'Program details'}> <div className="details-button"></div></CustomToolTop></Link></div>
                </div>
                <div className="card-middle_line">
                     <div className="left_side">
