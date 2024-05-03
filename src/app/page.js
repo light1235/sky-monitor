@@ -31,23 +31,23 @@ export default function Home() {
                              },
                         },
                    ]}>
-                        <div style={{display:"grid"}}>
-                             <Link target="_blank" href='/' aria-hidden="true">
+                        <div style={{display:"grid"}} aria-hidden="true">
+                             <Link target="_blank" href='/'>
                                   <Image src={HeroBanner} priority alt="banner"></Image>
                              </Link>
                         </div>
-                        <div>
-                             <Link target="_blank" href='/' aria-hidden="true">
+                        <div aria-hidden="true">
+                             <Link target="_blank" href='/'>
                                   <Image src={HeroBanner1} priority width="369" height="170" alt="banner"></Image>
                              </Link>
                         </div>
-                        <div>
-                             <Link target="_blank" href='/' aria-hidden="true">
+                        <div aria-hidden="true">
+                             <Link target="_blank" href='/'>
                                   <Image src={HeroBanner} priority alt="banner"></Image>
                              </Link>
                         </div>
-                        <div>
-                             <Link target="_blank" href='/' aria-hidden="true">
+                        <div aria-hidden="true">
+                             <Link target="_blank" href='/'>
                                   <Image src={HeroBanner1} priority alt="banner"></Image>
                              </Link>
                         </div>
