@@ -36,7 +36,7 @@ const Faq = () => {
                     <p>Of course! Example: “CryptoTrade”
                          CryptoTrade is an internet platform for trading cryptocurrencies and foreign exchange. It offers buyers the opportunity to spend money on traders' trading strategies. The account management system minimizes dangers and ensures strong profitability.</p>
                     <h3>How to put money into a HYIP?</h3>
-                    <p>In order to invest in HYIP, you should observe several steps.</p>
+                    <p>In order to invest in HYIP, you should observe several steps:</p>
                     <ul>
                          <li><p><strong>Choose the right HYIP</strong>: Explore diverse HYIPs, observe their circumstance, recognition and work history. Choose the one that fits your investment criteria and pointers
                          </p></li>
