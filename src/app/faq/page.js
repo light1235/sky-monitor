@@ -18,7 +18,7 @@ const Faq = () => {
                     <p>Risk assessment in HYIPs is a complex system that requires careful evaluation. It is important to examine the history of HYIP, its monetary circumstance and reputation. It is likewise beneficial to turn to impartial sources, together with HYIP tracking, to gain additional facts about the assignment.
                          For beginners, it's miles important to begin with small quantities and progressively compare your investments as you gain enjoy. It is also really worth studying the primary requirements of making an investment.</p>
                     <h3>How great is the risk of losing money?</h3>
-                    <p>The threat in HYIPs stems from numerous elements</p>
+                    <p>The threat in HYIPs stems from numerous elements:</p>
                     <ul>
                          <li><p>Ability to analyze projects</p></li>
                          <li><p>Skill and effect of Risk Management</p></li>

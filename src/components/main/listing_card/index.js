@@ -46,7 +46,7 @@ const ListingCard = ({ item, wish,ind,setWish}) => {
 
      // Определяем названия месяцев
      const months = [
-          'Jan', 'Feb', 'Mar', 'April', 'May', 'June',
+          'Jan', 'Feb', 'Mar', 'April', 'May', 'Jun',
           'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'
      ];
 

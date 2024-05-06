@@ -31,12 +31,10 @@ const AboutUs = () => {
               </p>
               <h2>Asset Management Company: Our Experience</h2>
               <h3>What separates us</h3>
-              <p>We identify promising projects that will be innovative in the market, and we participate in such projects and make recommendations on their use to ensure that our clients' assets can be exposed to minimal risk.
+              <p>We become aware of promising projects and work on each venture individually, the use of present day methods of evaluation and assessment. Our team of experts thoroughly examines each element of the project to pick out its capacity and reduce dangers.
               </p>
               <h3>Our Approach to Asset Management</h3>
-              <p>We create review of promising projects that maximize profits at the same time as proscribing risks via engaging in
-                thorough checks and staying updated on market movements. Our proactive technique allows us to quickly
-                modify to converting marketplace situations, protective our customers' hobbies.
+              <p>We create an overview of promising tasks that will can help you multiply your capital, an open voting form and remarks on a selected mission will come up with the opportunity to pick out only promising tasks, thereby minimizing your dangers, engaging in thorough tests and staying abreast of market actions. Our proactive method permits us to quick adapt to changing market situations, protecting our clients' passions.
               </p>
               <h2>Navigating the Crypto Investment Landscape.
               </h2>
@@ -50,8 +48,7 @@ const AboutUs = () => {
                 decisions.
               </p>
               <h3>Providing Meaningful Reports</h3>
-              <p>In the financial commerce, transparency is crucial. We assure absolute accountability and transparency
-                by giving our clients detailed reports that give a clear picture of the performance of their money.
+              <p>Transparency is vital in economic buying and selling. We ensure absolute openness and transparency through presenting our clients with well timed reviews that provide a clean photo of the performance of each project
               </p>
               <h3>What a Financial Analyst Does and Does Not Need to Know</h3>
               <p>It takes an unusual blend of analytical skill and financial knowledge to be a financial analyst. Given
