@@ -2,6 +2,7 @@
 import React from 'react';
 import DATAART from '../../../db/articleData.json';
 import ArticlePage from "@/components/main/simple-article";
+import NewsArticle from "@/components/main/news-article";
 
 const PostComp = ({params}) => {
 
@@ -18,13 +19,9 @@ const PostComp = ({params}) => {
                })}
 
                {filteredData.map(post => (
-                    <ArticlePage post={post} key={post.id} />
-                    // <div key={post.id}>
-                    //      <h1>{post.preview.title}</h1>
-                    //      <p>{post.preview.description}</p>
-                    // </div>
+                    // <ArticlePage post={post} key={post.id} />
+                    <NewsArticle post={post} key={post.id} />
                ))}
-
           </div>
      );
 };
