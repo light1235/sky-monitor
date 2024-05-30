@@ -1,0 +1,19 @@
+
+
+.post-form {
+   width: 100%;
+   display: grid;
+   justify-items: center;
+   & .post-form-content {
+      width: 50%;
+      display: grid;
+   }
+}
+
+@media only screen and (max-width : 600px) {
+   .post-form {
+      & .post-form-content {
+         width: 100%;
+      }
+   }
+}

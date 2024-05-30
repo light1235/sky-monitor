@@ -12,12 +12,11 @@ const PostComp = ({params}) => {
 
      return (
           <div>
-               {/*{filteredData.map(post => (*/}
-               {/*     <div key={post.id}>*/}
-               {/*          <h1>{post.preview.title}</h1>*/}
-               {/*          <p>{post.preview.description}</p>*/}
-               {/*     </div>*/}
-               {/*))}*/}
+
+               {DATAART.map((post) => {
+                    // console.log(  post.article.articleType.news);
+               })}
+
                {filteredData.map(post => (
                     <ArticlePage post={post} key={post.id} />
                     // <div key={post.id}>

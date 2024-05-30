@@ -1,5 +1,5 @@
 "use client"
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './index.scss'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
@@ -28,13 +28,11 @@ const PopUpForm = () => {
      });
      const handleFormSubmit = (values,  { setSubmitting }) => {
           setFormData(values);
-
-          setTimeout(() => {
-               alert(JSON.stringify(values, null, 2));
-               setSubmitting(false);
-               console.log(formData,'formData');
-          }, 400);
+          setSubmitting(false);
      };
+     useEffect(() => {
+          console.log(formData, 'formData');
+     }, [formData]);
 
      return (
           <div className="Pop-Up-Form">
@@ -85,7 +83,7 @@ not be published"/>
                                                       <ErrorMessage className="inputError" name="description"
                                                                     component="div"/>
                                                  </label>
-                                                 <CustomFrontUpload />
+                                                 {/*<CustomFrontUpload />*/}
                                                  <label>
                                                       <p>Site Url</p>
                                                       <Field as={CustomFrontInput} type="text" name="siteUrl"

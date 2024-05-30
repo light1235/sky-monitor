@@ -4,11 +4,18 @@ import './index.scss';
 import Image from "next/image";
 import { Flex, Progress, Slider, Typography } from 'antd';
 import Link from "next/link";
+import Comments_post from "@/components/main/comments_post";
+import Add_post_form from "@/components/main/add_post_form";
+
 
 
 const ArticlePage = ({post}) => {
-
-
+     const comments = [
+          {id:1,name:'Roy Jamson',date:'18.05.2024',context:'Rewline\'s team of experts is committed to helping traders make informed trading decisions by utilizing the power of artificial intelligence. Using artificial intelligence-based algorithms, the company provides traders with insights'},
+          {id:2,name:'Michael Rayen',date:'22.05.2024',context:'Leveraging the power of artificial intelligence, Rewline\'s team of experts empowers traders to make informed decisions, utilizing AI-powered algorithms that provide valuable market insights.\n' +
+                    '\n'},
+          {id:3,name:'Wilson Mchourney',date:'23.05.2024',context:'This sentence captures the essence of Rewline\'s offering by emphasizing their AI expertise, data-driven insights, and the ability to empower traders to make informed decisions.\n'},
+     ]
 
      return (
           <div className="article__page">
@@ -63,6 +70,13 @@ const ArticlePage = ({post}) => {
                     </div>
 
                     <div className="invested-stats">
+
+                    </div>
+                    <div className="comments" style={{marginTop:'40px'}}>
+                         {comments.map((post) =>
+                              <Comments_post post={post} key={post.id} />
+                         )}
+                         <Add_post_form />
 
                     </div>
                </div>

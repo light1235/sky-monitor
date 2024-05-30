@@ -4,7 +4,7 @@ import {Input} from "antd";
 const { TextArea } = Input;
 import './index.scss';
 
-const CustomTextArea = ({placeholder = ' ', dis = false,formData ,name,setFormData,...props}) => {
+const CustomTextArea = ({placeholder = ' ', dis = false,formData ,name ,max = 60,setFormData,...props}) => {
 
      const handleInputChange = (event) => {
           const { name, value } = event.target;
@@ -18,7 +18,7 @@ const CustomTextArea = ({placeholder = ' ', dis = false,formData ,name,setFormDa
           <div className="front-text-area">
                <TextArea
                     placeholder={placeholder}
-                    maxLength={60}
+                    maxLength={max}
                     // onChange={handleInputChange}
                     name={name}
                     autoSize={{
