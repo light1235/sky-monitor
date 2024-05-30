@@ -31,14 +31,14 @@ const ArticlePage = ({post}) => {
                               <div className="block-left">
                                    <div>Project start:<span>{post.article.start}</span></div>
                                    <div>Yield:<span>{post.article.yield}</span></div>
-                                   <div>Investment term:<span>from 10 days</span></div>
-                                   <div>Deposit amount:<span>from 30$</span></div>
+                                   <div>Investment term:<span>{post.article.investTerm}</span></div>
+                                   <div>Deposit amount:<span>{post.article.amountDeposit}</span></div>
                               </div>
                               <div className="block-right">
-                                   <div>Accepts:<span>Bitcoin, Litecoin, Dogecoin, Tether, Tron</span></div>
-                                   <div>Payouts:<span>up to 48 hours Refback: 0%</span></div>
-                                   <div>Refback:<span>0%</span></div>
-                                   <div>Our deposit:<span>300$</span></div>
+                                   <div>Accepts:<span>{post.article.paymentSystem}</span></div>
+                                   <div>Payouts:<span>{post.article.payouts}</span></div>
+                                   <div>Refback:<span>{post.article.refback}</span></div>
+                                   <div>Our deposit:<span>{post.article.outDeposit}</span></div>
                               </div>
                          </div>
                          <div className="content__text">
@@ -58,7 +58,7 @@ const ArticlePage = ({post}) => {
                                    <Progress
                                         type="dashboard"
                                         steps={8}
-                                        percent={50}
+                                        percent={30}
                                         strokeColor="#8bc643"
                                         trailColor="rgba(0, 0, 0, 0.06)"
                                         strokeWidth={20}
@@ -77,7 +77,6 @@ const ArticlePage = ({post}) => {
                               <Comments_post post={post} key={post.id} />
                          )}
                          <Add_post_form />
-
                     </div>
                </div>
           </div>
