@@ -31,6 +31,7 @@ const Add_pop_up = () => {
      return (
           <div className="pop-up__page">
                <PopUpForm />
+               <Banner_form />
                {/*<BannerForm/>*/}
                {/*<Add_pop_up />*/}
 {/*               <div className="pop-up__page-content">*/}

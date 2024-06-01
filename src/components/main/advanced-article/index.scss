@@ -1,0 +1,208 @@
+@font-face {
+   font-family: 'Jost';
+   src: url('../../../assets/fonts/Jost-Regular.woff2') format('woff2'),
+   url('../../../assets/fonts/Jost-Regular.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: 'Jost';
+   src: url('../../../assets/fonts/Jost-SemiBold.woff2') format('woff2'),
+   url('../../../assets/fonts/Jost-SemiBold.woff') format('woff');
+   font-weight: 600;
+   font-style: normal;
+   font-display: swap;
+}
+
+
+.advanced-article__page {
+   padding: 40px 0;
+   max-width: 1200px;
+   margin: 0 auto;
+   & .ant-tabs-tab-active {
+      & button {
+         //color: yellow;
+      }
+   }
+   & :where(.css-dev-only-do-not-override-1kuana8).ant-tabs-card >.ant-tabs-nav .ant-tabs-tab, :where(.css-dev-only-do-not-override-1kuana8).ant-tabs-card >div>.ant-tabs-nav .ant-tabs-tab{
+      background: none;
+      border: none;
+      padding: 10px 10px 20px 0;
+      margin: 0;
+   }
+   & :where(.css-dev-only-do-not-override-1kuana8).ant-tabs-top >.ant-tabs-nav::before, :where(.css-dev-only-do-not-override-1kuana8).ant-tabs-bottom >.ant-tabs-nav::before, :where(.css-dev-only-do-not-override-1kuana8).ant-tabs-top >div>.ant-tabs-nav::before, :where(.css-dev-only-do-not-override-1kuana8).ant-tabs-bottom >div>.ant-tabs-nav::before {
+      border: none;
+   }
+   & .article__inner {
+      display: grid;
+      justify-items: center;
+      & .article-image {
+         border-radius: 40px;
+         max-height: 500px;
+         width: auto;
+      }
+      & .article__content {
+         & .article__main-content {
+            & .article__main-block {
+               & h2 {
+                  font-family: "Jost", serif;
+                  font-weight: 600;
+                  font-size: 32px;
+                  line-height: 160%;
+                  color: #101010;
+                  margin-bottom: 5px;
+                  display: grid;
+                  grid-template-columns: max-content max-content;
+                  align-items: center;
+                  grid-gap: 20px;
+                  & .text-separator {
+                     border: 2px solid #101010;
+                     width: 80px;
+                     height: 0;
+                  }
+               }
+               & p {
+                  font-family: "Jost", serif;
+                  font-weight: normal;
+                  font-size: 24px;
+                  line-height: 200%;
+                  color: #5e5e5e;
+                  margin: 0;
+               }
+            }
+            & .project-plan {
+               & img {
+                  width: 100%;
+                  max-height: none;
+                  height: auto;
+                  margin: 30px 0 30px 0;
+               }
+            }
+            .project-description  {
+               & div {
+                  display: grid;
+                  grid-template-columns: max-content max-content;
+                  font-family: "Jost", serif;
+                  font-weight: 500;
+                  font-size: 20px;
+                  gap: 5px;
+                  & span {
+                     font-weight: bold;
+                  }
+               }
+            }
+         }
+         & .content__top {
+            padding-top: 30px;
+            width: 100%;
+            display: grid;
+            justify-items: center;
+            & .content__date-published {
+               font-family: var(--Main-front-font);
+               font-weight: 300;
+               font-size: 20px;
+               line-height: 140%;
+               color: #5e5e5e;
+               text-align: center;
+            }
+            & .content__title {
+               font-family: "Jost", serif;
+               font-weight: 600;
+               font-size: 75px;
+               color: #101010;
+               margin: 0;
+               text-transform: capitalize;
+               text-align: center;
+               & a {
+                  //color: #9a2de3;
+                  text-decoration: none;
+                  transition: all .4s ease-in-out;
+                  &:hover {
+                     transition: all .2s ease-in-out;
+                     color:#f67280;
+                  }
+               }
+            }
+            & .content__separator{
+               border: 4px solid #101010;
+               width: 180px;
+               height: 0;
+               margin-top: 30px;
+            }
+         }
+      }
+
+   }
+}
+
+
+
+@media only screen and (max-width : 1304px) {
+   .advanced-article__page  {
+      max-width: 100%;
+      padding: 40px 40px;
+      .article__inner .article__content .content__top .content__title {
+         font-size: 80px;
+      }
+      .article-image {
+         width: 100%;
+         height: auto;
+      }
+      .youtube-player {
+         width: 100% !important;
+         height: 300px !important;
+      }
+   }
+}
+@media only screen and (max-width : 520px) {
+   .advanced-article__page .article__inner .article-image {
+      width: 100%;
+      height: auto;
+   }
+   .ant-btn-lg {
+      font-size: 15px !important;
+      padding: 0 20px 0 20px !important;
+   }
+   .youtube-player {
+      width: 100% !important;
+      height: 200px !important;
+   }
+   .advanced-article__page .article__inner .article__content .content__top .content__title {
+      font-size: 40px;
+      & h2 {
+         font-size: 40px;
+         grid-template-columns: 1fr;
+      }
+   }
+   .advanced-article__page .article__inner {
+      display: inline-block;
+   }
+   .advanced-article__page .article__inner .article__content .article__main-content .project-description div {
+      grid-template-columns: 1fr;
+   }
+   .advanced-article__page .article__inner .article__content .article__main-content .article__main-block h2 {
+      grid-template-columns: 1fr;
+   }
+   .advanced-article__page .article__inner .article__content  p {
+      font-size: 20px;
+      //text-align: justify;
+   }
+   .advanced-article__page .article__inner .article__content .article__main-content .article__main-block p {
+      font-size: 20px;
+   }
+   .advanced-article__page .article__inner .article__content .content__text .text-title{
+      font-size: 26px;
+   }
+   .advanced-article__page .article__inner .article__content .content__text .invested-stats-item{
+      padding: 10px 10px;
+      grid-gap: 10px;
+      & p {
+         font-size: 14px;
+      }
+   }
+   .advanced-article__page .article__inner .article__content .content__main-block{
+      padding: 0 20px;
+   }
+}
