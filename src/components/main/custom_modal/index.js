@@ -33,7 +33,7 @@ const CustomModal = ({open,close,children}) => {
      };
      return (
           <>
-               <Modal  open={open}  onCancel={close} footer={false} styles={modalStyles} centered  width={'auto'} closeIcon={null} contentBg={'transparent'}>
+               <Modal  open={open}  onCancel={close} footer={false} styles={modalStyles} centered  width={'initial'}  closeIcon={null} contentBg={'transparent'}>
                     {children}
                </Modal>
           </>

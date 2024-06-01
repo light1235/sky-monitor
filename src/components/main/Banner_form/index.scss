@@ -15,6 +15,7 @@
          border-bottom-left-radius: 20px;
          border-top-left-radius: 20px;
          background: aliceblue;
+         padding-right: 50px;
          & .left-container {
             width: 350px;
             & h2 {
@@ -102,5 +103,8 @@
       border-bottom-right-radius: 0;
       border-top-right-radius: 20px;
       border-top-left-radius: 20px;
+   }
+   .Banner-Form .Banner-Form__content .content-left {
+      padding: 40px 15px;
    }
 }

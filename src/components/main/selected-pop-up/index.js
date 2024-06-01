@@ -64,7 +64,7 @@ const SelectedPopUp = ({close}) => {
                <div className="button-wrapper">
                <button onClick={SelectService} className="selected-button">Select</button>
                </div>
-               <CustomModal open={showSelect} close={SelectService}>{popUps[active-1]}</CustomModal>
+               <CustomModal  open={showSelect} close={SelectService}>{popUps[active-1]}</CustomModal>
           </div>
      );
 };

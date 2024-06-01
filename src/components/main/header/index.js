@@ -102,7 +102,7 @@ const Header = () => {
                               <li><Link href='/'>about us</Link></li>
                               <li><Link href='/'>support</Link></li>
                          </ul>
-                         <button ><Link href='/'> <Image src={buttonIcon} alt="add icon"></Image> Add program</Link>
+                         <button onClick={showModal}><Link href='/'> <Image src={buttonIcon} alt="add icon"></Image> Add program</Link>
                          </button>
                          <div className="language-menu">
                               <span>Language</span>

@@ -15,6 +15,7 @@
          border-bottom-left-radius: 20px;
          border-top-left-radius: 20px;
          background: aliceblue;
+         padding-right: 50px;
          & .left-container {
             width: 350px;
             & h2 {
@@ -65,7 +66,7 @@
    }
 }
 
-@media only screen and (max-width : 1220px) {
+@media only screen and (max-width : 1020px) {
    .Pop-Up-Form {
       & .Pop-Up-Form__content {
          grid-template-columns: 1fr;
@@ -104,5 +105,8 @@
       border-bottom-right-radius: 0;
       border-top-right-radius: 20px;
       border-top-left-radius: 20px;
+   }
+   .Pop-Up-Form .Pop-Up-Form__content .content-left {
+      padding: 40px 15px;
    }
 }
