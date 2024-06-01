@@ -5,9 +5,28 @@ import selectedImage1 from '/src/assets/main/images/selected-1.jpg';
 import selectedImage2 from '/src/assets/main/images/selected-2.jpg';
 import selectedImage3 from '/src/assets/main/images/selected-3.jpg';
 import Image from "next/image";
+import CustomModal from "@/components/main/custom_modal";
+import PopUpForm from "@/components/main/pop-up-form";
+import BannerForm from "@/components/main/Banner_form";
 
 const SelectedPopUp = ({close}) => {
      const [active, setActive] = useState(2);
+     const [showSelect, setShowSelect] = useState(false);
+     const [clickCount, setClickCount] = useState(0);
+
+     let popUps = ['listing',<BannerForm/>,<PopUpForm/>];
+
+     const SelectService = () => {
+          close();
+          if (clickCount === 0) {
+               setTimeout(() => {
+                    setShowSelect(!showSelect);
+               }, 700);
+          } else {
+               setShowSelect(!showSelect);
+          }
+          setClickCount(clickCount + 1);
+     };
 
      return (
           <div className="pop-up-item">
@@ -43,8 +62,9 @@ const SelectedPopUp = ({close}) => {
                     </div>
                </div>
                <div className="button-wrapper">
-               <button className="selected-button">Select</button>
+               <button onClick={SelectService} className="selected-button">Select</button>
                </div>
+               <CustomModal open={showSelect} close={SelectService}>{popUps[active-1]}</CustomModal>
           </div>
      );
 };
