@@ -27,13 +27,13 @@
       }
    }
    & :where(.css-dev-only-do-not-override-1kuana8).ant-tabs-card >.ant-tabs-nav .ant-tabs-tab, :where(.css-dev-only-do-not-override-1kuana8).ant-tabs-card >div>.ant-tabs-nav .ant-tabs-tab{
-      background: none;
-      border: none;
-      padding: 10px 10px 20px 0;
-      margin: 0;
+      background: none !important;
+      border: none !important;
+      padding: 10px 10px 20px 0 !important;
+      margin: 0 !important;
    }
    & :where(.css-dev-only-do-not-override-1kuana8).ant-tabs-top >.ant-tabs-nav::before, :where(.css-dev-only-do-not-override-1kuana8).ant-tabs-bottom >.ant-tabs-nav::before, :where(.css-dev-only-do-not-override-1kuana8).ant-tabs-top >div>.ant-tabs-nav::before, :where(.css-dev-only-do-not-override-1kuana8).ant-tabs-bottom >div>.ant-tabs-nav::before {
-      border: none;
+      border: none !important;
    }
    & .article__inner {
       display: grid;
