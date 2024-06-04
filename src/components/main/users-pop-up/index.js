@@ -1,5 +1,6 @@
 import React from 'react';
 import './index.scss'
+import Image from "next/image";
 
 const UserPopUp = () => {
      return (
@@ -7,7 +8,7 @@ const UserPopUp = () => {
                <div className="element-close">
                     <div className="close-circle"></div>
                </div>
-               <img src="" alt=""/>
+               <Image src="" alt="pop-up image"/>
                <div className="element-title">Scam detected!</div>
                <div className="element-description">We noticed that you may have an
                     Bitmugnet  is Scam</div>

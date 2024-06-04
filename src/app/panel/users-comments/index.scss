@@ -1,0 +1,74 @@
+
+.users-admin {
+   width: 100%;
+   min-height: 100vh;
+   background: #F0F3F6;
+   box-sizing: border-box;
+   padding: 110px 40px 10px 270px;
+   & .page-top-bar {
+      width: 100%;
+      border-bottom: 1px solid #e9edf0;
+      display: grid;
+      grid-template-columns: 1fr max-content;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+      & h2 {
+         margin: 0;
+         font-family: "Open Sans", sans-serif;
+         font-weight: 800;
+         font-size: 16px;
+         color: #4f5f6f;
+      }
+   }
+   .table-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 80vh;
+   }
+   .table-search {
+      width: 100%;
+      display: grid;
+      justify-items: center;
+      padding: 20px 0;
+   }
+   & .table-top {
+      display: grid;
+      grid-template-columns:  1fr 1fr;
+      background-color: #FCFCFD;
+      padding: 10px 20px 10px 60px;
+      & p {
+         font-family: var(--Panel-font);
+         font-weight: 700;
+         font-size: 14px;
+         color: #999;
+      }
+   }
+   .data-comments {
+      height: auto;
+      & .table-top {
+         display: grid;
+         grid-template-columns:  1fr 1fr;
+         background-color: #FCFCFD;
+         padding: 10px 20px 10px 20px;
+         & p {
+            font-family: var(--Panel-font);
+            font-weight: 700;
+            font-size: 14px;
+            color: #999;
+         }
+      }
+   }
+   & .page-data-table {
+      box-sizing: border-box;
+      width: 100%;
+      box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.25);
+      background: #fff;
+      height: fit-content;
+
+   }
+   & .table-users {
+      width: 500px;
+      //display: grid;
+      //align-items: center;
+   }
+}
