@@ -4,6 +4,7 @@ import Listing_card from "@/components/main/listing_card";
 import './index.scss'
 import Listing_card_mobile from "@/components/main/listing_card_mobile";
 import ContentBanner from "@/components/main/content-banner";
+import Listing_card_free from "@/components/main/listing_card_free";
 
 
 
@@ -69,21 +70,31 @@ const ContentBlock = ({items}) => {
           <div className="content__block">
                <div className="content-list-items">
                     {items.map((item, index) => (
-                         widthState < 1480 ? (
-                              <Listing_card_mobile  key={index} item={item} />
-                         ) : (
-                         <Listing_card  key={index} item={item}  wish={wishList[index]}  setWish={() => handleWishClick(index)}  ind={index}   />
-                         )
+                         <React.Fragment key={index}>
+                              {widthState < 1480 ? (
+                                   item.noFund ? (
+                                        <Listing_card_mobile item={item} />
+                                   ) : (
+                                        <Listing_card_mobile item={item} />
+                                   )
+                              ) : (
+                                   item.noFund ? (
+                                        <Listing_card_free item={item} wish={wishList[index]} setWish={() => handleWishClick(index)} ind={index} />
+                                   ) : (
+                                        <Listing_card item={item} wish={wishList[index]} setWish={() => handleWishClick(index)} ind={index} />
+                                   )
+                              )}
+                         </React.Fragment>
                     ))}
-
                </div>
                <div className="content-banners">
-                         {[blocks[0].banners[0], blocks[0].banners[1]].map((banner, bannerIndex) => (
-                              <ContentBanner key={bannerIndex} image={banner}/>
-                         ))}
+                    {[blocks[0].banners[0], blocks[0].banners[1]].map((banner, bannerIndex) => (
+                         <ContentBanner key={bannerIndex} image={banner} />
+                    ))}
                </div>
           </div>
      );
+
 };
 
 export default ContentBlock;

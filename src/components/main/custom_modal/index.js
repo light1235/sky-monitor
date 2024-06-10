@@ -2,7 +2,7 @@
 import React, {useState} from 'react';
 import { Button, Modal } from 'antd';
 
-const CustomModal = ({open,close,children}) => {
+const CustomModal = ({open,close,children,width = 'initial',centered = true}) => {
      const [isModalOpen, setIsModalOpen] = useState(false);
 
      const showModal = () => {
@@ -33,7 +33,7 @@ const CustomModal = ({open,close,children}) => {
      };
      return (
           <>
-               <Modal  open={open}  onCancel={close} footer={false} styles={modalStyles} centered  width={'initial'}  closeIcon={null} contentBg={'transparent'}>
+               <Modal   open={open}  onCancel={close} footer={false} styles={modalStyles}  centered width={width}  closeIcon={null} contentBg={'transparent'}>
                     {children}
                </Modal>
           </>

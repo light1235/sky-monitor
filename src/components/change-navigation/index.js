@@ -5,6 +5,7 @@ import Header from "@/components/main/header";
 import Footer from "@/components/main/footer";
 import Control_header from "@/components/panel/control_header";
 import ControlMenu from "@/components/panel/control_footer";
+import UserHeader from "@/components/dashboard/user-header";
 
 
 const ChangeNavigation = ({children}) => {
@@ -12,6 +13,7 @@ const ChangeNavigation = ({children}) => {
      const pathname = usePathname();
      const isCustomHeaderFooterPage = pathname === '/panel' || pathname === '/panel/seo-statistics' || pathname === '/panel/support' || pathname === '/panel/listing' || pathname === '/panel/partners-adm' || pathname === '/panel/news' || pathname === '/panel/users-comments' || pathname === '/panel/information';
      const isNoHeaderFooterPage  = pathname === '/login' || pathname === '/reset' || pathname === '/sign-up';
+     const isDashboard = pathname === '/my/dashboard' || pathname === '/my/profile';
 
      return (
           <>
@@ -27,9 +29,20 @@ const ChangeNavigation = ({children}) => {
                               [children]
                          ) : (
                               <>
-                                   <Header />
-                                   {children}
-                                   <Footer />
+                                   {isDashboard ? (
+                                        <>
+                                             {/*<h2>Lora De mi</h2>*/}
+                                             <UserHeader />
+                                             {/*<User_header />*/}
+                                             {children}
+                                        </>
+                                   ) : (
+                                        <>
+                                             <Header />
+                                             {children}
+                                             <Footer />
+                                        </>
+                                   )}
                               </>
                          )}
                     </>

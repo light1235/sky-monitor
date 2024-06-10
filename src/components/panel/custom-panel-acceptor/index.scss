@@ -1,0 +1,90 @@
+
+
+.panel-modal {
+   width: 600px;
+   height: 200px;
+   background: white;
+
+   & .modal-top-line {
+      width: 100%;
+      height: 60px;
+      background: var(--Main-color);
+      display: grid;
+      align-items: center;
+      grid-template-columns: 1fr 1fr;
+      box-sizing: border-box;
+      & .alert {
+         display: grid;
+         grid-template-columns:  min-content min-content;
+         align-items: center;
+         padding-left: 15px;
+         grid-gap: 10px;
+         font-family: "Open Sans", sans-serif;
+         font-weight: 700;
+         font-size: 14px;
+         color: #fff;
+      }
+      & i {
+         color: white;
+         font-size: 40px;
+         cursor: pointer;
+      }
+      & .close-block {
+         width: 100%;
+         display: grid;
+         place-items: end;
+      }
+   }
+   & .modal-content-line {
+      width: 100%;
+      height: 60px;
+      border-bottom: 1px solid #e9edf0;
+      display: grid;
+      align-items: center;
+      padding: 0 15px;
+      box-sizing: border-box;
+      & p {
+         font-family: "Open Sans", sans-serif;
+         font-weight: 400;
+         font-size: 14px;
+         color: #9ba8b5;
+         margin: 0;
+      }
+   }
+   .modal-bottom-line {
+      height: 80px;
+      display: grid;
+      place-items: end;
+      .button-container {
+         width: 100px;
+         display: grid;
+         grid-template-columns: 1fr 1fr;
+         padding-bottom: 15px;
+         padding-right: 15px;
+         & .button-yes {
+           width: 44px;
+            height: 28px;
+            background-color: var(--Main-color);
+            font-family: "Open Sans", sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            color: #fff;
+            display: grid;
+            place-items: center;
+            cursor: pointer;
+         }
+         .button-no {
+            width: 44px;
+            height: 28px;
+            border: 1px solid #9ba8b5;
+            font-family: "Open Sans", sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            color: #9BA8B5;
+            display: grid;
+            place-items: center;
+            cursor: pointer;
+         }
+      }
+   }
+}

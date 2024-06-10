@@ -11,6 +11,9 @@ import {Input} from "antd";
 import PopUpForm from "@/components/main/pop-up-form";
 import Banner_form from "@/components/main/Banner_form";
 import BannerForm from "@/components/main/Banner_form";
+import Listing_card from "@/components/main/listing_card";
+import Listing_card_free from "@/components/main/listing_card_free";
+import CustomPanelAcceptor from "@/components/panel/custom-panel-acceptor";
 
 
 
@@ -29,9 +32,13 @@ const Add_pop_up = () => {
      };
 
      return (
-          <div className="pop-up__page">
-               <PopUpForm />
-               <Banner_form />
+          <div className="pop-up__page" style={{padding:'40px 40px'}}>
+               {/*<PopUpForm />*/}
+               {/*<Banner_form />*/}
+               {/*<Listing_card_free />*/}
+               {/*<CustomPanelAcceptor />*/}
+               {/*<CustomPanelAcceptor />*/}
+
                {/*<BannerForm/>*/}
                {/*<Add_pop_up />*/}
 {/*               <div className="pop-up__page-content">*/}
