@@ -614,6 +614,8 @@ template {
 .icon-time-line:before { content: '\e81d'; } /* '' */
 .icon-skull-1:before { content: '\e81e'; } /* '' */
 .icon-bell:before { content: '\e81f'; } /* '' */
+.icon-quote-left:before { content: '\e820'; } /* '' */
+.icon-lock-open:before { content: '\e821'; } /* '' */
 .icon-bell-alt:before { content: '\f0f3'; } /* '' */
 .icon-dollar:before { content: '\f155'; } /* '' */
 .icon-thumbs-up-alt:before { content: '\f164'; } /* '' */
@@ -622,6 +624,7 @@ template {
 .icon-newspaper:before { content: '\f1ea'; } /* '' */
 .icon-chart-area:before { content: '\f1fe'; } /* '' */
 .icon-chart-line:before { content: '\f201'; } /* '' */
+.icon-commenting:before { content: '\f27a'; } /* '' */
 .icon-audio-description:before { content: '\f29e'; } /* '' */
 .icon-address-card-o:before { content: '\f2bc'; } /* '' */
 .icon-window-close-o:before { content: '\f2d4'; } /* '' */

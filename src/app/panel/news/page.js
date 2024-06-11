@@ -51,6 +51,22 @@ const items = [
           ),
           key: '5',
      },
+     {
+          label: (
+               <>
+                    <i className="icon-commenting" style={{color:'#85CE36'}}></i> Open Comments
+               </>
+          ),
+          key: '6',
+     },
+     {
+          label: (
+               <>
+                    <i className="icon-lock-open" style={{color:'red'}}></i> Block Comments
+               </>
+          ),
+          key: '7',
+     },
 
 ];
 
