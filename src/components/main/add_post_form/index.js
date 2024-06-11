@@ -9,7 +9,7 @@ const AddPostForm = () => {
      return (
           <div className="post-form">
                <div className="post-form-content">
-                    <CustomTextArea placeholder={'Add comments...'} max={230}></CustomTextArea>
+                    <CustomTextArea placeholder={'Add comments...'} max={222}></CustomTextArea>
                     <Button type={'primary'} htmlType="submit"  size={'large'} style={{
                          background: '#5B5BDF',
                          fontFamily: 'Open Sans',

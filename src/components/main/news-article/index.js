@@ -12,7 +12,7 @@ const NewsArticle = ({post}) => {
      const isLogin = false;
 
      const comments = [
-          {id:1,name:'Roy Jamson',date:'18.05.2024',context:'Rewline\'s team of experts is committed to helping traders make informed trading decisions by utilizing the power of artificial intelligence. Using artificial intelligence-based algorithms, the company provides traders with insights'},
+          {id:1,name:'Roy Jamson',date:'18.05.2024',context:'Rewline\'s team of experts is committed to helping traders make informed trading decisions by utilizing the power of artificial intelligence. Using artificial intelligence-based algorithms, the company provides traders with'},
           {id:2,name:'Michael Rayen',date:'22.05.2024',context:'Leveraging the power of artificial intelligence, Rewline\'s team of experts empowers traders to make informed decisions, utilizing AI-powered algorithms that provide valuable market insights.\n' +
                     '\n'},
           {id:3,name:'Wilson Mchourney',date:'23.05.2024',context:'This sentence captures the essence of Rewline\'s offering by emphasizing their AI expertise, data-driven insights, and the ability to empower traders to make informed decisions.\n'},
