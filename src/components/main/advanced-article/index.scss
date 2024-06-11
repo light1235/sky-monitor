@@ -155,6 +155,10 @@
          height: 300px !important;
       }
    }
+   .advanced-article__page .article__inner .article-image {
+      width: 100%;
+      height: auto;
+   }
 }
 @media only screen and (max-width : 520px) {
    .advanced-article__page .article__inner .article-image {
