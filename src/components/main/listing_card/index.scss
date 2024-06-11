@@ -13,6 +13,19 @@
       grid-template-columns: 1fr min-content min-content;
       grid-gap: 10px;
       padding-bottom: 10px;
+      & .program_details {
+         & a {
+            & span {
+               &:hover {
+                  & .details-button {
+                     cursor: pointer;
+                     background: #8bc643;
+                     transition: all .4s ease-in-out;
+                  }
+               }
+            }
+         }
+      }
       & .program_name {
          font-family: "Lato", sans-serif;
          font-weight: bold;
@@ -39,6 +52,21 @@
          width: 22px;
          height: 22px;
          transition: all .6s ease-in-out;
+         display: grid;
+         place-items: center;
+         & .button-circle {
+            width: 17px;
+            height: 17px;
+            display: grid;
+            place-items: center;
+            border: 1.5px solid white;
+            border-radius: 50%;
+            &:hover .details-button {
+               cursor: pointer;
+               background: #8bc643;
+               transition: all .4s ease-in-out;
+            }
+         }
          &:hover {
             cursor: pointer;
             background: #8bc643;

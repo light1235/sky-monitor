@@ -7,6 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 import voteIcon from "@/assets/main/icons/vote-icon.svg";
 import './index.scss'
+import ArrowTopNextGroup from "@/assets/main/icons/arrow-super-next.svg";
 
 
 const ListingCardFree = ({ item, wish,ind,setWish }) => {
@@ -42,12 +43,15 @@ const ListingCardFree = ({ item, wish,ind,setWish }) => {
                     <div className="program_details"><Link target="_blank" aria-label="program details"
                                                            href={item.detailsLink}><CustomToolTop
                          text={'Program details'}>
-                         <div className="details-button"></div>
+                         <div className="details-button">
+                              <div className="button-circle"><Image src={ArrowTopNextGroup} alt="arrow icon" width="10"
+                                                                    height="10"/></div>
+                         </div>
                     </CustomToolTop></Link></div>
                </div>
                <div className="card-middle_line">
                     <div className="left_side">
-                         {imageLoading ? (
+                    {imageLoading ? (
                               <Image
                                    src={item.projectImage}
                                    width="124"

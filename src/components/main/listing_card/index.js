@@ -28,7 +28,7 @@ import whoIs from '/src/assets/main/icons/who-is.svg';
 import forumIocn from '/src/assets/main/icons/forum-icon.svg';
 import voteIcon from '/src/assets/main/icons/vote-icon.svg';
 import CustomToolTop from "@/components/main/tooltip_custom";
-
+import ArrowTopNextGroup from '../../../assets/main/icons/arrow-super-next.svg';
 
 
 const ListingCard = ({ item, wish,ind,setWish}) => {
@@ -94,7 +94,7 @@ const ListingCard = ({ item, wish,ind,setWish}) => {
                     <div className="program-favorites" onClick={handleWishClick}>
                          {wish ?  <AiFillHeart size="20px" color="#85CE36" />   : <CustomToolTop text="add to favorites">   <AiOutlineHeart color={'#85CE36'} size="20px" />  </CustomToolTop>}
                     </div>
-                    <div className="program_details"><Link target="_blank" aria-label="program details" href={item.detailsLink}><CustomToolTop text={'Program details'}> <div className="details-button"></div></CustomToolTop></Link></div>
+                    <div className="program_details"><Link target="_blank" aria-label="program details" href={item.detailsLink}><CustomToolTop text={'Program details'}> <div className="details-button"><div className="button-circle"><Image src={ArrowTopNextGroup} alt="arrow icon" width="10" height="10" /></div></div></CustomToolTop></Link></div>
                </div>
                <div className="card-middle_line">
                     <div className="left_side">

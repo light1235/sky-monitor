@@ -24,6 +24,7 @@ import simillarWeb from "@/assets/main/icons/simillar-web.svg";
 import whoIs from "@/assets/main/icons/who-is.svg";
 import forumIocn from "@/assets/main/icons/forum-icon.svg";
 import voteIcon from "@/assets/main/icons/vote-icon.svg";
+import ArrowTopNextGroup from '../../../assets/main/icons/arrow-super-next.svg';
 
 const MobileListing = ({ item}) => {
 
@@ -73,7 +74,10 @@ const MobileListing = ({ item}) => {
                     </div>
                     <div className="program_details"><Link target="_blank" aria-label="program details"  href={item.detailsLink}><CustomToolTop
                          text={'Program details'}>
-                         <div className="details-button"></div>
+                         <div className="details-button">
+                              <div className="button-circle"><Image src={ArrowTopNextGroup} alt="arrow icon" width="10"
+                                                                    height="10"/></div>
+                         </div>
                     </CustomToolTop></Link></div>
                </div>
                <div className="card-middle_line">
