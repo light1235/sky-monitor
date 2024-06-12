@@ -5,6 +5,7 @@ import './index.scss'
 import Listing_card_mobile from "@/components/main/listing_card_mobile";
 import ContentBanner from "@/components/main/content-banner";
 import Listing_card_free from "@/components/main/listing_card_free";
+import Listing_card_mobile_free from "@/components/main/listing_card_mobile_free";
 
 
 
@@ -73,7 +74,8 @@ const ContentBlock = ({items}) => {
                          <React.Fragment key={index}>
                               {widthState < 1480 ? (
                                    item.noFund ? (
-                                        <Listing_card_mobile item={item} />
+                                             <Listing_card_mobile_free item={item} />
+
                                    ) : (
                                         <Listing_card_mobile item={item} />
                                    )
