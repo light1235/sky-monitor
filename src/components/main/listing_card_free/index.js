@@ -8,6 +8,8 @@ import Image from "next/image";
 import voteIcon from "@/assets/main/icons/vote-icon.svg";
 import './index.scss'
 import ArrowTopNextGroup from "@/assets/main/icons/arrow-super-next.svg";
+import IconCrypto from '../../../assets/main/icons/icon-crypto.svg';
+import IconCash from '../../../assets/main/icons/icon-cash.svg';
 
 
 const ListingCardFree = ({ item, wish,ind,setWish }) => {
@@ -25,6 +27,35 @@ const ListingCardFree = ({ item, wish,ind,setWish }) => {
      useEffect(() => {
           setImageLoading(true);
      }, []);
+
+
+     const startDate = new Date(item.projectInformation.created);
+     const currentDate = new Date();
+     const differenceMs = currentDate - startDate;
+     const days = Math.floor(differenceMs / (1000 * 60 * 60 * 24));
+
+     const months = [
+          'Jan', 'Feb', 'Mar', 'April', 'May', 'June',
+          'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'
+     ];
+
+     const day = startDate.getDate();
+     const month = months[startDate.getMonth()];
+     const year = startDate.getFullYear();
+     const formattedString = `${month} ${day}st ${year}`;
+
+     const [truncatedText, setTruncatedText] = useState("");
+     const maxLength = 180; // Установите максимальное количество символов
+
+     useEffect(() => {
+          const text = item.projectInformation.description
+          if (text.length > maxLength) {
+               setTruncatedText(text.substring(0, maxLength) + "…");
+          } else {
+               setTruncatedText(text);
+          }
+     }, []);
+
 
      return (
           <div className={item.projectInformation.status.scam ? "listing__card-thin listing__card-free scam-status" : 'listing__card-thin listing__card-free'}>
@@ -63,23 +94,12 @@ const ListingCardFree = ({ item, wish,ind,setWish }) => {
 
                               <Skeleton.Image style={{width: 124, height: 124}} active/>
                          )}
-                         {/*<Image src={item.projectImage} width="124" height="124" alt="project-image" ></Image>*/}
                          <div className="content_wrapper">
                               <div className="content-items status">Status:
-                                   <span>{item.projectInformation.status.announcement && 'Announcement'}</span>
+                                   <span>{item.projectInformation.status.announcement && 'Announcement' ||item.projectInformation.status.launched && 'Launched' || item.projectInformation.status.listed && 'Listed' }</span>
                               </div>
-                              <div className="content-items">
-                              </div>
-                              <div className="content-items">Payout
-                                   rate:<span> </span></div>
-                              <div className="content-items">Last paid: <span> </span>
-                              </div>
-                              <div className="content-items">Created:<span> </span></div>
-                              <div className="content-items">Minimal
-                                   spend: <span> </span></div>
-                              <div className="content-items">Withdrawal:<span> </span>
-                              </div>
-                              <div className="content-items">Days online :<span> </span></div>
+                              <div className="content-items">Start:<span> {formattedString}</span></div>
+                              <div className="content-items content-description">{truncatedText}</div>
                          </div>
                     </div>
                     <div className="right_side">
@@ -88,8 +108,17 @@ const ListingCardFree = ({ item, wish,ind,setWish }) => {
                </div>
                <div className="card-bottom_line">
                     <div className="invested-description">
-                         <div>Invested plans:</div>
-                         <div className="plans">1</div>
+                         {item.projectInformation.crypto ? (
+                              <>
+                                   <Image src={IconCrypto} alt="crypto image" />
+                                   <span>Crypto</span>
+                              </>
+                         ) : (
+                              <>
+                                   <Image src={IconCash} alt="cash image" />
+                                   <span>Cash</span>
+                              </>
+                         )}
                     </div>
                     <div className="user-buttons">
                          <div className="button-vote"><span>Vote now</span><Link href='/'><CustomToolTop

@@ -27,7 +27,7 @@
             margin-left: 10px;
             border: 3px solid #8BC643;
             border-radius: 7px;
-            padding: 0px 5px;
+            padding: 0 5px;
             line-height: 0.5;
          }
       }
@@ -49,7 +49,7 @@
    }
    & .card-middle_line{
       display: grid;
-      grid-template-columns:  3fr 1fr;
+      grid-template-columns:  1fr !important;
       & .left_side{
          display: grid;
          grid-template-columns: min-content 1fr;
@@ -70,6 +70,14 @@
                   font-size: 11px;
                   color: #747474;
                }
+            }
+            & .content-description {
+               width: 80%;
+               line-height: 1.2;
+               font-family: var(--Main-front-font);
+               font-weight: 700;
+               font-size: 12px;
+               color: #747474;
             }
             & .status span {
                line-height: 1.5;
@@ -116,25 +124,26 @@
       display: grid;
       grid-template-columns: 2fr 1fr;
       & .invested-description{
+         display: grid;
+         grid-template-columns: min-content max-content;
+         padding-top: 15px;
+         grid-gap: 8px;
+         align-items: center;
+         & img {
+            //width: 115px;
+            //height:initial;
+         }
+         & span {
+            font-family: "Ubuntu", sans-serif;
+            font-weight: 700;
+            font-size: 24px;
+            color: #000;
+         }
 
-         //display: grid;
-         & div {
-            font-family: "Open Sans", sans-serif;
-            font-weight: 400;
-            font-size: 11px;
-            color: #747474;
-         }
-         & .plans{
-            font-family: var(--Main-front-font);
-            font-weight:800;
-            font-size: 11px;
-            min-height: 34.56px;
-            //color: #747474;
-            //color: #CCCCFF;
-            //color: #97a7c9;
-         }
+
       }
       & .user-buttons{
+         padding-top: 33px;
          display: grid;
          justify-self: end;
          & .button-forum{
@@ -186,7 +195,7 @@
    & .card-vote-line {
       width: 100%;
       border-top: 1px solid #ededed;
-      margin-top: 14px;
+      margin-top: 11px;
       display: grid;
       grid-template-columns: 3fr 1fr min-content;
       padding-top: 8px;

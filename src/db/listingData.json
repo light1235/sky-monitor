@@ -13,7 +13,9 @@
           "paying":false,
           "untraceable": false,
           "scam": false,
-          "announcement":true
+          "announcement":false,
+          "launched":true,
+          "listed": false
         },
         "ourInvestments": {
           "our": "400$",
@@ -27,7 +29,9 @@
         "minimalSpend": "50$",
         "withdrawal": "automatic",
         "daysOnline": "",
-        "investedPlans": "2.9%-3.1% daily for 15-15 working days\n150% after 15 buisness days after 15 buisness days"
+        "investedPlans": "2.9%-3.1% daily for 15-15 working days\n150% after 15 buisness days after 15 buisness days",
+        "crypto": true,
+        "description": "“Hamster Kombat” is a Tap To Earn style game that requires no financial investment. Players can immediately start earning coins by performing simple actions without any investment."
       },
       "paymentSystem": {
         "bitcoin": true,
