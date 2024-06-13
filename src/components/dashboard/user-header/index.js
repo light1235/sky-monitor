@@ -58,8 +58,8 @@ const UserHeader = () => {
                               <div className="panel-menu">
                                    <div><Link href="/my/dashboard"><Image src={DashBoardImage} alt="img"/><p>Dashboard</p></Link></div>
                                    <div><Link href="/my/profile"><i className="icon-user"></i><p>Profile</p></Link></div>
-                                   <div><Image src={ArrowBack} alt="img"/> <p>Back to site</p></div>
-                                   <div> <i className="icon-logout"></i><p>Logout</p></div>
+                                   <div><Link href="/#"><Image src={ArrowBack} alt="img"/><p>Back to site</p></Link></div>
+                                   <div><Link href="/my/dashboard"><i className="icon-logout"></i><p>Logout</p></Link></div>
                               </div>
                          }
                     </div>
