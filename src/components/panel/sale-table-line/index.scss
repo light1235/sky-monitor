@@ -1,0 +1,24 @@
+
+
+.sale-table-line {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+   //padding: 10px 20px 10px 30px;
+   & p {
+      font-family: "Open Sans", sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      color: #4f5f6f;
+      margin: 0;
+   }
+}
+
+.grid-item {
+   padding: 16px 20px 16px 30px;
+   border-right: 1px solid #E9EDF0; /* Добавляем правую границу */
+}
+
+/* Удаляем правую границу для последнего элемента в каждом ряду */
+.grid-item:nth-child(5n) {
+   border-right: none;
+}
