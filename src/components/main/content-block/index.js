@@ -74,10 +74,10 @@ const ContentBlock = ({items}) => {
                          <React.Fragment key={index}>
                               {widthState < 1480 ? (
                                    item.noFund ? (
-                                             <Listing_card_mobile_free item={item} />
+                                             <Listing_card_mobile_free item={item}  wish={wishList[index]} setWish={() => handleWishClick(index)} ind={index} />
 
                                    ) : (
-                                        <Listing_card_mobile item={item} />
+                                        <Listing_card_mobile item={item} wish={wishList[index]} setWish={() => handleWishClick(index)} ind={index}  />
                                    )
                               ) : (
                                    item.noFund ? (

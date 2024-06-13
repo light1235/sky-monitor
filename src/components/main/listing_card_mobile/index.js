@@ -25,9 +25,14 @@ import whoIs from "@/assets/main/icons/who-is.svg";
 import forumIocn from "@/assets/main/icons/forum-icon.svg";
 import voteIcon from "@/assets/main/icons/vote-icon.svg";
 import ArrowTopNextGroup from '../../../assets/main/icons/arrow-super-next.svg';
+import {AiFillHeart, AiOutlineHeart} from "react-icons/ai";
 
-const MobileListing = ({ item}) => {
+const MobileListing = ({ item, wish,ind,setWish}) => {
 
+     const handleWishClick = (event) => {
+          event.stopPropagation(); // Предотвращаем всплытие события, чтобы оно не достигло родительского элемента
+          setWish(ind);
+     };
 
      //days online
      const startDate = new Date(item.projectInformation.created);
@@ -72,7 +77,13 @@ const MobileListing = ({ item}) => {
                                    'project'}><span>Long Term</span></CustomToolTop>
                          }
                     </div>
-                    <div className="program_details"><Link target="_blank" aria-label="program details"  href={item.detailsLink}><CustomToolTop
+                    <div className="program-favorites" onClick={handleWishClick}>
+                         {wish ? <AiFillHeart size="20px" color="#85CE36"/> :
+                              <CustomToolTop text="add to favorites"> <AiOutlineHeart color={'#85CE36'} size="20px"/>
+                              </CustomToolTop>}
+                    </div>
+                    <div className="program_details"><Link target="_blank" aria-label="program details"
+                                                           href={item.detailsLink}><CustomToolTop
                          text={'Program details'}>
                          <div className="details-button">
                               <div className="button-circle"><Image src={ArrowTopNextGroup} alt="arrow icon" width="10"

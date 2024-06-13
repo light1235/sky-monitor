@@ -10,7 +10,8 @@
    padding: 20px 20px 10px 20px;
    & .card-top_line{
       display: grid;
-      grid-template-columns: 1fr min-content;
+      grid-template-columns: 1fr min-content min-content;
+      grid-gap: 10px;
       padding-bottom: 5px;
       & .program_name {
          font-family: "Lato", sans-serif;

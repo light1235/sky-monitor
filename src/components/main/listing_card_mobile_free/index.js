@@ -8,8 +8,15 @@ import voteIcon from "@/assets/main/icons/vote-icon.svg";
 import './index.scss'
 import {Skeleton} from "antd";
 import IconCrypto from "@/assets/main/icons/icon-crypto.svg";
+import IconCash from "@/assets/main/icons/icon-cash.svg";
+import {AiFillHeart, AiOutlineHeart} from "react-icons/ai";
 
-const MobileListingFree = ({item}) => {
+const MobileListingFree = ({item, wish,ind,setWish}) => {
+
+     const handleWishClick = (event) => {
+          event.stopPropagation(); // Предотвращаем всплытие события, чтобы оно не достигло родительского элемента
+          setWish(ind);
+     };
 
      const [imageLoadingMobile, setimageLoadingMobile] = useState(false);
 
@@ -62,6 +69,11 @@ const MobileListingFree = ({item}) => {
                                    'project'}><span>NoFund Project</span></CustomToolTop>
                          }
                     </div>
+                    <div className="program-favorites" onClick={handleWishClick}>
+                         {wish ? <AiFillHeart size="20px" color="#85CE36"/> :
+                              <CustomToolTop text="add to favorites"> <AiOutlineHeart color={'#85CE36'} size="20px"/>
+                              </CustomToolTop>}
+                    </div>
                     <div className="program_details"><Link target="_blank" aria-label="program details"
                                                            href={item.detailsLink}><CustomToolTop
                          text={'Program details'}>
@@ -86,8 +98,8 @@ const MobileListingFree = ({item}) => {
                               <Skeleton.Image style={{width: 124, height: 124}} active/>
                          )}
                          <div className="content_wrapper">
-                              <div className="content-items status">Status:<span
-                                   style={{color: item.projectInformation.status.untraceable && '#DF5BD2'}}>{item.projectInformation.status.paying && ' Paying' || item.projectInformation.status.untraceable && ' Untraceable' || item.projectInformation.status.scam && ' Not Payed'}</span>
+                              <div className="content-items status">Status:
+                                   <span>{item.projectInformation.status.announcement && 'Announcement' || item.projectInformation.status.launched && 'Launched' || item.projectInformation.status.listed && 'Listed'}</span>
                               </div>
                               <div className="content-items">Start:<span> {formattedString}</span></div>
                               <div className="content-items content-description">{truncatedText}</div>
@@ -97,8 +109,17 @@ const MobileListingFree = ({item}) => {
                </div>
                <div className="card-bottom_line">
                     <div className="invested-description">
-                         <Image src={IconCrypto} alt="crypto image" />
-                         <span>Crypto</span>
+                         {item.projectInformation.crypto ? (
+                              <>
+                                   <Image src={IconCrypto} alt="crypto image" />
+                                   <span>Crypto</span>
+                              </>
+                         ) : (
+                              <>
+                                   <Image src={IconCash} alt="cash image" />
+                                   <span>Cash</span>
+                              </>
+                         )}
                     </div>
                     <div className="user-buttons">
                          <div className="button-vote"><span>Vote now</span><Link href='/'><CustomToolTop
