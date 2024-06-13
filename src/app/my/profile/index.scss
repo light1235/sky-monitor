@@ -18,6 +18,7 @@
             gap: 24px;
             flex-direction: row;
             padding-bottom: 24px;
+            border-radius: 16px;
          }
          & img {
             border-radius: 16px;
@@ -32,8 +33,11 @@
    }
 
    .gold {
+
       border: 4px solid #ffd700;
       box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+
+
    }
    .silver {
       border: 4px solid #c0c0c0;
@@ -60,8 +64,83 @@
       box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
    }
    .full-blur{
+
       border: 4px solid #191970;
       box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
       filter: blur(8px);
+   }
+}
+
+.profile-inner {
+   max-width: 1240px;
+   display: grid;
+   grid-template-columns: min-content min-content 6fr;
+   grid-gap: 40px;
+   margin: 0 auto;
+   align-items: center;
+   & .inner-data {
+      & .data-item {
+         & .item-name {
+            font-family: "Quicksand", sans-serif;
+            font-weight: 800;
+            font-size: 10px;
+            color: #7e8e9f;
+            padding-bottom: 10px;
+         }
+         & .item-input {
+            font-family: "Quicksand", sans-serif;
+            font-weight: 600;
+            font-size: 25px;
+            color: #000;
+            box-shadow: 0 10px 40px 0 rgba(182, 198, 214, 0.2);
+            width: 260px;
+            height: 40px;
+            margin-bottom: 10px;
+            background: white;
+            display: grid;
+            align-items: center;
+            box-sizing: border-box;
+            padding: 4px 11px;
+            border-radius: 16px;
+         }
+      }
+   }
+   & .inner-user-preview {
+      width: 200px;
+      height: 256px;
+      background-color: #fff;
+      border-radius: 40px;
+      box-shadow: 0 10px 40px 0 rgba(182, 198, 214, 0.2);
+      padding: 32px 15px;
+      display: grid;
+      justify-items: center;
+      //place-items: center;
+      position: relative;
+      & img {
+         border-radius: 50%;
+         width: 110px;
+         height: auto;
+         display: block;
+         position: absolute;
+         bottom: 25%;
+      }
+      & p {
+         font-family: "Quicksand", sans-serif;
+         font-weight: 700;
+         font-size: 25px;
+      }
+   }
+   .inner-user-icons {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      & div {
+         display: grid;
+         grid-gap: 10px;
+         border-radius: 16px;
+      }
+      & img {
+         border-radius: 16px;
+         cursor: pointer;
+      }
    }
 }

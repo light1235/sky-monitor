@@ -39,8 +39,19 @@ const Profile = () => {
      const StyleClass = ['gold','silver','emerald','diamond','ruby','grey','turquoise','full-blur'];
      return (
           <div className="profile-page">
-               <div className="content-container">
-                    <div className="content-preview">
+               <div className="profile-inner">
+                    <div className="inner-data">
+                         <div className="data-item">
+                              <div className="item-name">User Name</div>
+                              <div className="item-input">Dora</div>
+                         </div>
+                         <div className="data-item">
+                              <div className="item-name">Registration Date</div>
+                              <div className="item-input">18.02.2024</div>
+                         </div>
+                    </div>
+                    <div className="inner-user-preview">
+                         <p>Profile photo</p>
                          {
                               <Image
                                    src={selectedImage ? selectedImage : ZeroIcon }
@@ -49,7 +60,7 @@ const Profile = () => {
                               />
                          }
                     </div>
-                    <div className="content-icons">
+                    <div className="inner-user-icons">
                          <div>
                               {line1.map((post, index) => (
                                    <Image
@@ -74,16 +85,20 @@ const Profile = () => {
                          </div>
                          <div>
                               {line3.map((post, index) => (
-                                   <Image
-                                        src={post}
-                                        key={index + line1.length + line2.length}
-                                        onClick={() => {
-                                             setSelectedImage(post)
-                                             setSelectedClass(index);
-                                        }}
-                                        className={selectedImage === post ? `${StyleClass[index]} active` : StyleClass[index]}
-                                        alt={`User Icon ${index + line1.length + line2.length + 1}`}
-                                   />
+                                   <>
+                                        <div>
+                                             <Image
+                                                  src={post}
+                                                  key={index + line1.length + line2.length}
+                                                  onClick={() => {
+                                                       setSelectedImage(post)
+                                                       setSelectedClass(index);
+                                                  }}
+                                                  className={selectedImage === post ? `${StyleClass[index]} active` : StyleClass[index]}
+                                                  alt={`User Icon ${index + line1.length + line2.length + 1}`}
+                                             />
+                                        </div>
+                                   </>
                               ))}
                          </div>
                     </div>
