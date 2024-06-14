@@ -33,7 +33,7 @@ const ControlMenu = () => {
                          <li><Link href='/panel'><i className="icon-thumbs-up-alt"></i>Vote</Link></li>
                          <li className={pathname === '/panel/sale-statistics' ? 'active-menu' : ''}><Link href='/panel/sale-statistics'><i className="icon-sale"></i>Sale statistics</Link></li>
                          <li><Link href='/panel'><i className="icon-warning"></i>Alerts</Link></li>
-                         <li><Link href='/panel'><i className="icon-time-line"></i>Timeline advertise</Link></li>
+                         <li className={pathname === '/panel/timeline-adv' ? 'active-menu' : ''}><Link href='/panel/timeline-adv'><i className="icon-time-line"></i>Timeline advertise</Link></li>
                          <li className={pathname === '/panel/support' ? 'active-menu' : ''}><Link href='/panel/support'><i
                               className="icon-lifebuoy"></i>Support</Link></li>
                          <li className={pathname === '/panel/partners-adm' ? 'active-menu' : ''}><Link
