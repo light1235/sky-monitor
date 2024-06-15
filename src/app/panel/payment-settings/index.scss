@@ -1,0 +1,62 @@
+
+
+
+.payment__page {
+   width: 100%;
+   height: 100vh;
+   background: #F0F3F6;
+   box-sizing: border-box;
+   padding: 110px 40px 40px 270px;
+   display: grid;
+   grid-gap: 40px;
+   grid-template-columns: 1fr 1fr;
+   & .panel-block {
+      width:  80%;
+      box-sizing: border-box;
+      height: fit-content;
+      box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.25);
+      background: #fff;
+      padding: 20px 20px;
+      display: grid;
+      & .social-name {
+         margin-bottom: 25px;
+         & h2 {
+            font-family: "Open Sans", sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            color: #4f5f6f;
+            margin: 0;
+         }
+         & p {
+            font-family: "Open Sans", sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            color: #7e8e9f;
+            margin: 0;
+         }
+      }
+      & .social-line {
+         display: grid;
+         grid-template-columns: min-content 1fr;
+         grid-gap: 20px;
+         padding-bottom: 30px;
+         & .line-circle {
+            width: 40px;
+            height: 40px;
+            background-color: var(--Main-color);
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+         }
+
+      }
+      & .items-line {
+         & p {
+            font-family: "Open Sans", sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            color: #4f5f6f;
+         }
+      }
+   }
+}

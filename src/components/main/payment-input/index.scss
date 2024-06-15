@@ -1,0 +1,37 @@
+
+
+.payment-input {
+   display: grid;
+   grid-template-columns: min-content min-content;
+   grid-gap: 20px;
+   & div {
+      border: 1px solid #85ce36;
+      width: 42px;
+      height: 31px;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      & i {
+         color: var(--Main-color);
+         font-size: 25px;
+      }
+   }
+   & input {
+      border: 1px dashed #ddd;
+      width: 268px;
+      height: 35px;
+      background: #fafafa;
+      padding: 0 10px;
+      font-family: "Open Sans", sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      color: #7e8e9f;
+      &:focus {
+         border: 1px dashed var(--Main-color);
+         outline: none;
+      }
+      &:focus-visible {
+         border: 1px dashed var(--Main-color);
+      }
+   }
+}
