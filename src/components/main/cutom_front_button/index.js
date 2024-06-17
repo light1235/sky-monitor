@@ -1,7 +1,8 @@
+"use client"
 import React from 'react';
 import {Button} from "antd";
 
-const CustomFrontButton = ({type = 'primary', name = 'Move to payment',disabled} ) => {
+const CustomFrontButton = ({type = 'primary', name = 'Move to payment',disabled,   } ) => {
      return (
           <div>
                <Button type={type} htmlType="submit" disabled={disabled} size={'large'} style={{

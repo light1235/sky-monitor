@@ -1,0 +1,98 @@
+
+.vote-data-table {
+   display: grid;
+   grid-template-columns: 1fr  5fr;
+   align-items: center;
+   padding: 10px 20px 10px 30px;
+   & .table-left {
+      display: grid;
+      grid-template-columns: max-content 1fr 1fr;
+      align-items: center;
+      grid-gap: 10px;
+      .image-block {
+         width: 60px;
+         height: 60px;
+         background: #efefef;
+         border-radius: 3px;
+         display: grid;
+         justify-self: center;
+      }
+   }
+   & .table-right {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      justify-items: center;
+      align-items: center;
+      & input {
+         border: 1px dashed #ddd;
+         width: 50px;
+         height: 35px;
+         background: #fafafa;
+         padding: 0 10px;
+         font-family: "Open Sans", sans-serif;
+         font-weight: 600;
+         font-size: 14px;
+         color: #7e8e9f;
+         &:focus {
+            border: 1px dashed var(--Main-color);
+            outline: none;
+         }
+         &:focus-visible {
+            border: 1px dashed var(--Main-color);
+         }
+      }
+
+      & .table-panel{
+         display: grid;
+         grid-template-columns: 1fr max-content;
+         grid-gap: 20px;
+         align-items: center;
+         position: relative;
+         & p {
+            font-weight: 400;
+         }
+         & i {
+            color: #9BA8B5;
+            font-size: 20px;
+            cursor: pointer;
+         }
+         & .edit-menu {
+            position: absolute;
+            z-index: 10;
+            right: 40px;
+            top: 0;
+            width: 160px;
+            //height: 82px;
+            box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.25);
+            background: #fff;
+            & div {
+               display: grid;
+               grid-template-columns: max-content 1fr;
+               padding: 10px 15px;
+               align-items: center;
+               transition: all 0.2s ease-in-out;
+               cursor: pointer;
+               grid-gap: 5px;
+               & p {
+                  margin: 0;
+                  font-family: "Open Sans", sans-serif;
+                  font-weight: 400;
+                  font-size: 12px;
+                  color: #9ba8b5;
+               }
+               &:hover{
+                  background: gainsboro;
+                  transition: all 0.3s ease-in-out;
+               }
+            }
+         }
+      }
+   }
+   & p {
+      margin: 0;
+      font-family: var(--Panel-font);
+      font-weight: 700;
+      font-size: 16px;
+      color: #999;
+   }
+}

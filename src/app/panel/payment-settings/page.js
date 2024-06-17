@@ -8,8 +8,8 @@ import Tiktok from '../../../assets/main/icons/tik-tok-white.svg';
 import Image from "next/image";
 const PaymentSettings = () => {
      const [socialData, setSocialData] = useState({
-          teleGram: '',
-          youTube: '',
+          teleGram: 'sadasda',
+          youTube: 'asdasd',
           TikTok:'',
      });
 

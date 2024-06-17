@@ -27,8 +27,6 @@ const PaymentInput = ({ dataKey, data, onPaymentDataChange }) => {
      const inputRef = useRef(null);
 
 
-
-
      return (
           <div className="payment-input">
                <input
