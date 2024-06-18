@@ -1,0 +1,35 @@
+
+
+.alerts-line {
+   border: 1px dashed #ddd;
+   height: 40px;
+   background: #fafafa;
+   padding: 0 5px;
+   font-family: Open Sans, sans-serif;
+   font-weight: 600;
+   font-size: 14px;
+   color: #7e8e9f;
+   display: grid;
+   grid-template-columns:  max-content 1fr 1fr;
+   align-items: center;
+   grid-gap: 40px;
+   & .line-image {
+      & i {
+         font-size: 25px;
+      }
+   }
+   & .line-content {
+      font-family: "Open Sans", sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      color: #7e8e9f;
+   }
+   .line-close {
+      display: grid;
+      justify-items: end;
+      font-size: 30px;
+      & i {
+         cursor: pointer;
+      }
+   }
+}
