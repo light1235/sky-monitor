@@ -6,7 +6,7 @@ const OptionVoteTopLine = ({category = 'Category'}) => {
      return (
           <div className="vote-top-line">
                <div className="table-left">
-                    <CustomCheckBox/><p className="image-table">Image</p><p>Project Name</p>
+                    <p></p><p className="image-table">Image</p><p>Project Name</p>
                </div>
                <div className="table-right">
                     <p>User Name</p><p>Vote</p><p>Type</p><p>Category</p><p>Confirmation</p>

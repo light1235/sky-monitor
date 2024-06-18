@@ -53,8 +53,6 @@ const VotePanel = () => {
                <div className="page-top-bar">
                     <div className="bar-actions">
                          <h2>Vote</h2>
-                         <CustomButton name={'Submit'} />
-                         <CustomDropDown1 items={items} />
                     </div>
                     <div className="bar-search">
                          <CustomSearch />

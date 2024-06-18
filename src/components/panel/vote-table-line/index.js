@@ -3,6 +3,7 @@ import React, { useRef, useState } from 'react';
 import './index.scss'
 import CustomCheckBox from "@/components/panel/check-box";
 import CustomButton from "@/components/panel/custom-button";
+import CustomInput from "@/components/panel/custom-input";
 
 const VoteTableLine = ({ item, back, dataFor, dataAgainst, onPaymentDataChange }) => {
      const inputRef = useRef(null);
@@ -41,12 +42,13 @@ const VoteTableLine = ({ item, back, dataFor, dataAgainst, onPaymentDataChange }
                          ref={inputRef}
                          value={inputValue}
                          readOnly={activeButton}
+                         maxLength="7"
                     />
                     <p>Premium</p>
                     <p>{item.category}</p>
                     <div className="table-panel">
                          <div onClick={handleButtonClick}>
-                              <CustomButton name={activeButton ? "Edit" : "Submit"} />
+                              <CustomButton  name={activeButton ? "Edit" : "Submit"} color={activeButton ? "#85CE36" : "#5B5BDF"} />
                          </div>
                     </div>
                </div>
