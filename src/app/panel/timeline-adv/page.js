@@ -1,4 +1,5 @@
-import React from 'react';
+"use client"
+import React, {useState} from 'react';
 import './index.scss'
 import CustomButton from "@/components/panel/custom-button";
 import CustomDropDown1 from "@/components/panel/drop-down";
@@ -8,8 +9,15 @@ import TableLine from "@/components/panel/standard-table-line";
 import CustomPagination from "@/components/panel/pagination";
 import AdvTableLine from "@/components/panel/adv-table-line";
 import CustomCheckBox from "@/components/panel/check-box";
+import Custom_modal from "@/components/main/custom_modal";
+import AddBannerForm from "@/components/panel/add-banner-form";
 
 const TimeLineAdv = () => {
+     const [activeModal, setActiveModal] = useState(false);
+
+     const showModal = () => {
+          setActiveModal(!activeModal);
+     };
 
      const items = [
 
@@ -45,7 +53,7 @@ const TimeLineAdv = () => {
                <div className="page-top-bar">
                     <div className="bar-actions">
                          <h2>Banner</h2>
-                         <CustomButton/>
+                         <div onClick={showModal}><CustomButton /></div>
                          <CustomDropDown1 items={items}/>
                     </div>
                     <div className="bar-search">
@@ -82,6 +90,7 @@ const TimeLineAdv = () => {
                <div className="pagination-wrap" style={{display: 'grid', justifyItems: 'end'}}>
                     <CustomPagination/>
                </div>
+               <Custom_modal open={activeModal} close={showModal}><AddBannerForm/></Custom_modal>
           </div>
      );
 };

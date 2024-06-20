@@ -6,6 +6,7 @@ import Footer from "@/components/main/footer";
 import Control_header from "@/components/panel/control_header";
 import ControlMenu from "@/components/panel/control_footer";
 import UserHeader from "@/components/dashboard/user-header";
+import Head from "next/head";
 
 
 const ChangeNavigation = ({children}) => {

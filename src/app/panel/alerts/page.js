@@ -50,7 +50,7 @@ const AlertsItem = () => {
                          <div className="form-content">
                               <label>
                                    <p>Article</p>
-                                   <CustomInput/>
+                                   <CustomInput value={value === 1 && 'news' || value === 2 && 'ads' || value === 3 && 'Scam detected!' } />
                               </label>
                               <label>
                                    <p>Description</p>

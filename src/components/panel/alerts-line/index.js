@@ -8,6 +8,7 @@ const AlertsLine = ({content,type}) => {
                     {type === 'ads' && <i className="icon-audio-description"></i>}
                     {type === 'news' && <i className="icon-newspaper"></i>}
                     {type === 'scam' && <i className="icon-edit"></i>}
+                    {type === 'special' && <i className="icon-payments"></i>}
                </div>
                <div className="line-content">{content}</div>
                <div className="line-close">

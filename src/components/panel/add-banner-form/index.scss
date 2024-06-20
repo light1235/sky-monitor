@@ -1,0 +1,45 @@
+
+.panel-banner-form {
+   width: 800px;
+   //height: 800px;
+   box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.25);
+   background: #fff;
+   padding: 20px;
+   & h2 {
+      font-family: "Open Sans", sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: #9ba8b5;
+      margin: 0;
+   }
+   & p {
+      font-family: "Open Sans", sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      color: #9ba8b5;
+   }
+   & .bottom-line {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      grid-gap: 50px;
+      align-items: end;
+      justify-items: end;
+   }
+   & .ant-select-single {
+      height: 40px;
+      width: 100% !important;
+      & .ant-select-selector {
+         border-radius: 0;
+         border: 1px solid var(--Main-color) !important;
+         color: #9BA8B5!important;
+      }
+   }
+
+}
+.ant-select-dropdown {
+   border-radius: 0 !important;
+}
+
+.ant-select-dropdown .ant-select-item-option-content {
+   color: #9BA8B5!important;
+}
