@@ -5,14 +5,14 @@ import './index.scss';
 
 const     CustomCheckBox = ({label,onSelect = checked => {}  }) => {
 
-     const onChange = (e) => {
+     const onChange1 = (e) => {
           console.log(`checked = ${e.target.checked}`);
           onSelect(e.target.checked);
      };
 
      return (
           <>
-               <Checkbox onChange={onChange} className="custom-checkbox">{label}</Checkbox>
+               <Checkbox onChange={onChange1} className="custom-checkbox">{label}</Checkbox>
           </>
      );
 };

@@ -85,4 +85,10 @@
 
       }
    }
+   & .active-status {
+      color: var(--Main-color);
+   }
+   & .deactivate {
+      color: #ce5a5a;
+   }
 }
