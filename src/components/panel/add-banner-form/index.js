@@ -81,7 +81,10 @@ const AddBannerForm = ({inner, setInner, click,close}) => {
                          <p>Image Mobile</p>
                          <CustomUpload/>
                     </label>
-                    <div onClick={click}><CustomButton click={close}  name="Submit" width="150px" /></div>
+                    <div onClick={() => {
+                         click()
+                         close()
+                    }}><CustomButton  name="Submit" width="150px" /></div>
                </div>
           </div>
      );
