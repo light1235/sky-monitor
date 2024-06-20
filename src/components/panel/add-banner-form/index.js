@@ -6,7 +6,7 @@ import {Select} from "antd";
 import CustomUpload from "@/components/panel/custom-upload";
 import CustomButton from "@/components/panel/custom-button";
 
-const AddBannerForm = ({inner, setInner, click,close}) => {
+const AddBannerForm = ({inner, setInner, click = () =>{},close}) => {
 
      const handleChange = (value) => {
           console.log(`selected ${value}`);
