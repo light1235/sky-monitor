@@ -4,6 +4,8 @@ import './index.scss';
 import selectedImage1 from '/src/assets/main/images/selected-1.jpg';
 import selectedImage2 from '/src/assets/main/images/selected-2.jpg';
 import selectedImage3 from '/src/assets/main/images/selected-3.jpg';
+import selectedImage4 from '/src/assets/main/images/selected-4.jpg';
+import selectedImage5 from '/src/assets/main/images/selected-6.jpg';
 import Image from "next/image";
 import CustomModal from "@/components/main/custom_modal";
 import PopUpForm from "@/components/main/pop-up-form";
@@ -14,7 +16,7 @@ const SelectedPopUp = ({close}) => {
      const [showSelect, setShowSelect] = useState(false);
      const [clickCount, setClickCount] = useState(0);
 
-     let popUps = ['listing',<BannerForm/>,<PopUpForm/>];
+     let popUps = ['listing',<BannerForm/>,<PopUpForm/>,'2','5'];
 
      const SelectService = () => {
           close();
@@ -41,30 +43,54 @@ const SelectedPopUp = ({close}) => {
                <div className="item-title">choose the appropriate service</div>
                <div className="item-description">Choose from the selected:</div>
                <div className="item-wrapper">
-                    <div className={active === 1 ? 'item-selected active-select' : ' item-selected'} onClick={()=> setActive(1)}>
-                         <div className="decoration-item"><div className="item-circle"></div></div>
+                    <div className={active === 1 ? 'item-selected active-select' : ' item-selected'}
+                         onClick={() => setActive(1)}>
+                         <div className="decoration-item">
+                              <div className="item-circle"></div>
+                         </div>
                          <Image src={selectedImage1} alt="selected image"/>
                          <span>Listing</span>
                     </div>
-                    <div className={active === 2 ? 'item-selected active-select' : ' item-selected'} onClick={()=> setActive(2)}>
+                    <div className={active === 2 ? 'item-selected active-select' : ' item-selected'}
+                         onClick={() => setActive(2)}>
                          <div className="decoration-item">
                               <div className="item-circle"></div>
                          </div>
                          <Image src={selectedImage2} alt="selected image"/>
                          <span>Banner</span>
                     </div>
-                    <div className={active === 3 ? 'item-selected active-select' : ' item-selected'} onClick={()=> setActive(3)}>
+                    <div className={active === 3 ? 'item-selected active-select' : ' item-selected'}
+                         onClick={() => setActive(3)}>
                          <div className="decoration-item">
                               <div className="item-circle"></div>
                          </div>
                          <Image src={selectedImage3} alt="selected image"/>
                          <span>Pop-Up</span>
                     </div>
+                    <div className={active === 4 ? 'item-selected active-select' : ' item-selected'}
+                         onClick={() => setActive(4)}>
+                         <div className="decoration-item">
+                              <div className="item-circle"></div>
+                         </div>
+                         <Image src={selectedImage4} alt="selected image"/>
+                         <span>Pin&Raise</span>
+                    </div>
+                    <div className={active === 5 ? 'item-selected active-select' : ' item-selected'}
+                         onClick={() => setActive(5)}>
+                         <div className="decoration-item">
+                              <div className="item-circle"></div>
+                         </div>
+                         <Image src={selectedImage5} alt="selected image"/>
+                         <span>Article</span>
+                    </div>
+                    <div className="bottom-line-items">
+
+                    </div>
                </div>
                <div className="button-wrapper">
-               <button onClick={SelectService} className="selected-button">Select</button>
+                    <button onClick={SelectService} className="selected-button">Select</button>
                </div>
-               <CustomModal  open={showSelect} close={SelectService}>{popUps[active-1]}</CustomModal>
+               <CustomModal open={showSelect} close={SelectService}>{popUps[active - 1]}</CustomModal>
           </div>
      );
 };
