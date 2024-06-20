@@ -1,10 +1,13 @@
 import React from 'react';
 import {Button} from "antd";
 
-const CustomButton = ({name = 'Add new', type= 'primary', color= '#85CE36', width = '100%', click = () => {}}) => {
+const CustomButton = ({name = 'Add new', type= 'primary', color= '#85CE36', width = '100%', click}) => {
 
      const handleClick = () => {
-          click()
+          if (typeof click === 'function') {
+               click();
+          } else {
+          }
      }
 
 

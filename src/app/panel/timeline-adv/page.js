@@ -30,9 +30,7 @@ const TimeLineAdv = () => {
                setNewBannerText('');
           }
      };
-     useEffect(() => {
-          console.log(newBannerText);
-     }, [newBannerText]);
+
 
      const items = [
           {

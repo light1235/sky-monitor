@@ -13,7 +13,7 @@ const AddBannerForm = ({inner, setInner, click,close}) => {
      };
 
      const handleInputChange = (e) => {
-          console.log("Input changed to:", e.target.value);
+          // console.log("Input changed to:", e.target.value);
           setInner(e.target.value);
      };
 

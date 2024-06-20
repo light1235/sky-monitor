@@ -28,7 +28,6 @@ const AdvTableLine = ({EditeM = 'Edite listing',DeleteM ='Mark delete', item, de
 
      const handleDelete = () => {
           deleteBanner(item.id);
-          console.log("123");
      };
      const  closePopUp = () => {
           setActiveEdit(!activeEdit)
