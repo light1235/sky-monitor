@@ -139,15 +139,15 @@ const AddNewsForm = ({ placeholder }) => {
                               <p>Image Desktop</p>
                               <CustomUpload />
                               <div className="editor-wrap">
-                                   <JoditEditor
-                                        ref={editor}
-                                        value={editorContent}
-                                        config={config}
-                                        tabIndex={1} // tabIndex of textarea
-                                        onBlur={(newContent) => setEditorContent(newContent)}
-                                        onChange={(newContent) => {
-                                        }}
-                                   />
+                                   {/*<JoditEditor*/}
+                                   {/*     ref={editor}*/}
+                                   {/*     value={editorContent}*/}
+                                   {/*     config={config}*/}
+                                   {/*     tabIndex={1} // tabIndex of textarea*/}
+                                   {/*     onBlur={(newContent) => setEditorContent(newContent)}*/}
+                                   {/*     onChange={(newContent) => {*/}
+                                   {/*     }}*/}
+                                   {/*/>*/}
                                    <Button
                                         type="primary"
                                         onClick={() => {
@@ -159,7 +159,7 @@ const AddNewsForm = ({ placeholder }) => {
                                         Submit Content
                                    </Button>
                               </div>
-                              <div dangerouslySetInnerHTML={{__html: editorContent}}/>
+                              {/*<div dangerouslySetInnerHTML={{__html: editorContent}}/>*/}
 
 
                          </div>
