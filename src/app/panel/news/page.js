@@ -8,6 +8,7 @@ import OptionTableLine from "@/components/panel/option-table-line";
 import TableLine from "@/components/panel/standard-table-line";
 import CustomPagination from "@/components/panel/pagination";
 import Custom_modal from "@/components/main/custom_modal";
+import NewsStepper from "@/components/panel/news-stepper";
 
 
 const items = [
@@ -109,7 +110,8 @@ const NewsPage = () => {
                     <CustomPagination/>
                </div>
                <Custom_modal open={activeModal} close={handleModal}>
-                    777777
+
+                    <NewsStepper />
                </Custom_modal>
           </div>
      );
