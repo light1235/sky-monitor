@@ -181,9 +181,6 @@ const AddNewsForm = ({ placeholder }) => {
                               <label>
                                    <CustomCheckBox/>
                                    <div className="item-button button-calendar">Date <i className="icon-calendar"></i></div>
-                                   <Space direction="vertical">
-                                        <DatePicker onChange={onChangeCalendar} picker="week" />
-                                   </Space>
                               </label>
                          </div>
                          <div className="item">

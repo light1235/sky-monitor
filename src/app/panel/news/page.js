@@ -1,4 +1,5 @@
-import React from 'react';
+"use client"
+import React, {useState} from 'react';
 import './index.scss'
 import CustomButton from "@/components/panel/custom-button";
 import CustomDropDown1 from "@/components/panel/drop-down";
@@ -7,6 +8,9 @@ import OptionTableLine from "@/components/panel/option-table-line";
 import TableLine from "@/components/panel/standard-table-line";
 import CustomPagination from "@/components/panel/pagination";
 import NewsStepper from "@/components/panel/news-stepper";
+import AddBannerForm from "@/components/panel/add-banner-form";
+import Custom_modal from "@/components/main/custom_modal";
+import AddNewsForm from "@/components/panel/add-news-form";
 
 
 const items = [
@@ -71,12 +75,18 @@ const items = [
 ];
 
 const NewsPage = () => {
+     const [activeModal, setActiveModal] = useState(false);
+
+     const handleModal = () => {
+          setActiveModal(!activeModal);
+     }
+
      return (
           <div className="news-page">
                <div className="page-top-bar">
                     <div className="bar-actions">
                          <h2>Listing</h2>
-                         <CustomButton/>
+                         <div onClick={handleModal}><CustomButton/></div>
                          <CustomDropDown1 items={items}/>
                     </div>
                     <div className="bar-search">
@@ -101,7 +111,9 @@ const NewsPage = () => {
                <div className="pagination-wrap" style={{display: 'grid', justifyItems: 'end'}}>
                     <CustomPagination/>
                </div>
-               {/*<NewsStepper />*/}
+               <Custom_modal open={activeModal} close={handleModal}>
+                 <AddNewsForm />
+               </Custom_modal>
           </div>
      );
 };
