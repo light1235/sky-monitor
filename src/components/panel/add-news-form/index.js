@@ -1,18 +1,18 @@
-"use client"
-import React, {useEffect, useMemo, useRef, useState} from 'react';
-import './index.scss'
-import {Button, message, Steps, theme} from "antd";
+import React, { useEffect, useMemo, useRef, useState } from 'react';
+import './index.scss';
+import { Button, message, Steps, theme } from "antd";
 import CustomInput from "@/components/panel/custom-input";
 import CustomTextArea from "@/components/main/cutom-text-area";
 import NewsLineLogo from "@/assets/main/icons/news-line-logo.svg";
 import Image from "next/image";
 import CustomUpload from "@/components/panel/custom-upload";
-import JoditEditor from 'jodit-react';
+import dynamic from 'next/dynamic';  // Add this line
 import CustomCheckBox from "@/components/panel/check-box";
 import { DatePicker, Space } from 'antd';
 
-const AddNewsForm = ({ placeholder }) => {
+const JoditEditor = dynamic(() => import('jodit-react'), { ssr: false });  // Modify this line
 
+const AddNewsForm = ({ placeholder }) => {
      const onChangeCalendar = (date, dateString) => {
           console.log(date, dateString);
      };
@@ -23,8 +23,8 @@ const AddNewsForm = ({ placeholder }) => {
 
      const config = useMemo(
           () => ({
-               readonly: false, // all options from https://xdsoft.net/jodit/docs/,
-               placeholder: placeholder || 'Start typings...'
+               readonly: false,
+               placeholder: placeholder || 'Start typing...'
           }),
           [placeholder]
      );
@@ -44,10 +44,6 @@ const AddNewsForm = ({ placeholder }) => {
           }));
      };
 
-
-
-
-
      const steps = [
           {
                title: 'News preview',
@@ -56,38 +52,37 @@ const AddNewsForm = ({ placeholder }) => {
                          <div>
                               <label>
                                    <p>Name</p>
-                                   <CustomInput/>
+                                   <CustomInput />
                               </label>
                               <label>
                                    <p>Description</p>
-                                   <CustomTextArea placeholder={'Add comments...'} minR="7" max={300}/>
+                                   <CustomTextArea placeholder={'Add comments...'} minR="7" max={300} />
                               </label>
                               <label>
                                    <p>Tags</p>
-                                   <CustomInput/>
+                                   <CustomInput />
                               </label>
                               <label>
-                                   <p>Main page  news block(news summary) <Image style={{display:'inline',padding:'0 5px'}} src={NewsLineLogo} alt="fire icon" height={29}></Image></p>
-                                   <CustomInput/>
+                                   <p>Main page news block(news summary) <Image style={{ display: 'inline', padding: '0 5px' }} src={NewsLineLogo} alt="fire icon" height={29}></Image></p>
+                                   <CustomInput />
                               </label>
-
                          </div>
-                         <div style={{margin:'0 auto'}}>
+                         <div style={{ margin: '0 auto' }}>
                               <p>Images desktop</p>
-                              <div style={{display:'grid',justifyItems:'center'}}>  <CustomUpload /></div>
+                              <div style={{ display: 'grid', justifyItems: 'center' }}>  <CustomUpload /></div>
                          </div>
                          <div>
                               <label>
                                    <p>Title</p>
-                                   <CustomInput/>
+                                   <CustomInput />
                               </label>
                               <label>
                                    <p>Description</p>
-                                   <CustomInput/>
+                                   <CustomInput />
                               </label>
                               <label>
                                    <p>Image-Alt</p>
-                                   <CustomInput/>
+                                   <CustomInput />
                               </label>
                          </div>
                     </div>
@@ -100,72 +95,69 @@ const AddNewsForm = ({ placeholder }) => {
                          <div>
                               <label>
                                    <p>Title</p>
-                                   <CustomInput/>
+                                   <CustomInput />
                               </label>
                               <label>
                                    <p>Description</p>
-                                   <CustomInput/>
+                                   <CustomInput />
                               </label>
                               <label>
                                    <p>OG-Title</p>
-                                   <CustomInput/>
+                                   <CustomInput />
                               </label>
                               <label>
                                    <p>OG-Description</p>
-                                   <CustomInput/>
+                                   <CustomInput />
                               </label>
                               <label>
                                    <p>OG-URL</p>
-                                   <CustomInput/>
+                                   <CustomInput />
                               </label>
                               <label>
                                    <p>OG-Image</p>
-                                   <CustomInput/>
+                                   <CustomInput />
                               </label>
                               <label>
                                    <p>Canonical</p>
-                                   <CustomInput/>
+                                   <CustomInput />
                               </label>
                               <label>
                                    <p>Image ALT</p>
-                                   <CustomInput placeholder={"Black__car"}/>
+                                   <CustomInput placeholder={"Black__car"} />
                               </label>
                          </div>
                          <div>
                               <label>
                                    <p>Image ALT</p>
-                                   <CustomInput placeholder={"Black__car"}/>
+                                   <CustomInput placeholder={"Black__car"} />
                               </label>
                               <p>Image Desktop</p>
                               <CustomUpload />
                               <div className="editor-wrap">
-                                   {/*<JoditEditor*/}
-                                   {/*     ref={editor}*/}
-                                   {/*     value={editorContent}*/}
-                                   {/*     config={config}*/}
-                                   {/*     tabIndex={1} // tabIndex of textarea*/}
-                                   {/*     onBlur={(newContent) => setEditorContent(newContent)}*/}
-                                   {/*     onChange={(newContent) => {*/}
-                                   {/*     }}*/}
-                                   {/*/>*/}
+                                   <JoditEditor
+                                        ref={editor}
+                                        value={editorContent}
+                                        config={config}
+                                        tabIndex={1} // tabIndex of textarea
+                                        onBlur={(newContent) => setEditorContent(newContent)}
+                                        onChange={(newContent) => {
+                                        }}
+                                   />
                                    <Button
                                         type="primary"
                                         onClick={() => {
                                              setContent(editorContent);
                                              // setEditorContent('');
                                         }}
-                                        style={{marginTop: '10px'}}
+                                        style={{ marginTop: '10px' }}
                                    >
                                         Submit Content
                                    </Button>
                               </div>
-                              {/*<div dangerouslySetInnerHTML={{__html: editorContent}}/>*/}
-
-
+                              {/* <div dangerouslySetInnerHTML={{ __html: editorContent }} /> */}
                          </div>
                     </div>
                ),
-
           },
           {
                title: 'Publish',
@@ -173,21 +165,20 @@ const AddNewsForm = ({ placeholder }) => {
                     <div className="news-content-3">
                          <div className="item">
                               <label>
-                                   <CustomCheckBox/>
+                                   <CustomCheckBox />
                                    <div className="item-button">Now</div>
                               </label>
                          </div>
                          <div className="item">
                               <label>
-                                   <CustomCheckBox/>
+                                   <CustomCheckBox />
                                    <div className="item-button button-calendar">Date <i className="icon-calendar"></i></div>
                               </label>
                          </div>
                          <div className="item">
                               <label>
-                                   <CustomCheckBox/>
+                                   <CustomCheckBox />
                                    <div className="item-button">Save only</div>
-
                               </label>
                          </div>
                     </div>
@@ -195,7 +186,7 @@ const AddNewsForm = ({ placeholder }) => {
           },
      ];
 
-     const {token} = theme.useToken();
+     const { token } = theme.useToken();
      const [current, setCurrent] = useState(0);
      const next = () => {
           setCurrent(current + 1);
@@ -209,9 +200,9 @@ const AddNewsForm = ({ placeholder }) => {
      }));
      const contentStyle = {
           lineHeight: '20px',
-          padding:'20px 0',
+          padding: '20px 0',
           color: token.colorTextTertiary,
-          backgroundColor:'#f2f2f2',
+          backgroundColor: '#f2f2f2',
           borderRadius: token.borderRadiusLG,
           border: `none`,
           marginTop: 16,
@@ -219,7 +210,7 @@ const AddNewsForm = ({ placeholder }) => {
 
      return (
           <div className="step-table news-table">
-               <Steps current={current} items={items}/>
+               <Steps current={current} items={items} />
                <div style={contentStyle}>{steps[current].content}</div>
                <div
                     style={{
