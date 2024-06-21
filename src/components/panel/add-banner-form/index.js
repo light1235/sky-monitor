@@ -1,19 +1,20 @@
 "use client"
-import React from 'react';
+import React, {useState} from 'react';
 import './index.scss';
 import CustomInput from "@/components/panel/custom-input";
 import {Select} from "antd";
 import CustomUpload from "@/components/panel/custom-upload";
 import CustomButton from "@/components/panel/custom-button";
 
-const AddBannerForm = ({inner, setInner, click = () =>{},close}) => {
+const AddBannerForm = ({inner, setInner, click = () => {}, close, onSelect, setCat }) => {
+     const [selectedCategory, setSelectedCategory] = useState('Header banner');
 
-     const handleChange = (value) => {
-          console.log(`selected ${value}`);
+     const handleCategoryChange = (value) => {
+          // setSelectedCategory(value);
+          setCat(value); // Directly updating parent state
      };
 
      const handleInputChange = (e) => {
-          // console.log("Input changed to:", e.target.value);
           setInner(e.target.value);
      };
 
@@ -34,7 +35,7 @@ const AddBannerForm = ({inner, setInner, click = () =>{},close}) => {
                     style={{
                          width: 120,
                     }}
-                    onChange={handleChange}
+                    onChange={handleCategoryChange}
                     options={[
                          {
                               value: 'Header banner',
@@ -52,7 +53,7 @@ const AddBannerForm = ({inner, setInner, click = () =>{},close}) => {
                     style={{
                          width: 120,
                     }}
-                    onChange={handleChange}
+                    onChange={() => {}}
                     options={[
                          {
                               value: '1 week',
@@ -81,10 +82,7 @@ const AddBannerForm = ({inner, setInner, click = () =>{},close}) => {
                          <p>Image Mobile</p>
                          <CustomUpload/>
                     </label>
-                    <div onClick={() => {
-                         click()
-                         close()
-                    }}><CustomButton  name="Submit" width="150px" /></div>
+                    <div onClick={click}><div onClick={close}><CustomButton name="Submit" width="150px" /></div></div>
                </div>
           </div>
      );

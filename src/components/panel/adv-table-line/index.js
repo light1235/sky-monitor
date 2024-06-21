@@ -5,22 +5,19 @@ import CustomCheckBox from "@/components/panel/check-box";
 import Custom_modal from "@/components/main/custom_modal";
 import AddBannerForm from "@/components/panel/add-banner-form";
 
-const AdvTableLine = ({EditeM = 'Edite listing',DeleteM ='Mark delete', item, deleteBanner, editBanner }) => {
+const AdvTableLine = ({EditeM = 'Edite listing', DeleteM = 'Mark delete', item, deleteBanner, editBanner }) => {
      const [activeMenu, setActiveMenu] = useState(false);
      const [activeEdit, setActiveEdit] = useState(false);
 
      useEffect(() => {
-          // Функция-обработчик для закрытия меню при щелчке вне его области
+          // Close menu when clicking outside
           const handleClickOutsideMenu = (event) => {
-               if (activeMenu === true){
-                    setActiveMenu(false)
+               if (activeMenu) {
+                    setActiveMenu(false);
                }
           };
 
-          // Добавляем обработчик при монтировании компонента
           document.addEventListener('click', handleClickOutsideMenu);
-
-          // Убираем обработчик при размонтировании компонента
           return () => {
                document.removeEventListener('click', handleClickOutsideMenu);
           };
@@ -29,10 +26,9 @@ const AdvTableLine = ({EditeM = 'Edite listing',DeleteM ='Mark delete', item, de
      const handleDelete = () => {
           deleteBanner(item.id);
      };
-     const  closePopUp = () => {
-          setActiveEdit(!activeEdit)
-     }
-
+     const closePopUp = () => {
+          setActiveEdit(!activeEdit);
+     };
 
      return (
           <div className="adv-table">
@@ -48,7 +44,7 @@ const AdvTableLine = ({EditeM = 'Edite listing',DeleteM ='Mark delete', item, de
                          <p>21 SEP 10.45</p>
                     </div>
                     <p>{item.category}</p>
-                    <p className={item.status === 'active' ? 'active-status' : 'deactivate'  }>{item.status}</p>
+                    <p className={item.status === 'active' ? 'active-status' : 'deactivate'}>{item.status}</p>
                     <div className="table-panel">
                          {activeMenu &&
                               <div className="edit-menu">
@@ -62,11 +58,11 @@ const AdvTableLine = ({EditeM = 'Edite listing',DeleteM ='Mark delete', item, de
                <Custom_modal open={activeEdit} close={closePopUp}>
                     <AddBannerForm
                          inner={item.name}
-                         setInner={(newName) => editBanner(item.id, newName)}
+                         setInner={(newName) => editBanner(item.id, newName, item.category)}
                          click={closePopUp}
+                         setCat={(newCategory) => editBanner(item.id, item.name, newCategory)}
                     />
                </Custom_modal>
-
           </div>
      );
 };
