@@ -7,8 +7,6 @@ import CustomSearch from "@/components/panel/custom-search";
 import OptionTableLine from "@/components/panel/option-table-line";
 import TableLine from "@/components/panel/standard-table-line";
 import CustomPagination from "@/components/panel/pagination";
-import NewsStepper from "@/components/panel/news-stepper";
-import AddBannerForm from "@/components/panel/add-banner-form";
 import Custom_modal from "@/components/main/custom_modal";
 import AddNewsForm from "@/components/panel/add-news-form";
 
