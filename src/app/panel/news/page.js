@@ -9,6 +9,7 @@ import TableLine from "@/components/panel/standard-table-line";
 import CustomPagination from "@/components/panel/pagination";
 import Custom_modal from "@/components/main/custom_modal";
 import AddNewsForm from "@/components/panel/add-news-form";
+import NewsStepper from "@/components/panel/news-stepper";
 
 
 const items = [
@@ -110,7 +111,8 @@ const NewsPage = () => {
                     <CustomPagination/>
                </div>
                <Custom_modal open={activeModal} close={handleModal}>
-                 <AddNewsForm />
+                 {/*<AddNewsForm />*/}
+                    <NewsStepper />
                </Custom_modal>
           </div>
      );
