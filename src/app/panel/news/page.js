@@ -109,7 +109,7 @@ const NewsPage = () => {
                     <CustomPagination/>
                </div>
                <Custom_modal open={activeModal} close={handleModal}>
-
+                    777777
                </Custom_modal>
           </div>
      );
