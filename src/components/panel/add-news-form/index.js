@@ -154,7 +154,7 @@ const AddNewsForm = ({ placeholder }) => {
                                         Submit Content
                                    </Button>
                               </div>
-                              {/* <div dangerouslySetInnerHTML={{ __html: editorContent }} /> */}
+                               <div dangerouslySetInnerHTML={{ __html: editorContent }} />
                          </div>
                     </div>
                ),
