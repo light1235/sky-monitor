@@ -6,7 +6,7 @@ import selectedImage2 from '/src/assets/main/images/selected-2.jpg';
 import selectedImage3 from '/src/assets/main/images/selected-3.jpg';
 import selectedImage4 from '/src/assets/main/images/selected-4.jpg';
 import selectedImage5 from '/src/assets/main/images/selected-5.jpg';
-import ArrowImage from '/src/assets/main/images/arrow-mario-5.jpg'
+import ArrowImage from '/src/assets/main/images/arrow-mario-6.jpg'
 import Image from "next/image";
 import CustomModal from "@/components/main/custom_modal";
 import PopUpForm from "@/components/main/pop-up-form";
