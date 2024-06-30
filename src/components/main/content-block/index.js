@@ -66,6 +66,8 @@ const ContentBlock = ({items}) => {
 
      }, []);
 
+     const [isRegistered, setIsRegistered] = useState(false);
+
 
      return (
           <div className="content__block">
@@ -74,16 +76,16 @@ const ContentBlock = ({items}) => {
                          <React.Fragment key={index}>
                               {widthState < 1480 ? (
                                    item.noFund ? (
-                                             <Listing_card_mobile_free item={item}  wish={wishList[index]} setWish={() => handleWishClick(index)} ind={index} />
+                                             <Listing_card_mobile_free item={item} registred={isRegistered}  wish={wishList[index]} setWish={() => handleWishClick(index)} ind={index} />
 
                                    ) : (
-                                        <Listing_card_mobile item={item} wish={wishList[index]} setWish={() => handleWishClick(index)} ind={index}  />
+                                        <Listing_card_mobile item={item} registred={isRegistered} wish={wishList[index]} setWish={() => handleWishClick(index)} ind={index}  />
                                    )
                               ) : (
                                    item.noFund ? (
-                                        <Listing_card_free item={item} wish={wishList[index]} setWish={() => handleWishClick(index)} ind={index} />
+                                        <Listing_card_free item={item} registred={isRegistered} wish={wishList[index]} setWish={() => handleWishClick(index)} ind={index} />
                                    ) : (
-                                        <Listing_card item={item} wish={wishList[index]} setWish={() => handleWishClick(index)} ind={index} />
+                                        <Listing_card item={item} registred={isRegistered} wish={wishList[index]} setWish={() => handleWishClick(index)} ind={index} />
                                    )
                               )}
                          </React.Fragment>
