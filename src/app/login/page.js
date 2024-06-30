@@ -76,7 +76,7 @@ const LoginPage = () => {
                                                   <CustomCheckBox onSelect={handleForgotChange}  />Remember me
                                              </label>
                                              <div className="form-separator"></div>
-                                             <div className="ps-reset"><Link href="">Forgot your password ?</Link></div>
+                                             <div className="ps-reset"><Link href="/reset">Forgot your password ?</Link></div>
                                         </Form>
                                    )}
                               </Formik>
