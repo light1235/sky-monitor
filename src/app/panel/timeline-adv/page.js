@@ -11,6 +11,7 @@ import Custom_modal from "@/components/main/custom_modal";
 import AddBannerForm from "@/components/panel/add-banner-form";
 
 const TimeLineAdv = () => {
+
      const [activeModal, setActiveModal] = useState(false);
      const [advertisement, setAdvertisement] = useState([
           {name: 'Razzelton', type: '', from: '', to: '', category: 'Header-banner', status: 'active', start: Date.now(), id: '1'},

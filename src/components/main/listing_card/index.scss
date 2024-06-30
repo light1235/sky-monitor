@@ -190,6 +190,10 @@
             display: grid;
             grid-template-columns: 2fr 1fr;
             justify-items: end;
+            & img {
+               padding-right: 7px;
+               cursor: pointer;
+            }
             & span {
                padding-right: 5px;
                font-family: "Open Sans", sans-serif;
@@ -271,4 +275,28 @@
    .card-middle_line .left_side .content_wrapper .status span {
       color: #CC0F0F;
    }
+}
+.vote__menu {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-column-gap: 10px;
+   & .vote-item {
+      border: 2px solid #8bc643;
+      border-radius: 4px;
+      width:40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      & img {
+         width: 30px;
+         height: auto;
+      }
+      &:nth-child(2n){
+         border: 2px solid #CC0000;
+      }
+   }
+}
+.ant-popover .ant-popover-inner {
+   padding: 6px !important;
 }

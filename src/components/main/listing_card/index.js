@@ -4,7 +4,7 @@ import './index.scss'
 import Image from "next/image";
 import Link from "next/link";
 import {AiFillHeart, AiOutlineHeart} from "react-icons/ai";
-import { Divider, Form, Radio, Skeleton, Space, Switch } from 'antd';
+import {Divider, Form, Popover, Radio, Skeleton, Space, Switch} from 'antd';
 
 import bitcoinLogo from '/src/assets/main/icons/payments-system/bitcoin.svg';
 import advLogo from '/src/assets/main/icons/payments-system/adv-cash.svg'
@@ -29,6 +29,8 @@ import forumIocn from '/src/assets/main/icons/forum-icon.svg';
 import voteIcon from '/src/assets/main/icons/vote-icon.svg';
 import CustomToolTop from "@/components/main/tooltip_custom";
 import ArrowTopNextGroup from '../../../assets/main/icons/arrow-super-next.svg';
+import VoteLike from '../../../assets/main/icons/vote-like.svg';
+import VoteUnLike from '../../../assets/main/icons/vote-unlike.svg';
 
 
 const ListingCard = ({ item, wish,ind,setWish}) => {
@@ -82,6 +84,13 @@ const ListingCard = ({ item, wish,ind,setWish}) => {
           setImageLoading(true);
      }, [paymentSystems]);
 
+     const VoteMenu = (
+          <div className="vote__menu">
+               <div className="vote-item"><Image width="16" height="16" src={VoteLike} alt="vote-image"/></div>
+               <div className="vote-item"><Image width="16" height="16" src={VoteUnLike} alt="vote-image"/></div>
+          </div>
+     );
+
      return (
           <div className={ item.projectInformation.status.scam ? "listing__card-thin scam-status" : 'listing__card-thin'}>
                <div className="card-top_line">
@@ -94,7 +103,7 @@ const ListingCard = ({ item, wish,ind,setWish}) => {
                     <div className="program-favorites" onClick={handleWishClick}>
                          {wish ?  <AiFillHeart size="20px" color="#85CE36" />   : <CustomToolTop text="add to favorites">   <AiOutlineHeart color={'#85CE36'} size="20px" />  </CustomToolTop>}
                     </div>
-                    <div className="program_details"><Link target="_blank" aria-label="program details" href={item.detailsLink}><CustomToolTop text={'Program details'}> <div className="details-button"><div className="button-circle"><Image src={ArrowTopNextGroup} alt="arrow icon" width="10" height="10" /></div></div></CustomToolTop></Link></div>
+                    <div className="program_details"><Link rel="nofollow" target="_blank" aria-label="program details" href={item.detailsLink}><CustomToolTop text={'Program details'}> <div className="details-button"><div className="button-circle"><Image src={ArrowTopNextGroup} alt="arrow icon" width="10" height="10" /></div></div></CustomToolTop></Link></div>
                </div>
                <div className="card-middle_line">
                     <div className="left_side">
@@ -161,12 +170,12 @@ const ListingCard = ({ item, wish,ind,setWish}) => {
                          </div>
                          <div className="info">Info</div>
                          <div className="project-info">
-                              <Link target="_blank" href="https://www.similarweb.com/ru/">
+                              <Link rel="nofollow" target="_blank" href="https://www.similarweb.com/ru/">
                                    <CustomToolTop text={'Seo information'}>
                                         <Image src={simillarWeb} height="15" width="15" alt="simillar_web_logo"/>
                                    </CustomToolTop>
                               </Link>
-                              <Link target="_blank" href="https://whois.domaintools.com/">
+                              <Link rel="nofollow" target="_blank" href="https://whois.domaintools.com/">
                                    <CustomToolTop text={'Whois information'}>
                                         <Image src={whoIs} height="15" width="15" alt="who_is_logo"/>
                                    </CustomToolTop>
@@ -180,8 +189,13 @@ const ListingCard = ({ item, wish,ind,setWish}) => {
                          <div className="plans">{truncatedText} </div>
                     </div>
                     <div className="user-buttons">
-                         <div className="button-forum"><span>Forum</span><Link target="_blank" href={item.forum}> <Image width="15" src={forumIocn} alt="forum_logo"/></Link></div>
-                         <div className="button-vote"><span>Vote now</span><Link href='/'><CustomToolTop text={'Only for registered users'}> <Image width="15" src={voteIcon} alt="vote_logo"/></CustomToolTop></Link></div>
+                         <div className="button-forum"><span>Forum</span><Link rel="nofollow" target="_blank" href={item.forum}> <Image width="15" src={forumIocn} alt="forum_logo"/></Link></div>
+                         <div className="button-vote"><span>Vote now</span>
+                              <CustomToolTop  text={'Only for registered users'}>
+                                   <Popover content={VoteMenu} trigger="click" >
+                                   <Image width="15" src={voteIcon} alt="vote_logo"/>
+                                   </Popover>
+                              </CustomToolTop></div>
                     </div>
                </div>
                <div className="card-vote-line">
