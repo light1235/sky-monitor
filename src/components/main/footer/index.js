@@ -21,13 +21,13 @@ const Footer = () => {
                                    <li>
                                         <div className="social__networks">
                                              <div className="social__links">
-                                                  <a href="/" className="telegram"><Image src={teleGramIcon} alt="telegram icon"></Image></a>
+                                                  <a rel="nofollow" href="/" className="telegram"><Image src={teleGramIcon} alt="telegram icon"></Image></a>
                                              </div>
                                              <div className="social__links">
-                                                  <a href="/"><Image src={youTubeIcon} alt="youtube icon"></Image></a>
+                                                  <a  rel="nofollow" href="/"><Image src={youTubeIcon} alt="youtube icon"></Image></a>
                                              </div>
                                              <div className="social__links">
-                                                  <a href="/"><Image src={tikTokIcon} alt="tik-tok icon"></Image></a>
+                                                  <a rel="nofollow" href="/"><Image src={tikTokIcon} alt="tik-tok icon"></Image></a>
                                              </div>
                                         </div>
                                    </li>

@@ -32,22 +32,22 @@ export default function Home() {
                         },
                    ]}>
                         <div style={{display:"grid"}} aria-hidden="true">
-                             <Link target="_blank" href='/' aria-label="program banner" aria-hidden="true">
+                             <Link rel="nofollow" target="_blank" href='/' aria-label="program banner" aria-hidden="true">
                                   <Image src={HeroBanner} priority width="369" height="170" alt="banner" aria-hidden="true"></Image>
                              </Link>
                         </div>
                         <div aria-hidden="true">
-                             <Link target="_blank" href='/' aria-label="program banner" aria-hidden="true">
+                             <Link rel="nofollow" target="_blank" href='/' aria-label="program banner" aria-hidden="true">
                                   <Image src={HeroBanner1} priority width="369" height="170" alt="banner"></Image>
                              </Link>
                         </div>
                         <div aria-hidden="true">
-                             <Link target="_blank" href='/' aria-label="program banner" aria-hidden="true">
+                             <Link rel="nofollow" target="_blank" href='/' aria-label="program banner" aria-hidden="true">
                                   <Image src={HeroBanner} priority width="369" height="170" alt="banner" aria-hidden="true"></Image>
                              </Link>
                         </div>
                         <div aria-hidden="true">
-                             <Link target="_blank" href='/' aria-label="program banner" aria-hidden="true">
+                             <Link  rel="nofollow" target="_blank" href='/' aria-label="program banner" aria-hidden="true">
                                   <Image src={HeroBanner1} priority width="369" height="170" alt="banner" aria-hidden="true"></Image>
                              </Link>
                         </div>

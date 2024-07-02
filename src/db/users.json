@@ -1,0 +1,28 @@
+[
+  {
+    "type": "user",
+    "name": "",
+    "icon": "https",
+    "comments": true,
+    "level": "1",
+    "services": {
+
+    },
+    "dashboard": {
+      "favorites": "",
+      "news": "",
+      "voting": ""
+    }
+  },
+  {
+    "type": "admin",
+    "name": "",
+    "icon": "https"
+  },
+  {
+    "type": "moderator",
+    "name": "",
+    "icon": "https",
+    "payments": false
+  }
+]
