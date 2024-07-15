@@ -22,7 +22,7 @@ const Services = () => {
                          </div>
                          <div className="item-title">Listing Advertising</div>
                          <div className="item-description">
-                              описание пакетов услуг для листига и что в них входит
+                              description of listing packages
                          </div>
                          <div className="item-link"><Image src={linkLogo} alt='link-icon'></Image>
                          </div>
@@ -35,7 +35,7 @@ const Services = () => {
                          </div>
                          <div className="item-title">Banner Advertising</div>
                          <div className="item-description">
-                              детальное описание услуги баннера которую вы можете получить
+                              Graphic advertisement on the website
                          </div>
                          <div className="item-link"><Image src={linkLogo} alt='link-icon'></Image>
                          </div>
@@ -48,7 +48,7 @@ const Services = () => {
                          </div>
                          <div className="item-title">Pop-up Advertising</div>
                          <div className="item-description">
-                              как выглядит услуга поп ап и как она работает-
+                              Advertising pop-up window on top of the main content
                          </div>
                          <div className="item-link"><Image src={linkLogo} alt='link-icon'></Image>
                          </div>
@@ -61,7 +61,7 @@ const Services = () => {
                          </div>
                          <div className="item-title">Listing pin to top</div>
                          <div className="item-description">
-                              описание самой услуги а так же ее приемуществ
+                              Anchoring the project in the Overview column
                          </div>
                          <div className="item-link"><Image src={linkLogo} alt='link-icon'></Image>
                          </div>
@@ -74,7 +74,7 @@ const Services = () => {
                          </div>
                          <div className="item-title">Listing raise to top</div>
                          <div className="item-description">
-                              дополнительная услуга для актуальных рекламодателей
+                              Raising the project on the Overview column
                          </div>
                          <div className="item-link"><Image src={linkLogo} alt='link-icon'></Image>
                          </div>
@@ -87,7 +87,7 @@ const Services = () => {
                          </div>
                          <div className="item-title">Project pin to top</div>
                          <div className="item-description">
-                              описание услуги  описания проекта
+                              Project Anchoring in projects page
                          </div>
                          <div className="item-link"><Image src={linkLogo} alt='link-icon'></Image>
                          </div>
