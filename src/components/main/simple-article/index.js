@@ -20,7 +20,7 @@ const ArticlePage = ({post}) => {
      return (
           <div className="article__page">
                <div className="article__inner">
-                    <Image  width="1920" height="500" src={post.article.image} alt="article image"></Image>
+                    <Image  width="900" height="500" src={post.article.image} alt="article image"></Image>
                     <div className="article__content">
                          <div className="content__top">
                               <div className="content__date-published">{post.article.date}</div>

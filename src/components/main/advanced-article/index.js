@@ -79,7 +79,7 @@ const AdvancedArticle = ({post}) => {
      return (
           <div className="advanced-article__page">
                <div className="article__inner">
-                    <Image className="article-image"  width="1920" height="500" src={post.article.image} alt="article image"></Image>
+                    <Image className="article-image"  width="900" height="500" src={post.article.image} alt="article image"></Image>
                     <div className="article__content">
                          <div className="content__top">
                               <div className="content__date-published">{post.article.date}</div>
