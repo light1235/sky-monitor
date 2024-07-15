@@ -22,7 +22,7 @@ const Services = () => {
                          </div>
                          <div className="item-title">Listing Advertising</div>
                          <div className="item-description">
-                              description of listing packages
+                              Description of listing packages
                          </div>
                          <div className="item-link"><Image src={linkLogo} alt='link-icon'></Image>
                          </div>
