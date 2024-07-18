@@ -29,7 +29,7 @@ const Services = () => {
                          </Link>
                     </div>
                     <div className="services-item">
-                         <Link href='/'>
+                         <Link href='/banner-advertising'>
                          <div className="item-logo">
                               <div className="logo-circle"><Image src={bannerLogo}  width='40'alt={'listing icon'}/></div>
                          </div>
