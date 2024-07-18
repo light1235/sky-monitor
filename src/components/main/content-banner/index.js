@@ -6,7 +6,7 @@ const ContentBanner = ({image, url}) => {
 
      return (
           <>
-               <Link target="_blank" href="https://www.google.com/"> <Image width="615" height="90" src={image} alt='banner-image' /></Link>
+               <Link target="_blank" href={url}> <Image width="615" height="90" src={image} alt='banner-image' /></Link>
           </>
      );
 };
