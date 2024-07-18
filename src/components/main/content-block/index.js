@@ -18,10 +18,12 @@ const ContentBlock = ({items}) => {
           'https://cdn.discordapp.com/attachments/1046398987659395152/1223050710527115386/492.gif?ex=669658fc&is=6695077c&hm=b2683a09b1440484df3610106d286c0d5e2f99e21038a7d52a8d5f897b58e305&',
           'https://cdn.discordapp.com/attachments/1046398987659395152/1223050746887405609/493.gif?ex=66965905&is=66950785&hm=ba3389dda9a782b7d03446db79f65d92d4c115b1e3d4e8c63badacbb98a44493&'];
 
-     const RandomBanner = [{banner:'',url:'https://google.com'},{banner:'',url:'https://www.facebook.com/'},{banner:'',url:'https://www.instagram.com/'},{banner:'',url:'https://www.zfort.com.ua/'},{banner:'',url:'https://betravis.github.io/shape-tools/path-to-polygon/'},{banner:'',url:'http://phrogz.net/SVG/convert_path_to_polygon.xhtml'},]
-     // RandomBanner.map((item, index) =>
-     //      console.log(item.url)
-     // )
+     // const RandomBanner = [{banner:'',url:'https://google.com'},{banner:'',url:'https://www.facebook.com/'},{banner:'',url:'https://www.instagram.com/'},{banner:'',url:'https://www.zfort.com.ua/'},{banner:'',url:'https://betravis.github.io/shape-tools/path-to-polygon/'},{banner:'',url:'http://phrogz.net/SVG/convert_path_to_polygon.xhtml'},]
+     // // RandomBanner.map((item, index) =>
+     // //      console.log(item.url)
+     // // )
+     // low
+
 
 
 
@@ -87,7 +89,7 @@ const ContentBlock = ({items}) => {
                          <React.Fragment key={index}>
                               {widthState < 1480 ? (
                                    item.noFund ? (
-                                             <Listing_card_mobile_free item={item} registred={isRegistered}  wish={wishList[index]} setWish={() => handleWishClick(index)} ind={index} />
+                                        <Listing_card_mobile_free item={item} registred={isRegistered}  wish={wishList[index]} setWish={() => handleWishClick(index)} ind={index} />
 
                                    ) : (
                                         <Listing_card_mobile item={item} registred={isRegistered} wish={wishList[index]} setWish={() => handleWishClick(index)} ind={index}  />
@@ -114,4 +116,3 @@ const ContentBlock = ({items}) => {
 };
 
 export default ContentBlock;
-
