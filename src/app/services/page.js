@@ -68,7 +68,7 @@ const Services = () => {
                          </Link>
                     </div>
                     <div className="services-item">
-                         <Link href='/'>
+                         <Link href='/listing-raise'>
                          <div className="item-logo">
                               <div className="logo-circle"><Image src={listingRaise} width='40' alt={'listing icon'}/></div>
                          </div>

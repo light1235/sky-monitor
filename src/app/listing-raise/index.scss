@@ -1,3 +1,4 @@
+
 @font-face {
    font-family: 'Jost';
    src: url('../../assets/fonts/Jost-Regular.woff2') format('woff2'),
@@ -17,7 +18,7 @@
 }
 
 
-.listing-service__page {
+.listing-raise__page {
    background-color: #F4F6F7;
    padding: 100px 0 100px 0;
    & .page-container {
@@ -55,7 +56,7 @@
 }
 
 @media only screen and (max-width : 520px) {
-   .listing-service__page  {
+   .listing-raise__page  {
       & .page-container {
          & h1 {
             font-size: 30px;
