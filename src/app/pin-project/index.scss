@@ -1,0 +1,54 @@
+@font-face {
+   font-family: 'Jost';
+   src: url('../../assets/fonts/Jost-Regular.woff2') format('woff2'),
+   url('../../assets/fonts/Jost-Regular.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: 'Jost';
+   src: url('../../assets/fonts/Jost-SemiBold.woff2') format('woff2'),
+   url('../../assets/fonts/Jost-SemiBold.woff') format('woff');
+   font-weight: 600;
+   font-style: normal;
+   font-display: swap;
+}
+
+.pin-project__page {
+   background-color: #F4F6F7;
+   padding: 100px 0 100px 0;
+   & .page-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 20px;
+      & img {
+         width: 100%;
+         height: auto;
+         //border-radius: 40px;
+      }
+      & h2 {
+         font-family: Jost, serif;
+         font-size: 36px;
+         font-weight: 600;
+      }
+      & h3 {
+         font-family: Jost, serif;
+         font-size: 30px;
+
+      }
+      & h1 {
+         font-family: Jost, serif;
+         font-size: 45px;
+      }
+      & p {
+         font-family: Jost, serif;
+         font-size: 20px;
+         line-height: 1.5;
+         color: #5e5e5e;
+         font-weight: normal;
+
+      }
+   }
+}

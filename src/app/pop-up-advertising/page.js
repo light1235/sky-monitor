@@ -8,8 +8,8 @@ const PopUpPackages  = () => {
           <div className="pop-up-service__page">
                <div className="page-container">
                     <h1><strong>Popup banner </strong></h1>
-                    <h2>Is a popup on a website that shows important information, offer or promotion to grab the
-                         attention of users.</h2>
+                    <h3>Is a popup on a website that shows important information, offer or promotion to grab the
+                         attention of users.</h3>
 
                     <Image src={PopUpImage} alt={'example image'}/>
                     <p>Shows ads once to the user who visited the site, when you log in again will not be shown.

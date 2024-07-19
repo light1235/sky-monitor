@@ -31,7 +31,7 @@ const Services = () => {
                     <div className="services-item">
                          <Link href='/banner-advertising'>
                          <div className="item-logo">
-                              <div className="logo-circle"><Image src={bannerLogo}  width='40'alt={'listing icon'}/></div>
+                              <div className="logo-circle"><Image src={bannerLogo}  width='40' alt={'listing icon'}/></div>
                          </div>
                          <div className="item-title">Banner Advertising</div>
                          <div className="item-description">
@@ -81,7 +81,7 @@ const Services = () => {
                          </Link>
                     </div>
                     <div className="services-item">
-                         <Link href='/'>
+                         <Link href='/pin-project'>
                          <div className="item-logo">
                               <div className="logo-circle"><Image src={projectLogo} width="40" alt={'listing icon'}/></div>
                          </div>
