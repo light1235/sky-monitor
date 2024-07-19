@@ -9,7 +9,7 @@ const ModifiedStrings = ({ domains }) => {
                const removeDomain = /\..*$/;
                const modifiedString = domains.map(originalString => originalString.replace(removeDomain, '')).join(', ');
                setModifiedString(modifiedString);
-               setLoading(false); // Помечаем, что загрузка завершена
+               setLoading(false);
           }
      }, [domains]);
 
@@ -17,7 +17,7 @@ const ModifiedStrings = ({ domains }) => {
           return <div>Loading...</div>;
      }
 
-     return <div>{modifiedString || 'No data'}</div>; // Проверяем, если modifiedString пустая, отображаем 'No data'
+     return <div>{modifiedString || 'No data'}</div>;
 };
 
 export default ModifiedStrings;

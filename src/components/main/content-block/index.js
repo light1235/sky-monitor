@@ -20,11 +20,6 @@ const ContentBlock = ({items}) => {
 
      const RandomBanner = [{banner:'https://cdn.discordapp.com/attachments/1046398987659395152/1222300614822858975/lapaido728e.gif?ex=66964167&is=6694efe7&hm=f9a7af6e9cc4d1ed90308c1cf22dcb9fa976734d9eed8148692ed879c9686016&',url:'https://google.com'},{banner:'https://cdn.discordapp.com/attachments/1046398987659395152/1222301455751450727/hyiproom468ee.gif?ex=66964230&is=6694f0b0&hm=0e7b96eac06556c957da6c487f049dc1afa1e3f499bc4fb710df0e2eae905a03&',url:'https://www.facebook.com/'},{banner:'https://cdn.discordapp.com/attachments/1046398987659395152/1223050593866875002/rotor.webp?ex=669658e0&is=66950760&hm=e4544c7da84f4d131ff8b9d6acd7882ae81fb5c4a27db9533243bc73e6dcb92e&',url:'https://www.instagram.com/'},{banner:'https://cdn.discordapp.com/attachments/1046398987659395152/1223050673155866684/489.gif?ex=669658f3&is=66950773&hm=d80481fc816ea58dbc85ea6a3a716fa8b0e46ad543cef14733bbc9389fc5bf53&',url:'https://www.zfort.com.ua/'},{banner:'https://cdn.discordapp.com/attachments/1046398987659395152/1223050710527115386/492.gif?ex=669a4d7c&is=6698fbfc&hm=ab44ee3e2b4262148a28458b6bc32677b2da58f15a87ff77372d3cf249883c37&',url:'https://betravis.github.io/shape-tools/path-to-polygon/'},{banner:'https://cdn.discordapp.com/attachments/1046398987659395152/1223050746887405609/493.gif?ex=669a4d85&is=6698fc05&hm=9e61d8384977877063b330d0e420c6a33af8326e89965dcd75ff258e97e4551b&',url:'http://phrogz.net/SVG/convert_path_to_polygon.xhtml'},]
 
-     // // RandomBanner.map((item, index) =>
-     // //      console.log(item.url)
-     // // )
-
-
 
 
 

@@ -90,6 +90,7 @@ const ListingCard = ({ item, wish,ind,setWish}) => {
                <div className="vote-item"><Image width="16" height="16" src={VoteUnLike} alt="vote-image"/></div>
           </div>
      );
+     // TODO: сделать голосование для всех листинг карточек
 
      return (
           <div className={ item.projectInformation.status.scam ? "listing__card-thin scam-status" : 'listing__card-thin'}>
