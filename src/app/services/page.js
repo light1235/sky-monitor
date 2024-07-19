@@ -55,7 +55,7 @@ const Services = () => {
                          </Link>
                     </div>
                     <div className="services-item">
-                         <Link href='/'>
+                         <Link href='/listing-pin'>
                          <div className="item-logo">
                               <div className="logo-circle"><Image src={listingPin} width='40' alt={'listing icon'}/></div>
                          </div>
