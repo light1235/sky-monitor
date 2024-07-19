@@ -1,6 +1,6 @@
 import React from 'react';
 import './index.scss'
-import PopUpImage from '../../assets/main/images/service-pop-up.jpg'
+import PopUpImage from '../../assets/main/images/pop-up-service.jpg'
 import Image from "next/image";
 
 const PopUpPackages  = () => {
