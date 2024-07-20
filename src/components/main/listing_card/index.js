@@ -86,8 +86,8 @@ const ListingCard = ({ item, wish,ind,setWish}) => {
 
      const VoteMenu = (
           <div className="vote__menu">
-               <div className="vote-item"><Image width="16" height="16" src={VoteLike} alt="vote-image"/></div>
-               <div className="vote-item"><Image width="16" height="16" src={VoteUnLike} alt="vote-image"/></div>
+               <div className="vote-item item-yes"><Image width="16" height="16" src={VoteLike} alt="vote-image"/></div>
+               <div className="vote-item item-no"><Image width="16" height="16" src={VoteUnLike} alt="vote-image"/></div>
           </div>
      );
      // TODO: сделать голосование для всех листинг карточек
@@ -192,11 +192,12 @@ const ListingCard = ({ item, wish,ind,setWish}) => {
                     <div className="user-buttons">
                          <div className="button-forum"><span>Forum</span><Link rel="nofollow" target="_blank" href={item.forum}> <Image width="15" src={forumIocn} alt="forum_logo"/></Link></div>
                          <div className="button-vote"><span>Vote now</span>
-                              <CustomToolTop  text={'Only for registered users'}>
+                              {/*<CustomToolTop  text={'Only for registered users'}>*/}
                                    <Popover content={VoteMenu} trigger="click" >
                                    <Image width="15" src={voteIcon} alt="vote_logo"/>
                                    </Popover>
-                              </CustomToolTop></div>
+                              {/*</CustomToolTop>*/}
+                         </div>
                     </div>
                </div>
                <div className="card-vote-line">
