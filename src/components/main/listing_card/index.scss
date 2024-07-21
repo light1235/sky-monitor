@@ -280,6 +280,16 @@
    display: grid;
    grid-template-columns: 1fr 1fr;
    grid-column-gap: 10px;
+   &:hover {
+      & .vote-item {
+         border-color: gainsboro;
+         transition: all .35s ease-in-out;
+         & svg {
+            //stroke: #eaeaea;
+            transition: all .35s ease-in-out;
+         }
+      }
+   }
    & .vote-item {
       border: 2px solid #8bc643;
       border-radius: 4px;
@@ -288,6 +298,13 @@
       display: grid;
       place-items: center;
       cursor: pointer;
+      transition: all .2s ease-in-out;
+      & svg {
+         transition: all .2s ease-in-out;
+         stroke:#8BC643;
+         //stroke:white;
+         //fill: #8BC643;
+      }
       & img {
          width: 30px;
          height: auto;

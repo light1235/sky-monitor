@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import {AiFillHeart, AiOutlineHeart} from "react-icons/ai";
 import {Divider, Form, Popover, Radio, Skeleton, Space, Switch} from 'antd';
+import { useSpring, animated } from '@react-spring/web'
+
 
 import bitcoinLogo from '/src/assets/main/icons/payments-system/bitcoin.svg';
 import advLogo from '/src/assets/main/icons/payments-system/adv-cash.svg'
@@ -31,6 +33,7 @@ import CustomToolTop from "@/components/main/tooltip_custom";
 import ArrowTopNextGroup from '../../../assets/main/icons/arrow-super-next.svg';
 import VoteLike from '../../../assets/main/icons/vote-like.svg';
 import VoteUnLike from '../../../assets/main/icons/vote-unlike.svg';
+import {easings} from "react-spring";
 
 
 const ListingCard = ({ item, wish,ind,setWish}) => {
@@ -84,16 +87,52 @@ const ListingCard = ({ item, wish,ind,setWish}) => {
           setImageLoading(true);
      }, [paymentSystems]);
 
+     const [springs, api] = useSpring(() => ({
+          from: { scale:1 },
+     }))
+     const [spt, scale] = useSpring(() => ({
+          from: { scale:1 },
+     }))
+     const handleClick = () => {
+          api.start({
+                    from: { scale:1,duration:10 },
+                    to: [
+                         { scale:1.35,duration:50  },
+                         { scale:1,duration:10 },
+                    ],
+                    config: {
+                         easing: easings.easeInOutBack	,
+                         duration:350,
+                    },
+               onStart : () => {
+                         setColorYes(false);
+               },
+               onRest : () => console.log("123"), // onComplete
+          })
+     }
+
+     const [colorYes, setColorYes] = useState(true);
+     const [colorNo, setColorNo] = useState(true);
+
+
      const VoteMenu = (
           <div className="vote__menu">
-               <div className="vote-item item-yes"><Image width="16" height="16" src={VoteLike} alt="vote-image"/></div>
-               <div className="vote-item item-no"><Image width="16" height="16" src={VoteUnLike} alt="vote-image"/></div>
+               <animated.div className="vote-item item-yes"
+                            >
+                    <animated.svg  onClick={handleClick} width="30" height="auto" fill={colorYes ? 'none' : '#8bc643'} style={{  ...springs,}} viewBox="0 0 16 15"  xmlns="http://www.w3.org/2000/svg">
+                         <path
+                              d="M1.49584 6.44707H3.69477C3.97503 6.44707 4.19061 6.66375 4.19061 6.94544V13.4893C4.19061 13.771 3.97503 13.9877 3.69477 13.9877H1.49584C1.21558 13.9877 1 13.771 1 13.4893V6.94544C1 6.68542 1.21558 6.44707 1.49584 6.44707ZM7.72616 1.55C7.98486 0.228223 10.1191 1.44166 10.27 3.56517C10.2916 4.32356 10.2485 5.08196 10.076 5.81868H13.1373C14.4092 5.86202 15.5302 6.79377 14.7326 8.28889C14.905 8.93894 14.9482 9.71901 14.4523 10.0224C14.517 11.0625 14.2152 11.6908 13.6978 12.2109C13.6547 12.7309 13.5469 13.186 13.3097 13.5327C12.9001 14.1177 12.5552 13.9877 11.9084 13.9877H6.75604C5.93683 13.9877 5.4841 13.7493 4.94515 13.0776V7.27047C6.47578 6.85877 7.29499 4.73526 7.72616 3.34848V1.55Z"
+                               stroke-miterlimit="10"/>
+                    </animated.svg>
+               </animated.div>
+               <div className="vote-item item-no"><Image width="16" height="16" src={VoteUnLike} alt="vote-image"/>
+               </div>
           </div>
      );
      // TODO: сделать голосование для всех листинг карточек
 
      return (
-          <div className={ item.projectInformation.status.scam ? "listing__card-thin scam-status" : 'listing__card-thin'}>
+          <div className={item.projectInformation.status.scam ? "listing__card-thin scam-status" : 'listing__card-thin'}>
                <div className="card-top_line">
                     <div className="program_name">{item.name}
                          {item.longTerm &&
@@ -102,7 +141,7 @@ const ListingCard = ({ item, wish,ind,setWish}) => {
                          }
                     </div>
                     <div className="program-favorites" onClick={handleWishClick}>
-                         {wish ?  <AiFillHeart size="20px" color="#85CE36" />   : <CustomToolTop text="add to favorites">   <AiOutlineHeart color={'#85CE36'} size="20px" />  </CustomToolTop>}
+                         {wish ? <AiFillHeart size="20px" color="#85CE36" />   : <CustomToolTop text="add to favorites">   <AiOutlineHeart color={'#85CE36'} size="20px" />  </CustomToolTop>}
                     </div>
                     <div className="program_details"><Link rel="nofollow" target="_blank" aria-label="program details" href={item.detailsLink}><CustomToolTop text={'Program details'}> <div className="details-button"><div className="button-circle"><Image src={ArrowTopNextGroup} alt="arrow icon" width="10" height="10" /></div></div></CustomToolTop></Link></div>
                </div>
@@ -193,7 +232,7 @@ const ListingCard = ({ item, wish,ind,setWish}) => {
                          <div className="button-forum"><span>Forum</span><Link rel="nofollow" target="_blank" href={item.forum}> <Image width="15" src={forumIocn} alt="forum_logo"/></Link></div>
                          <div className="button-vote"><span>Vote now</span>
                               {/*<CustomToolTop  text={'Only for registered users'}>*/}
-                                   <Popover content={VoteMenu} trigger="click" >
+                                   <Popover content={VoteMenu}  trigger="click" >
                                    <Image width="15" src={voteIcon} alt="vote_logo"/>
                                    </Popover>
                               {/*</CustomToolTop>*/}
