@@ -43,7 +43,6 @@ const MainTabs = () => {
      };
 
 
-
      const [activeTab, setActiveTab] = useState('1');
 
      useEffect(() => {
