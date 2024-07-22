@@ -15,6 +15,9 @@ import Listing_card from "@/components/main/listing_card";
 import Listing_card_free from "@/components/main/listing_card_free";
 import CustomPanelAcceptor from "@/components/panel/custom-panel-acceptor";
 import VotePopUp from "@/components/main/vote-pop-up";
+import CustomModal from "@/components/main/custom_modal";
+import Custom_modal from "@/components/main/custom_modal";
+import SelectedPopUp from "@/components/main/selected-pop-up";
 
 
 
@@ -31,10 +34,20 @@ const Add_pop_up = () => {
           event.preventDefault();
           console.log('Отправленные данные:', formData);
      };
+     const [open, setOpen] = useState(false);
+     const [activeProgram, setActiveProgram] = useState(false);
+
+
+     const showModal = () => {
+          setActiveProgram(!activeProgram);
+     };
 
      return (
           <div className="pop-up__page" style={{padding:'40px 40px'}}>
-               <VotePopUp />
+               <button onClick={showModal}>open</button>
+
+               {/*<CustomModal open={open}> <VotePopUp /></CustomModal>*/}
+               <Custom_modal open={activeProgram} close={showModal} ><VotePopUp />  </Custom_modal>
                {/*<PopUpForm />*/}
                {/*<Banner_form />*/}
                {/*<Listing_card_free />*/}

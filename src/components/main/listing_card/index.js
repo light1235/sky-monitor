@@ -332,7 +332,7 @@ const ListingCard = ({ item, wish,ind,setWish,registred}) => {
                     <CustomToolTop text={'The number of users  ' +
                          'who voted'}><div className="amount-vote">490/500</div></CustomToolTop>
                </div>
-               <CustomModal open={modalConfirm} > <VotePopUp close={showModal} disable={disableVoteFunction} voteData={voteArray} name={item.name} /></CustomModal>
+               <CustomModal open={modalConfirm} close={showModal}  > <VotePopUp close={showModal} disable={disableVoteFunction} voteData={voteArray} name={item.name} /></CustomModal>
           </div>
 
      );
