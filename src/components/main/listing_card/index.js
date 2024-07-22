@@ -171,6 +171,7 @@ const ListingCard = ({ item, wish,ind,setWish,registred}) => {
           setTimeout( () => {
                setModalConfirm(true)
                setPopOver(false)
+               setColorYes(true);
           },1400)
      };
 
@@ -179,6 +180,7 @@ const ListingCard = ({ item, wish,ind,setWish,registred}) => {
           setTimeout( () => {
                setModalConfirm(true)
                setPopOver(false)
+               setColorNo(true)
           },1400)
      };
 
