@@ -39,6 +39,7 @@ const ContentBlock = ({items}) => {
 
 
 
+
      useEffect(() => {
           const intervalId = setInterval(() => {
                // shuffleBlocks();

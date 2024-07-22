@@ -36,13 +36,16 @@ import VoteUnLike from '../../../assets/main/icons/vote-unlike.svg';
 import {easings} from "react-spring";
 
 
-const ListingCard = ({ item, wish,ind,setWish}) => {
+const ListingCard = ({ item, wish,ind,setWish,registred}) => {
      const [AnimationFavorite, FastScale] = useSpring(() => ({
           from: { scale:1 },
      }))
+     const [wishAnimation, setWishAnimation] = useState(true);
      const handleWishClick = (event) => {
           // event.stopPropagation();
           setWish(ind);
+          setWishAnimation(!wishAnimation)
+          wishAnimation ?
           FastScale.start({
                from: { scale:1,duration:10},
                to: [
@@ -55,6 +58,7 @@ const ListingCard = ({ item, wish,ind,setWish}) => {
                },
                onRest : () => console.log("12377"), // onComplete
           })
+               : null
      };
 
      //days online
@@ -144,6 +148,7 @@ const ListingCard = ({ item, wish,ind,setWish}) => {
 
      const [colorYes, setColorYes] = useState(true);
      const [colorNo, setColorNo] = useState(true);
+     const [disableVote, setDisableVote] = useState(false);
 
 
      const VoteMenu = (
@@ -267,11 +272,15 @@ const ListingCard = ({ item, wish,ind,setWish}) => {
                     </div>
                     <div className="user-buttons">
                          <div className="button-forum"><span>Forum</span><Link rel="nofollow" target="_blank" href={item.forum}> <Image width="15" src={forumIocn} alt="forum_logo"/></Link></div>
-                         <div className="button-vote"><span>Vote now</span>
+                         <div className={disableVote? 'button-vote disable-vote' : 'button-vote'}><span>Vote now</span>
                               {/*<CustomToolTop  text={'Only for registered users'}>*/}
+                              {disableVote ?
+                                   <CustomToolTop  text={'142 hours '}>  <Image width="15" src={voteIcon} alt="vote_logo"/></CustomToolTop>
+                                   :
                                    <Popover content={VoteMenu}  trigger="click" >
-                                   <Image width="15" src={voteIcon} alt="vote_logo"/>
+                                        <Image width="15" src={voteIcon} alt="vote_logo"/>
                                    </Popover>
+                              }
                               {/*</CustomToolTop>*/}
                          </div>
                     </div>
