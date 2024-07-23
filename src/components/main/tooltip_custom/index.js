@@ -1,11 +1,11 @@
 import React from 'react';
 import { Tooltip } from 'antd';
 
-const CustomToolTop = ({children,text,visible}) => {
+const CustomToolTop = ({children,text,open}) => {
 
      return (
           <>
-               <Tooltip style={{ color: 'red' }} className={'wrap-span'} color="white" title={<span style={{ color: '#a1a1a4', fontFamily:"Roboto", fontWeight:400,padding:'0 16px', }}>{text}</span>}>
+               <Tooltip  trigger={'hover'} style={{ color: 'red' }} className={'wrap-span'} color="white" title={<span style={{ color: '#a1a1a4', fontFamily:"Roboto", fontWeight:400,padding:'0 16px', }}>{text}</span>}>
                     {children}
                </Tooltip>
           </>
