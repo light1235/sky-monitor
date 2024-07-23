@@ -154,7 +154,7 @@ const ListingCard = ({ item, wish,ind,setWish,registred}) => {
      const [disableVote, setDisableVote] = useState(false);
 
 
-     
+
      const [voteArray, setVoteArray] = useState('');
      const [modalConfirm, setModalConfirm] = useState(false);
      const [popOver, setPopOver] = useState(false);
@@ -188,12 +188,12 @@ const ListingCard = ({ item, wish,ind,setWish,registred}) => {
      const disableVoteFunction = () => {
           setDisableVote(true)
           setModalConfirm(false)
+
      };
      const handleComplete = () => {
           console.log('Timer completed!');
-          setDisableVote(false)
+          // setDisableVote(false)
      };
-
 
 
      const VoteMenu = (
@@ -320,7 +320,7 @@ const ListingCard = ({ item, wish,ind,setWish,registred}) => {
                          <div className={disableVote? 'button-vote disable-vote' : 'button-vote'}><span>Vote now</span>
                               {/*<CustomToolTop  text={'Only for registered users'}>*/}
                               {disableVote ?
-                                   <CustomToolTop   text={<CountdownTimer initialHours={0.01} onComplete={handleComplete}/>}> <Image width="15" src={voteIcon} alt="vote_logo"/></CustomToolTop>
+                                   <CustomToolTop  text={<CountdownTimer initialHours={0.005}  onComplete={handleComplete}/>}> <Image width="15" src={voteIcon} alt="vote_logo"/></CustomToolTop>
                                    :
                                    <Popover content={VoteMenu} open={popOver} onOpenChange={showPopOver}  trigger="click">
                                         <Image width="15"  src={voteIcon} alt="vote_logo"/>

@@ -29,7 +29,6 @@ const CountdownTimer = ({ initialHours, onComplete }) => {
      return (
 
                <>Time left: {formatTime(time)}</>
-
      );
 };
 
