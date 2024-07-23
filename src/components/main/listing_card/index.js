@@ -36,6 +36,7 @@ import VoteUnLike from '../../../assets/main/icons/vote-unlike.svg';
 import {easings} from "react-spring";
 import CustomModal from "@/components/main/custom_modal";
 import VotePopUp from "@/components/main/vote-pop-up";
+import CountdownTimer from "@/utils/hooks/countDownTimer";
 
 
 const ListingCard = ({ item, wish,ind,setWish,registred}) => {
@@ -188,6 +189,10 @@ const ListingCard = ({ item, wish,ind,setWish,registred}) => {
           setDisableVote(true)
           setModalConfirm(false)
      };
+     const handleComplete = () => {
+          console.log('Timer completed!');
+          setDisableVote(false)
+     };
 
 
 
@@ -315,10 +320,10 @@ const ListingCard = ({ item, wish,ind,setWish,registred}) => {
                          <div className={disableVote? 'button-vote disable-vote' : 'button-vote'}><span>Vote now</span>
                               {/*<CustomToolTop  text={'Only for registered users'}>*/}
                               {disableVote ?
-                                   <CustomToolTop  text={'142 hours '}> <Image width="15" src={voteIcon} alt="vote_logo"/></CustomToolTop>
+                                   <CustomToolTop   text={<CountdownTimer initialHours={0.01} onComplete={handleComplete}/>}> <Image width="15" src={voteIcon} alt="vote_logo"/></CustomToolTop>
                                    :
                                    <Popover content={VoteMenu} open={popOver} onOpenChange={showPopOver}  trigger="click">
-                                        <Image width="15" src={voteIcon} alt="vote_logo"/>
+                                        <Image width="15"  src={voteIcon} alt="vote_logo"/>
                                    </Popover>
                               }
                               {/*</CustomToolTop>*/}
