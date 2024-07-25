@@ -356,7 +356,7 @@ template {
   --Main-front-font: Quicksand, sans-serif;
   --Main-color:#85CE36;
 }
-/*var()*/
+
 
 @font-face {
   font-family: 'Ubuntu';
@@ -628,3 +628,4 @@ template {
 .icon-audio-description:before { content: '\f29e'; } /* '' */
 .icon-address-card-o:before { content: '\f2bc'; } /* '' */
 .icon-window-close-o:before { content: '\f2d4'; } /* '' */
+

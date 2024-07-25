@@ -5,7 +5,6 @@ header {
    width: 100%;
    padding: 20px 0 0 0;
    background: linear-gradient(65deg, #5913b4 0%, #9a2de3 88.46%, rgba(169, 51, 238, 0.2) 99.99%, #be3bff 100%);
-   overflow: hidden;
    & .mobile-navigation{
       display: none;
    }
@@ -111,7 +110,7 @@ header {
                   justify-items: center;
                   align-items: center;
                }
-               & div {
+               & .login-menu {
                   display: grid;
                   grid-template-columns: 1fr max-content max-content;
                   & span {
@@ -133,10 +132,83 @@ header {
                      color: #fff;
                   }
                }
+               & .panel-notify{
+                  position: relative;
+                  width: 25px;
+                  padding-right: 10px;
+                  & i {
+                     font-size: 22px;
+                     color: white;
+                     cursor: pointer;
+                  }
+                  & .notify-amount{
+                     position: absolute;
+                     top: -12px;
+                     right: 1px;
+                     font-family: "Open Sans", sans-serif;
+                     font-weight: bold;
+                     font-size: 17px;
+                     color: red;
+                     pointer-events: none;
+                     &::selection {
+                        background-color: transparent;
+                     }
+                  }
+                  & .notify-menu {
+                     display: block;
+                     position: absolute;
+                     right: 8px;
+                     top: 48px;
+                     box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.25);
+                     background: #fff;
+                     z-index: 200;
+                  }
+               }
+               & .wrap-menu {
+                  position: relative;
+               }
+               & .panel-menu {
+                  z-index: 10;
+                  position: absolute;
+                  left: 0;
+                  top:60px;
+                  width: 160px;
+                  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.25);
+                  background: #fff;
+                  border-radius: 20px;
+                  height: 94px;
+                  & div {
+                     display: grid;
+                     grid-template-columns: max-content 1fr;
+                     padding: 10px 15px;
+                     align-items: center;
+                     transition: all .2s ease-in-out;
+                     cursor: pointer;
+                     &:hover {
+                        //background: gainsboro;
+                        //transition: all .3s ease-in-out;
+                     }
+                     & p {
+                        margin: 0;
+                        font-family: "Open Sans", sans-serif;
+                        font-weight: 700;
+                        font-size: 15px;
+                        color: #7e8e9f;
+                     }
+                     & i {
+                        margin-right: 10px;
+                        color: #85CE36;
+                        font-size: 20px;
+                     }
+                  }
+               }
             }
          }
       }
       & .header__bottom {
+         position: relative;
+         top: 1px;
+         overflow: hidden;
          .navigation {
             text-align: center;
          }

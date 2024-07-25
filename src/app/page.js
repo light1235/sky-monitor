@@ -23,7 +23,7 @@ export default function Home() {
     <main style={{background:'#F4F6F7'}}>
          <section className="hero-banner">
               <Suspense>
-                   <Carousel autoplay slidesToShow={3} responsive={[
+                   <Carousel adaptiveHeight={true} autoplay slidesToShow={3} responsive={[
                         {
                              breakpoint: 768,
                              settings: {

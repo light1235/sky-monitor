@@ -13,12 +13,15 @@ import partnerIcon from '/src/assets/main/icons/partner.svg';
 import buttonIcon from '/src/assets/main/icons/button-+.svg';
 import LangButton from '/src/assets/main/icons/lang-panel.svg';
 import loginAva from '/src/assets/main/icons/login-ava.svg';
+import LoginedAva from '/src/assets/main/icons/logined-icon.svg'
+import LoginedAvaNew from '/src/assets/main/icons/icon-image-face.png'
 import teleGramIcon from "@/assets/main/icons/telegram.svg";
 import youTubeIcon from "@/assets/main/icons/youtub.svg";
 import tikTokIcon from "@/assets/main/icons/tik-tok.svg";
 import Custom_modal from "@/components/main/custom_modal";
 import { usePathname } from 'next/navigation'
 import SelectedPopUp from "@/components/main/selected-pop-up";
+import Notification from "@/components/panel/notification-message";
 
 
 
@@ -28,6 +31,7 @@ const Header = () => {
      const [activeMenu, setActiveMenu] = useState(true);
      const [changeLanguage, setChangeLanguage] = useState(true);
      const [activeProgram, setActiveProgram] = useState(false);
+     const [isLogin, setIsLogin] = useState(false);
 
      const showModal = () => {
           setActiveProgram(!activeProgram);
@@ -58,6 +62,40 @@ const Header = () => {
           setActiveMenu(!activeMenu);
      };
 
+     const handleLogin = () => {
+          setIsLogin(!isLogin);
+     };
+     const [showMessage, setShowMessage] = useState(false);
+     const [showMenu, setShowMenu] = useState(false);
+     //
+     useEffect(() => {
+          // Функция-обработчик для закрытия меню при щелчке вне его области
+          const handleClickOutsideMenu = (event) => {
+               if (!event.target.closest('.wrap-menu')) {
+                    setShowMenu(false);
+               }
+          };
+
+          const handleClickOutsideMessage = (event) => {
+               if (!event.target.closest('.panel-notify')) {
+                    setShowMessage(false);
+               }
+          };
+          document.addEventListener('click', handleClickOutsideMessage);
+
+          // Добавляем обработчик при монтировании компонента
+          document.addEventListener('click', handleClickOutsideMenu);
+
+          // Убираем обработчик при размонтировании компонента
+          return () => {
+               document.removeEventListener('click', handleClickOutsideMenu);
+               document.removeEventListener('click', handleClickOutsideMessage);
+          };
+
+     }, []);
+
+
+
      return (
           <header>
                <div className="navbar">
@@ -67,18 +105,64 @@ const Header = () => {
                         </div>
                         <div className="middle_menu"></div>
                         <div className="left__menu">
-                             <button onClick={showModal}> <div> <Image src={buttonIcon} alt={'logo'} priority={true}></Image> Add program</div></button>
+                             <button onClick={showModal}>
+                                  <div><Image src={buttonIcon} alt={'logo'} priority={true}></Image> Add program</div>
+                             </button>
                              <div className="lang__menu">
-                                  <div className={block ? 'image-circle active-block' : 'image-circle'} onClick={isLangisChange}><Image src={LangButton} alt="logo icon"></Image> </div><span>{langValue}</span></div>
-                             <div className="authentication"><div className="circle"><Image src={loginAva} alt="login icon"></Image></div> <div><Link href='/'>Login</Link><span>/</span><Link href='/'>Register</Link></div></div>
+                                  <div className={block ? 'image-circle active-block' : 'image-circle'}
+                                       onClick={isLangisChange}><Image src={LangButton} alt="logo icon"></Image></div>
+                                  <span>{langValue}</span></div>
+
+                             <div className="authentication">
+                                  {isLogin ?
+                                       <>
+                                            <div className="panel-notify"><i
+                                                 className={showMessage ? 'icon-bell-alt' : 'icon-bell'}
+                                                 onClick={() => setShowMessage(!showMessage)}></i>
+                                                 <div className="notify-amount">8</div>
+                                                 {showMessage &&
+                                                      <div className="notify-menu">
+                                                           <Notification/>
+                                                           <Notification/>
+                                                           <Notification/>
+                                                           <Notification/>
+                                                      </div>
+                                                 }
+                                            </div>
+                                            <div className="wrap-menu"  ><Image onClick={() =>setShowMenu(!showMenu)} src={LoginedAvaNew} width={50} height={50}
+                                                                                                  alt="login icon">
+                                            </Image>
+                                                 {showMenu &&
+                                                      <div className="panel-menu">
+                                                           <div><i className="icon-user"></i><p>Profile</p></div>
+                                                           <div onClick={() => setIsLogin(false)}><i className="icon-logout"></i><p>Logout</p></div>
+                                                      </div>
+                                                 }
+                                            </div>
+
+                                       </>
+                                       :
+                                       <>
+                                            <div className="circle" onClick={handleLogin}><Image src={loginAva}
+                                                                                                 alt="login icon">
+                                            </Image></div>
+                                            <div className="login-menu"><Link href='/login'>Login</Link>
+                                                 <span>/</span>
+                                                 <Link href='/sign-up'>Register</Link></div>
+                                       </>
+
+                                  }
+                             </div>
+
 
                         </div>
-                        <div className={activeMenu ? 'menu-icon-wrapper': 'menu-icon-wrapper menu-icon-active'} onClick={() => setActiveMenu(!activeMenu)}></div>
+                        <div className={activeMenu ? 'menu-icon-wrapper' : 'menu-icon-wrapper menu-icon-active'}
+                             onClick={() => setActiveMenu(!activeMenu)}></div>
                    </div>
                     <div className="header__bottom">
-                        <nav className="navigation">
-                             <ul className="navigation__list">
-                                  <li className={`link ${pathname === '/' ? 'active-color' : ''}`}>
+                    <nav className="navigation">
+                              <ul className="navigation__list">
+                                   <li className={`link ${pathname === '/' ? 'active-color' : ''}`}>
                                        <Link href='/'><Image src={monIco} alt={'logo'}></Image> <span>monitoring</span></Link></li>
                                   <li  className={`link ${pathname === '/services' ? 'active-color' : ''}`}><Link href='/services'><Image src={serviceIcon} alt={'logo'}></Image> services </Link></li>
                                   <li  className={`link ${pathname === '/projects' ? 'active-color' : ''}`}><Link href='/projects'><Image src={projectIcon} alt={'logo'}></Image>projects</Link></li>
