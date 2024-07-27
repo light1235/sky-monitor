@@ -10,6 +10,28 @@
       border: none;
       border-radius: 10px;
    }
+   .slick-dots {
+      bottom: -30px !important;
+   }
+
+   /* Change the width of the dots */
+   .slick-dots li button {
+      //width: 30px !important;
+      height: 5px !important;
+   }
+   .slick-dots li {
+      margin: 0 7px !important;
+   }
+
+
+   .slick-dots li button {
+      background-color: gray !important;
+   }
+
+   .slick-dots li.slick-active button {
+      background-color: black !important;
+   }
+
 
 }
 
@@ -145,3 +167,4 @@
       }
    }
 }
+
