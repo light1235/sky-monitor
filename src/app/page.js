@@ -15,41 +15,35 @@ import NewsLine from "@/components/main/news_line";
 import NewsLineLogo from '/src/assets/main/icons/news-line-logo.svg';
 import Link from "next/link";
 import MainTabs from "@/components/main/main-tabs";
-import TestBlock from "@/components/main/test-block";
-import {Suspense} from "react";
 
 
 export default function Home() {
-
-     const [showMenu, setShowMenu] = useState(true);
-     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-     const handleResize = () => {
-          setWindowWidth(window.innerWidth);
-     };
-
+     const [showSlider, setShowSlider] = useState(false);
      useEffect(() => {
+          const handleResize = () => {
+               if (window.matchMedia("(max-width: 768px)").matches) {
+                    // setShowMenu(false)
+                    console.log("123");
+               } else  {
+                    console.log("1237777");
+               }
+          };
+
           window.addEventListener('resize', handleResize);
+
+          // Call handleResize initially to apply the logic right away
+          handleResize();
+
           return () => {
                window.removeEventListener('resize', handleResize);
           };
      }, []);
 
-     useEffect(() => {
-          if (windowWidth <= 768) {
-               setShowMenu(false);
-          } else {
-               setShowMenu(true);
-          }
-     }, [windowWidth]);
-
-
-
   return (
     <main style={{background:'#F4F6F7'}}>
          <section className="hero-banner">
               <React.Suspense>
-                   <Carousel adaptiveHeight={true} arrows={true} autoplay  slidesToShow={showMenu ? 3 : 1} responsive={[
+                   <Carousel adaptiveHeight={true} arrows={true} autoplay  slidesToShow={1} responsive={[
                         {
                              breakpoint: 768,
                              settings: {
