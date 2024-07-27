@@ -18,25 +18,14 @@ import MainTabs from "@/components/main/main-tabs";
 
 
 export default function Home() {
-     const [windowWidth, setWindowWidth] = useState(600);
-     const [showSlider, setShowSlider] = useState(true);
 
-     useEffect(() => {
-
-          if (windowWidth => 768) {
-              setShowSlider(false)
-          } else {
-               setShowSlider(true)
-          }
-          setWindowWidth(window.innerWidth)
-     }, [windowWidth]);
 
 
      return (
     <main style={{background:'#F4F6F7'}}>
          <section className="hero-banner">
               <React.Suspense>
-                   <Carousel  autoplay  slidesToShow={showSlider ? 1 : 3} responsive={[
+                   <Carousel  autoplay  slidesToShow={3} responsive={[
                         {
                              breakpoint: 768,
                              settings: {
