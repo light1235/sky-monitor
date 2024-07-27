@@ -14,9 +14,9 @@ const Footer = () => {
           <footer>
                <div className="footer__inner">
                     <ul className="footer__navigation--list">
-                         <div className="social-block">
+                         <li className="social-block">
                               <Image className="block-image" src={Decoration} alt="social decoration"></Image>
-                              <div>
+                              <ul>
                                    <li className="footer__title">Follow us</li>
                                    <li>
                                         <div className="social__networks">
@@ -31,8 +31,8 @@ const Footer = () => {
                                              </div>
                                         </div>
                                    </li>
-                              </div>
-                         </div>
+                              </ul>
+                         </li>
                          <li className="footer__navigation--item">
                               <ul>
                                    <li>Company</li>
