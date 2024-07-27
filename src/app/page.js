@@ -21,12 +21,25 @@ import {Suspense} from "react";
 
 export default function Home() {
 
+     const [showMenu, setShowMenu] = useState(true);
      const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+     const handleResize = () => {
+          setWindowWidth(window.innerWidth);
+     };
+
+     useEffect(() => {
+          window.addEventListener('resize', handleResize);
+          return () => {
+               window.removeEventListener('resize', handleResize);
+          };
+     }, []);
+
      useEffect(() => {
           if (windowWidth <= 768) {
-               // setShowMenu(false);
+               setShowMenu(false);
           } else {
-               // setShowMenu(true);
+               setShowMenu(true);
           }
      }, [windowWidth]);
 
@@ -36,7 +49,7 @@ export default function Home() {
     <main style={{background:'#F4F6F7'}}>
          <section className="hero-banner">
               <React.Suspense>
-                   <Carousel adaptiveHeight={true} arrows={true} autoplay  slidesToShow={windowWidth > 768 ? 3 : 1} responsive={[
+                   <Carousel adaptiveHeight={true} arrows={true} autoplay  slidesToShow={showMenu ? 3 : 1} responsive={[
                         {
                              breakpoint: 768,
                              settings: {
