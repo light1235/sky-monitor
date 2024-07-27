@@ -1,6 +1,7 @@
+"use client"
 import Image from "next/image";
 import { Carousel } from 'antd';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import HeroBanner from '/src/assets/main/images/head-b-8.jpg';
 import HeroBanner1 from '/src/assets/main/images/head-b-9.jpg';
 import './index.scss';
@@ -19,17 +20,27 @@ import {Suspense} from "react";
 
 
 export default function Home() {
+
+     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+     useEffect(() => {
+          if (windowWidth <= 768) {
+               // setShowMenu(false);
+          } else {
+               // setShowMenu(true);
+          }
+     }, [windowWidth]);
+
+
+
   return (
     <main style={{background:'#F4F6F7'}}>
          <section className="hero-banner">
-              <Suspense>
-                   <Carousel adaptiveHeight={true} arrows={true} autoplay slidesToShow={3} responsive={[
+              <React.Suspense>
+                   <Carousel adaptiveHeight={true} arrows={true} autoplay  slidesToShow={windowWidth > 768 ? 3 : 1} responsive={[
                         {
                              breakpoint: 768,
-
                              settings: {
                                   slidesToShow: 1,
-                                  dotWidth:40,
                              },
                         },
                    ]}>
@@ -54,7 +65,7 @@ export default function Home() {
                              </Link>
                         </div>
                    </Carousel>
-              </Suspense>
+              </React.Suspense>
          </section>
          <section className="main-content">
               <div className="content__item">

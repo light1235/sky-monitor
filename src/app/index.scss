@@ -156,6 +156,15 @@
    }
 }
 
+@media only screen and (max-width : 768px) {
+   .hero-banner {
+      & img {
+         width: 100%;
+      }
+   }
+}
+
+
 @media only screen and (max-width : 500px) {
    .error-page .error-page-container .error-page-content {
       & h1 {
