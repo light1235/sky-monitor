@@ -7,8 +7,13 @@ import CustomWrapper from "@/components/main/custom-wrapper";
 import  './index.scss'
 import ArrowButton from '../../../assets/main/icons/arrow-button.svg';
 import Image from "next/image";
+import axios from "axios";
+import { useGetListingsQuery } from "@/services/listingApi";
+
 
 const MainTabs = () => {
+     const { data =[], error, isLoading } = useGetListingsQuery(undefined, undefined);
+
      const [searchTerm, SetSearchTerm] = useState('');
 
      const [showBlocks, setShowBlocks] = useState(1);
@@ -18,6 +23,7 @@ const MainTabs = () => {
      const [showBlocksScam, setShowBlocksScam] = useState(1);
 
 
+     // const items = data;
      const items = DATALIST;
      const chunkSize = 6;
      const chunkedItems = [];
@@ -178,6 +184,7 @@ const MainTabs = () => {
                          },
                     ]}
                />
+
           </>
      );
 };
