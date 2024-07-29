@@ -23,8 +23,8 @@ const MainTabs = () => {
      const [showBlocksScam, setShowBlocksScam] = useState(1);
 
 
-     // const items = data;
-     const items = DATALIST;
+     const items = data;
+     // const items = DATALIST;
      const chunkSize = 6;
      const chunkedItems = [];
 
