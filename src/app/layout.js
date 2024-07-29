@@ -19,9 +19,6 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
       <AntdRegistry >
-      {/*<Header />*/}
-      {/*{children}*/}
-      {/*<Footer />*/}
            <ChangeNavigation>{children}</ChangeNavigation>
       </AntdRegistry>
       </body>

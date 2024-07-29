@@ -1,7 +1,6 @@
-"use client"
 import Image from "next/image";
 import { Carousel } from 'antd';
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import HeroBanner from '/src/assets/main/images/head-b-8.jpg';
 import HeroBanner1 from '/src/assets/main/images/head-b-9.jpg';
 import './index.scss';
@@ -18,8 +17,20 @@ import MainTabs from "@/components/main/main-tabs";
 
 
 export default function Home() {
-
-
+     // const [windowWidth, setWindowWidth] = useState(600);
+     // const [showSlider, setShowSlider] = useState(true);
+     //
+     //
+     // useEffect(() => {
+     //
+     //      if (windowWidth => 768) {
+     //          setShowSlider(false)
+     //      } else {
+     //           setShowSlider(true)
+     //      }
+     //      setWindowWidth(window.innerWidth)
+     // }, [windowWidth]);
+     // showSlider ? 1 : 3
 
      return (
     <main style={{background:'#F4F6F7'}}>

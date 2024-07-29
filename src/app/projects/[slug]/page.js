@@ -7,7 +7,6 @@ import AdvancedArticle from "@/components/main/advanced-article";
 
 const PostComp = ({params}) => {
 
-
      const {slug} = params;
 
      const filteredData = DATAART.filter(post => post.slug.replace(/\s+/g, '-') === slug);
