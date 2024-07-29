@@ -10,12 +10,12 @@ import Image from "next/image";
 import { useGetListingsQuery } from "@/services/listingApi";
 
 
-const MainTabs = ({list}) => {
-     // const { data =[], error, isLoading } = useGetListingsQuery(undefined, {
-     //      pollingInterval: 60000,
-     //      refetchOnMountOrArgChange: true,
-     //      refetchOnReconnect: true,
-     // });
+const MainTabs = () => {
+     const { data =[], error, isLoading } = useGetListingsQuery(undefined, {
+          pollingInterval: 60000,
+          refetchOnMountOrArgChange: true,
+          refetchOnReconnect: true,
+     });
 
      const [searchTerm, SetSearchTerm] = useState('');
 
@@ -26,7 +26,7 @@ const MainTabs = ({list}) => {
      const [showBlocksScam, setShowBlocksScam] = useState(1);
 
 
-     const items = list;
+     const items = data;
      // const items = DATALIST;
      const chunkSize = 6;
      const chunkedItems = [];

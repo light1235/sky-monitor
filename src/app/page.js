@@ -1,4 +1,3 @@
-"use client"
 import Image from "next/image";
 import { Carousel } from 'antd';
 import React from 'react';
@@ -15,16 +14,8 @@ import NewsLine from "@/components/main/news_line";
 import NewsLineLogo from '/src/assets/main/icons/news-line-logo.svg';
 import Link from "next/link";
 import MainTabs from "@/components/main/main-tabs";
-import { useGetListingsQuery } from "@/services/listingApi";
-
 
 export default function Home() {
-
-     const { data =[], error, isLoading } = useGetListingsQuery(undefined, {
-          pollingInterval: 60000,
-          refetchOnMountOrArgChange: true,
-          refetchOnReconnect: true,
-     });
 
      // const [windowWidth, setWindowWidth] = useState(600);
      // const [showSlider, setShowSlider] = useState(true);
@@ -94,7 +85,7 @@ export default function Home() {
                    </Info_block>
               </div>
               <div className="content__item">
-                   <MainTabs list={data} />
+                   <MainTabs />
               </div>
               <div className="content__item item--bottom">
                    <BlockSlat text={'Latest Hyip News'}/>
