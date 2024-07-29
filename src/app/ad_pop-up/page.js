@@ -50,7 +50,7 @@ const Add_pop_up = () => {
      useEffect( () => {
           axios.get('https://jsonplaceholder.typicode.com/users')
                .then(res =>  {
-                    console.log(res);
+                    // console.log(res);
                     setPeople({persona:res.data});
                })
      },[setPeople])
