@@ -8,9 +8,6 @@ const InformationLine = ({ image,items,scam}) => {
      if (items && items.name) {
                domainStrings.push(items.name);
      }
-     if (scam) {
-          console.log(items);
-     }
 
      const removeDomain = /\..*$/;
      const modifiedStrings = domainStrings.map((originalString) =>
@@ -18,7 +15,6 @@ const InformationLine = ({ image,items,scam}) => {
                .replace(removeDomain, '')
                .replace(/-/g, '\u2011')
      );
-     console.log(items && items.projectInformation.created);
 
      return (
           <>

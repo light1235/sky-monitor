@@ -16,19 +16,34 @@ import NewsLineLogo from '/src/assets/main/icons/news-line-logo.svg';
 import Link from "next/link";
 import MainTabs from "@/components/main/main-tabs";
 import {useGetListingsQuery} from "@/services/listingApi";
+import {useGetProjectQuery} from "@/services/projectApi";
 
 
 export default function Home() {
 
-     const { data : listings = [], error, isLoading } = useGetListingsQuery(undefined, {
-          // pollingInterval: 60000,
-          // refetchOnMountOrArgChange: true,
-          // refetchOnReconnect: true,
+     const { data : listings = [], error: postsError, isLoading: postsLoading } = useGetListingsQuery(undefined, {
+          pollingInterval: 60000,
+          refetchOnMountOrArgChange: true,
+          refetchOnReconnect: true,
+     });
+     const { data : projects = [], error: commentsError, isLoading: commentsLoading } = useGetProjectQuery(undefined, {
+          pollingInterval: 60000,
+          refetchOnMountOrArgChange: true,
+          refetchOnReconnect: true,
      });
 
+
      const items = [...listings].reverse().slice(0,4);
+
      const filteredArrayScam = listings.filter(obj => obj.category === 'scam');
      const filteredArrayScamSlice = filteredArrayScam.reverse().slice(0,4);
+
+     const projectItem = [...projects].reverse().slice(0,4);
+     const filteredArrayNews  = projects.filter(obj => obj.article.articleType.news === true);
+     const filteredArrayNewsSlice = filteredArrayNews.reverse().slice(0,4);
+
+
+
 
 
      // const [windowWidth, setWindowWidth] = useState(600);
@@ -104,10 +119,13 @@ export default function Home() {
               <div className="content__item item--bottom">
                    <BlockSlat text={'Latest Hyip News'}/>
                    <Info_block>
-                        <NewsLine dora={true} image={<Image src={NewsLineLogo} alt="fire icon" height={29}></Image>} />
-                        <NewsLine image={<Image src={NewsLineLogo} alt="fire icon" height={29}></Image>} />
-                        <NewsLine image={<Image src={NewsLineLogo} alt="fire icon" height={29}></Image>} />
-                        <NewsLine image={<Image src={NewsLineLogo} alt="fire icon" height={29}></Image>} />
+                        {filteredArrayNewsSlice.map((item,index) =>
+                             <NewsLine item={item} key={index} image={<Image src={NewsLineLogo} alt="fire icon" height={29}></Image>} />
+                        )}
+                        {/*<NewsLine dora={true} image={<Image src={NewsLineLogo} alt="fire icon" height={29}></Image>} />*/}
+                        {/*<NewsLine image={<Image src={NewsLineLogo} alt="fire icon" height={29}></Image>} />*/}
+                        {/*<NewsLine image={<Image src={NewsLineLogo} alt="fire icon" height={29}></Image>} />*/}
+                        {/*<NewsLine image={<Image src={NewsLineLogo} alt="fire icon" height={29}></Image>} />*/}
                    </Info_block>
                    <BlockSlat text={'Latest Scams'}/>
                    <Info_block>
