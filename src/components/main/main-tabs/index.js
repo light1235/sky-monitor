@@ -8,6 +8,7 @@ import  './index.scss'
 import ArrowButton from '../../../assets/main/icons/arrow-button.svg';
 import Image from "next/image";
 import { useGetListingsQuery } from "@/services/listingApi";
+import DATAART from "@/db/articleData.json";
 
 
 const MainTabs = () => {
@@ -26,7 +27,10 @@ const MainTabs = () => {
      const [showBlocksScam, setShowBlocksScam] = useState(1);
 
 
-     const items = data;
+     const items = [...data].reverse();
+     let prevItems = data.slice(0,5);
+     // console.log(prevItems);
+
      // const items = DATALIST;
      const chunkSize = 6;
      const chunkedItems = [];
