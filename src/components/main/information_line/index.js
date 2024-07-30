@@ -18,6 +18,7 @@ const InformationLine = ({ image,items,scam}) => {
                .replace(removeDomain, '')
                .replace(/-/g, '\u2011')
      );
+     console.log(items && items.projectInformation.created);
 
      return (
           <>
