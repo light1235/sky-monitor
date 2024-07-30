@@ -6,7 +6,6 @@ const InfoBlock = ({children}) => {
      return (
           <div className="info-block">
                {children}
-               {/*<Information_line />*/}
           </div>
      );
 };

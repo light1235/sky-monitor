@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import { Carousel } from 'antd';
 import React from 'react';
@@ -14,8 +15,21 @@ import NewsLine from "@/components/main/news_line";
 import NewsLineLogo from '/src/assets/main/icons/news-line-logo.svg';
 import Link from "next/link";
 import MainTabs from "@/components/main/main-tabs";
+import {useGetListingsQuery} from "@/services/listingApi";
+
 
 export default function Home() {
+
+     const { data =[], error, isLoading } = useGetListingsQuery(undefined, {
+          pollingInterval: 60000,
+          refetchOnMountOrArgChange: true,
+          refetchOnReconnect: true,
+     });
+     // const items1 = DATAART;
+
+     const items = [...data].reverse().slice(0,4);
+     const filterItems = items.slice(0,4);
+     // console.log(filterItems);
 
      // const [windowWidth, setWindowWidth] = useState(600);
      // const [showSlider, setShowSlider] = useState(true);
@@ -78,10 +92,13 @@ export default function Home() {
                    </Info_block>
                    <BlockSlat text={'New Listings'}/>
                    <Info_block>
-                        <Information_line image={<Image src={newListingLogo}  alt="leaf icon" height={29}></Image>} />
-                        <Information_line  image={<Image src={newListingLogo} alt="leaf icon" height={29}></Image>} />
-                        <Information_line image={<Image src={newListingLogo}  alt="leaf icon" height={29}></Image>} />
-                        <Information_line image={<Image src={newListingLogo}  alt="leaf icon" height={29}></Image>}/>
+                        {items.map((item,index) =>
+                             <Information_line key={index} items={item} image={<Image src={newListingLogo}  alt="leaf icon" height={29}></Image>} />
+                        )}
+
+                        {/*<Information_line  image={<Image src={newListingLogo} alt="leaf icon" height={29}></Image>} />*/}
+                        {/*<Information_line image={<Image src={newListingLogo}  alt="leaf icon" height={29}></Image>} />*/}
+                        {/*<Information_line image={<Image src={newListingLogo}  alt="leaf icon" height={29}></Image>}/>*/}
                    </Info_block>
               </div>
               <div className="content__item">

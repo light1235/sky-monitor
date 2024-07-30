@@ -591,7 +591,7 @@
     {
       "category": "premium",
       "id": "12",
-      "name" : "Money-flow",
+      "name" : "Money-flow1",
       "longTerm": false,
       "noFund": false,
       "detailsLink": "https://trust-fx.com/",
@@ -639,7 +639,7 @@
     {
       "category": "premium",
       "id": "13",
-      "name" : "Allerta",
+      "name" : "Allertas",
       "longTerm": false,
       "noFund": false,
       "detailsLink": "https://trust-fx.com/",
