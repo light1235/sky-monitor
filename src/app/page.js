@@ -21,9 +21,9 @@ import {useGetListingsQuery} from "@/services/listingApi";
 export default function Home() {
 
      const { data : listings = [], error, isLoading } = useGetListingsQuery(undefined, {
-          pollingInterval: 60000,
-          refetchOnMountOrArgChange: true,
-          refetchOnReconnect: true,
+          // pollingInterval: 60000,
+          // refetchOnMountOrArgChange: true,
+          // refetchOnReconnect: true,
      });
 
      const items = [...listings].reverse().slice(0,4);
