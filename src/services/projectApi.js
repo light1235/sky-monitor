@@ -6,7 +6,7 @@ export const projectApi = createApi({
      endpoints: (builder) => ({
           getProject: builder.query({
                query: () => '',
-               // keepUnusedDataFor: 60,
+               keepUnusedDataFor: 60,
           }),
      }),
 });
