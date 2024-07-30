@@ -36,13 +36,18 @@ export default function Home() {
      const items = [...listings].reverse().slice(0,4);
 
      const filteredArrayScam = listings.filter(obj => obj.category === 'scam');
-     const filteredArrayScamSlice = filteredArrayScam.reverse().slice(0,4);
+     const filteredArrayPremium = listings.filter(obj => obj.category === 'premium');
 
-     const projectItem = [...projects].reverse().slice(0,4);
+     const filteredArrayScamSlice = filteredArrayScam.reverse().slice(0,4);
+     const filteredArrayPremiumSlice = filteredArrayPremium.reverse().slice(0,4);
+
      const filteredArrayNews  = projects.filter(obj => obj.article.articleType.news === true);
      const filteredArrayNewsSlice = filteredArrayNews.reverse().slice(0,4);
 
 
+     if (listings) {
+          console.log(filteredArrayPremiumSlice);
+     }
 
 
 
@@ -122,10 +127,6 @@ export default function Home() {
                         {filteredArrayNewsSlice.map((item,index) =>
                              <NewsLine item={item} key={index} image={<Image src={NewsLineLogo} alt="fire icon" height={29}></Image>} />
                         )}
-                        {/*<NewsLine dora={true} image={<Image src={NewsLineLogo} alt="fire icon" height={29}></Image>} />*/}
-                        {/*<NewsLine image={<Image src={NewsLineLogo} alt="fire icon" height={29}></Image>} />*/}
-                        {/*<NewsLine image={<Image src={NewsLineLogo} alt="fire icon" height={29}></Image>} />*/}
-                        {/*<NewsLine image={<Image src={NewsLineLogo} alt="fire icon" height={29}></Image>} />*/}
                    </Info_block>
                    <BlockSlat text={'Latest Scams'}/>
                    <Info_block>

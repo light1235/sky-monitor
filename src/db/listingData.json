@@ -541,7 +541,7 @@
       }
     },
     {
-      "category": "premium",
+      "category": "normal",
       "id": "11",
       "name" : "ATM2024",
       "longTerm": false,
@@ -637,7 +637,7 @@
       }
     },
     {
-      "category": "premium",
+      "category": "normal",
       "id": "13",
       "name" : "Allertas.com",
       "longTerm": false,
