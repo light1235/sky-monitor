@@ -27,7 +27,10 @@ const InformationLine = ({ image,items,scam}) => {
                          <div className="item-name">{items && modifiedStrings}</div>
                     </div>
                     <div className="line-items-one">
-                    <div className="item-numbers">{items && items.projectInformation.created}</div>
+                         {scam ? <div>Warning</div> :
+                              <div className="item-numbers">{items && items.projectInformation.created}</div>
+                         }
+
                     </div>
                </Link>
           </>
