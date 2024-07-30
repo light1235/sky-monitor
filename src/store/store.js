@@ -1,5 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import {listingsApi} from "@/services/listingApi";
+import {projectApi} from "@/services/projectApi";
 
 
 const store = configureStore({
@@ -7,7 +8,7 @@ const store = configureStore({
          [listingsApi.reducerPath]: listingsApi.reducer,
      },
      middleware: (getDefaultMiddleware) =>
-          getDefaultMiddleware().concat(listingsApi.middleware),
+          getDefaultMiddleware().concat(listingsApi.middleware).concat(projectApi.middleware),
 
 });
 

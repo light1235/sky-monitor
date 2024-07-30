@@ -20,15 +20,14 @@ import {useGetListingsQuery} from "@/services/listingApi";
 
 export default function Home() {
 
-     const { data =[], error, isLoading } = useGetListingsQuery(undefined, {
+     const { data : listings = [], error, isLoading } = useGetListingsQuery(undefined, {
           pollingInterval: 60000,
           refetchOnMountOrArgChange: true,
           refetchOnReconnect: true,
      });
 
-     const items = [...data].reverse().slice(0,4);
-
-     const filteredArrayScam = data.filter(obj => obj.category === 'scam');
+     const items = [...listings].reverse().slice(0,4);
+     const filteredArrayScam = listings.filter(obj => obj.category === 'scam');
      const filteredArrayScamSlice = filteredArrayScam.reverse().slice(0,4);
 
 
@@ -113,15 +112,8 @@ export default function Home() {
                    <BlockSlat text={'Latest Scams'}/>
                    <Info_block>
                         {filteredArrayScamSlice.map(( itemScam,index) =>
-                             <Information_line  scam={true} items={itemScam} key={index} image={<Image src={scamIcon}  alt="alert icon" height={29}></Image>} />
+                                 <Information_line  scam={true} items={itemScam} key={index} image={<Image src={scamIcon}  alt="alert icon" height={29}></Image>} />
                         )}
-                        {/*{filteredArrayScam.map((item, index)=>*/}
-                        {/*     <Information_line key={index} scam={'true'} image={<Image src={scamIcon}  alt="alert icon" height={29}></Image>} />*/}
-                        {/*)}*/}
-
-                        <Information_line   image={<Image src={scamIcon} alt="alert icon" height={29}></Image>} />
-                        <Information_line image={<Image src={scamIcon}  alt="alert icon" height={29}></Image>} />
-                        <Information_line image={<Image src={scamIcon}  alt="alert icon" height={29}></Image>}/>
                    </Info_block>
               </div>
          </section>
