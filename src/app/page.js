@@ -28,7 +28,7 @@ export default function Home() {
      // const items1 = DATAART;
 
      const items = [...data].reverse().slice(0,4);
-     const filterItems = items.slice(0,4);
+
      // console.log(filterItems);
 
      // const [windowWidth, setWindowWidth] = useState(600);

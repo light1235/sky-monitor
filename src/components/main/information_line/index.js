@@ -10,9 +10,9 @@ const InformationLine = ({ image, name, numbers, domains = 'Asignat.com', items 
      const domainStrings = [];
 
      // Add items.name to the domainStrings array if items is defined and has a name property
-     if (items && items.name) {
-          domainStrings.push(items.name);
-     }
+     // if (items && items.name) {
+     //      domainStrings.push(items.name);
+     // }
 
      // Use a regular expression to remove the domain part of each string
      const removeDomain = /\..*$/;
@@ -26,7 +26,7 @@ const InformationLine = ({ image, name, numbers, domains = 'Asignat.com', items 
                          <div className="item-name">{items && items.name}</div>
                     </div>
                     <div className="line-items-one">
-                         <div className="item-numbers">{items.projectInformation.created}</div>
+                         <div className="item-numbers">{items && items.projectInformation.created}</div>
                     </div>
                </Link>
           </>
