@@ -101,6 +101,15 @@ const ListingCard = ({ item, wish,ind,setWish,registred}) => {
 
      const [imageLoading, setImageLoading] = useState(false);
 
+     const domainStrings = [item.name];
+     const removeDomain = /\..*$/;
+     const filterName = domainStrings.map((originalString) =>
+          originalString
+               .replace(removeDomain, '')
+               .replace(/-/g, '\u2011')
+     );
+
+
      const handleImageLoad = () => {
           setImageLoading(true);
      };
@@ -218,7 +227,7 @@ const ListingCard = ({ item, wish,ind,setWish,registred}) => {
      return (
           <div className={item.projectInformation.status.scam ? "listing__card-thin scam-status" : 'listing__card-thin'}>
                <div className="card-top_line">
-                    <div className="program_name">{item.name}
+                    <div className="program_name">{filterName}
                          {item.longTerm &&
                               <CustomToolTop text={'Long-term investment \n' +
                                    'project'}><span>Long Term</span></CustomToolTop>

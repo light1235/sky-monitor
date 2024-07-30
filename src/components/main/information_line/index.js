@@ -1,32 +1,33 @@
 "use client"
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './index.scss';
 import Link from "next/link";
-import ModifiedStrings from "@/utils/hooks/modifiedString";
-// import DataArt from '../../../db/listingData.json'
 
-const InformationLine = ({ image, name, numbers, domains = 'Asignat.com', items }) => {
-     // Create an array with the initial domain
+const InformationLine = ({ image,items,scam}) => {
      const domainStrings = [];
+     if (items && items.name) {
+               domainStrings.push(items.name);
+     }
+     if (scam) {
+          console.log(items);
+     }
 
-     // Add items.name to the domainStrings array if items is defined and has a name property
-     // if (items && items.name) {
-     //      domainStrings.push(items.name);
-     // }
-
-     // Use a regular expression to remove the domain part of each string
      const removeDomain = /\..*$/;
-     const modifiedStrings = domainStrings.map((originalString) => originalString.replace(removeDomain, ''));
+     const modifiedStrings = domainStrings.map((originalString) =>
+          originalString
+               .replace(removeDomain, '')
+               .replace(/-/g, '\u2011')
+     );
 
      return (
           <>
                <Link target="_blank" href='/' className="information-line">
                     <div className="line-items">
                          <div className="item-logo">{image}</div>
-                         <div className="item-name">{items && items.name}</div>
+                         <div className="item-name">{items && modifiedStrings}</div>
                     </div>
                     <div className="line-items-one">
-                         <div className="item-numbers">{items && items.projectInformation.created}</div>
+                    <div className="item-numbers">{items && items.projectInformation.created}</div>
                     </div>
                </Link>
           </>

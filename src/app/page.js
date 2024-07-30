@@ -25,11 +25,12 @@ export default function Home() {
           refetchOnMountOrArgChange: true,
           refetchOnReconnect: true,
      });
-     // const items1 = DATAART;
 
      const items = [...data].reverse().slice(0,4);
 
-     // console.log(filterItems);
+     const filteredArrayScam = data.filter(obj => obj.category === 'scam');
+     const filteredArrayScamSlice = filteredArrayScam.reverse().slice(0,4);
+
 
      // const [windowWidth, setWindowWidth] = useState(600);
      // const [showSlider, setShowSlider] = useState(true);
@@ -45,6 +46,7 @@ export default function Home() {
      //      setWindowWidth(window.innerWidth)
      // }, [windowWidth]);
      // showSlider ? 1 : 3
+     let mpt= true
 
      return (
     <main style={{background:'#F4F6F7'}}>
@@ -93,12 +95,8 @@ export default function Home() {
                    <BlockSlat text={'New Listings'}/>
                    <Info_block>
                         {items.map((item,index) =>
-                             <Information_line key={index} items={item} image={<Image src={newListingLogo}  alt="leaf icon" height={29}></Image>} />
+                             <Information_line key={index} items={item} scam={false} image={<Image src={newListingLogo}  alt="leaf icon" height={29}></Image>} />
                         )}
-
-                        {/*<Information_line  image={<Image src={newListingLogo} alt="leaf icon" height={29}></Image>} />*/}
-                        {/*<Information_line image={<Image src={newListingLogo}  alt="leaf icon" height={29}></Image>} />*/}
-                        {/*<Information_line image={<Image src={newListingLogo}  alt="leaf icon" height={29}></Image>}/>*/}
                    </Info_block>
               </div>
               <div className="content__item">
@@ -107,15 +105,21 @@ export default function Home() {
               <div className="content__item item--bottom">
                    <BlockSlat text={'Latest Hyip News'}/>
                    <Info_block>
-                        <NewsLine image={<Image src={NewsLineLogo} alt="fire icon" height={29}></Image>} />
+                        <NewsLine dora={true} image={<Image src={NewsLineLogo} alt="fire icon" height={29}></Image>} />
                         <NewsLine image={<Image src={NewsLineLogo} alt="fire icon" height={29}></Image>} />
                         <NewsLine image={<Image src={NewsLineLogo} alt="fire icon" height={29}></Image>} />
                         <NewsLine image={<Image src={NewsLineLogo} alt="fire icon" height={29}></Image>} />
                    </Info_block>
                    <BlockSlat text={'Latest Scams'}/>
                    <Info_block>
-                        <Information_line image={<Image src={scamIcon}  alt="alert icon" height={29}></Image>} />
-                        <Information_line  image={<Image src={scamIcon} alt="alert icon" height={29}></Image>} />
+                        {filteredArrayScamSlice.map(( itemScam,index) =>
+                             <Information_line  scam={true} items={itemScam} key={index} image={<Image src={scamIcon}  alt="alert icon" height={29}></Image>} />
+                        )}
+                        {/*{filteredArrayScam.map((item, index)=>*/}
+                        {/*     <Information_line key={index} scam={'true'} image={<Image src={scamIcon}  alt="alert icon" height={29}></Image>} />*/}
+                        {/*)}*/}
+
+                        <Information_line   image={<Image src={scamIcon} alt="alert icon" height={29}></Image>} />
                         <Information_line image={<Image src={scamIcon}  alt="alert icon" height={29}></Image>} />
                         <Information_line image={<Image src={scamIcon}  alt="alert icon" height={29}></Image>}/>
                    </Info_block>
