@@ -16,12 +16,8 @@ const InformationLine = ({ image, items, scam, top }) => {
                .replace(/-/g, '\u2011')
      );
 
-     if (top) {
-           console.log( items && items.projectInformation.ourInvestments.our);
-     }
-
      const content = (
-          <div className="information-line">
+          <div className="information-line" style={scam ? { cursor: 'not-allowed' } : { cursor: 'help' }}>
                <div className="line-items">
                     <div className="item-logo">{image}</div>
                     <div className="item-name">{items && modifiedStrings}</div>
