@@ -45,11 +45,6 @@ export default function Home() {
      const filteredArrayNewsSlice = filteredArrayNews.reverse().slice(0,4);
 
 
-     if (listings) {
-          console.log(filteredArrayPremiumSlice);
-     }
-
-
 
      // const [windowWidth, setWindowWidth] = useState(600);
      // const [showSlider, setShowSlider] = useState(true);
@@ -65,7 +60,6 @@ export default function Home() {
      //      setWindowWidth(window.innerWidth)
      // }, [windowWidth]);
      // showSlider ? 1 : 3
-     let mpt= true
 
      return (
     <main style={{background:'#F4F6F7'}}>
@@ -106,15 +100,14 @@ export default function Home() {
               <div className="content__item">
                    <BlockSlat text={'TOP Projects'}/>
                    <Info_block>
-                        <Information_line domains="Bitmugnet.ro" image={<Image src={topProjectLogo} alt="chart icon" height={29}></Image>} />
-                        <Information_line image={<Image src={topProjectLogo} alt="chart icon" height={29}></Image>} />
-                        <Information_line image={<Image src={topProjectLogo} alt="chart icon" height={29}></Image>} />
-                        <Information_line image={<Image src={topProjectLogo} alt="chart icon" height={29}></Image>} />
+                        {filteredArrayPremiumSlice.map((itemsTop,index) =>
+                             <Information_line key={index} items={itemsTop} scam={false} top={true} image={<Image src={topProjectLogo} alt="chart icon" height={29}></Image>} />
+                        )}
                    </Info_block>
                    <BlockSlat text={'New Listings'}/>
                    <Info_block>
                         {items.map((item,index) =>
-                             <Information_line key={index} items={item} scam={false} image={<Image src={newListingLogo}  alt="leaf icon" height={29}></Image>} />
+                             <Information_line key={index} items={item} scam={false} top={false} image={<Image src={newListingLogo}  alt="leaf icon" height={29}></Image>} />
                         )}
                    </Info_block>
               </div>
@@ -131,7 +124,7 @@ export default function Home() {
                    <BlockSlat text={'Latest Scams'}/>
                    <Info_block>
                         {filteredArrayScamSlice.map(( itemScam,index) =>
-                                 <Information_line  scam={true} items={itemScam} key={index} image={<Image src={scamIcon}  alt="alert icon" height={29}></Image>} />
+                                 <Information_line  scam={true}  top={false} items={itemScam} key={index} image={<Image src={scamIcon}  alt="alert icon" height={29}></Image>} />
                         )}
                    </Info_block>
               </div>

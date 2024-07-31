@@ -2,7 +2,6 @@
 import React from 'react';
 import  './index.scss'
 import PartnersReview from "@/components/main/partners-review";
-import DATAPARTNER from '../../db/partnersData.json';
 import {useGetPartnersQuery} from "@/services/partnersApi";
 
 const Partners = () => {

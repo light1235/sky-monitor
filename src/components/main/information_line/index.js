@@ -3,7 +3,7 @@ import React from 'react';
 import './index.scss';
 import Link from "next/link";
 
-const InformationLine = ({ image, items, scam }) => {
+const InformationLine = ({ image, items, scam, top }) => {
      const domainStrings = [];
      if (items && items.name) {
           domainStrings.push(items.name);
@@ -16,6 +16,10 @@ const InformationLine = ({ image, items, scam }) => {
                .replace(/-/g, '\u2011')
      );
 
+     if (top) {
+           console.log( items && items.projectInformation.ourInvestments.our);
+     }
+
      const content = (
           <div className="information-line">
                <div className="line-items">
@@ -24,7 +28,11 @@ const InformationLine = ({ image, items, scam }) => {
                </div>
                <div className="line-items-one">
                     {scam ? <div>Warning</div> :
-                         <div className="item-numbers" style={{textDecoration:'none'}}>{items && items.projectInformation.created}</div>
+                         <>{top ? <div>{items && items && items.projectInformation.ourInvestments.our}</div> : <div className="item-numbers"
+                                              style={{textDecoration: 'none'}}>{items && items.projectInformation.created}</div>}
+
+                         </>
+
                     }
                </div>
           </div>
