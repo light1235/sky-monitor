@@ -17,20 +17,21 @@ const inter = Inter({ subsets: ["latin"] });
 // };
 // Sky Finance - Expert in investments analytics
 // Sky Finance - Analytics for investors
-export default function RootLayout({ children }) {
-  return (
-       <html lang="en">
-       <head>
-            <title>{metadata.title}</title>
-            <meta name="description" content={metadata.description}/>
-       </head>
-       <body>
-       <Provider store={store}>
-            <AntdRegistry>
-                 <ChangeNavigation>{children}</ChangeNavigation>
-            </AntdRegistry>
-       </Provider>
-       </body>
-       </html>
-  );
+
+export default function RootLayout({ children}) {
+     return (
+          <html lang="en">
+          <head>
+               <title>{metadata.title}</title>
+               <meta name="description" content={metadata.description}/>
+          </head>
+          <body>
+          <Provider store={store}>
+               <AntdRegistry>
+                    <ChangeNavigation>{children}</ChangeNavigation>
+               </AntdRegistry>
+          </Provider>
+          </body>
+          </html>
+     );
 }

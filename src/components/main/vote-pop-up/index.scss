@@ -123,3 +123,27 @@
       }
    }
 }
+
+
+
+
+@media only screen and (max-width : 700px) {
+   .vote-pop-up{
+      width: 340px;
+   }
+   .vote-pop-up .item-top .item-top-inner {
+      grid-template-columns: max-content 1fr;
+   }
+   .vote-pop-up .item-top .item-top-inner p{
+      font-size: 16px;
+   }
+   .vote-pop-up .item-main-content {
+      padding-left: 0;
+      display: grid;
+      justify-items: center;
+   }
+   .vote-pop-up .item-buttons {
+      grid-template-columns: 1fr 1fr;
+      justify-items: center;
+   }
+}

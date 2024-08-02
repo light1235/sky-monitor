@@ -88,6 +88,15 @@ const MobileListing = ({ item, wish,ind,setWish}) => {
           }
      }, []);
 
+     const domainStrings = [item.name];
+     const removeDomain = /\..*$/;
+     const filterName = domainStrings.map((originalString) =>
+          originalString
+               .replace(removeDomain, '')
+               .replace(/-/g, '\u2011')
+     );
+
+
 
      const paymentSystems = Object.keys(item.paymentSystem).filter(system => item.paymentSystem[system]);
 
@@ -203,7 +212,7 @@ const MobileListing = ({ item, wish,ind,setWish}) => {
      return (
           <div className={item.projectInformation.status.scam ? "listing__card-mobile scam-status" : 'listing__card-mobile'}>
                <div className="card-top_line">
-                    <div className="program_name">{item.name}
+                    <div className="program_name">{filterName}
                          {item.longTerm &&
                               <CustomToolTop text={'Long-term investment \n' +
                                    'project'}><span>Long Term</span></CustomToolTop>

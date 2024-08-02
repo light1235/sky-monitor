@@ -31,8 +31,6 @@ import forumIocn from '/src/assets/main/icons/forum-icon.svg';
 import voteIcon from '/src/assets/main/icons/vote-icon.svg';
 import CustomToolTop from "@/components/main/tooltip_custom";
 import ArrowTopNextGroup from '../../../assets/main/icons/arrow-super-next.svg';
-import VoteLike from '../../../assets/main/icons/vote-like.svg';
-import VoteUnLike from '../../../assets/main/icons/vote-unlike.svg';
 import {easings} from "react-spring";
 import CustomModal from "@/components/main/custom_modal";
 import VotePopUp from "@/components/main/vote-pop-up";
@@ -222,7 +220,7 @@ const ListingCard = ({ item, wish,ind,setWish,registred}) => {
                </div>
           </div>
      );
-     // TODO: сделать голосование для всех листинг карточек
+     // TODO: доработать логику pop over что бы счетчик активировался сам а не при наведении на него
 
      return (
           <div className={item.projectInformation.status.scam ? "listing__card-thin scam-status" : 'listing__card-thin'}>

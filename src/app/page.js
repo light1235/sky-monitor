@@ -32,7 +32,6 @@ export default function Home() {
           refetchOnReconnect: true,
      });
 
-
      const items = [...listings].reverse().slice(0,4);
 
      const filteredArrayScam = listings.filter(obj => obj.category === 'scam');

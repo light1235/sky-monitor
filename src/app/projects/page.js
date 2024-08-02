@@ -1,28 +1,20 @@
-"use client"
-import React  from 'react';
+import React from 'react';
 import './index.scss';
 import Project_preview from "@/components/main/project_preview";
-import {useGetProjectQuery} from "@/services/projectApi";
+import getData from '../../services/projectApi'
 
-const Projects = () => {
 
-     const { data : projects = [], error: commentsError, isLoading: commentsLoading } = useGetProjectQuery(undefined, {
-          pollingInterval: 60000,
-          refetchOnMountOrArgChange: true,
-          refetchOnReconnect: true,
-     });
-
-     const projectItem = [...projects].reverse();
-
+const Projects = async () => {
+     const data = await getData()
 
      return (
           <section className="projects__page">
                <div className="projects__page-container">
                     <div className="projects__page-content">
-                         {projectItem.map((post, index) =>
-                              <Project_preview key={post.id} item={post} link={`/projects/${post.slug.replace(/\s+/g, '-')}`} />
+                         {data.map((post, index) =>
+                              <Project_preview key={post.id} item={post}
+                                               link={`/projects/${post.slug.replace(/\s+/g, '-')}`}/>
                          )}
-
                     </div>
                </div>
           </section>
@@ -30,4 +22,3 @@ const Projects = () => {
 };
 
 export default Projects;
-
