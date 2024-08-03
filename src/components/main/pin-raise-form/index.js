@@ -9,11 +9,20 @@ import CustomFrontInput from "@/components/main/custom-front-input";
 import CustomFrontUpload from "@/components/main/custom_front_upload";
 import CustomFrontSelect from "@/components/main/custom_front_select";
 import CustomFrontButton from "@/components/main/cutom_front_button";
+import PinImage from '../../../assets/main/images/pin-raise-image.jpg'
 
 const validationSchema = Yup.object().shape({
      siteName: Yup.string().min(8, 'Site name must be at least 8 characters').required("First Name should be required please"),
 });
-const PinRaiseForm = () => {
+const PinRaiseForm = ({src}) => {
+
+     useEffect(() => {
+          const nativeImage = new window.Image();
+          nativeImage.src = PinImage.src;
+          nativeImage.onload = () => {
+               document.getElementById('background-div').style.backgroundImage = `url(${PinImage.src})`;
+          };
+     }, []);
 
      const [isValid, setIsValid] = useState(false);
 
@@ -119,7 +128,7 @@ const PinRaiseForm = () => {
                               </Formik>
                          </div>
                     </div>
-                    <div className="content-right"></div>
+                    <div className="content-right" id="background-div" ></div>
                </div>
           </div>
      );
