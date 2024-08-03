@@ -13,13 +13,14 @@ import PopUpForm from "@/components/main/pop-up-form";
 import BannerForm from "@/components/main/Banner_form";
 import Link from "next/link";
 import CustomToolTop from "@/components/main/tooltip_custom";
+import PinRaiseForm from "@/components/main/pin-raise-form";
 
 const SelectedPopUp = ({close}) => {
      const [active, setActive] = useState(2);
      const [showSelect, setShowSelect] = useState(false);
      const [clickCount, setClickCount] = useState(0);
 
-     let popUps = ['listing',<BannerForm/>,<PopUpForm/>,'2','5'];
+     let popUps = ['listing',<BannerForm/>,<PopUpForm/>,<PinRaiseForm />,'5'];
 
      const SelectService = () => {
           close();

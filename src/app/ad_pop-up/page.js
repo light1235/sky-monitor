@@ -19,6 +19,7 @@ import CustomModal from "@/components/main/custom_modal";
 import Custom_modal from "@/components/main/custom_modal";
 import SelectedPopUp from "@/components/main/selected-pop-up";
 import axios from "axios";
+import PinRaiseForm from "@/components/main/pin-raise-form";
 
 
 
@@ -39,27 +40,12 @@ const Add_pop_up = () => {
      const [activeProgram, setActiveProgram] = useState(false);
 
 
-     const showModal = () => {
-          setActiveProgram(!activeProgram);
-     };
 
-     const [people,setPeople] = useState({
-          persona:[]
-     });
-
-     useEffect( () => {
-          axios.get('https://jsonplaceholder.typicode.com/users')
-               .then(res =>  {
-                    // console.log(res);
-                    setPeople({persona:res.data});
-               })
-     },[setPeople])
 
      return (
           <div className="pop-up__page" style={{padding: '40px 40px'}}>
-               <ul>
-                    {people.persona.map(person => <li key={person.id}>{person.name}</li>)}
-               </ul>
+               <PinRaiseForm />
+
                {/*<button onClick={showModal}>open</button>*/}
 
                {/*<CustomModal open={open}> <VotePopUp /></CustomModal>*/}

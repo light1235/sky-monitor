@@ -1,4 +1,3 @@
-'use client'
 import React from 'react';
 import {usePathname} from "next/navigation";
 import Header from "@/components/main/header";
@@ -32,9 +31,7 @@ const ChangeNavigation = ({children}) => {
                               <>
                                    {isDashboard ? (
                                         <>
-                                             {/*<h2>Lora De mi</h2>*/}
                                              <UserHeader />
-                                             {/*<User_header />*/}
                                              {children}
                                         </>
                                    ) : (
@@ -53,3 +50,4 @@ const ChangeNavigation = ({children}) => {
 };
 
 export default ChangeNavigation;
+
