@@ -20,6 +20,7 @@ import Custom_modal from "@/components/main/custom_modal";
 import SelectedPopUp from "@/components/main/selected-pop-up";
 import axios from "axios";
 import PinRaiseForm from "@/components/main/pin-raise-form";
+import ArticleForm from "@/components/main/article-form";
 
 
 
@@ -44,7 +45,7 @@ const Add_pop_up = () => {
 
      return (
           <div className="pop-up__page" style={{padding: '40px 40px'}}>
-               <PinRaiseForm />
+               <ArticleForm />
 
                {/*<button onClick={showModal}>open</button>*/}
 

@@ -1,19 +1,17 @@
 "use client"
-import React, {useEffect, useState} from 'react';
-import * as Yup from "yup";
+import React, {useState} from 'react';
 import './index.scss'
 import {ErrorMessage, Field, Form, Formik} from "formik";
-import Image from "next/image";
-import LOGO from "@/assets/logo-2.svg";
 import CustomFrontInput from "@/components/main/custom-front-input";
-import CustomFrontUpload from "@/components/main/custom_front_upload";
 import CustomFrontSelect from "@/components/main/custom_front_select";
 import CustomFrontButton from "@/components/main/cutom_front_button";
+import * as Yup from "yup";
 
 const validationSchema = Yup.object().shape({
      siteName: Yup.string().min(8, 'Site name must be at least 8 characters').required("First Name should be required please"),
 });
-const PinRaiseForm = () => {
+
+const ArticleForm = () => {
 
      const [isValid, setIsValid] = useState(false);
 
@@ -44,27 +42,22 @@ const PinRaiseForm = () => {
           { value: '28', label: '4 week' },
      ]
      let selectCategory = [
-          { value: '1', label: 'Pin your listing' },
-          { value: '2', label: 'Raise your listing' },
+          { value: '1', label: 'Pin Article' },
      ]
 
-     // useEffect(() => {
-     //      console.log(formData, 'formData');
-     // }, [formData]);
-
      return (
-          <div className="pin-raise-form">
-               <div className="pin-raise-form--content">
+          <div className="article-form">
+               <div className="article-content">
                     <div className="content-left">
                          <div className="left-container">
                               {!isValid &&
                                    <>
-                                        <h2>Pin or Raise Service</h2>
+                                        <h2>Article Pin Service</h2>
                                         <h3>Embark on the unknown path!</h3>
                                    </>
                               }
                               <Formik
-                                   initialValues={{siteName: '', ourListing: '', }}
+                                   initialValues={{siteName: '', ourListing: '',}}
                                    validationSchema={validationSchema}
                                    onSubmit={(values, actions) => {
                                         actions.setSubmitting(true);
@@ -83,7 +76,7 @@ const PinRaiseForm = () => {
 
                                    {({isSubmitting}) => (
                                         <Form>
-                                             {isValid ? <>Valid</>:
+                                             {isValid ? <>Valid</> :
                                                   <>
                                                        <label>
                                                             <p>Company</p>
@@ -102,7 +95,7 @@ const PinRaiseForm = () => {
                                                        <label>
                                                             <p>Service</p>
                                                             <CustomFrontSelect onSelect={handleCategorySelectChange}
-                                                                               placeholder="Pin"
+                                                                               placeholder="Pin Article"
                                                                                Data={selectCategory}/>
                                                        </label>
                                                        <label>
@@ -119,10 +112,12 @@ const PinRaiseForm = () => {
                               </Formik>
                          </div>
                     </div>
-                    <div className="content-right"></div>
+                    <div className="content-right">
+
+                    </div>
                </div>
           </div>
      );
 };
 
-export default PinRaiseForm;
+export default ArticleForm;
