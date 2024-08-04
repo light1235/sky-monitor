@@ -9,7 +9,7 @@
    grid-template-areas: "content-left content-right ";
    & .content-right {
       width: 100%;
-      //background-image: url(../../../assets/main/images/pin-raise-image.jpg);
+      background-image: url(../../../assets/main/images/pin-raise-image.jpg);
       background-size: cover;
       //background-position: 0px 0px;
       border-bottom-right-radius: 20px;
@@ -56,6 +56,11 @@
       & .front-dashed {
          & input {
             border: 2px dashed #d9d9d9;
+            background: rgba(233, 237, 240, 0.49);
+            &::placeholder {
+               font-weight: bold;
+               font-size: 18px;
+            }
          }
       }
    }

@@ -1,49 +1,27 @@
 "use client"
 import React, {useEffect, useState} from 'react';
-import * as Yup from "yup";
 import './index.scss'
-import {ErrorMessage, Field, Form, Formik} from "formik";
-import Image from "next/image";
-import LOGO from "@/assets/logo-2.svg";
 import CustomFrontInput from "@/components/main/custom-front-input";
-import CustomFrontUpload from "@/components/main/custom_front_upload";
 import CustomFrontSelect from "@/components/main/custom_front_select";
 import CustomFrontButton from "@/components/main/cutom_front_button";
-import PinImage from '../../../assets/main/images/pin-raise-image.jpg'
 
-const validationSchema = Yup.object().shape({
-     siteName: Yup.string().min(8, 'Site name must be at least 8 characters').required("First Name should be required please"),
-});
-const PinRaiseForm = ({src}) => {
+const PinRaiseForm = () => {
+     const [period, setPeriod] = useState('7');
+     const [category, setCategory] = useState('1');
 
-     useEffect(() => {
-          const nativeImage = new window.Image();
-          nativeImage.src = PinImage.src;
-          nativeImage.onload = () => {
-               document.getElementById('background-div').style.backgroundImage = `url(${PinImage.src})`;
-          };
-     }, []);
-
-     const [isValid, setIsValid] = useState(false);
 
      const [formData, setFormData] = useState({
-          siteName: '',
           yourListing:'',
-          selectedPeriodOption: '7',
-          selectedCategoryOption: '1'
+          selectedPeriodOption: period,
+          selectedCategoryOption: category
      });
 
-     const handleFormSubmit = (values, { setSubmitting }) => {
-          setFormData({ ...values, selectedPeriodOption: formData.selectedPeriodOption, selectedCategoryOption: formData.selectedCategoryOption });
-          setSubmitting(false);
-     };
-
      const handlePeriodSelectChange = (value) => {
-          setFormData({ ...formData, selectedPeriodOption: value });
+          setPeriod(value)
      };
 
      const handleCategorySelectChange = (value) => {
-          setFormData({ ...formData, selectedCategoryOption: value });
+          setCategory(value)
      };
 
      let selectPeriod = [
@@ -57,78 +35,47 @@ const PinRaiseForm = ({src}) => {
           { value: '2', label: 'Raise your listing' },
      ]
 
-     // useEffect(() => {
-     //      console.log(formData, 'formData');
-     // }, [formData]);
-
+     const handleSubmit = (event) => {
+          event.preventDefault();
+          setFormData(prevFormData => ({
+               ...prevFormData,
+               selectedCategoryOption: category,
+               selectedPeriodOption: period,
+          }));
+     };
      return (
           <div className="pin-raise-form">
                <div className="pin-raise-form--content">
                     <div className="content-left">
                          <div className="left-container">
-                              {!isValid &&
                                    <>
                                         <h2>Pin or Raise Service</h2>
                                         <h3>Embark on the unknown path!</h3>
                                    </>
-                              }
-                              <Formik
-                                   initialValues={{siteName: '', ourListing: '', }}
-                                   validationSchema={validationSchema}
-                                   onSubmit={(values, actions) => {
-                                        actions.setSubmitting(true);
-                                        actions.validateForm().then((errors) => {
-                                             if (Object.keys(errors).length === 0) {
-                                                  handleFormSubmit(values, actions);
-                                                  setIsValid(true);
-
-                                             } else {
-                                                  actions.setSubmitting(false);
-                                                  setIsValid(false);
-                                             }
-                                        });
-                                   }}
-                              >
-
-                                   {({isSubmitting}) => (
-                                        <Form>
-                                             {isValid ? <>Valid</>:
-                                                  <>
-                                                       <label>
-                                                            <p>Company</p>
-                                                            <Field as={CustomFrontInput} type="text" name="siteName"
-                                                                   placeholder={'Enter company name'}/>
-                                                            <ErrorMessage className="inputError" name="siteName"
-                                                                          component="div"></ErrorMessage>
-                                                       </label>
-                                                       <label className="front-dashed">
-                                                            <p>Your Listing</p>
-                                                            <Field as={CustomFrontInput} type="text" name="siteUrl"
-                                                                   placeholder={'Razzelton'} dis={true}/>
-                                                            <ErrorMessage className="inputError" name="ourListing"
-                                                                          component="div"/>
-                                                       </label>
-                                                       <label>
-                                                            <p>Service</p>
-                                                            <CustomFrontSelect onSelect={handleCategorySelectChange}
-                                                                               placeholder="Pin"
-                                                                               Data={selectCategory}/>
-                                                       </label>
-                                                       <label>
-                                                            <p>Period</p>
-                                                            <CustomFrontSelect onSelect={handlePeriodSelectChange}
-                                                                               placeholder="Price per week 7$"
-                                                                               Data={selectPeriod}/>
-                                                       </label>
-                                                       <CustomFrontButton disblad={isSubmitting}/>
-                                                  </>
-                                             }
-                                        </Form>
-                                   )}
-                              </Formik>
+                              <form onSubmit={handleSubmit}>
+                                   <>
+                                        <label className="front-dashed front-bold">
+                                             <p>Your Listing</p>
+                                             <CustomFrontInput placeholder={'Razzelton'} name="siteUrl" dis={true}/>
+                                        </label>
+                                        <label>
+                                             <p>Service</p>
+                                             <CustomFrontSelect onSelect={handleCategorySelectChange}
+                                                                placeholder="Pin"
+                                                                Data={selectCategory}/>
+                                        </label>
+                                        <label>
+                                             <p>Period</p>
+                                             <CustomFrontSelect onSelect={handlePeriodSelectChange}
+                                                                placeholder="Price per week 7$"
+                                                                Data={selectPeriod}/>
+                                        </label>
+                                        <CustomFrontButton/>
+                                   </>
+                              </form>
                          </div>
                     </div>
-                    <div className="content-right" id="background-div" ></div>
+                    <div className="content-right" ></div>
                </div>
           </div>
      );
