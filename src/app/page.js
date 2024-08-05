@@ -20,7 +20,7 @@ import getListing from '../services/listingApi'
 const Home = async () => {
 
      const listings = await getListing();
-     const projects = await getData()
+     const projects = await getData();
 
 
      const items = [...listings].reverse().slice(0,4);
