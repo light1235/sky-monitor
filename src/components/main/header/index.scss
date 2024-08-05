@@ -427,6 +427,7 @@ header {
       }
       & .mobile-navigation{
          display: grid;
+         grid-template-rows: min-content min-content 1fr;
          height: 100vh;
          padding: 20px 20px;
          background: linear-gradient(65deg, #5913b4 0%, #5913b4 0.01%, #5913b4 99.99%);
@@ -617,7 +618,58 @@ header {
                margin-top: 20px;
             }
          }
+         .mobile-authentication {
+            display: grid;
+            grid-template-columns: min-content min-content;
+            align-items: center;
+            margin-bottom: 20px;
+            & .authentication-circle {
+               width: 82px;
+               height: 82px;
+               border-radius: 50%;
+               display: grid;
+               justify-items: center;
+               align-items: center;
+               & img {
+                  width: 100%;
+                  height: auto;
+               }
+            }
+            & ul {
+               padding-left: 20px;
+               margin: 0;
+               align-self: center;
+               display: grid;
+               align-items: center;
+               grid-gap: 10px;
+               & li {
+                  text-decoration: none;
+                  list-style-type: none;
+                  //padding-bottom: 10px;
+                  & a {
+                     font-family: var(--Main-front-font);
+                     font-weight: 500;
+                     font-size: 15px;
+                     color: #fff;
+                     text-decoration: none;
+                  }
+               }
+            }
+            .authentication-name {
+               font-family: var(--Main-front-font);
+               font-weight: 500;
+               font-size: 20px;
+               color: #fff;
+               text-decoration: none;
+               padding-left: 15px;
+            }
 
+         }
+         & .line-separator {
+            width: 100%;
+            height: 1px;
+            background-color: #3f0e7f;
+         }
       }
       & .mobile-show {
          transform: translateX(0%);

@@ -173,10 +173,37 @@ const Header = () => {
                     </div>
                </div>
                <div className={activeMenu ? 'mobile-navigation' : 'mobile-navigation mobile-show'}>
+
+                    <div className="mobile-authentication">
+                         {isLogin ?
+                              <>
+                                   <div className="authentication-circle" onClick={handleLogin}>
+                                        <Image src={LoginedAvaNew}
+                                               alt="login icon">
+                                        </Image>
+                                   </div>
+                                   <div className="authentication-name">Dora</div>
+                              </>
+                              :
+                              <>
+                                   <div className="authentication-circle" onClick={handleLogin}>
+                                        <Image src={LoginedAva}
+                                               alt="login icon">
+                                        </Image>
+                                   </div>
+                                   <ul>
+                                        <li><Link onClick={CloseMenu} href='/login'>Login</Link></li>
+                                        <li><Link onClick={CloseMenu} href='/sign-up'>Register</Link></li>
+                                   </ul>
+                              </>
+                         }
+
+                    </div>
+                    <div className="line-separator"></div>
                     <nav className="navigation">
                          <ul>
-                              <li ><Link onClick={CloseMenu}  href='/'>monitoring</Link></li>
-                              <li ><Link onClick={CloseMenu} href='/services'>services</Link></li>
+                              <li><Link onClick={CloseMenu} href='/'>monitoring</Link></li>
+                              <li><Link onClick={CloseMenu} href='/services'>services</Link></li>
                               <li><Link onClick={CloseMenu} href='/projects'>projects</Link></li>
                               <li><Link onClick={CloseMenu} href='/contacts'>contacts</Link></li>
                               <li><Link onClick={CloseMenu} href='/partners'>partners</Link></li>
@@ -186,7 +213,8 @@ const Header = () => {
                               <li><Link href='/'>about us</Link></li>
                               <li><Link href='/'>support</Link></li>
                          </ul>
-                         <button onClick={showModal}><Link href='/'> <Image src={buttonIcon} alt="add icon"></Image> Add program</Link>
+                         <button onClick={showModal}><Link href='/'> <Image src={buttonIcon} alt="add icon"></Image> Add
+                              program</Link>
                          </button>
                          <div className="language-menu">
                               <span>Language</span>
@@ -202,13 +230,15 @@ const Header = () => {
                          <div className="social-menu">
                               <span>Social Media</span>
                               <div className="wrap-social">
-                                   <a href="#" className="telegram"><Image src={teleGramIcon} alt="telegram icon"></Image></a>
+                                   <a href="#" className="telegram"><Image src={teleGramIcon}
+                                                                           alt="telegram icon"></Image></a>
                                    <a href="#"><Image src={youTubeIcon} alt="youtube icon"></Image></a>
                                    <a href="#"><Image src={tikTokIcon} alt="tik-tok icon"></Image></a>
                               </div>
                          </div>
                          <div className="copyright"> © 2024 All Rights Reserved</div>
-                         <Custom_modal open={activeProgram} close={showModal}><SelectedPopUp close={showModal}  /> </Custom_modal>
+                         <Custom_modal open={activeProgram} close={showModal}><SelectedPopUp close={showModal}/>
+                         </Custom_modal>
                     </nav>
                </div>
 
