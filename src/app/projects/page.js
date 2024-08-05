@@ -8,16 +8,22 @@ const Projects = async () => {
      const data = await getData()
 
      return (
-          <section className="projects__page">
-               <div className="projects__page-container">
-                    <div className="projects__page-content">
-                         {data.map((post, index) =>
-                              <Project_preview key={post.id} item={post}
-                                               link={`/projects/${post.slug.replace(/\s+/g, '-')}`}/>
-                         )}
+          <>
+               <head>
+                    <meta name="description"
+                          content="Explore our curated selection of tracked investment ventures for informed decision-making"/>
+               </head>
+               <section className="projects__page">
+                    <div className="projects__page-container">
+                         <div className="projects__page-content">
+                              {data.map((post, index) =>
+                                   <Project_preview key={post.id} item={post}
+                                                    link={`/projects/${post.slug.replace(/\s+/g, '-')}`}/>
+                              )}
+                         </div>
                     </div>
-               </div>
-          </section>
+               </section>
+          </>
      );
 };
 
