@@ -1,4 +1,3 @@
-"use client"
 import Image from "next/image";
 import { Carousel } from 'antd';
 import React from 'react';
@@ -15,22 +14,14 @@ import NewsLine from "@/components/main/news_line";
 import NewsLineLogo from '/src/assets/main/icons/news-line-logo.svg';
 import Link from "next/link";
 import MainTabs from "@/components/main/main-tabs";
-import {useGetListingsQuery} from "@/services/listingApi";
-import {useGetProjectQuery} from "@/services/projectApi";
+import getData  from "../services/projectApi";
+import getListing from '../services/listingApi'
 
+const Home = async () => {
 
-export default function Home() {
+     const listings = await getListing();
+     const projects = await getData()
 
-     const { data : listings = [], error: postsError, isLoading: postsLoading } = useGetListingsQuery(undefined, {
-          pollingInterval: 60000,
-          refetchOnMountOrArgChange: true,
-          refetchOnReconnect: true,
-     });
-     const { data : projects = [], error: commentsError, isLoading: commentsLoading } = useGetProjectQuery(undefined, {
-          pollingInterval: 60000,
-          refetchOnMountOrArgChange: true,
-          refetchOnReconnect: true,
-     });
 
      const items = [...listings].reverse().slice(0,4);
 
@@ -132,3 +123,5 @@ export default function Home() {
     </main>
   );
 }
+
+export default Home;

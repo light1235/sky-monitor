@@ -12,3 +12,17 @@ export const listingsApi = createApi({
 });
 
 export const {useGetListingsQuery} = listingsApi;
+
+
+export default async function getListing() {
+     const res = await fetch('https://raw.githubusercontent.com/light1235/sky-monitor/master/src/db/listingData.json');
+
+     if (!res.ok) {
+          // This will activate the closest `error.js` Error Boundary
+          throw new Error('Failed to fetch data')
+     }
+
+     return res.json()
+}
+
+
