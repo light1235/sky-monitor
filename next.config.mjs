@@ -10,6 +10,11 @@ const nextConfig = {
                     destination: '/api/sitemap',
                     permanent: true,
                },
+               {
+                    source: '/robots.txt',
+                    destination: '/api/robots',
+                    permanent: true,
+               },
           ];
      },
 
