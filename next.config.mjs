@@ -3,6 +3,16 @@ const nextConfig = {
      images: {
           domains: ['cdn.discordapp.com'],
      },
+     async redirects() {
+          return [
+               {
+                    source: '/sitemap.xml',
+                    destination: '/api/sitemap',
+                    permanent: true,
+               },
+          ];
+     },
+
 };
 
 export default nextConfig;
