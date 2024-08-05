@@ -4,7 +4,7 @@ import {Input} from "antd";
 import  './index.scss'
 
 
-const CustomFrontInput = ({placeholder = ' ', dis = false,formData ,name,setFormData,...props}) => {
+const CustomFrontInput = ({placeholder = ' ', readonly = false,dis = false,formData ,name,setFormData,...props}) => {
      // const [state, setState] = useState();
      // const handleInputChange = (event) => {
      //      const { name, value } = event.target;
@@ -19,6 +19,7 @@ const CustomFrontInput = ({placeholder = ' ', dis = false,formData ,name,setForm
                <Input
                     placeholder={placeholder}
                     disabled={dis}
+                    readOnly={readonly}
                     style={{ height: '40px' }}
                     name={name}
                     {...props}
