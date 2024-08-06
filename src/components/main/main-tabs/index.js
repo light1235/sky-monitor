@@ -2,21 +2,14 @@
 import React, {useEffect, useState} from 'react';
 import {Tabs} from "antd";
 import ContentBlock from "@/components/main/content-block";
-import DATALIST from '../../../db/listingData.json';
 import CustomWrapper from "@/components/main/custom-wrapper";
 import  './index.scss'
 import ArrowButton from '../../../assets/main/icons/arrow-button.svg';
 import Image from "next/image";
-import { useGetListingsQuery } from "@/services/listingApi";
-import DATAART from "@/db/articleData.json";
 
 
-const MainTabs = () => {
-     const { data =[], error, isLoading } = useGetListingsQuery(undefined, {
-          pollingInterval: 60000,
-          refetchOnMountOrArgChange: true,
-          refetchOnReconnect: true,
-     });
+const MainTabs = ({dataListing}) => {
+
 
      const [searchTerm, SetSearchTerm] = useState('');
 
@@ -27,9 +20,8 @@ const MainTabs = () => {
      const [showBlocksScam, setShowBlocksScam] = useState(1);
 
 
-     const items = [...data].reverse();
-     let prevItems = data.slice(0,5);
-     // console.log(prevItems);
+     const items = [...dataListing].reverse();
+
 
      // const items = DATALIST;
      const chunkSize = 6;

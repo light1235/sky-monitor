@@ -102,7 +102,7 @@ const Home = async () => {
                    </Info_block>
               </div>
               <div className="content__item">
-                   <MainTabs />
+                   <MainTabs dataListing={listings} />
               </div>
               <div className="content__item item--bottom">
                    <BlockSlat text={'Latest Hyip News'}/>
