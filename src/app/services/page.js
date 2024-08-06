@@ -9,6 +9,8 @@ import popLogo from '/src/assets/main/icons/services-pop-up-logo.svg';
 import listingPin from '/src/assets/main/icons/servisec-listing-pin.svg';
 import listingRaise from '/src/assets/main/icons/services-listing-raise.svg';
 import projectLogo from '/src/assets/main/icons/services-project-icon.svg';
+import Htegs from "@/components/main/hiden-tegs";
+import HidenTegs from "@/components/main/hiden-tegs";
 
 
 const Services = () => {
@@ -19,6 +21,7 @@ const Services = () => {
                           content="Discover tailored financial solutions crafted by our expert team"/>
                </head>
                <section className="Services-page">
+                   <HidenTegs text={'Services Offered: Tailored Financial Solutions for Your Needs'} />
                     <div className="page-container">
                          <div className="services-item">
                               <Link href='/listing-advertising'>

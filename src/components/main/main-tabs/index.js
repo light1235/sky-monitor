@@ -10,9 +10,7 @@ import Image from "next/image";
 
 const MainTabs = ({dataListing}) => {
 
-
      const [searchTerm, SetSearchTerm] = useState('');
-
      const [showBlocks, setShowBlocks] = useState(1);
      const [showBlocksPremium, setShowBlocksPremium] = useState(1);
      const [showBlocksNormal, setShowBlocksNormal] = useState(1);
@@ -23,7 +21,6 @@ const MainTabs = ({dataListing}) => {
      const items = [...dataListing].reverse();
 
 
-     // const items = DATALIST;
      const chunkSize = 6;
      const chunkedItems = [];
 

@@ -16,6 +16,7 @@ import Link from "next/link";
 import MainTabs from "@/components/main/main-tabs";
 import getData  from "../services/projectApi";
 import getListing from '../services/listingApi'
+import HidenTegs from "@/components/main/hiden-tegs";
 
 const Home = async () => {
 
@@ -33,8 +34,6 @@ const Home = async () => {
 
      const filteredArrayNews  = projects.filter(obj => obj.article.articleType.news === true);
      const filteredArrayNewsSlice = filteredArrayNews.reverse().slice(0,4);
-
-
 
      // const [windowWidth, setWindowWidth] = useState(600);
      // const [showSlider, setShowSlider] = useState(true);
@@ -102,6 +101,7 @@ const Home = async () => {
                    </Info_block>
               </div>
               <div className="content__item">
+                   <HidenTegs text={'Chartered financial advisor recommending the best investments, including crypto investments, to maximize dividends.'} />
                    <MainTabs dataListing={listings} />
               </div>
               <div className="content__item item--bottom">
