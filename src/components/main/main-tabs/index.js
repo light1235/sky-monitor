@@ -6,9 +6,15 @@ import CustomWrapper from "@/components/main/custom-wrapper";
 import  './index.scss'
 import ArrowButton from '../../../assets/main/icons/arrow-button.svg';
 import Image from "next/image";
-
+// import { useGetListingsQuery } from "@/services/listingApi";
 
 const MainTabs = ({dataListing}) => {
+
+     // const { data =[], error, isLoading } = useGetListingsQuery(undefined, {
+     //      pollingInterval: 60000,
+     //      refetchOnMountOrArgChange: true,
+     //      refetchOnReconnect: true,
+     // });
 
      const [searchTerm, SetSearchTerm] = useState('');
      const [showBlocks, setShowBlocks] = useState(1);
@@ -19,7 +25,8 @@ const MainTabs = ({dataListing}) => {
 
 
      const items = [...dataListing].reverse();
-
+     // let prevItems = data.slice(0,5);
+     // console.log(prevItems);
 
      const chunkSize = 6;
      const chunkedItems = [];
