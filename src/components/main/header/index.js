@@ -14,7 +14,7 @@ import buttonIcon from '/src/assets/main/icons/button-+.svg';
 import LangButton from '/src/assets/main/icons/lang-panel.svg';
 import loginAva from '/src/assets/main/icons/login-ava.svg';
 import LoginedAva from '/src/assets/main/icons/logined-icon.svg'
-import LogAvatar from '/src/assets/main/icons/mobile-logo.png';
+import LogAvatar from '/src/assets/main/icons/newAvaPerson.png';
 import LoginedAvaNew from '/src/assets/main/icons/icon-image-face.png'
 import teleGramIcon from "@/assets/main/icons/telegram.svg";
 import youTubeIcon from "@/assets/main/icons/youtub.svg";
