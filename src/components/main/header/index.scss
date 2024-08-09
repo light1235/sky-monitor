@@ -621,7 +621,7 @@ header {
          }
          .mobile-authentication {
             display: grid;
-            grid-template-columns: min-content min-content;
+            grid-template-columns: min-content min-content max-content;
             align-items: center;
             margin-bottom: 20px;
             & .authentication-circle {
@@ -663,6 +663,45 @@ header {
                color: #fff;
                text-decoration: none;
                padding-left: 15px;
+               padding-right: 25px;
+            }
+            & .panel-notify{
+               position: relative;
+               width: 50px;
+               height: 50px;
+               //padding-right: 10px;
+               border-radius: 50% 50%;
+               background-color: rgba(255, 255, 255, 0.47);
+               display: grid;
+               place-items: center;
+               & i {
+                  font-size: 22px;
+                  color: white;
+                  cursor: pointer;
+                  display: block;
+               }
+               & .notify-amount{
+                  position: absolute;
+                  top: 2px;
+                  right: 11px;
+                  font-family: "Open Sans", sans-serif;
+                  font-weight: bold;
+                  font-size: 14px;
+                  color: red;
+                  pointer-events: none;
+                  &::selection {
+                     background-color: transparent;
+                  }
+               }
+               & .notify-menu {
+                  display: block;
+                  position: absolute;
+                  right: -56px;
+                  top: 70px;
+                  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.25);
+                  background: #fff;
+                  z-index: 200;
+               }
             }
 
          }
