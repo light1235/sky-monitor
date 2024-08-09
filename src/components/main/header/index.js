@@ -55,7 +55,10 @@ const Header = () => {
                });
           }
 
+
      },[block])
+
+
 
      const pathname = usePathname();
      const CloseMenu = () => {
@@ -93,6 +96,18 @@ const Header = () => {
           };
 
      }, []);
+
+     useEffect(() => {
+          if (showMessage) {
+               anime({
+                    targets: '.panel-notify i',
+                    rotate:['20deg','-20deg','20deg','0deg'],
+                    duration: 600,
+                    easing: 'easeInOutQuad' ,
+                    loop: false,
+               });
+          }
+     },[showMessage])
 
 
 
