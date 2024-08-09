@@ -701,6 +701,15 @@ header {
                   box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.25);
                   background: #fff;
                   z-index: 200;
+                  & .notification-message {
+                     & span {
+                        cursor: pointer;
+                     }
+                     & p {
+                        cursor: pointer !important;
+                     }
+
+                  }
                }
             }
 

@@ -9,6 +9,10 @@
    align-items: center;
    justify-items: center;
    border-bottom: 1px solid #e9edf0;
+   cursor: pointer;
+   & img {
+      cursor: pointer;
+   }
    &:hover{
       background: gainsboro;
       transition: all 0.3s ease-in-out;
@@ -19,11 +23,13 @@
       font-weight: 400;
       font-size: 12px;
       color: #7e8e9f;
+      cursor: pointer;
    }
    & span {
       font-family: "Open Sans", sans-serif;
       font-weight: 700;
       font-size: 14px;
       color: #999;
+      cursor: pointer;
    }
 }
