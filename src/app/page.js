@@ -34,6 +34,8 @@ const Home = async () => {
 
      const filteredArrayNews  = projects.filter(obj => obj.article.articleType.news === true);
      const filteredArrayNewsSlice = filteredArrayNews.reverse().slice(0,4);
+     // console.log(filteredArrayScam);
+     // console.log("123");
 
      // const [windowWidth, setWindowWidth] = useState(600);
      // const [showSlider, setShowSlider] = useState(true);
