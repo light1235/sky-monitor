@@ -23,6 +23,8 @@ import Custom_modal from "@/components/main/custom_modal";
 import { usePathname } from 'next/navigation'
 import SelectedPopUp from "@/components/main/selected-pop-up";
 import Notification from "@/components/panel/notification-message";
+import NotifyData from '../../../db/notificationData.json'
+import UserNotification from "@/components/main/user_notification";
 
 
 
@@ -33,6 +35,14 @@ const Header = () => {
      const [changeLanguage, setChangeLanguage] = useState(true);
      const [activeProgram, setActiveProgram] = useState(false);
      const [isLogin, setIsLogin] = useState(false);
+     const notifyArr = [
+          {type:'project',withWho:'Razzelton',activity:'добавил новый проект'},
+          {type:'scam',withWho:'Razzelton',activity:'сменил категорию'},
+          {type:'pin',withWho:'Razzelton',activity:'закрепил проект'},
+          {type:'news',withWho:'Crypto up',activity:'опубликовал статью '},
+          {type:'act',withWho:'Activity', activity:'300 vote and 400 comments', vote:'300', comments:'400',date:'14-06-21'},
+
+     ]
 
      const showModal = () => {
           setActiveProgram(!activeProgram);
@@ -138,10 +148,13 @@ const Header = () => {
                                                  <div className="notify-amount">8</div>
                                                  {showMessage &&
                                                       <div className="notify-menu">
-                                                           <Notification/>
-                                                           <Notification/>
-                                                           <Notification/>
-                                                           <Notification/>
+                                                           {NotifyData.map((item,index) =>
+                                                                <UserNotification item={item} key={index} />
+                                                           )}
+                                                           {/*<Notification/>*/}
+                                                           {/*<Notification/>*/}
+                                                           {/*<Notification/>*/}
+                                                           {/*<Notification/>*/}
                                                       </div>
                                                  }
                                             </div>

@@ -1,0 +1,29 @@
+[
+  {
+    "type": "project",
+    "definition": "Razzelton",
+    "activity": "добавил  проект"
+  },
+  {
+    "type": "Activity",
+    "definition": "Activity",
+    "vote": "300",
+    "comments": "400",
+    "date": "14-06-21"
+  },
+  {
+    "type": "scam",
+    "definition": "Razzelton",
+    "activity": "сменил категорию"
+  },
+  {
+    "type": "pin",
+    "definition": "Razzelton",
+    "activity": "закрепил проект"
+  },
+  {
+    "type": "news",
+    "definition": "Crypto up",
+    "activity": "опубликовал статью"
+  }
+]

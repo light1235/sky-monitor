@@ -1,0 +1,53 @@
+
+
+.notification-msg {
+   width: 380px;
+   padding: 10px 10px;
+   display: grid;
+   grid-template-columns: 40px 1fr 1fr 2fr;
+   border-bottom: 1px solid #e9edf0;
+   align-items: center;
+   justify-items: center;
+     &:hover {
+        cursor: pointer;
+        background: gainsboro;
+        transition: all 0.3s ease-in-out;
+     }
+   & .notification-type {
+      font-family: "Open Sans", sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      color: #999;
+      cursor: pointer;
+      text-transform: capitalize;
+   }
+   & .notification-definition {
+      font-family: "Open Sans", sans-serif;
+      text-transform: capitalize;
+      font-weight: 700;
+      font-size: 14px;
+      color: black;
+      cursor: pointer;
+   }
+   //.day-act {
+   //   color: black;
+   //}
+   & .notification-activity {
+      margin: 0;
+      font-family: "Open Sans", sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+      color: #7e8e9f;
+      cursor: pointer;
+      & p {
+         margin: 0;
+         display: inline;
+      }
+   }
+   .vote-msg {
+      color: var(--Main-color);
+   }
+   .com-mgs {
+      color: #446DFE;
+   }
+}
