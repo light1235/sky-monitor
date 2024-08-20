@@ -502,9 +502,9 @@
       "projectImage": "https://cdn.discordapp.com/attachments/1046398987659395152/1222583425601372242/007.gif?ex=6696a00b&is=66954e8b&hm=abef36bb437f616ce19a567f47fae75f239d3872c8e0c354c50b1f595a1db74b&",
       "projectInformation": {
         "status": {
-          "paying":true,
+          "paying":false,
           "untraceable": false,
-          "scam": false
+          "scam": true
         },
         "ourInvestments": {
           "our": "400$",
