@@ -2,13 +2,15 @@ import React from 'react';
 import './index.scss'
 import SupportImage from '../../assets/main/images/support.jpg';
 import Image from "next/image";
+
+export const metadata = {
+     title: 'Заголовок страницы',
+     description: 'Описание страницы',
+};
+
 const SupportPage = () => {
      return (
           <>
-               <head>
-                    <title>Заголовок страницы</title>
-                    <meta name="description" content="Описание страницы" />
-               </head>
                <section className="support__page">
                     <div className="page-container">
                          <Image src={SupportImage} alt="support image"></Image>

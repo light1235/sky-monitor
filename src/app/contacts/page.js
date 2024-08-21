@@ -3,13 +3,13 @@ import './index.scss'
 import Image from "next/image";
 import contactPageImage from '/src/assets/main/images/contanct-page.svg'
 
+export const metadata = {
+     title: 'Sky Finance - Expert in investments',
+     description: 'Reach out to us for personalized financial guidance and assistance',
+};
+
 const Contacts = () => {
      return (
-          <>
-               <head>
-                    <meta name="description"
-                          content="Explore our network of trusted partners driving financial success together"/>
-               </head>
                <section className="contact__page">
                     <div className="contact__page-container">
                          <div className="contact__page-content">
@@ -20,7 +20,6 @@ const Contacts = () => {
                          </div>
                     </div>
                </section>
-          </>
      );
 };
 

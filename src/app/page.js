@@ -18,6 +18,11 @@ import getData  from "../services/projectApi";
 import getListing from '../services/listingApi'
 import HidenTegs from "@/components/main/hiden-tegs";
 
+export const metadata = {
+     title: 'Sky Finance - Expert in investments',
+     description: "Guiding Your Wealth Journey with Expertise and Insight",
+};
+
 const Home = async () => {
 
      const listings = await getListing();

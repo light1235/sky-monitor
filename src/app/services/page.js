@@ -12,14 +12,13 @@ import projectLogo from '/src/assets/main/icons/services-project-icon.svg';
 import Htegs from "@/components/main/hiden-tegs";
 import HidenTegs from "@/components/main/hiden-tegs";
 
+export const metadata = {
+     title: 'Sky Finance - Expert in investments',
+     description: 'Discover tailored financial solutions crafted by our expert team',
+};
 
 const Services = () => {
      return (
-          <>
-               <head>
-                    <meta name="description"
-                          content="Discover tailored financial solutions crafted by our expert team"/>
-               </head>
                <section className="Services-page">
                    <HidenTegs text={'Services Offered: Tailored Financial Solutions for Your Needs'} />
                     <div className="page-container">
@@ -109,7 +108,6 @@ const Services = () => {
                          </div>
                     </div>
                </section>
-          </>
      );
 };
 

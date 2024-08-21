@@ -12,7 +12,6 @@ const ProjectPreview = ({item,link}) => {
 
      const pathname = usePathname();
 
-
      const [truncatedText, setTruncatedText] = useState("");
      const maxLength = 322; // Установите максимальное количество символов
 
@@ -44,7 +43,7 @@ const ProjectPreview = ({item,link}) => {
                               <Image src={pinIcon} height={29} alt='pin icon'/><span>{item.preview.tags}</span>
                          </div>
                          <div className="line-item">
-                              <Image src={calendarIcon} height={32} alt='pin icon'/> <span>{item.preview.postDate}</span>
+                              <Image src={calendarIcon} height={29} alt='pin icon'/> <span>{item.preview.postDate}</span>
                          </div>
                     </div>
                </div>

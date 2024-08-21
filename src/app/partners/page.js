@@ -3,6 +3,10 @@ import  './index.scss'
 import PartnersReview from "@/components/main/partners-review";
 import getPartners from '../../services/partnersApi'
 
+export const metadata = {
+     title: 'Sky Finance - Expert in investments',
+     description: 'Explore our network of trusted partners driving financial success together',
+};
 
 const Partners = async () => {
 
