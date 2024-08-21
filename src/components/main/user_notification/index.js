@@ -4,6 +4,7 @@ import NewsLineLogo from "@/assets/main/icons/newsIconNew.svg";
 import ScamLogo from "@/assets/main/icons/scamIconNew.svg";
 import newListing from "@/assets/main/icons/listingIconNew.svg";
 import comments from "@/assets/main/icons/commentIconNew.svg";
+import PinIcon from "@/assets/main/icons/pinIconNew.svg";
 import Image from "next/image";
 
 const UserNotification = ({item}) => {
@@ -12,6 +13,7 @@ const UserNotification = ({item}) => {
                <div className="notification-img">
                     {item.type === 'news' ? <Image src={NewsLineLogo} alt="fire icon" height={29}></Image> : null }
                     {item.type === 'scam' ? <Image src={ScamLogo} alt="fire icon" height={29}></Image> : null }
+                    {item.type === 'pin' ? <Image src={PinIcon} alt="fire icon" height={29}></Image> : null }
                     {item.type === 'project' ? <Image src={newListing} alt="fire icon" height={29}></Image> : null }
                     {item.type === 'Activity' ? <Image src={comments} alt="fire icon" height={29}></Image> : null }
                </div>

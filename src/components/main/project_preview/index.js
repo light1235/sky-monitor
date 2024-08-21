@@ -2,8 +2,8 @@
 import React, {useEffect, useState} from 'react';
 import './index.scss'
 import Image from "next/image";
-import pinIcon from '/src/assets/main/icons/pin-icon.svg';
-import calendarIcon from '/src/assets/main/icons/calendar-icon.svg';
+import pinIcon from '/src/assets/main/icons/pinIconNew.svg';
+import calendarIcon from '/src/assets/main/icons/calendarIconNew.svg';
 import Link from "next/link";
 import CustomToolTop from "@/components/main/tooltip_custom";
 import {usePathname} from "next/navigation";
@@ -41,10 +41,10 @@ const ProjectPreview = ({item,link}) => {
                     </div>
                     <div className="preview-card-bottom-line">
                          <div className="line-item">
-                              <Image src={pinIcon} alt='pin icon'/><span>{item.preview.tags}</span>
+                              <Image src={pinIcon} height={29} alt='pin icon'/><span>{item.preview.tags}</span>
                          </div>
                          <div className="line-item">
-                              <Image src={calendarIcon} alt='pin icon'/> <span>{item.preview.postDate}</span>
+                              <Image src={calendarIcon} height={32} alt='pin icon'/> <span>{item.preview.postDate}</span>
                          </div>
                     </div>
                </div>
