@@ -36,15 +36,6 @@ const Header = () => {
      const [activeProgram, setActiveProgram] = useState(false);
      const [isLogin, setIsLogin] = useState(false);
 
-     const notifyArr = [
-          {type:'project',withWho:'Razzelton',activity:'добавил новый проект'},
-          {type:'scam',withWho:'Razzelton',activity:'сменил категорию'},
-          {type:'pin',withWho:'Razzelton',activity:'закрепил проект'},
-          {type:'news',withWho:'Crypto up',activity:'опубликовал статью '},
-          {type:'act',withWho:'Activity', activity:'300 vote and 400 comments', vote:'300', comments:'400',date:'14-06-21'},
-
-     ]
-
      const router = useRouter();
 
      const goToDashboard = () => {
@@ -83,8 +74,16 @@ const Header = () => {
           setActiveMenu(!activeMenu);
      };
 
+     useEffect(() => {
+          const savedLoginState = localStorage.getItem('isLogin');
+          if (savedLoginState) {
+               setIsLogin(JSON.parse(savedLoginState));
+          }
+     }, []);
+
      const handleLogin = () => {
           setIsLogin(!isLogin);
+          localStorage.setItem('isLogin', JSON.stringify(isLogin));
      };
      const [showMessage, setShowMessage] = useState(false);
      const [showMenu, setShowMenu] = useState(false);
