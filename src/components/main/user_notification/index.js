@@ -17,7 +17,6 @@ const UserNotification = ({item}) => {
                     {item.type === 'project' ? <Image src={newListing} alt="fire icon" height={29}></Image> : null }
                     {item.type === 'Activity' ? <Image src={comments} alt="fire icon" height={29}></Image> : null }
                </div>
-               <div className="notification-type">{item.type}</div>
                <div className="notification-definition">{item.definition === 'Activity' ? item.date : item.definition}</div>
                <div className="notification-activity">{item.type === 'Activity'? <span><p className="vote-msg">{item.vote}</p>  vote <p className="com-mgs">{item.comments}</p> comments</span> :item.activity }</div>
           </div>

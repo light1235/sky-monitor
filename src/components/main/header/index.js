@@ -151,7 +151,7 @@ const Header = () => {
                                                            {NotifyData.map((item,index) =>
                                                                 <UserNotification item={item} key={index} />
                                                            )}
-                                                           <Notification/>
+                                                           {/*<Notification/>*/}
                                                            {/*<Notification/>*/}
                                                            {/*<Notification/>*/}
                                                            {/*<Notification/>*/}

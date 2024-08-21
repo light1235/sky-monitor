@@ -5,7 +5,7 @@
    padding: 10px 10px;
    display: grid;
    //grid-template-columns: 40px 1fr 1fr 2fr;
-   grid-template-columns: 40px max-content max-content 136px;
+   grid-template-columns: 40px max-content max-content;
    grid-column-gap: 5px;
    border-bottom: 1px solid #e9edf0;
    align-items: center;
@@ -28,7 +28,8 @@
       text-transform: capitalize;
       font-weight: 700;
       font-size: 14px;
-      color: black;
+      color: #999;
+      //color: black;
       cursor: pointer;
    }
    //.day-act {
