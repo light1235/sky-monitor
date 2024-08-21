@@ -75,6 +75,7 @@ const Header = () => {
      };
 
      useEffect(() => {
+          // Retrieve the login state from localStorage on component mount
           const savedLoginState = localStorage.getItem('isLogin');
           if (savedLoginState) {
                setIsLogin(JSON.parse(savedLoginState));
@@ -82,8 +83,9 @@ const Header = () => {
      }, []);
 
      const handleLogin = () => {
-          setIsLogin(!isLogin);
-          localStorage.setItem('isLogin', JSON.stringify(isLogin));
+          const newLoginState = !isLogin;
+          setIsLogin(newLoginState);
+          localStorage.setItem('isLogin', JSON.stringify(newLoginState));
      };
      const [showMessage, setShowMessage] = useState(false);
      const [showMenu, setShowMenu] = useState(false);
