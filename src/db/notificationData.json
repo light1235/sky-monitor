@@ -2,7 +2,7 @@
   {
     "type": "project",
     "definition": "Razzelton",
-    "activity": "добавил  проект"
+    "activity": "Project added"
   },
   {
     "type": "Activity",
@@ -14,16 +14,16 @@
   {
     "type": "scam",
     "definition": "Razzelton",
-    "activity": "сменил категорию"
+    "activity": "Changed category"
   },
   {
     "type": "pin",
     "definition": "Razzelton",
-    "activity": "закрепил проект"
+    "activity": "Anchored the project"
   },
   {
     "type": "news",
     "definition": "Crypto up",
-    "activity": "опубликовал статью"
+    "activity": "Published an article"
   }
 ]
