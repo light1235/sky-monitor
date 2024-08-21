@@ -25,7 +25,7 @@ import SelectedPopUp from "@/components/main/selected-pop-up";
 import Notification from "@/components/panel/notification-message";
 import NotifyData from '../../../db/notificationData.json'
 import UserNotification from "@/components/main/user_notification";
-
+import { useRouter } from 'next/navigation';
 
 
 const Header = () => {
@@ -35,6 +35,7 @@ const Header = () => {
      const [changeLanguage, setChangeLanguage] = useState(true);
      const [activeProgram, setActiveProgram] = useState(false);
      const [isLogin, setIsLogin] = useState(false);
+
      const notifyArr = [
           {type:'project',withWho:'Razzelton',activity:'добавил новый проект'},
           {type:'scam',withWho:'Razzelton',activity:'сменил категорию'},
@@ -43,6 +44,12 @@ const Header = () => {
           {type:'act',withWho:'Activity', activity:'300 vote and 400 comments', vote:'300', comments:'400',date:'14-06-21'},
 
      ]
+
+     const router = useRouter();
+
+     const goToDashboard = () => {
+          router.push('/my/dashboard');
+     };
 
      const showModal = () => {
           setActiveProgram(!activeProgram);
@@ -151,10 +158,6 @@ const Header = () => {
                                                            {NotifyData.map((item,index) =>
                                                                 <UserNotification item={item} key={index} />
                                                            )}
-                                                           {/*<Notification/>*/}
-                                                           {/*<Notification/>*/}
-                                                           {/*<Notification/>*/}
-                                                           {/*<Notification/>*/}
                                                       </div>
                                                  }
                                             </div>
@@ -163,7 +166,7 @@ const Header = () => {
                                             </Image>
                                                  {showMenu &&
                                                       <div className="panel-menu">
-                                                           <div><i className="icon-user"></i><p>Profile</p></div>
+                                                          <div onClick={goToDashboard}><i className="icon-user"></i><p>Profile</p></div>
                                                            <div onClick={() => setIsLogin(false)}><i className="icon-logout"></i><p>Logout</p></div>
                                                       </div>
 
