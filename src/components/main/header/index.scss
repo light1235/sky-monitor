@@ -709,8 +709,8 @@ header {
                & .notify-menu {
                   display: block;
                   position: absolute;
-                  right: -56px;
-                  top: 70px;
+                  right: -35px;
+                  top: 88px;
                   box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.25);
                   background: #fff;
                   z-index: 200;
@@ -718,7 +718,7 @@ header {
                   white-space: nowrap;
                   overflow-y: scroll;
                   overflow-x: hidden;
-                  scrollbar-color: violet rebeccapurple;
+                  scrollbar-color: var(--Main-color) rebeccapurple;
                   scrollbar-width: thin;
                   & .notification-message {
                      & span {
@@ -730,6 +730,44 @@ header {
 
                   }
                }
+            }
+            & .panel-menu {
+               z-index: 10;
+               position: absolute;
+               left: 19px;
+               top:124px;
+               width: 125px;
+               & a {
+                  text-decoration: none;
+               }
+               & div {
+                  display: grid;
+                  grid-template-columns: max-content 1fr;
+                  padding: 10px 15px;
+                  align-items: center;
+                  transition: all .2s ease-in-out;
+                  cursor: pointer;
+                  border-radius:  20px 0 20px 0;
+                  background: #fff;
+                  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.25);
+                  &:hover {
+                     background: gainsboro;
+                     transition: all .3s ease-in-out;
+                  }
+                  & p {
+                     margin: 0;
+                     font-family: "Open Sans", sans-serif;
+                     font-weight: 700;
+                     font-size: 15px;
+                     color: #7e8e9f;
+                  }
+                  & i {
+                     margin-right: 10px;
+                     color: #85CE36;
+                     font-size: 20px;
+                  }
+               }
+
             }
 
          }

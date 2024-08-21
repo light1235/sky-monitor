@@ -92,7 +92,13 @@ const Header = () => {
      useEffect(() => {
           // Функция-обработчик для закрытия меню при щелчке вне его области
           const handleClickOutsideMenu = (event) => {
-               if (!event.target.closest('.wrap-menu')) {
+               // if (!event.target.closest('.wrap-menu')) {
+               //      setShowMenu(false);
+               // }
+               if (
+                    !event.target.closest('.wrap-menu') &&
+                    !event.target.closest('.authentication-circle')
+               ) {
                     setShowMenu(false);
                }
           };
@@ -210,10 +216,18 @@ const Header = () => {
                     <div className="mobile-authentication">
                          {isLogin ?
                               <>
-                                   <div className="authentication-circle" onClick={handleLogin}>
-                                        <Image src={LogAvatar}
+                                   <div className="authentication-circle">
+                                        <Image onClick={() => setShowMenu(!showMenu)} src={LogAvatar}
                                                alt="login icon">
                                         </Image>
+
+                                        {showMenu &&
+                                             <div className="panel-menu">
+                                                  <div onClick={goToDashboard}><i className="icon-user"></i><p>Profile</p></div>
+                                                  <div onClick={() => setIsLogin(false)}><i className="icon-logout"></i><p>Logout</p></div>
+                                             </div>
+
+                                        }
                                    </div>
                                    <div className="authentication-name">Dora</div>
                                    <div className="panel-notify"><i
@@ -222,10 +236,9 @@ const Header = () => {
                                         <div className="notify-amount">8</div>
                                         {showMessage &&
                                              <div className="notify-menu">
-                                                  <Notification/>
-                                                  <Notification/>
-                                                  <Notification/>
-                                                  <Notification/>
+                                                  {NotifyData.map((item,index) =>
+                                                       <UserNotification item={item} key={index} />
+                                                  )}
                                              </div>
                                         }
                                    </div>
