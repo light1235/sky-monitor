@@ -35,6 +35,9 @@
     "react-spring": "^9.7.3",
     "redux": "^5.0.1",
     "sass": "^1.71.1",
+    "workbox-build": "^7.1.1",
+    "workbox-cli": "^7.1.0",
+    "workbox-precaching": "^7.1.0",
     "yup": "^0.32.0"
   }
 }
