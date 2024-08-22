@@ -173,7 +173,7 @@ const Header = () => {
                                             </Image>
                                                  {showMenu &&
                                                       <div className="panel-menu">
-                                                          <div onClick={goToDashboard}><i className="icon-user"></i><p>Profile</p></div>
+                                                          <div onClick={goToDashboard}><i className="icon-dashboard"></i><p>Dashboard</p></div>
                                                            <div onClick={() => setIsLogin(false)}><i className="icon-logout"></i><p>Logout</p></div>
                                                       </div>
 
