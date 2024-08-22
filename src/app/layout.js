@@ -5,9 +5,7 @@ import React from 'react';
 import { AntdRegistry } from '@ant-design/nextjs-registry';
 import ChangeNavigation from "@/components/change-navigation";
 import {Provider} from "react-redux";
-import store from '../store/store'
-import {metadata} from "@/app/metadata";
-
+import store from '../store/store';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,9 +16,13 @@ const inter = Inter({ subsets: ["latin"] });
 // Sky Finance - Expert in investments analytics
 // Sky Finance - Analytics for investors
 
+
 export default function RootLayout({ children}) {
      return (
           <html lang="en">
+          <head>
+               <link rel="manifest" href="/manifest.json"/>
+          </head>
           <body>
           <Provider store={store}>
                <AntdRegistry>
