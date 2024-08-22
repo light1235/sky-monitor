@@ -19,31 +19,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children}) {
 
-     useEffect(() => {
-          if ('serviceWorker' in navigator && 'SyncManager' in window) {
-               navigator.serviceWorker.ready.then((registration) => {
-                    return registration.sync.register('sync-tag');
-               }).catch((error) => {
-                    console.error('Синхронизация не зарегистрирована:', error);
-               });
-          } else {
-               console.warn('Фоновая синхронизация не поддерживается вашим браузером.');
-          }
-     }, []);
-
-
      // useEffect(() => {
-     //      if ('serviceWorker' in navigator) {
-     //           window.addEventListener('load', () => {
-     //                navigator.serviceWorker.register('/sw.js').then(registration => {
-     //                     console.log('Service Worker registered with scope:', registration.scope);
-     //                }).catch(error => {
-     //                     console.log('Service Worker registration failed:', error);
-     //                });
-     //           });
-     //      }
-     //
-     //      // index.js или app.js
      //      if ('serviceWorker' in navigator && 'SyncManager' in window) {
      //           navigator.serviceWorker.ready.then((registration) => {
      //                return registration.sync.register('sync-tag');
@@ -53,8 +29,21 @@ export default function RootLayout({ children}) {
      //      } else {
      //           console.warn('Фоновая синхронизация не поддерживается вашим браузером.');
      //      }
-     //
      // }, []);
+
+
+     useEffect(() => {
+          if ('serviceWorker' in navigator) {
+               window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/sw.js').then(registration => {
+                         console.log('Service Worker registered with scope:', registration.scope);
+                    }).catch(error => {
+                         console.log('Service Worker registration failed:', error);
+                    });
+               });
+          }
+
+     }, []);
 
      return (
           <html lang="en">
