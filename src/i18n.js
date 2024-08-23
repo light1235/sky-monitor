@@ -8,7 +8,7 @@ const getInitialLanguage = () => {
      if (typeof window !== 'undefined') {
           return localStorage.getItem('i18nextLng') || 'en';
      }
-     return 'en'; // Значение по умолчанию, если localStorage недоступен
+     return 'en'; // Значение по умолчанию, если localStorage недоступенs
 };
 
 i18n
