@@ -7,9 +7,11 @@ import youTubeIcon from '/src/assets/main/icons/youtub.svg'
 import teleGramIcon from '/src/assets/main/icons/telegram.svg'
 import tikTokIcon from '/src/assets/main/icons/tik-tok.svg'
 import Link from "next/link";
+import {useTranslation} from "react-i18next";
 
 
 const Footer = () => {
+     const {t, i18n} = useTranslation();
      return (
           <footer>
                <div className="footer__inner">
@@ -17,7 +19,7 @@ const Footer = () => {
                          <li className="social-block">
                               <Image className="block-image" src={Decoration} alt="social decoration"></Image>
                               <ul>
-                                   <li className="footer__title">Follow us</li>
+                                   <li className="footer__title">{t('footer.footerTop.navItem1')}</li>
                                    <li>
                                         <div className="social__networks">
                                              <div className="social__links">
@@ -35,7 +37,7 @@ const Footer = () => {
                          </li>
                          <li className="footer__navigation--item">
                               <ul>
-                                   <li>Company</li>
+                                   <li>{t('footer.footerTop.navItem2')}</li>
                                    <li><Link href="/about-us" >About Us</Link></li>
                                    <li><Link href="/affiliate">Affiliate</Link></li>
                                    <li><Link href="/faq">Faq</Link></li>
@@ -43,14 +45,14 @@ const Footer = () => {
                          </li>
                          <li className="footer__navigation--item">
                               <ul>
-                                   <li>Info</li>
+                                   <li>{t('footer.footerTop.navItem3')}</li>
                                    <li><Link href="/support">Support</Link></li>
                                    <li><Link href="/rules">Rules</Link></li>
                               </ul>
                          </li>
                          <li className="footer__navigation--item">
                               <ul>
-                                   <li>Customer Service</li>
+                                   <li>{t('footer.footerTop.navItem4')}</li>
                                    <li><Link href="/sign-up">Registration</Link></li>
                                    <li><Link href="/login">Login</Link></li>
                                    <li><Link href="/reset">Reset account</Link></li>

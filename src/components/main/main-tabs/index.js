@@ -7,7 +7,6 @@ import  './index.scss'
 import ArrowButton from '../../../assets/main/icons/arrow-button.svg';
 import Image from "next/image";
 // import { useGetListingsQuery } from "@/services/listingApi";
-
 const MainTabs = ({dataListing}) => {
 
      // const { data =[], error, isLoading } = useGetListingsQuery(undefined, {
