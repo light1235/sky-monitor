@@ -4,6 +4,13 @@ import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import nextI18NextConfig from '../next-i18next.config';
 
+const getInitialLanguage = () => {
+     if (typeof window !== 'undefined') {
+          return localStorage.getItem('i18nextLng') || 'en';
+     }
+     return 'en'; // Значение по умолчанию, если localStorage недоступен
+};
+
 i18n
      .use(initReactI18next)
      .use(LanguageDetector)
@@ -55,7 +62,7 @@ i18n
                     },
                },
           },
-          lng: localStorage.getItem('i18nextLng') || 'en',
+          lng: getInitialLanguage(),
           fallbackLng: 'en',
           detection: {
                order: ['localStorage', 'cookie', 'querystring', 'sessionStorage', 'navigator', 'htmlTag'],
