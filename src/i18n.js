@@ -27,7 +27,8 @@ i18n
                                    menu3: "Проекты",
                                    menu4: "Контакты",
                                    menu5: "Партнеры",
-                              }
+                              },
+                              langMenu:"RU"
                          },
                          footer: {
                               footerTop: {
@@ -49,7 +50,8 @@ i18n
                                    menu3: "Projects",
                                    menu4: "Contacts",
                                    menu5: "Partners",
-                              }
+                              },
+                              langMenu:"EN"
                          },
                          footer: {
                               footerTop: {

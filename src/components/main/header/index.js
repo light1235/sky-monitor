@@ -30,7 +30,7 @@ import {useTranslation} from "react-i18next";
 
 // {t('hello')}
 const Header = () => {
-     const [block, setBlock] = useState(false);
+     const [block, setBlock] = useState(true);
      const [langValue, setLangValue] = useState('EN');
      const [activeMenu, setActiveMenu] = useState(true);
      const [changeLanguage, setChangeLanguage] = useState(true);
@@ -66,16 +66,25 @@ const Header = () => {
           setBlock(true);
           setTimeout(() => {
                setBlock(false);
+
           }, 3000);
 
-          setLangValue(prevValue => {
-               const newLang = prevValue === 'EN' ? 'RU' : 'EN';
-
-               // Сохраняем новое значение языка в localStorage
-               localStorage.setItem('langValue', newLang);
-
-               return newLang;
+          anime({
+               targets: 'header .navbar .header__top .left__menu .lang__menu .image-circle',
+               rotate: '+=180',
+               duration: 3500,
+               loop: false,
           });
+
+
+          // setLangValue(prevValue => {
+          //      const newLang = prevValue === 'EN' ? 'RU' : 'EN';
+          //
+          //      // Сохраняем новое значение языка в localStorage
+          //      localStorage.setItem('langValue', newLang);
+          //
+          //      return newLang;
+          // });
 
           // Измените язык в зависимости от clickCount
           const newLang = clickCount % 2 === 0 ? 'ess' : 'en';
@@ -85,18 +94,22 @@ const Header = () => {
      };
 
      useEffect(() => {
-          if (block) {
-               anime({
-                    targets: 'header .navbar .header__top .left__menu .lang__menu .image-circle',
-                    rotate: '+=180',
-                    duration: 3500,
-                    loop: false,
-               });
-          }
-     }, [block])
+               //
+               // anime({
+               //      targets: 'header .navbar .header__top .left__menu .lang__menu .image-circle',
+               //      rotate: '+=180',
+               //      duration: 3500,
+               //      loop: false,
+               // });
+
+     }, [])
      useEffect(() => {
-          const storedLang = localStorage.getItem('langValue') || 'EN'; // Установите значение по умолчанию, если ничего нет
-          setLangValue(storedLang);
+          setTimeout(() => {
+               setBlock(false)
+          },800)
+          //
+               // const storedLang = localStorage.getItem('langValue') || 'EN'; // Установите значение по умолчанию, если ничего нет
+               // setLangValue(storedLang);
      }, []);
 
 
@@ -181,7 +194,7 @@ const Header = () => {
                               <div className="lang__menu">
                                    <div className={block ? 'image-circle active-block' : 'image-circle'}
                                         onClick={isLangisChange}><Image src={LangButton} alt="logo icon"></Image></div>
-                                   <span>{langValue}</span></div>
+                                   <span>{t('header.langMenu')}</span></div>
 
                               <div className="authentication">
                                    {isLogin ?
