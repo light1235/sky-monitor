@@ -8,7 +8,7 @@ const getInitialLanguage = () => {
      if (typeof window !== 'undefined') {
           return localStorage.getItem('i18nextLng') || 'en';
      }
-     return 'en'; // Значение по умолчанию, если localStorage недоступенs
+     return 'en';
 };
 
 i18n
@@ -28,7 +28,13 @@ i18n
                                    menu4: "Контакты",
                                    menu5: "Партнеры",
                               },
-                              langMenu:"RU"
+                              login:"Авторизоваться",
+                              register:"Зарегистрироваться",
+                              langMenu:"RU",
+                              loginMenu:{
+                                dashboard:"Панель",
+                                exit:"Выйти"
+                              }
                          },
                          footer: {
                               footerTop: {
@@ -36,8 +42,38 @@ i18n
                                    navItem2: "Компания",
                                    navItem3: "Информация",
                                    navItem4: "Обслуживание клиентов",
+                              },
+                              footerMenu:{
+                                   about:"О нас",
+                                   affiliate:"Партнерская программа",
+                                   faq:"Часто задаваемые вопросы",
+                                   support:"Поддержка",
+                                   rules:"Правалиа",
+                                   register:"Регистрация",
+                                   login:"Авторизироваться",
+                                   reset:"Сбросить Аккаунт"
+                              },
+                              footerBottom:{
+                                   rights:"© 2024 Все права защищены",
+                                   privacy:"Политика конфиденциальности Условия и положения"
                               }
                          },
+                         mainPage:{
+                              blocks:{
+                                   top:"Лучшие проекты",
+                                   new:"Новые объявления",
+                                   news:"Последние новости Hyip",
+                                   scam:"Последние мошенничества",
+                              },
+                              tabs:{
+                                   tab1:"Обзор",
+                                   tab2:"Премиум",
+                                   tab3:"Нормальный",
+                                   tab4:"Пробный",
+                                   tab5:"Мошенники",
+                              },
+                              search:"поиск"
+                         }
                     },
                },
                en: {
@@ -51,7 +87,13 @@ i18n
                                    menu4: "Contacts",
                                    menu5: "Partners",
                               },
-                              langMenu:"EN"
+                              login:"Login",
+                              register:"Register",
+                              langMenu:"EN",
+                              loginMenu:{
+                                   dashboard:"Dashboard",
+                                   exit:"Logout"
+                              }
                          },
                          footer: {
                               footerTop: {
@@ -59,8 +101,38 @@ i18n
                                    navItem2: "Company",
                                    navItem3: "Info",
                                    navItem4: "Customer Service",
+                              },
+                              footerMenu:{
+                                   about:"About Us",
+                                   affiliate:"Affiliate",
+                                   faq:"Faq",
+                                   support:"Support",
+                                   rules:"Rules",
+                                   register:"Registration",
+                                   login:"Login",
+                                   reset:"Reset Account"
+                              },
+                              footerBottom:{
+                                   rights:"© 2024 All Rights Reserved",
+                                   privacy:"Privacy Policy Terms & Conditions"
                               }
                          },
+                         mainPage:{
+                              blocks:{
+                                   top:"Top Projects",
+                                   new:"New Listings",
+                                   news:"Latest Hyip News",
+                                   scam:"Latest Scams",
+                              },
+                              tabs:{
+                                tab1:"Overview",
+                                tab2:"Premium",
+                                tab3:"Normal",
+                                tab4:"Trial",
+                                tab5:"Scam",
+                              },
+                              search:"search"
+                         }
                     },
                },
           },

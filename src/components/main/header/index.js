@@ -22,13 +22,11 @@ import tikTokIcon from "@/assets/main/icons/tik-tok.svg";
 import Custom_modal from "@/components/main/custom_modal";
 import {usePathname} from 'next/navigation'
 import SelectedPopUp from "@/components/main/selected-pop-up";
-import Notification from "@/components/panel/notification-message";
 import NotifyData from '../../../db/notificationData.json'
 import UserNotification from "@/components/main/user_notification";
 import {useRouter} from 'next/navigation';
 import {useTranslation} from "react-i18next";
 
-// {t('hello')}
 const Header = () => {
      const [block, setBlock] = useState(true);
      const [langValue, setLangValue] = useState('EN');
@@ -37,22 +35,23 @@ const Header = () => {
      const [activeProgram, setActiveProgram] = useState(false);
      const [isLogin, setIsLogin] = useState(false);
 
-
-     const {t, i18n} = useTranslation();
      const router = useRouter();
 
+     const {t, i18n} = useTranslation();
      const handleLanguageChange = (lang) => {
-          i18n.changeLanguage(lang)
-               .then(() => {
-                    console.log('Language changed to:', lang);
-                    console.log('Current language in localStorage:', localStorage.getItem('i18nextLng'));
-                    const path = router.asPath || '/';
-                    router.push(path, path, { locale: lang });
-               })
-               .catch(err => console.error('Ошибка при смене языка:', err));
+          i18n.changeLanguage(lang);
+          if (lang) {
+               if (changeLanguage) {
+                    anime({
+                         targets: 'header .navbar .header__top .left__menu .lang__menu .image-circle',
+                         rotate: '+=180',
+                         duration: 3500,
+                         loop: false,
+                    });
+               }
+          }
+
      };
-
-
      const goToDashboard = () => {
           router.push('/my/dashboard');
      };
@@ -66,49 +65,19 @@ const Header = () => {
           setBlock(true);
           setTimeout(() => {
                setBlock(false);
-
           }, 3000);
 
-          anime({
-               targets: 'header .navbar .header__top .left__menu .lang__menu .image-circle',
-               rotate: '+=180',
-               duration: 3500,
-               loop: false,
-          });
 
-
-          // setLangValue(prevValue => {
-          //      const newLang = prevValue === 'EN' ? 'RU' : 'EN';
-          //
-          //      // Сохраняем новое значение языка в localStorage
-          //      localStorage.setItem('langValue', newLang);
-          //
-          //      return newLang;
-          // });
-
-          // Измените язык в зависимости от clickCount
           const newLang = clickCount % 2 === 0 ? 'ess' : 'en';
           handleLanguageChange(newLang);
-
           setClickCount(prevCount => prevCount + 1);
      };
 
      useEffect(() => {
-               //
-               // anime({
-               //      targets: 'header .navbar .header__top .left__menu .lang__menu .image-circle',
-               //      rotate: '+=180',
-               //      duration: 3500,
-               //      loop: false,
-               // });
-
-     }, [])
-     useEffect(() => {
           setTimeout(() => {
                setBlock(false)
-          },800)
-          //
-               // const storedLang = localStorage.getItem('langValue') || 'EN'; // Установите значение по умолчанию, если ничего нет
+          },2500)
+               // const storedLang = localStorage.getItem('langValue') || 'EN';
                // setLangValue(storedLang);
      }, []);
 
@@ -119,7 +88,7 @@ const Header = () => {
      };
 
      useEffect(() => {
-          // Retrieve the login state from localStorage on component mount
+
           const savedLoginState = localStorage.getItem('isLogin');
           if (savedLoginState) {
                setIsLogin(JSON.parse(savedLoginState));
@@ -135,7 +104,6 @@ const Header = () => {
      const [showMenu, setShowMenu] = useState(false);
      //
      useEffect(() => {
-          // Функция-обработчик для закрытия меню при щелчке вне его области
           const handleClickOutsideMenu = (event) => {
                // if (!event.target.closest('.wrap-menu')) {
                //      setShowMenu(false);
@@ -189,13 +157,13 @@ const Header = () => {
                          <div className="middle_menu"></div>
                          <div className="left__menu">
                               <button onClick={showModal}>
-                                   <div><Image src={buttonIcon} alt={'logo'} priority={true}></Image>{t('header.button')}</div>
+                                   <div><Image src={buttonIcon} alt={'logo'}
+                                               priority={true}></Image>{t('header.button')}</div>
                               </button>
                               <div className="lang__menu">
                                    <div className={block ? 'image-circle active-block' : 'image-circle'}
                                         onClick={isLangisChange}><Image src={LangButton} alt="logo icon"></Image></div>
                                    <span>{t('header.langMenu')}</span></div>
-
                               <div className="authentication">
                                    {isLogin ?
                                         <>
@@ -219,9 +187,9 @@ const Header = () => {
                                                   {showMenu &&
                                                        <div className="panel-menu">
                                                             <div onClick={goToDashboard}><i
-                                                                 className="icon-dashboard"></i><p>Dashboard</p></div>
+                                                                 className="icon-dashboard"></i><p>{t('header.loginMenu.dashboard')}</p></div>
                                                             <div onClick={() => setIsLogin(false)}><i
-                                                                 className="icon-logout"></i><p>Logout</p></div>
+                                                                 className="icon-logout"></i><p>{t('header.loginMenu.exit')}</p></div>
                                                        </div>
 
                                                   }
@@ -233,9 +201,9 @@ const Header = () => {
                                              <div className="circle" onClick={handleLogin}><Image src={loginAva}
                                                                                                   alt="login icon">
                                              </Image></div>
-                                             <div className="login-menu"><Link href='/login'>Login</Link>
+                                             <div className="login-menu"><Link href='/login'>{t('header.login')}</Link>
                                                   <span>/</span>
-                                                  <Link href='/sign-up'>Register</Link></div>
+                                                  <Link href='/sign-up'>{t('header.register')}</Link></div>
                                         </>
 
                                    }
@@ -359,7 +327,6 @@ const Header = () => {
                          </Custom_modal>
                     </nav>
                </div>
-
           </header>
      );
 };

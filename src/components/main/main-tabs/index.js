@@ -6,6 +6,7 @@ import CustomWrapper from "@/components/main/custom-wrapper";
 import  './index.scss'
 import ArrowButton from '../../../assets/main/icons/arrow-button.svg';
 import Image from "next/image";
+import {useTranslation} from "react-i18next";
 // import { useGetListingsQuery } from "@/services/listingApi";
 const MainTabs = ({dataListing}) => {
 
@@ -14,6 +15,8 @@ const MainTabs = ({dataListing}) => {
      //      refetchOnMountOrArgChange: true,
      //      refetchOnReconnect: true,
      // });
+
+     const {t} = useTranslation();
 
      const [searchTerm, SetSearchTerm] = useState('');
      const [showBlocks, setShowBlocks] = useState(1);
@@ -93,7 +96,7 @@ const MainTabs = ({dataListing}) => {
           <>
                <div className="input-wrapper">
                     <div className="input-inner">
-                         <input type="text" placeholder="search" onChange={event => {
+                         <input type="text" placeholder={t('mainPage.search')} onChange={event => {
                               SetSearchTerm(event.target.value);
                               setActiveTab('1');
                          }}/>
@@ -107,13 +110,13 @@ const MainTabs = ({dataListing}) => {
                     centered
                     items={[
                          {
-                              label: 'Overview',
+                              label: t('mainPage.tabs.tab1'),
                               key: '1',
                               children: <CustomWrapper itemsList={items} termState={searchTerm} />
                               ,
                          },
                          {
-                              label: 'Premium',
+                              label: t('mainPage.tabs.tab2'),
                               key: '2',
                               children: <>
                                    {chunkedItems1.slice(0, showBlocksPremium).map((chunk, index) => (
@@ -131,7 +134,7 @@ const MainTabs = ({dataListing}) => {
                               </>,
                          },
                          {
-                              label: 'Normal',
+                              label: t('mainPage.tabs.tab3'),
                               key: '3',
                               children: <>
 
@@ -149,7 +152,7 @@ const MainTabs = ({dataListing}) => {
                               </>,
                          },
                          {
-                              label: 'Trial',
+                              label: t('mainPage.tabs.tab4'),
                               key: '4',
                               children: <>
 
@@ -167,7 +170,7 @@ const MainTabs = ({dataListing}) => {
                               </>,
                          },
                          {
-                              label: 'Scam',
+                              label: t('mainPage.tabs.tab5'),
                               key: '5',
                               children: <>
 

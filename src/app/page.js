@@ -18,6 +18,7 @@ import getData  from "../services/projectApi";
 import getListing from '../services/listingApi'
 import HidenTegs from "@/components/main/hiden-tegs";
 
+
 export const metadata = {
      title: 'Sky Finance - Expert in investments',
      description: "Guiding Your Wealth Journey with Expertise and Insight",
@@ -27,7 +28,6 @@ const Home = async () => {
 
      const listings = await getListing();
      const projects = await getData();
-
 
      const items = [...listings].reverse().slice(0,4);
 
@@ -94,13 +94,13 @@ const Home = async () => {
          </section>
          <section className="main-content">
               <div className="content__item">
-                   <BlockSlat text={'TOP Projects'}/>
+                   <BlockSlat text={'mainPage.blocks.top'}/>
                    <Info_block>
                         {filteredArrayPremiumSlice.map((itemsTop,index) =>
                              <Information_line key={index} items={itemsTop} scam={false} top={true} image={<Image src={topProjectLogo} alt="chart icon" height={29}></Image>} />
                         )}
                    </Info_block>
-                   <BlockSlat text={'New Listings'}/>
+                   <BlockSlat text={'mainPage.blocks.new'}/>
                    <Info_block>
                         {items.map((item,index) =>
                              <Information_line key={index} items={item} scam={false} top={false} image={<Image src={newListingLogo}  alt="leaf icon" height={29}></Image>} />
@@ -112,13 +112,13 @@ const Home = async () => {
                    <MainTabs dataListing={listings} />
               </div>
               <div className="content__item item--bottom">
-                   <BlockSlat text={'Latest Hyip News'}/>
+                   <BlockSlat text={'mainPage.blocks.news'}/>
                    <Info_block>
                         {filteredArrayNewsSlice.map((item,index) =>
                              <NewsLine item={item} key={index} image={<Image src={NewsLineLogo} alt="fire icon" height={29}></Image>} />
                         )}
                    </Info_block>
-                   <BlockSlat text={'Latest Scams'}/>
+                   <BlockSlat text={'mainPage.blocks.scam'}/>
                    <Info_block>
                         {filteredArrayScamSlice.map(( itemScam,index) =>
                                  <Information_line  scam={true}  top={false} items={itemScam} key={index} image={<Image src={scamIcon}  alt="alert icon" height={29}></Image>} />
