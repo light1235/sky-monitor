@@ -1,9 +1,11 @@
 // next-i18next.config.js
+const path = require('path');
+
+
 module.exports = {
      i18n: {
           defaultLocale: 'en',
-          locales: ['ess', 'en'],
+          locales: ['en', 'ess'],
      },
-     defaultNS: 'common',
-     localePath: './public/locales',
+     localePath: path.resolve('./public/locales'),
 };
