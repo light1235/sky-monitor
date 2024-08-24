@@ -34,7 +34,16 @@ i18n
                               loginMenu:{
                                 dashboard:"Панель",
                                 exit:"Выйти"
-                              }
+                              },
+                              popUp:{
+                                   title:"выберите подходящую услугу",
+                                   description:"Выберите один из предложенных вариантов:",
+                                   listing:"Реклама",
+                                   banner:"Баннер",
+                                   popUp:"Окно",
+                                   pin:"Доп.Услуги",
+                                   article:"Статья"
+                              },
                          },
                          footer: {
                               footerTop: {
@@ -93,7 +102,16 @@ i18n
                               loginMenu:{
                                    dashboard:"Dashboard",
                                    exit:"Logout"
-                              }
+                              },
+                              popUp:{
+                                title:"choose the appropriate service",
+                                description:"Choose from the selected:",
+                                listing:"Listing",
+                                banner:"Banner",
+                                popUp:"Pop-Up",
+                                pin:"Pin&Raise",
+                                article:"Article"
+                              },
                          },
                          footer: {
                               footerTop: {

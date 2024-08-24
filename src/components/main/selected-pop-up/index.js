@@ -15,11 +15,14 @@ import Link from "next/link";
 import CustomToolTop from "@/components/main/tooltip_custom";
 import PinRaiseForm from "@/components/main/pin-raise-form";
 import ArticleForm from "@/components/main/article-form";
+import {useTranslation} from "react-i18next";
 
 const SelectedPopUp = ({close}) => {
      const [active, setActive] = useState(2);
      const [showSelect, setShowSelect] = useState(false);
      const [clickCount, setClickCount] = useState(0);
+
+     const {t} = useTranslation();
 
      let popUps = ['listing',<BannerForm/>,<PopUpForm/>,<PinRaiseForm />,<ArticleForm />];
 
@@ -45,8 +48,8 @@ const SelectedPopUp = ({close}) => {
                          </div>
                     </div>
                </div>
-               <div className="item-title">choose the appropriate service</div>
-               <div className="item-description">Choose from the selected:</div>
+               <div className="item-title">{t('header.popUp.title')}</div>
+               <div className="item-description">{t('header.popUp.description')}</div>
                <div className="item-wrapper">
                     <div className={active === 1 ? 'item-selected active-select' : ' item-selected'}
                          onClick={() => setActive(1)}>
@@ -54,7 +57,7 @@ const SelectedPopUp = ({close}) => {
                               <div className="item-circle"></div>
                          </div>
                          <Image src={selectedImage1} alt="selected image"/>
-                         <span>Listing</span>
+                         <span>{t('header.popUp.listing')}</span>
                     </div>
                     <div className={active === 2 ? 'item-selected active-select' : ' item-selected'}
                          onClick={() => setActive(2)}>
@@ -62,7 +65,7 @@ const SelectedPopUp = ({close}) => {
                               <div className="item-circle"></div>
                          </div>
                          <Image src={selectedImage2} alt="selected image"/>
-                         <span>Banner</span>
+                         <span>{t('header.popUp.banner')}</span>
                     </div>
                     <div className={active === 3 ? 'item-selected active-select' : ' item-selected'}
                          onClick={() => setActive(3)}>
@@ -70,7 +73,7 @@ const SelectedPopUp = ({close}) => {
                               <div className="item-circle"></div>
                          </div>
                          <Image src={selectedImage3} alt="selected image"/>
-                         <span>Pop-Up</span>
+                         <span>{t('header.popUp.popUp')}</span>
                     </div>
                     <div className={active === 4 ? 'item-selected active-select' : ' item-selected'}
                          onClick={() => setActive(4)}>
@@ -78,7 +81,7 @@ const SelectedPopUp = ({close}) => {
                               <div className="item-circle"></div>
                          </div>
                          <Image src={selectedImage4} alt="selected image"/>
-                         <span>Pin&Raise</span>
+                         <span>{t('header.popUp.pin')}</span>
                     </div>
                     <div className={active === 5 ? 'item-selected active-select' : ' item-selected'}
                          onClick={() => setActive(5)}>
@@ -86,7 +89,7 @@ const SelectedPopUp = ({close}) => {
                               <div className="item-circle"></div>
                          </div>
                          <Image src={selectedImage5} alt="selected image"/>
-                         <span>Article</span>
+                         <span>{t('header.popUp.article')}</span>
                     </div>
                     <div className="item-selected item-arrow">
                          <Link href="/services" onClick={close}>
