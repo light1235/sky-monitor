@@ -66,7 +66,7 @@ i18n
                               },
                               footerBottom:{
                                    rights:"© 2024 Все права защищены",
-                                   privacy:"Политика конфиденциальности"
+                                   privacy:"Политика конфиденциальности и Положения & Условия"
                               }
                          },
                          mainPage:{
@@ -134,7 +134,7 @@ i18n
                               },
                               footerBottom:{
                                    rights:"© 2024 All Rights Reserved",
-                                   privacy:"Privacy Policy"
+                                   privacy:"Privacy Policy and Terms & Conditions"
                               }
                          },
                          mainPage:{
