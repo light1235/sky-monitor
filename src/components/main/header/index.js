@@ -35,29 +35,29 @@ const Header = () => {
      const [activeProgram, setActiveProgram] = useState(false);
      const [isLogin, setIsLogin] = useState(false);
      const [selectedLanguage, setSelectedLanguage] = useState('en');
+     const [isLoading, setIsLoading] = useState(false);
+     const [clickCount, setClickCount] = useState(0);
 
      const router = useRouter();
 
      const {t, i18n} = useTranslation();
 
-    useEffect(() => {
-         console.log(selectedLanguage);
-    },[selectedLanguage])
+
      const handleLanguageChange = (lang) => {
+          setIsLoading(true);
           i18n.changeLanguage(lang);
           setSelectedLanguage(lang);
-          if (lang) {
-               if (changeLanguage) {
-                    anime({
-                         targets: 'header .navbar .header__top .left__menu .lang__menu .image-circle',
-                         rotate: '+=180',
-                         duration: 3500,
-                         loop: false,
-                    });
-               }
-          }
 
+          if (!isLoading) {
+               anime({
+                    targets: 'header .navbar .header__top .left__menu .lang__menu .image-circle',
+                    rotate: '+=180',
+                    duration: 3500,
+                    loop: false,
+               });
+          }
      };
+     // TODO проблема смены языка, блок языка попробывать сделать с lang а тоесть с selectedLanguage если он не пустой то делать анимацию
      const goToDashboard = () => {
           router.push('/my/dashboard');
      };
@@ -65,7 +65,7 @@ const Header = () => {
      const showModal = () => {
           setActiveProgram(!activeProgram);
      };
-     const [clickCount, setClickCount] = useState(0);
+
 
      const isLangisChange = () => {
           setBlock(true);
@@ -200,7 +200,6 @@ const Header = () => {
 
                                                   }
                                              </div>
-
                                         </>
                                         :
                                         <>
