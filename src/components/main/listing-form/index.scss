@@ -1,0 +1,52 @@
+
+
+.listing-table {
+   width: 85vw;
+   min-width: 1200px;
+   //height: 85vh;
+   //min-height: 700px;
+   background-color: #f0f3f6;
+   box-sizing: border-box;
+   padding: 20px;
+   & .ant-steps .ant-steps-item-process .ant-steps-item-icon {
+      background-color: #5B5BDF;
+      border: none;
+   }
+   & .ant-btn-primary ,.ant-btn-default {
+      width: 227px;
+      height: 75px;
+      background-color: #5B5BDF;
+      &:hover {
+         background-color: #5656de !important;
+         color: white !important;
+         transform: scale(1.0)  !important;
+         width: 227px !important;
+      }
+      font-weight: 600;
+      padding: 0 80px 0 80px;
+      box-shadow: 6px 8px 15px 0 rgba(86, 93, 178, 0.25);
+      stroke-width: 2px;
+      font-size: 20px;
+      color: white;
+   }
+   & .ant-steps .ant-steps-item-finish>.ant-steps-item-container>.ant-steps-item-content>.ant-steps-item-title::after {
+      background-color: black !important;
+   }
+   & .ant-steps-item-container>.ant-steps-item-content>.ant-steps-item-title {
+      font-family: var(--Panel-font);
+      font-weight: 800;
+   }
+   .button-wrap {
+      display: grid;
+      justify-items: end;
+      grid-template-columns: 1fr  min-content;
+   }
+}
+
+.listing-pop-up {
+   width: 85vw;
+   & img {
+      width: 100% !important;
+      height: auto;
+   }
+}

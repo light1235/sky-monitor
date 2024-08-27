@@ -1,8 +1,10 @@
 
 
 .pop-up__page {
-   max-width:1200px;
+   //max-width:1200px;
    margin: 0 auto;
+   display: grid;
+   justify-items: center;
    & .pop-up__page-content {
       border-radius: 10px;
       display: grid;

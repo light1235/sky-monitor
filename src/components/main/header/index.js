@@ -34,12 +34,18 @@ const Header = () => {
      const [changeLanguage, setChangeLanguage] = useState(true);
      const [activeProgram, setActiveProgram] = useState(false);
      const [isLogin, setIsLogin] = useState(false);
+     const [selectedLanguage, setSelectedLanguage] = useState('en');
 
      const router = useRouter();
 
      const {t, i18n} = useTranslation();
+
+    useEffect(() => {
+         console.log(selectedLanguage);
+    },[selectedLanguage])
      const handleLanguageChange = (lang) => {
           i18n.changeLanguage(lang);
+          setSelectedLanguage(lang);
           if (lang) {
                if (changeLanguage) {
                     anime({
@@ -304,12 +310,13 @@ const Header = () => {
                          </button>
                          <div className="language-menu">
                               <span>Language</span>
+                              {/*onClick={() => setChangeLanguage(true)}>EN*/}
                               <div className="wrap-language">
-                                   <div className={changeLanguage ? 'active-language' : ''}
-                                        onClick={() => setChangeLanguage(true)}>EN
+                                   <div   className={selectedLanguage === 'en' ? 'active-language' : ''}
+                                        onClick={() => handleLanguageChange('en')}>EN
                                    </div>
-                                   <div className={changeLanguage ? '' : 'active-language'}
-                                        onClick={() => setChangeLanguage(false)}>RU
+                                   <div  className={selectedLanguage === 'ess' ? 'active-language' : ''}
+                                        onClick={() =>  handleLanguageChange('ess')}  >RU
                                    </div>
                               </div>
                          </div>
