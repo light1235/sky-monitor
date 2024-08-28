@@ -54,11 +54,8 @@
          place-items: center;
       }
       & .content-right {
-         position: relative;
-         width: 500px;
-         height: 922px;
-         //width: 100%;
-         //background-image: url(../../../assets/main/images/banner-image.jpg);
+         width: 100%;
+         background-image: url(../../../assets/main/images/banner-image.jpg);
          background-color: aliceblue;
          background-size: cover;
          background-position: -200px 0px;

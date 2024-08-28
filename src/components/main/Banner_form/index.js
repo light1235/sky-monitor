@@ -9,8 +9,6 @@ import LOGO from '/src/assets/logo-2.svg'
 import Image from "next/image";
 import CustomFrontUpload from "@/components/main/custom_front_upload";
 import CustomFrontSelect from "@/components/main/custom_front_select";
-import Background from "@/components/main/background";
-import BackImage from '../../../assets/main/images/banner-image.jpg'
 
 const validationSchema = Yup.object().shape({
      siteName: Yup.string().min(8, 'Site name must be at least 8 characters').required("First Name should be required please"),
@@ -136,7 +134,6 @@ const BannerForm = () => {
                          </div>
                     </div>
                     <div className="content-right">
-                      <Background imageSrc={BackImage} />
                     </div>
                </div>
 

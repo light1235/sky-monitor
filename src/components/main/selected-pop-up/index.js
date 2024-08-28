@@ -56,7 +56,7 @@ const SelectedPopUp = ({close}) => {
                          <div className="decoration-item">
                               <div className="item-circle"></div>
                          </div>
-                         <Image priority={true} src={selectedImage1} alt="selected image"/>
+                         <Image placeholder="blur" priority={true} src={selectedImage1} alt="selected image"/>
                          <span>{t('header.popUp.listing')}</span>
                     </div>
                     <div className={active === 2 ? 'item-selected active-select' : ' item-selected'}
@@ -64,7 +64,7 @@ const SelectedPopUp = ({close}) => {
                          <div className="decoration-item">
                               <div className="item-circle"></div>
                          </div>
-                         <Image priority={true} src={selectedImage2} alt="selected image"/>
+                         <Image placeholder="blur" priority={true} src={selectedImage2} alt="selected image"/>
                          <span>{t('header.popUp.banner')}</span>
                     </div>
                     <div className={active === 3 ? 'item-selected active-select' : ' item-selected'}
@@ -72,7 +72,7 @@ const SelectedPopUp = ({close}) => {
                          <div className="decoration-item">
                               <div className="item-circle"></div>
                          </div>
-                         <Image priority={true} src={selectedImage3} alt="selected image"/>
+                         <Image  placeholder="blur" priority={true} src={selectedImage3} alt="selected image"/>
                          <span>{t('header.popUp.popUp')}</span>
                     </div>
                     <div className={active === 4 ? 'item-selected active-select' : ' item-selected'}
@@ -80,7 +80,7 @@ const SelectedPopUp = ({close}) => {
                          <div className="decoration-item">
                               <div className="item-circle"></div>
                          </div>
-                         <Image priority={true} src={selectedImage4} alt="selected image"/>
+                         <Image placeholder="blur" priority={true} src={selectedImage4} alt="selected image"/>
                          <span>{t('header.popUp.pin')}</span>
                     </div>
                     <div className={active === 5 ? 'item-selected active-select' : ' item-selected'}
@@ -88,13 +88,13 @@ const SelectedPopUp = ({close}) => {
                          <div className="decoration-item">
                               <div className="item-circle"></div>
                          </div>
-                         <Image priority={true} src={selectedImage5} alt="selected image"/>
+                         <Image placeholder="blur" priority={true} src={selectedImage5} alt="selected image"/>
                          <span>{t('header.popUp.article')}</span>
                     </div>
                     <div className="item-selected item-arrow">
                          <Link href="/services" onClick={close}>
                               <CustomToolTop text={'Services Description'}>
-                         <Image priority={true} src={ArrowImage} alt="selected image"/>
+                         <Image placeholder="blur" priority={true} src={ArrowImage} alt="selected image"/>
                               </CustomToolTop>
                          </Link>
                     </div>
