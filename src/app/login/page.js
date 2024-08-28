@@ -7,8 +7,6 @@ import CustomFrontButton from "@/components/main/cutom_front_button";
 import CustomFrontInput from "@/components/main/custom-front-input";
 import Link from "next/link";
 import CustomCheckBox from "@/components/panel/check-box";
-import BackImage from '../../assets/main/images/login-image.jpg'
-
 
 const validationSchema = Yup.object().shape({
      email: Yup.string().email('Invalid email address').required('Email is required'),
@@ -26,8 +24,6 @@ const LoginPage = () => {
 
      useEffect(() => {
           console.log(formData, 'formData');
-          const img = new Image();
-          img.src = BackImage;
      }, [formData]);
 
      const handleFormSubmit = (values,  { setSubmitting }) => {
@@ -84,7 +80,8 @@ const LoginPage = () => {
                               </Formik>
                          </div>
                     </div>
-                    <div className="content__image"></div>
+                    <div className="content__image">
+                    </div>
                </div>
           </section>
      );
