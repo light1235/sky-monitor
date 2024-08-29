@@ -65,7 +65,7 @@ const BannerForm = () => {
                               {!isValid &&
                                    <>
                                         <h2>Banner</h2>
-                                        <h3>Embark on the unknown path!</h3>
+                                        <h3>Show yourself among the stars!</h3>
                                    </>
                               }
                               <Formik

@@ -42,7 +42,7 @@ const PopUpForm = () => {
                               {!isValid &&
                                    <>
                                         <h2>Pop-Up</h2>
-                                        <h3>Embark on the unknown path!</h3>
+                                        <h3>Show the universe the invisible thread of possibility!</h3>
                                    </>
                               }
                               <Formik

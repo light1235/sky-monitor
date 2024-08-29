@@ -49,7 +49,7 @@ const ArticleForm = () => {
                               {!isValid &&
                                    <>
                                         <h2>Article Pin Service</h2>
-                                        <h3>Embark on the unknown path!</h3>
+                                        <h3>People need to know about the galaxy!</h3>
                                    </>
                               }
                                         <form onSubmit={handleSubmit}>

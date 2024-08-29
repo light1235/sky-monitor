@@ -16,6 +16,7 @@ import CustomToolTop from "@/components/main/tooltip_custom";
 import PinRaiseForm from "@/components/main/pin-raise-form";
 import ArticleForm from "@/components/main/article-form";
 import {useTranslation} from "react-i18next";
+import ListingForm from "@/components/main/listing-form";
 
 const SelectedPopUp = ({close}) => {
      const [active, setActive] = useState(2);
@@ -24,7 +25,7 @@ const SelectedPopUp = ({close}) => {
 
      const {t} = useTranslation();
 
-     let popUps = ['listing',<BannerForm/>,<PopUpForm/>,<PinRaiseForm />,<ArticleForm />];
+     let popUps = [<ListingForm/>,<BannerForm/>,<PopUpForm/>,<PinRaiseForm />,<ArticleForm />];
 
      const SelectService = () => {
           close();

@@ -50,7 +50,7 @@ const PinRaiseForm = () => {
                          <div className="left-container">
                                    <>
                                         <h2>Pin or Raise Service</h2>
-                                        <h3>Embark on the unknown path!</h3>
+                                        <h3>Become an eternal light for others!</h3>
                                    </>
                               <form onSubmit={handleSubmit}>
                                    <>

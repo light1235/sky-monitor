@@ -2,25 +2,22 @@
 
 .listing-table {
    width: 85vw;
-   min-width: 1200px;
-   //height: 85vh;
-   //min-height: 700px;
    background-color: #f0f3f6;
    box-sizing: border-box;
-   padding: 20px;
+
    & .ant-steps .ant-steps-item-process .ant-steps-item-icon {
       background-color: #5B5BDF;
       border: none;
    }
    & .ant-btn-primary ,.ant-btn-default {
       width: 227px;
-      height: 75px;
+      height: 60px;
       background-color: #5B5BDF;
       &:hover {
          background-color: #5656de !important;
          color: white !important;
-         transform: scale(1.0)  !important;
-         width: 227px !important;
+         //transform: scale(1.0)  !important;
+         //width: 227px !important;
       }
       font-weight: 600;
       padding: 0 80px 0 80px;
@@ -40,13 +37,142 @@
       display: grid;
       justify-items: end;
       grid-template-columns: 1fr  min-content;
+      grid-gap: 10px;
    }
 }
 
 .listing-pop-up {
    width: 85vw;
-   & img {
-      width: 100% !important;
-      height: auto;
+   background-color: #F0F3F6;
+   box-sizing: border-box;
+   margin: 40px 0;
+   .wrap-bg {
+      & img {
+         width: 100% !important;
+         height: auto;
+      }
+   }
+   & .listing-table {
+      padding: 20px 20px;
+      background: white !important;
+      & h2 {
+         font-family: "Open Sans", sans-serif;
+         font-weight: 600;
+         font-size: 32px;
+         color: #1d1d1d;
+         margin: 0;
+         text-align: center;
+         padding-bottom: 10px;
+      }
+      & h3 {
+         font-family: "Open Sans", sans-serif;
+         font-weight: 400;
+         font-size: 20px;
+         color: #7e8e9f;
+         margin: 5px 0 30px 0;
+         text-align: center;
+      }
+      .listing-content-1 {
+         display: grid;
+         grid-template-columns: repeat(auto-fit, minmax( 290px, 1fr));
+         grid-gap: 40px;
+         background: white !important;
+         justify-items: center;
+      }
+      .listing-content-2{
+         display: grid;
+         grid-template-columns: repeat(auto-fit, minmax( 290px, 1fr));
+         grid-gap: 40px;
+         background: white !important;
+         justify-items: center;
+      }
+      .listing-content-3{
+         display: grid;
+         grid-template-columns: repeat(auto-fit, minmax( 290px, 1fr));
+         grid-gap: 40px;
+         background: white !important;
+         justify-items: center;
+      }
+      .listing-content-4{
+         display: grid;
+         grid-template-columns: 1fr;
+         grid-gap: 40px;
+         background: white !important;
+         justify-items: center;
+         place-items: center;
+      }
+      .listing-content {
+         min-height: 400px;
+      }
+
+      & .listing-block {
+            width: 290px;
+         }
+         & p {
+            font-family: "Open Sans", sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            color: #747474;
+         }
+       .ant-radio-group {
+          border-radius: 10px;
+          stroke-width: 2px;
+          stroke: #e9edf0;
+          padding: 10px;
+          border: 3px solid  #e9edf0;
+          box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.25);
+          & span {
+             font-family: "Open Sans", sans-serif;
+             font-weight: 400;
+             font-size: 16px;
+             color: #7e8e9f;
+             text-align: center;
+          }
+       }
+         .ant-select-selector {
+            min-height: 40px;
+            border: 2px solid #E9EDF0;
+         }
+         .custom-load .ant-upload-select {
+            box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.25);
+            background: white !important;
+            & p {
+               font-size: 40px !important;
+               color: #5B5BDF;
+            }
+         }
+
+      & .select-inner {
+         display: grid !important;
+         grid-template-columns: min-content min-content !important;
+         grid-gap: 5px;
+         align-items: center;
+         font-family: "Open Sans", sans-serif;
+         font-weight: 600;
+         font-size: 14px;
+         color: #7e8e9f;
+         text-align: center;
+      }
+   }
+}
+
+@media only screen and (max-width : 700px) {
+   .listing-pop-up {
+      .listing-table .ant-btn-primary, .listing-table .ant-btn-default {
+         margin-top: 10px;
+      }
+      .listing-table .button-wrap {
+         display: block;
+      }
+      & .listing-table .listing-content {
+         min-height: initial;
+      }
+
+      .listing-content-4 {
+         justify-items: start;
+         & button {
+            width:65%  !important;
+         }
+      }
    }
 }
