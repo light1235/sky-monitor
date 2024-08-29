@@ -42,6 +42,11 @@ const ControlHeader = () => {
                "type": "pin article",
                "definition": "Razzelton",
                "activity": "Purchase an article"
+          },
+          {
+               "type": "user",
+               "definition": "Razzelton",
+               "activity": "User registered"
           }
      ]
 

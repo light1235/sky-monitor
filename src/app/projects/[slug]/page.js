@@ -1,15 +1,14 @@
-"use client"
 import React from 'react';
-import DATAART from '../../../db/articleData.json';
 import ArticlePage from "@/components/main/simple-article";
 import NewsArticle from "@/components/main/news-article";
 import AdvancedArticle from "@/components/main/advanced-article";
+import getData from "@/services/projectApi";
 
-const PostComp = ({params}) => {
-
+const PostComp = async ({params}) => {
+     const projects = await getData();
      const {slug} = params;
 
-     const filteredData = DATAART.filter(post => post.slug.replace(/\s+/g, '-') === slug);
+     const filteredData = projects.filter(post => post.slug.replace(/\s+/g, '-') === slug);
 
      return (
           <div>
