@@ -432,7 +432,7 @@ const ListingForm = () => {
      return (
           <div className="listing-pop-up">
              <div className="wrap-bg">
-                  <Image width="auto" height="auto" src={ListingHeader}  alt={'background'}/>
+                  <Image priority={true} width="auto" height="auto" src={ListingHeader}  alt={'background'}/>
              </div>
           <div className="step-table listing-table">
                <h2>Listing</h2>
