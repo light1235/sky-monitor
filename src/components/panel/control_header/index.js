@@ -5,10 +5,45 @@ import HeaderBell from '/src/assets/panel/icons/header-bell.svg';
 import adminImage from '/src/assets/panel/image/user-icon.jpg';
 import Link from "next/link";
 import Notification from "@/components/panel/notification-message";
+import NotifyData from "@/db/notificationData.json";
+import UserNotification from "@/components/main/user_notification";
 
 const ControlHeader = () => {
      const [showMessage, setShowMessage] = useState(false);
      const [showMenu, setShowMenu] = useState(false);
+     let messageData = [
+          {
+               "type": "listing",
+               "listingType":'"Premium"',
+               "definition": "Razzelton",
+               "activity": "Purchase listing"
+          },
+          {
+               "type": "banner",
+               "definition": "Dalcas",
+               "activity": "Purchase banner"
+          },
+          {
+               "type": "pop-up",
+               "definition": "Razzelton",
+               "activity": "Purchase pop-up"
+          },
+          {
+               "type": "pin",
+               "definition": "Saasky",
+               "activity": "Purchase an pin"
+          },
+          {
+               "type": "raise",
+               "definition": "Razzelton",
+               "activity": "Purchase an raise"
+          },
+          {
+               "type": "pin article",
+               "definition": "Razzelton",
+               "activity": "Purchase an article"
+          }
+     ]
 
      useEffect(() => {
           // Функция-обработчик для закрытия меню при щелчке вне его области
@@ -34,10 +69,9 @@ const ControlHeader = () => {
                     <div className="panel-notify"><i className={showMessage ? 'icon-bell-alt' : 'icon-bell'} onClick={() => setShowMessage(!showMessage)}></i><div className="notify-amount">8</div>
                          {showMessage &&
                               <div className="notify-menu">
-                                   <Notification/>
-                                   <Notification/>
-                                   <Notification/>
-                                   <Notification/>
+                                   {messageData.map((item, index) =>
+                                        <Notification item={item} key={index}/>
+                                   )}
                               </div>
                          }
                     </div>

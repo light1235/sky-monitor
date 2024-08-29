@@ -3,10 +3,10 @@ import './index.scss'
 import Image from "next/image";
 import adminImage from "@/assets/panel/image/user-icon.jpg";
 
-const Notification = () => {
+const Notification = ({item}) => {
      return (
           <div className="notification-message">
-               <Image src={adminImage} alt="admin image" /> <span>Razzelton</span> <p>Purchare new programm</p>
+               <i className="icon-dollar" style={{color:'#85CE36'}}></i> <span>{item.definition}</span> <p>{item.activity} {item.listingType}</p>
           </div>
      );
 };
