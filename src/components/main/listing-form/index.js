@@ -1,7 +1,7 @@
 "use client"
 import React, {useState} from 'react';
 import  './index.scss';
-import {Button, message, Radio, Steps, theme, Select} from 'antd';
+import {Button, message, Radio, Steps, theme, Select, Space} from 'antd';
 import ListingHeader from '../../../assets/main/images/listing-header.jpg';
 import Image from 'next/image'
 import CustomFrontInput from "@/components/main/custom-front-input";
@@ -254,25 +254,33 @@ const ListingForm = () => {
                content: (
                     <div className="listing-content-1 listing-content">
                          <div className="listing-block">
+
+                              <Space direction="horizontal" size="middle" style={{marginBottom:'20px'}}>
+                                   <label>
+                                        <p style={{color:'#5B5BDF'}}>Contact Email*</p>
+                                        <CustomFrontInput placeholder={'Enter your email'}/>
+                                   </label>
+
+                                   <label>
+                                        <p style={{color:'#5B5BDF'}}>Pricing Plan</p>
+                                        <CustomFrontSelect placeholder="Schoose listing" Data={selectPeriod}/>
+                                   </label>
+                              </Space>
                               <label>
                                    <p>Program name</p>
                                    <CustomFrontInput placeholder={'Enter  name'}/>
-                              </label>
-                              <label>
-                                   <p>Contact Email*</p>
-                                   <CustomFrontInput placeholder={'Enter your email'}/>
                               </label>
                               <label>
                                    <p>Start Date</p>
                                    <CustomFrontInput placeholder={'Enter date'}/>
                               </label>
                               <label>
-                                   <p>Plan</p>
-                                   <CustomFrontSelect placeholder="Schoose listing" Data={selectPeriod}/>
+                                   <p>Minimal Spend</p>
+                                   <CustomFrontInput placeholder={'Enter the number'}/>
                               </label>
                          </div>
                          <div className="listing-block">
-                              <p>Listing Image</p>
+                              <p>Listing Image - 125x125px</p>
                               <CustomFrontUpload/>
                               <label>
                                    <p>Withdraw type</p>
@@ -299,24 +307,18 @@ const ListingForm = () => {
                          </div>
                          <div className="listing-block">
                               <label>
-                                   <p>Similar Web Link</p>
+                                   <p>Project Link</p>
                                    <CustomFrontInput placeholder={'Enter your link'}/>
                               </label>
                               <label>
                                    <p>Whois Link</p>
                                    <CustomFrontInput placeholder={'Enter your link'}/>
                               </label>
-                              <label>
-                                   <p>GT Forum Link</p>
-                                   <CustomFrontInput placeholder={'Enter your link'}/>
-                              </label>
-                              <label>
-                                   <p>Minimal Spend</p>
-                                   <CustomFrontInput placeholder={'Enter the number'}/>
-                              </label>
+
                               <label>
                                    <p>Invested plans</p>
-                                   <CustomFrontInput placeholder={'Enter  plans of your project'}/>
+                                   {/*<CustomFrontInput placeholder={'Enter  plans of your project'}/>*/}
+                                   <CustomTextArea placeholder={'Enter  plans of your project'} minR={2} maxR={3} max={67} />
                               </label>
                          </div>
                     </div>
@@ -336,7 +338,7 @@ const ListingForm = () => {
                                    <CustomFrontInput placeholder={'Enter project date'}/>
                               </label>
                               <label>
-                                   <p>Income*</p>
+                                   <p>Yield*</p>
                                    <CustomFrontInput placeholder={'Enter income'}/>
                               </label>
                               <label>
@@ -345,25 +347,26 @@ const ListingForm = () => {
                               </label>
                          </div>
                          <div className="listing-block">
-                              <p>Project Image</p>
+                              <p>Project Image - Aspect Ratio 16:9</p>
                               <CustomFrontUpload/>
                               <label>
-                                   <p>Amount from</p>
+                                   <p>Min deposit amount</p>
                                    <CustomFrontInput placeholder={'Enter Amount'}/>
                               </label>
-                              <label>
-                                   <p>Invested plans</p>
-                                   <CustomTextArea placeholder={'Enter your plans'} />
-                              </label>
-                         </div>
-                         <div className="listing-block">
                               <label>
                                    <p>Ref Back</p>
                                    <CustomFrontInput placeholder={'Enter ref back'}/>
                               </label>
+                         </div>
+                         <div className="listing-block">
+
+                              <label>
+                                   <p>Invested plans</p>
+                                   <CustomTextArea placeholder={'Enter your plans'}/>
+                              </label>
                               <label>
                                    <p>Project Description</p>
-                                   <CustomTextArea placeholder={'Enter project description'} minR={6} />
+                                   <CustomTextArea placeholder={'Enter project description'} minR={6}/>
                               </label>
                          </div>
                     </div>
@@ -387,10 +390,6 @@ const ListingForm = () => {
                                    <p>Tags</p>
                                    <CustomFrontInput placeholder={'Enter project tags'}/>
                               </label>
-                         </div>
-                         <div className="listing-block">
-                              <p>Preview Image</p>
-                              <CustomFrontUpload/>
                          </div>
                     </div>
                )
