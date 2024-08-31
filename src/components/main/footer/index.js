@@ -6,12 +6,12 @@ import Decoration from '/src/assets/main/icons/social-decoration.svg';
 import youTubeIcon from '/src/assets/main/icons/youtub.svg'
 import teleGramIcon from '/src/assets/main/icons/telegram.svg'
 import tikTokIcon from '/src/assets/main/icons/tik-tok.svg'
-import Link from "next/link";
-import {useTranslation} from "react-i18next";
+import {Link} from '@/i18n/routing.public'
+import {useTranslations} from 'next-intl';
 
 
 const Footer = () => {
-     const {t, i18n} = useTranslation();
+     const t = useTranslations();
      return (
           <footer>
                <div className="footer__inner">

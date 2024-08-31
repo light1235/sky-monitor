@@ -15,15 +15,16 @@ import Link from "next/link";
 import CustomToolTop from "@/components/main/tooltip_custom";
 import PinRaiseForm from "@/components/main/pin-raise-form";
 import ArticleForm from "@/components/main/article-form";
-import {useTranslation} from "react-i18next";
+import {useTranslations} from 'next-intl';
 import ListingForm from "@/components/main/listing-form";
+
 
 const SelectedPopUp = ({close}) => {
      const [active, setActive] = useState(2);
      const [showSelect, setShowSelect] = useState(false);
      const [clickCount, setClickCount] = useState(0);
 
-     const {t} = useTranslation();
+     const t = useTranslations();
 
      let popUps = [<ListingForm/>,<BannerForm/>,<PopUpForm/>,<PinRaiseForm />,<ArticleForm />];
 

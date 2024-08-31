@@ -1,0 +1,85 @@
+
+
+.reset__page {
+   width: 100%;
+   //height: 100vh;
+   & .reset__content {
+      height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "content-left content-right ";
+      & .content__form{
+         width: 100%;
+         display: grid;
+         place-items: center;
+         grid-area: content-left;
+         & .form-container {
+            width: 350px;
+            & h1 {
+               font-family: "Open Sans", sans-serif;
+               font-weight: 600;
+               font-size: 32px;
+               color: #1d1d1d;
+               margin: 0;
+            }
+            & h2 {
+               font-family: "Open Sans", sans-serif;
+               font-weight: 400;
+               font-size: 20px;
+               color: #7e8e9f;
+               margin: 5px 0 30px 0;
+            }
+            & .ant-btn {
+               margin-top: 20px;
+               margin-bottom: 20px;
+            }
+            & p {
+               font-family: "Open Sans", sans-serif;
+               font-weight: 600;
+               font-size: 14px;
+               color: #747474;
+            }
+            & .inputError {
+               font-family: "Open Sans", sans-serif;
+               font-weight: 600;
+               font-size: 14px;
+               padding-top: 3px;
+            }
+         }
+      }
+      & .content__image {
+         background-image: url('../../../assets/main/images/reset-page-image.jpg');
+         background-size: cover;
+
+      }
+   }
+}
+
+
+@media only screen and (max-width : 1220px) {
+   .reset__page {
+      & .reset__content {
+         grid-template-rows: 1fr 1fr;
+         grid-template-columns: 1fr;
+         grid-template-areas:
+		"content-right"
+         "content-left"
+      ;
+      }
+   }
+}
+
+@media only screen and (max-width : 600px) {
+   .reset__page {
+      & .reset__content {
+         & .content__form {
+            padding: 20px 20px;
+            box-sizing: border-box;
+            & .form-container {
+               width: 100%;
+            }
+         }
+      }
+   }
+}
+

@@ -1,6 +1,6 @@
 import React from 'react';
+import './globals.css'
 import './index.scss'
-
 const notFound = () => {
      return (
           <div className="error-page">

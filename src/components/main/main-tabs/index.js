@@ -6,7 +6,7 @@ import CustomWrapper from "@/components/main/custom-wrapper";
 import  './index.scss'
 import ArrowButton from '../../../assets/main/icons/arrow-button.svg';
 import Image from "next/image";
-import {useTranslation} from "react-i18next";
+import {useTranslations} from 'next-intl';
 // import { useGetListingsQuery } from "@/services/listingApi";
 const MainTabs = ({dataListing}) => {
 
@@ -16,7 +16,7 @@ const MainTabs = ({dataListing}) => {
      //      refetchOnReconnect: true,
      // });
 
-     const {t} = useTranslation();
+     const t = useTranslations();
 
      const [searchTerm, SetSearchTerm] = useState('');
      const [showBlocks, setShowBlocks] = useState(1);

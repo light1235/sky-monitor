@@ -1,0 +1,66 @@
+{
+  "header": {
+    "button": "Add programs",
+    "menu": {
+      "menu1": "Monitoring",
+      "menu2": "Services",
+      "menu3": "Projects",
+      "menu4": "Contacts",
+      "menu5": "Partners"
+    },
+    "login": "Login",
+    "register": "Register",
+    "langMenu": "EN",
+    "loginMenu": {
+      "dashboard": "Dashboard",
+      "exit": "Logout"
+    },
+    "popUp": {
+      "title": "choose the appropriate service",
+      "description": "Choose from the selected:",
+      "listing": "Listing",
+      "banner": "Banner",
+      "popUp": "Pop-Up",
+      "pin": "Pin&Raise",
+      "article": "Article"
+    }
+  },
+  "footer": {
+    "footerTop": {
+      "navItem1": "Follow us",
+      "navItem2": "Company",
+      "navItem3": "Info",
+      "navItem4": "Customer Service"
+    },
+    "footerMenu": {
+      "about": "About Us",
+      "affiliate": "Affiliate",
+      "faq": "Faq",
+      "support": "Support",
+      "rules": "Rules",
+      "register": "Registration",
+      "login": "Login",
+      "reset": "Reset Account"
+    },
+    "footerBottom": {
+      "rights": "© 2024 All Rights Reserved",
+      "privacy": "Privacy Policy Terms & Conditions"
+    }
+  },
+  "mainPage": {
+    "blocks": {
+      "top": "Top Projects",
+      "new": "New Listings",
+      "news": "Latest Hyip News",
+      "scam": "Latest Scams"
+    },
+    "tabs": {
+      "tab1": "Overview",
+      "tab2": "Premium",
+      "tab3": "Normal",
+      "tab4": "Trial",
+      "tab5": "Scam"
+    },
+    "search": "search"
+  }
+}

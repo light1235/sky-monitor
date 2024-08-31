@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react';
 import './index.scss'
 import Image from 'next/image'
 import LOGO from '/src/assets/logo-2.svg'
-import Link from "next/link";
+import {Link} from '@/i18n/routing.public'
 import anime from 'animejs';
 import monIco from '/src/assets/main/icons/monitor.svg';
 import serviceIcon from '/src/assets/main/icons/services.svg';
@@ -25,11 +25,16 @@ import SelectedPopUp from "@/components/main/selected-pop-up";
 import NotifyData from '../../../db/notificationData.json'
 import UserNotification from "@/components/main/user_notification";
 import {useRouter} from 'next/navigation';
-import {useTranslation} from "react-i18next";
+import {useTranslations} from 'next-intl';
+import { useLocale } from 'next-intl';
+import PublicNavigationLocaleSwitcher from "@/components/local-switcher";
+
 
 const Header = () => {
+     const pathname = usePathname();
+     const router = useRouter();
      const [block, setBlock] = useState(true);
-     const [langValue, setLangValue] = useState('EN');
+     const [langValue, setLangValue] = useState('');
      const [activeMenu, setActiveMenu] = useState(true);
      const [changeLanguage, setChangeLanguage] = useState(true);
      const [activeProgram, setActiveProgram] = useState(false);
@@ -37,27 +42,33 @@ const Header = () => {
      const [selectedLanguage, setSelectedLanguage] = useState('en');
      const [isLoading, setIsLoading] = useState(false);
      const [clickCount, setClickCount] = useState(0);
+     const locale = useLocale();
 
-     const router = useRouter();
+     const t = useTranslations();
+     const switchToLocale = (nextLocale) => {
+          const currentPath = window.location.pathname;
 
-     const {t, i18n} = useTranslation();
-
-
-     const handleLanguageChange = (lang) => {
-          setIsLoading(true);
-          i18n.changeLanguage(lang);
-          setSelectedLanguage(lang);
-
-          if (!isLoading) {
-               anime({
-                    targets: 'header .navbar .header__top .left__menu .lang__menu .image-circle',
-                    rotate: '+=180',
-                    duration: 3500,
-                    loop: false,
-               });
+          // Извлекаем текущую локаль из пути, если она присутствует
+          const segments = currentPath.split('/');
+          if (segments[1] === 'en' || segments[1] === 'ru' ) {
+               segments.splice(1, 1);
           }
+          const newPath = `/${nextLocale}${segments.join('/')}`;
+
+          try {
+               router.push(newPath);
+               console.log(`Switched to ${nextLocale}`);
+          } catch (error) {
+               console.error('Failed to switch locale:', error);
+          }
+          anime({
+               targets: 'header .navbar .header__top .left__menu .lang__menu .image-circle',
+               rotate: '+=180',
+               duration: 3500,
+               loop: false,
+          });
      };
-     // TODO проблема смены языка, блок языка попробывать сделать с lang а тоесть с selectedLanguage если он не пустой то делать анимацию
+
      const goToDashboard = () => {
           router.push('/my/dashboard');
      };
@@ -65,30 +76,31 @@ const Header = () => {
      const showModal = () => {
           setActiveProgram(!activeProgram);
      };
-
-
-     const isLangisChange = () => {
-          setBlock(true);
-          setTimeout(() => {
-               setBlock(false);
-          }, 3000);
-
-
-          const newLang = clickCount % 2 === 0 ? 'ess' : 'en';
-          handleLanguageChange(newLang);
-          setClickCount(prevCount => prevCount + 1);
+     const handleLanguageAnimate = (lang) => {
+          anime({
+               targets: 'header .navbar .header__top .left__menu .lang__menu .image-circle',
+               rotate: '+=180',
+               duration: 3500,
+               loop: false,
+          });
      };
 
      useEffect(() => {
-          setTimeout(() => {
-               setBlock(false)
-          },2500)
-               // const storedLang = localStorage.getItem('langValue') || 'EN';
-               // setLangValue(storedLang);
-     }, []);
+          setLangValue(locale);
+          handleLanguageAnimate();
+     },[locale])
 
 
-     const pathname = usePathname();
+     const isLanguageChange = () => {
+          const newLang = clickCount % 2 === 0 ? 'ru' : 'en';
+          switchToLocale(newLang)
+          setClickCount(prevCount => prevCount + 1);
+     };
+
+
+
+
+
      const CloseMenu = () => {
           setActiveMenu(!activeMenu);
      };
@@ -167,8 +179,9 @@ const Header = () => {
                                                priority={true}></Image>{t('header.button')}</div>
                               </button>
                               <div className="lang__menu">
-                                   <div className={block ? 'image-circle active-block' : 'image-circle'}
-                                        onClick={isLangisChange}><Image src={LangButton} alt="logo icon"></Image></div>
+                                   <div className='image-circle'
+                                        onClick={isLanguageChange}><Image src={LangButton}
+                                                                                  alt="logo icon"></Image></div>
                                    <span>{t('header.langMenu')}</span></div>
                               <div className="authentication">
                                    {isLogin ?
@@ -193,9 +206,11 @@ const Header = () => {
                                                   {showMenu &&
                                                        <div className="panel-menu">
                                                             <div onClick={goToDashboard}><i
-                                                                 className="icon-dashboard"></i><p>{t('header.loginMenu.dashboard')}</p></div>
+                                                                 className="icon-dashboard"></i>
+                                                                 <p>{t('header.loginMenu.dashboard')}</p></div>
                                                             <div onClick={() => setIsLogin(false)}><i
-                                                                 className="icon-logout"></i><p>{t('header.loginMenu.exit')}</p></div>
+                                                                 className="icon-logout"></i>
+                                                                 <p>{t('header.loginMenu.exit')}</p></div>
                                                        </div>
 
                                                   }
@@ -309,13 +324,12 @@ const Header = () => {
                          </button>
                          <div className="language-menu">
                               <span>Language</span>
-                              {/*onClick={() => setChangeLanguage(true)}>EN*/}
                               <div className="wrap-language">
-                                   <div   className={selectedLanguage === 'en' ? 'active-language' : ''}
-                                        onClick={() => handleLanguageChange('en')}>EN
+                                   <div   className={langValue === 'en' ? 'active-language' : ''}
+                                        onClick={() =>  switchToLocale('en')}>EN
                                    </div>
-                                   <div  className={selectedLanguage === 'ess' ? 'active-language' : ''}
-                                        onClick={() =>  handleLanguageChange('ess')}  >RU
+                                   <div  className={langValue === 'ru' ? 'active-language' : ''}
+                                        onClick={() =>   switchToLocale('ru')}  >RU
                                    </div>
                               </div>
                          </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import './index.scss'
-import Link from "next/link";
+import {Link} from '@/i18n/routing.public'
 
 const NewsLine = ({image,item}) => {
      return (
