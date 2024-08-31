@@ -13,13 +13,13 @@ const nextConfig = {
      async redirects() {
           return [
                {
-                    source: '/sitemap.xml',
-                    destination: '/api/sitemap',
+                    source: '/en/sitemap.xml',
+                    destination: '/en/api/sitemap',
                     permanent: true,
                },
                {
-                    source: '/robots.txt',
-                    destination: '/api/robots',
+                    source: '/en/robots.txt',
+                    destination: '/en/api/robots',
                     permanent: true,
                },
           ];

@@ -35,5 +35,5 @@ export default function middleware(request) {
 
 export const config = {
   // Обрабатываем только интернационализированные маршруты
-  matcher: ['/', '/(ru|en)/:path*', '/app/:path*', '/my/:path*', '/panel/:path*']
+  matcher: ['/', '/(en|ru)/:path*', '/app/:path*', '/my/:path*', '/panel/:path*']
 };
