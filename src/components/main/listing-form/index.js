@@ -263,7 +263,7 @@ const ListingForm = () => {
 
                                    <label>
                                         <p style={{color:'#5B5BDF'}}>Pricing Plan</p>
-                                        <CustomFrontSelect placeholder="Schoose listing" Data={selectPeriod}/>
+                                        <CustomFrontSelect onSelect={handleChange} placeholder="Schoose listing" Data={selectPeriod}/>
                                    </label>
                               </Space>
                               <label>

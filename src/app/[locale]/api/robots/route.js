@@ -9,6 +9,8 @@ Disallow: /api/
 Disallow: /private/
 Allow: /
 
+# Sitemaps
+Sitemap: ${SITE_URL}/sitemap.xml
 Sitemap: ${SITE_URL}/sitemap.xml
   `;
 
