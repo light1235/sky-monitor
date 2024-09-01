@@ -1,11 +1,20 @@
-import {createSharedPathnamesNavigation} from 'next-intl/navigation';
+import {createLocalizedPathnamesNavigation} from 'next-intl/navigation';
 import {defineRouting} from 'next-intl/routing';
 import {locales, defaultLocale} from '@/config';
 
 export const routing = defineRouting({
   locales,
-  defaultLocale
+  defaultLocale,
+  pathnames: {
+    '/': '/',
+    '/pathnames': {
+      en: '/pathnames',
+      de: '/pfadnamen'
+    }
+  }
 });
+export const {Link, getPathname, redirect, usePathname, useRouter} =
+     createLocalizedPathnamesNavigation(routing);
 
-// Should only be used on public routes in the `[locale]` segment
-export const {Link, usePathname} = createSharedPathnamesNavigation(routing);
+
+

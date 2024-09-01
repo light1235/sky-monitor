@@ -1,5 +1,5 @@
 'use client'
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useTransition} from 'react';
 import './index.scss'
 import Image from 'next/image'
 import LOGO from '/src/assets/logo-2.svg'
@@ -20,55 +20,47 @@ import teleGramIcon from "@/assets/main/icons/telegram.svg";
 import youTubeIcon from "@/assets/main/icons/youtub.svg";
 import tikTokIcon from "@/assets/main/icons/tik-tok.svg";
 import Custom_modal from "@/components/main/custom_modal";
-import {usePathname} from 'next/navigation'
 import SelectedPopUp from "@/components/main/selected-pop-up";
 import NotifyData from '../../../db/notificationData.json'
 import UserNotification from "@/components/main/user_notification";
-import {useRouter} from 'next/navigation';
+import { usePathname, useRouter} from 'next/navigation';
 import {useTranslations} from 'next-intl';
 import { useLocale } from 'next-intl';
-import PublicNavigationLocaleSwitcher from "@/components/local-switcher";
-
 
 const Header = () => {
-     const pathname = usePathname();
-     const router = useRouter();
-     const [block, setBlock] = useState(true);
      const [langValue, setLangValue] = useState('');
      const [activeMenu, setActiveMenu] = useState(true);
-     const [changeLanguage, setChangeLanguage] = useState(true);
      const [activeProgram, setActiveProgram] = useState(false);
      const [isLogin, setIsLogin] = useState(false);
-     const [selectedLanguage, setSelectedLanguage] = useState('en');
-     const [isLoading, setIsLoading] = useState(false);
-     const [clickCount, setClickCount] = useState(0);
+     const [langCount, setLangCount] = useState();
+
      const locale = useLocale();
-
+     const pathname = usePathname();
+     const router = useRouter();
      const t = useTranslations();
-     const switchToLocale = (nextLocale) => {
-          const currentPath = window.location.pathname;
 
-          // Извлекаем текущую локаль из пути, если она присутствует
-          const segments = currentPath.split('/');
-          if (segments[1] === 'en' || segments[1] === 'ru' ) {
+     const switchToLocale = async (nextLocale) => {
+
+          if (nextLocale === locale) {
+               return;
+          }
+
+          const segments = pathname.split('/');
+          if (segments[1] === 'en' || segments[1] === 'ru') {
                segments.splice(1, 1);
           }
+
           const newPath = `/${nextLocale}${segments.join('/')}`;
 
-          try {
-               router.push(newPath);
-               console.log(`Switched to ${nextLocale}`);
-          } catch (error) {
-               console.error('Failed to switch locale:', error);
+          if (nextLocale) {
+               try {
+                    await router.push(newPath);
+                    console.log(`Switched to ${nextLocale}`);
+               } catch (error) {
+                    console.error('Failed to switch locale:', error);
+               }
           }
-          anime({
-               targets: 'header .navbar .header__top .left__menu .lang__menu .image-circle',
-               rotate: '+=180',
-               duration: 3500,
-               loop: false,
-          });
      };
-
      const goToDashboard = () => {
           router.push('/my/dashboard');
      };
@@ -90,16 +82,10 @@ const Header = () => {
           handleLanguageAnimate();
      },[locale])
 
-
      const isLanguageChange = () => {
-          const newLang = clickCount % 2 === 0 ? 'ru' : 'en';
-          switchToLocale(newLang)
-          setClickCount(prevCount => prevCount + 1);
+          setLangCount(!langCount)
+          switchToLocale(langCount ? 'en': 'ru')
      };
-
-
-
-
 
      const CloseMenu = () => {
           setActiveMenu(!activeMenu);
@@ -181,7 +167,7 @@ const Header = () => {
                               <div className="lang__menu">
                                    <div className='image-circle'
                                         onClick={isLanguageChange}><Image src={LangButton}
-                                                                                  alt="logo icon"></Image></div>
+                                                                          alt="logo icon"></Image></div>
                                    <span>{t('header.langMenu')}</span></div>
                               <div className="authentication">
                                    {isLogin ?
@@ -235,7 +221,7 @@ const Header = () => {
                               onClick={() => setActiveMenu(!activeMenu)}></div>
                     </div>
                     <div className="header__bottom">
-                         <nav className="navigation">
+                    <nav className="navigation">
                               <ul className="navigation__list">
                                    <li className={`link ${pathname === '/' ? 'active-color' : ''}`}>
                                         <Link href='/'><Image src={monIco} alt={'logo'}></Image> <span>{t('header.menu.menu1')}</span></Link>

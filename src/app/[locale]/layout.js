@@ -20,11 +20,13 @@ export default async function LocaleLayout({ children, params }) {
           </head>
           <body>
           {/*<Provider store={store}>*/}
+          <NextIntlClientProvider messages={messages}>
                     <AntdRegistry>
-                         <NextIntlClientProvider messages={messages}>
+
                       <ChangeNavigation>{children}</ChangeNavigation>
-                         </NextIntlClientProvider>
+
                     </AntdRegistry>
+          </NextIntlClientProvider>
           {/*</Provider>*/}
           </body>
           </html>
