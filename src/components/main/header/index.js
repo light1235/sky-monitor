@@ -32,7 +32,8 @@ const Header = () => {
      const [activeMenu, setActiveMenu] = useState(true);
      const [activeProgram, setActiveProgram] = useState(false);
      const [isLogin, setIsLogin] = useState(false);
-     const [langCount, setLangCount] = useState();
+     const [langCount, setLangCount] = useState(false);
+     const [newWorld, setNewWorld] = useState(true);
 
      const locale = useLocale();
      const pathname = usePathname();
@@ -40,7 +41,6 @@ const Header = () => {
      const t = useTranslations();
 
      const switchToLocale = async (nextLocale) => {
-
           if (nextLocale === locale) {
                return;
           }
@@ -55,9 +55,9 @@ const Header = () => {
           if (nextLocale) {
                try {
                     await router.push(newPath);
-                    console.log(`Switched to ${nextLocale}`);
+                    // console.log(`Switched to ${nextLocale}`);
                } catch (error) {
-                    console.error('Failed to switch locale:', error);
+                    // console.error('Failed to switch locale:', error);
                }
           }
      };
@@ -149,6 +149,12 @@ const Header = () => {
                });
           }
      }, [showMessage])
+    useEffect(() => {
+         console.log(langCount);
+    },[langCount])
+     const showSingUpModal = () => {
+          setNewWorld(!newWorld)
+     };
 
 
      return (
