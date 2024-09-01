@@ -40,10 +40,11 @@ const UserHeader = () => {
                     <div className="panel-notify"><i className={showMessage ? 'icon-bell-alt' : 'icon-bell'} onClick={() => setShowMessage(!showMessage)}></i><div className="notify-amount">8</div>
                          {showMessage &&
                               <div className="notify-menu">
-                                   <Notification/>
-                                   <Notification/>
-                                   <Notification/>
-                                   <Notification/>
+                                   dora
+                                   {/*<Notification/>*/}
+                                   {/*<Notification/>*/}
+                                   {/*<Notification/>*/}
+                                   {/*<Notification/>*/}
                               </div>
                          }
                     </div>

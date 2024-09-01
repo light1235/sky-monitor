@@ -72,7 +72,7 @@ header {
             }
             & .lang__menu {
                display: grid;
-               grid-template-columns: 1fr 1fr;
+               grid-template-columns:  1fr 1fr;
                justify-items: center;
                align-items: center;
                line-height: 3;
@@ -84,16 +84,21 @@ header {
                text-align: center;
                color: #fff;
                & .active-block {
-                  pointer-events: none;
+                  //pointer-events: none;
                   //cursor: not-allowed !important;
                }
                & .image-circle {
+                  //pointer-events: none;
+                  //cursor: pointer;
                   cursor: pointer;
                }
 
                & img {
                   //cursor: not-allowed;
                   //cursor: pointer;
+               }
+               span {
+                  cursor: pointer;
                }
             }
             & .authentication {

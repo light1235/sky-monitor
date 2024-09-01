@@ -1,5 +1,5 @@
 'use client'
-import React, {useEffect, useState, useTransition} from 'react';
+import React, {useEffect, useRef, useState, useTransition} from 'react';
 import './index.scss'
 import Image from 'next/image'
 import LOGO from '/src/assets/logo-2.svg'
@@ -27,39 +27,40 @@ import { usePathname, useRouter} from 'next/navigation';
 import {useTranslations} from 'next-intl';
 import { useLocale } from 'next-intl';
 
+
 const Header = () => {
      const [langValue, setLangValue] = useState('');
      const [activeMenu, setActiveMenu] = useState(true);
      const [activeProgram, setActiveProgram] = useState(false);
      const [isLogin, setIsLogin] = useState(false);
-     const [langCount, setLangCount] = useState(false);
-     const [newWorld, setNewWorld] = useState(true);
-
      const locale = useLocale();
      const pathname = usePathname();
      const router = useRouter();
      const t = useTranslations();
 
      const switchToLocale = async (nextLocale) => {
-          if (nextLocale === locale) {
-               return;
-          }
+          // if (nextLocale === locale) {
+          //      return;
+          // }
 
           const segments = pathname.split('/');
-          if (segments[1] === 'en' || segments[1] === 'ru') {
-               segments.splice(1, 1);
-          }
+          // if (segments[1] === 'en' || segments[1] === 'ru' || segments[1] === 'en' || segments[1] === 'ru' ) {
+          //      segments.splice(1, 1);
+          // }
+          // console.log(segments);
+          segments.splice(1, 1);
 
           const newPath = `/${nextLocale}${segments.join('/')}`;
-
+          router.push(newPath);
           if (nextLocale) {
                try {
-                    await router.push(newPath);
-                    // console.log(`Switched to ${nextLocale}`);
+
+                    console.log(`Switched to ${nextLocale}`);
                } catch (error) {
-                    // console.error('Failed to switch locale:', error);
+                    console.error('Failed to switch locale:', error);
                }
           }
+
      };
      const goToDashboard = () => {
           router.push('/my/dashboard');
@@ -83,9 +84,9 @@ const Header = () => {
      },[locale])
 
      const isLanguageChange = () => {
-          setLangCount(!langCount)
-          switchToLocale(langCount ? 'en': 'ru')
+          switchToLocale(locale === "ru" ? 'en': 'ru')
      };
+
 
      const CloseMenu = () => {
           setActiveMenu(!activeMenu);
@@ -149,12 +150,7 @@ const Header = () => {
                });
           }
      }, [showMessage])
-    useEffect(() => {
-         console.log(langCount);
-    },[langCount])
-     const showSingUpModal = () => {
-          setNewWorld(!newWorld)
-     };
+     console.log(locale);
 
 
      return (
@@ -166,15 +162,15 @@ const Header = () => {
                          </div>
                          <div className="middle_menu"></div>
                          <div className="left__menu">
-                              <button onClick={showModal}>
-                                   <div><Image src={buttonIcon} alt={'logo'}
-                                               priority={true}></Image>{t('header.button')}</div>
+                         <button onClick={showModal}>
+                                   <div><Image src={buttonIcon} alt={'logo'} priority={true}></Image>{t('header.button')}</div>
                               </button>
                               <div className="lang__menu">
                                    <div className='image-circle'
-                                        onClick={isLanguageChange}><Image src={LangButton}
-                                                                          alt="logo icon"></Image></div>
-                                   <span>{t('header.langMenu')}</span></div>
+                                        onClick={isLanguageChange}><Image src={LangButton} alt="logo icon"></Image>
+                                   </div>
+                                   <span>{t('header.langMenu')}</span>
+                              </div>
                               <div className="authentication">
                                    {isLogin ?
                                         <>
