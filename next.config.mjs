@@ -18,6 +18,11 @@ const nextConfig = {
                     permanent: true,
                },
                {
+                    source: '/ru/sitemap.xml',
+                    destination: '/ru/api/sitemap',
+                    permanent: true,
+               },
+               {
                     source: '/en/robots.txt',
                     destination: '/en/api/robots',
                     permanent: true,

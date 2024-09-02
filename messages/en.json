@@ -40,7 +40,7 @@
       "rules": "Rules",
       "register": "Registration",
       "login": "Login",
-      "reset": "Reset Account"
+      "reset": "Reset Password"
     },
     "footerBottom": {
       "rights": "© 2024 All Rights Reserved",
@@ -62,5 +62,15 @@
       "tab5": "Scam"
     },
     "search": "search"
-  }
+  },
+  "HeaderForms": {
+    "Listing": {},
+    "Banner": {},
+    "PopUp": {},
+    "PinRaise": {},
+    "Article": {}
+  },
+  "Login": {},
+  "Register": {},
+  "Reset": {}
 }

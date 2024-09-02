@@ -6,6 +6,8 @@ import adminImage from "@/assets/panel/image/user-icon.jpg";
 import DashBoardImage from '../../../assets/panel/icons/dashboard-icon.svg';
 import ArrowBack from '../../../assets/panel/icons/arrow-right.svg';
 import './index.scss'
+import NotifyData from "@/db/notificationData.json";
+import UserNotification from "@/components/main/user_notification";
 
 const UserHeader = () => {
      const [showMessage, setShowMessage] = useState(false);
@@ -40,11 +42,9 @@ const UserHeader = () => {
                     <div className="panel-notify"><i className={showMessage ? 'icon-bell-alt' : 'icon-bell'} onClick={() => setShowMessage(!showMessage)}></i><div className="notify-amount">8</div>
                          {showMessage &&
                               <div className="notify-menu">
-                                   dora
-                                   {/*<Notification/>*/}
-                                   {/*<Notification/>*/}
-                                   {/*<Notification/>*/}
-                                   {/*<Notification/>*/}
+                                   {NotifyData.map((item, index) =>
+                                        <UserNotification item={item} key={index}/>
+                                   )}
                               </div>
                          }
                     </div>
