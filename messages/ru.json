@@ -62,5 +62,23 @@
       "tab5": "Мошенники"
     },
     "search": "поиск"
+  },
+  "HeaderForms": {
+    "Listing": {},
+    "Banner": {},
+    "PopUp": {},
+    "PinRaise": {},
+    "Article": {}
+  },
+  "Login": {
+    "sign": "Регистрация",
+    "definition": "Найди свое пространство",
+    "name": "Имя*",
+    "email": "Имейл*",
+    "password": "Пароль*",
+    "buttonCreate": "Создать Аккаунт",
+    "buttonGoogle": "Войти с Google",
+    "description": "Уже есть Аккаунт?",
+    "logLink": "Войти"
   }
 }

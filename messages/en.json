@@ -70,7 +70,17 @@
     "PinRaise": {},
     "Article": {}
   },
-  "Login": {},
+  "Login": {
+    "sign": "Sign Up",
+    "definition": "Find your Space",
+    "name": "Name*",
+    "email": "Email*",
+    "password": "Password*",
+    "buttonCreate": "Create Account",
+    "buttonGoogle": "Sing Up With Google",
+    "description": "Already have account ?",
+    "logLink": "Log in"
+  },
   "Register": {},
   "Reset": {}
 }

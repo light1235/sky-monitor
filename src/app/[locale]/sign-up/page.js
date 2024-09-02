@@ -7,16 +7,13 @@ import CustomCheckBox from "@/components/panel/check-box";
 import {Link} from '@/i18n/routing.public'
 import * as Yup from "yup";
 import './index.scss';
+import {useTranslations} from 'next-intl';
+import { useLocale } from 'next-intl';
 
-
-const validationSchema = Yup.object().shape({
-     siteName: Yup.string().min(8, 'Site name must be at least 8 characters').required("Name should be required please"),
-     email: Yup.string().email('Invalid email address').required('Email is required'),
-     password: Yup.string().min(6, 'Password must be at least 6 characters long').required('Password is required'),
-});
 
 const SignUp = () => {
-
+     const t = useTranslations();
+     const locale = useLocale();
      const [isValidSingUp, setIsValidSingUp] = useState(false);
 
      const [formData, setFormData] = useState({
@@ -24,6 +21,13 @@ const SignUp = () => {
           email: '',
           password: '',
      });
+     const validationSchema = Yup.object().shape({
+          siteName: Yup.string().min(6, locale === 'en' ? 'Name must be at least 6 characters':'Имя должно состоять не менее чем из 6 символов').required(locale === "en" ?"Name should be required please":'Имя должно быть обязательным, пожалуйста'),
+          email: Yup.string().email(locale === 'en' ?'Invalid email address':'Неверный адрес электронной почты').required(locale === 'en' ?'Email is required':'Электронная почта обязательна'),
+          password: Yup.string().min(6, locale === 'en' ? 'Password must be at least 6 characters long': 'Пароль должен состоять не менее чем из 6 символов').required(locale === 'en'?'Password is required':'Пароль обязателен'),
+     });
+
+     // t('header.langMenu')
      //
      useEffect(() => {
           console.log(formData, 'formData');
@@ -39,8 +43,8 @@ const SignUp = () => {
                <div className="sing-up__content">
                     <div className="content__form">
                          <div className="form-container">
-                              <h1>Sing Up</h1>
-                              <h2>Find your Space</h2>
+                              <h1>{t('Login.sign')}</h1>
+                              <h2>{t('Login.definition')}</h2>
 
                               <Formik
                                    initialValues={{siteName:'', email: '', password: ''}}
@@ -61,23 +65,23 @@ const SignUp = () => {
                                    {({isSubmitting}) => (
                                         <Form>
                                              <label>
-                                                  <p>Name*</p>
+                                                  <p>{t('Login.name')}</p>
                                                   <Field as={CustomFrontInput} type="text" name="siteName"/>
                                                   <ErrorMessage name="siteName" component="div" className="inputError"/>
                                              </label>
                                              <label>
-                                                  <p>Email*</p>
+                                                  <p>{t('Login.email')}</p>
                                                   <Field as={CustomFrontInput} type="email" name="email"/>
                                                   <ErrorMessage name="email" component="div" className="inputError"/>
                                              </label>
                                              <label>
-                                                  <p>Password*</p>
+                                                  <p>{t('Login.password')}</p>
                                                   <Field as={CustomFrontInput} type="password" name="password"/>
                                                   <ErrorMessage name="password" component="div" className="inputError"/>
                                              </label>
-                                             <CustomFrontButton disblad={isSubmitting} name={'Create Account'}/>
-                                             <div className="google-authorization">Sing up with Google</div>
-                                             <div className="ps-reset">Already have account ?<Link href="/login">Log in</Link>
+                                             <CustomFrontButton disblad={isSubmitting} name={t('Login.buttonCreate')}/>
+                                             <div className="google-authorization">{t('Login.buttonGoogle')}</div>
+                                             <div className="ps-reset">{t('Login.description')}<Link href="/login">{t('Login.logLink')}</Link>
                                              </div>
                                         </Form>
                                    )}
