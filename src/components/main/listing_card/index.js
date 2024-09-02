@@ -62,6 +62,11 @@ const ListingCard = ({ item, wish,ind,setWish,registred}) => {
                : null
      };
 
+     const url = new URL(item.detailsLink);
+     const formattedUrl = url.origin;
+     const fullFormat = url.host
+     const whoIsLink = `https://whois.domaintools.com/${formattedUrl}`
+     const SimilarWeb = `https://www.similarweb.com/ru/website/${fullFormat}/#overview`
      //days online
      const startDate = new Date(item.projectInformation.created);
      const currentDate = new Date();
@@ -306,12 +311,12 @@ const ListingCard = ({ item, wish,ind,setWish,registred}) => {
                          </div>
                          <div className="info">Info</div>
                          <div className="project-info">
-                              <Link rel="nofollow" target="_blank" href="https://www.similarweb.com/ru/">
+                              <Link rel="nofollow" target="_blank" href={SimilarWeb}>
                                    <CustomToolTop text={'Seo information'}>
                                         <Image src={simillarWeb} height="15" width="15" alt="simillar_web_logo"/>
                                    </CustomToolTop>
                               </Link>
-                              <Link rel="nofollow" target="_blank" href="https://whois.domaintools.com/">
+                              <Link rel="nofollow" target="_blank" href={whoIsLink}>
                                    <CustomToolTop text={'Whois information'}>
                                         <Image src={whoIs} height="15" width="15" alt="who_is_logo"/>
                                    </CustomToolTop>

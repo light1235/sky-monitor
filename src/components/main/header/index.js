@@ -55,9 +55,9 @@ const Header = () => {
           if (nextLocale) {
                try {
 
-                    console.log(`Switched to ${nextLocale}`);
+                    // console.log(`Switched to ${nextLocale}`);
                } catch (error) {
-                    console.error('Failed to switch locale:', error);
+                    // console.error('Failed to switch locale:', error);
                }
           }
 
@@ -150,7 +150,6 @@ const Header = () => {
                });
           }
      }, [showMessage])
-     console.log(locale);
 
 
      return (
