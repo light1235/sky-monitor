@@ -74,11 +74,16 @@
     "sign": "Регистрация",
     "definition": "Найди свое пространство",
     "name": "Имя*",
-    "email": "Имейл*",
+    "email": "Электронная почта*",
     "password": "Пароль*",
     "buttonCreate": "Создать Аккаунт",
     "buttonGoogle": "Войти с Google",
     "description": "Уже есть Аккаунт?",
     "logLink": "Войти"
+  },
+  "Reset": {
+    "definition":"Сброс пароля",
+    "email": "Электронная почта*",
+    "button": "Продолжить"
   }
 }

@@ -82,5 +82,9 @@
     "logLink": "Log in"
   },
   "Register": {},
-  "Reset": {}
+  "Reset": {
+    "definition":"Password Reset",
+    "email": "Email*",
+    "button": "Continue"
+  }
 }

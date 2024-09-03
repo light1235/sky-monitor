@@ -5,17 +5,19 @@ import * as Yup from "yup";
 import {ErrorMessage, Field, Form, Formik} from "formik";
 import CustomFrontInput from "@/components/main/custom-front-input";
 import CustomFrontButton from "@/components/main/cutom_front_button";
+import {useTranslations} from 'next-intl';
+import {useLocale} from 'next-intl';
 
 
-
-const validationSchema = Yup.object().shape({
-     email: Yup.string().email('Invalid email address').required('Email is required'),
-
-});
 const ResetPage = () => {
-
+     const t = useTranslations();
+     const locale = useLocale();
      const [isValidSingUp, setIsValidSingUp] = useState(false);
 
+     const validationSchema = Yup.object().shape({
+          email: Yup.string().email(locale === "en" ?'Invalid email address' : 'Неверный адрес электронной почты').required( locale === "en" ? 'Email is required':'Электронная почта обязательна' ),
+
+     });
      const [formData, setFormData] = useState({
           email: '',
      });
@@ -36,7 +38,7 @@ const ResetPage = () => {
                <div className="reset__content">
                     <div className="content__form">
                          <div className="form-container">
-                              <h1>Password Reset</h1>
+                              <h1>{t('Reset.definition')}</h1>
                               <Formik
                                    initialValues={{ email: '',}}
                                    validationSchema={validationSchema}
@@ -56,11 +58,11 @@ const ResetPage = () => {
                                    {({isSubmitting}) => (
                                         <Form>
                                              <label>
-                                                  <p>Email*</p>
+                                                  <p>{t('Reset.email')}</p>
                                                   <Field as={CustomFrontInput} type="email" name="email"/>
                                                   <ErrorMessage name="email" component="div" className="inputError"/>
                                              </label>
-                                             <CustomFrontButton disblad={isSubmitting} name={'Continue'}/>
+                                             <CustomFrontButton disblad={isSubmitting} name={t('Reset.button')}/>
                                         </Form>
                                    )}
                               </Formik>
