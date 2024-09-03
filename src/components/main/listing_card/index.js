@@ -25,6 +25,7 @@ import ripple from '/src/assets/main/icons/payments-system/ripple.svg';
 import skrill from '/src/assets/main/icons/payments-system/skrill.svg';
 import tether from '/src/assets/main/icons/payments-system/tether.svg';
 import tron from '/src/assets/main/icons/payments-system/tron-trx.svg';
+import HypeStat from '/src/assets/main/icons/hypestat.svg';
 import simillarWeb from '/src/assets/main/icons/simillar-web.svg';
 import whoIs from '/src/assets/main/icons/who-is.svg';
 import forumIocn from '/src/assets/main/icons/forum-icon.svg';
@@ -35,6 +36,7 @@ import {easings} from "react-spring";
 import CustomModal from "@/components/main/custom_modal";
 import VotePopUp from "@/components/main/vote-pop-up";
 import CountdownTimer from "@/utils/hooks/countDownTimer";
+
 
 
 const ListingCard = ({ item, wish,ind,setWish,registred}) => {
@@ -312,7 +314,7 @@ const ListingCard = ({ item, wish,ind,setWish,registred}) => {
                          <div className="info">Info</div>
                          <div className="project-info">
                               <Link rel="nofollow" target="_blank" href={SimilarWeb}>
-                                   <CustomToolTop text={'Seo information'}>
+                                   <CustomToolTop text={'SimilarWeb information'}>
                                         <Image src={simillarWeb} height="15" width="15" alt="simillar_web_logo"/>
                                    </CustomToolTop>
                               </Link>
