@@ -6,8 +6,6 @@ import Link from "next/link";
 import {AiFillHeart, AiOutlineHeart} from "react-icons/ai";
 import {Divider, Form, Popover, Radio, Skeleton, Space, Switch} from 'antd';
 import { useSpring, animated } from '@react-spring/web'
-
-
 import bitcoinLogo from '/src/assets/main/icons/payments-system/bitcoin.svg';
 import advLogo from '/src/assets/main/icons/payments-system/adv-cash.svg'
 import perfectMoneyLogo from '/src/assets/main/icons/payments-system/perfect-money.svg';
@@ -26,8 +24,6 @@ import skrill from '/src/assets/main/icons/payments-system/skrill.svg';
 import tether from '/src/assets/main/icons/payments-system/tether.svg';
 import tron from '/src/assets/main/icons/payments-system/tron-trx.svg';
 import HypeStat from '/src/assets/main/icons/hypestat.svg';
-import simillarWeb from '/src/assets/main/icons/simillar-web.svg';
-import whoIs from '/src/assets/main/icons/who-is.svg';
 import forumIocn from '/src/assets/main/icons/forum-icon.svg';
 import voteIcon from '/src/assets/main/icons/vote-icon.svg';
 import CustomToolTop from "@/components/main/tooltip_custom";
@@ -65,10 +61,9 @@ const ListingCard = ({ item, wish,ind,setWish,registred}) => {
      };
 
      const url = new URL(item.detailsLink);
-     const formattedUrl = url.origin;
      const fullFormat = url.host
-     const whoIsLink = `https://whois.domaintools.com/${formattedUrl}`
-     const SimilarWeb = `https://www.similarweb.com/ru/website/${fullFormat}/#overview`
+     const HypeStatLink = `https://hypestat.com/info/${fullFormat}`
+
      //days online
      const startDate = new Date(item.projectInformation.created);
      const currentDate = new Date();
@@ -313,16 +308,16 @@ const ListingCard = ({ item, wish,ind,setWish,registred}) => {
                          </div>
                          <div className="info">Info</div>
                          <div className="project-info">
-                              <Link rel="nofollow" target="_blank" href={SimilarWeb}>
-                                   <CustomToolTop text={'SimilarWeb information'}>
-                                        <Image src={simillarWeb} height="15" width="15" alt="simillar_web_logo"/>
+                              <Link rel="nofollow" target="_blank" href={HypeStatLink}>
+                                   <CustomToolTop text={'HypeStat information'}>
+                                        <Image src={HypeStat} height="20" width="20" alt="simillar_web_logo"/>
                                    </CustomToolTop>
                               </Link>
-                              <Link rel="nofollow" target="_blank" href={whoIsLink}>
-                                   <CustomToolTop text={'Whois information'}>
-                                        <Image src={whoIs} height="15" width="15" alt="who_is_logo"/>
-                                   </CustomToolTop>
-                              </Link>
+                              {/*<Link rel="nofollow" target="_blank" href={whoIsLink}>*/}
+                              {/*     <CustomToolTop text={'Whois information'}>*/}
+                              {/*          <Image src={whoIs} height="20" width="20" alt="who_is_logo"/>*/}
+                              {/*     </CustomToolTop>*/}
+                              {/*</Link>*/}
                          </div>
                     </div>
                </div>

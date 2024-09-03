@@ -32,9 +32,9 @@ import CountdownTimer from "@/utils/hooks/countDownTimer";
 import {Popover} from "antd";
 import CustomModal from "@/components/main/custom_modal";
 import VotePopUp from "@/components/main/vote-pop-up";
+import HypeStat from '/src/assets/main/icons/hypestat.svg';
 
 const MobileListing = ({ item, wish,ind,setWish}) => {
-
      const [AnimationFavorite, FastScale] = useSpring(() => ({
           from: { scale:1 },
      }))
@@ -58,7 +58,9 @@ const MobileListing = ({ item, wish,ind,setWish}) => {
                })
                : null
      };
-
+     const url = new URL(item.detailsLink);
+     const fullFormat = url.host
+     const HypeStatLink = `https://hypestat.com/info/${fullFormat}`
 
      //days online
      const startDate = new Date(item.projectInformation.created);
@@ -287,16 +289,16 @@ const MobileListing = ({ item, wish,ind,setWish}) => {
                          </div>
                          <div className="info">Info</div>
                          <div className="project-info">
-                              <Link target="_blank" href="https://www.similarweb.com/ru/">
+                              <Link target="_blank" href={HypeStatLink}>
                                    <CustomToolTop text={'Seo information'}>
-                                        <Image src={simillarWeb} height="15" width="15" alt="simillar_web_logo"/>
+                                        <Image src={HypeStat} height="20" width="20" alt="simillar_web_logo"/>
                                    </CustomToolTop>
                               </Link>
-                              <Link target="_blank" href="https://whois.domaintools.com/">
-                                   <CustomToolTop text={'Whois information'}>
-                                        <Image src={whoIs} height="15" width="15" alt="who_is_logo"/>
-                                   </CustomToolTop>
-                              </Link>
+                              {/*<Link target="_blank" href="https://whois.domaintools.com/">*/}
+                              {/*     <CustomToolTop text={'Whois information'}>*/}
+                              {/*          <Image src={whoIs} height="15" width="15" alt="who_is_logo"/>*/}
+                              {/*     </CustomToolTop>*/}
+                              {/*</Link>*/}
                          </div>
                     </div>
                </div>

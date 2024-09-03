@@ -15,10 +15,9 @@ import {easings} from "react-spring";
 import CountdownTimer from "@/utils/hooks/countDownTimer";
 import CustomModal from "@/components/main/custom_modal";
 import VotePopUp from "@/components/main/vote-pop-up";
-
+import HypeStat from '/src/assets/main/icons/hypestat.svg';
 
 const ListingCardFree = ({ item, wish,ind,setWish }) => {
-
      const [AnimationFavorite, FastScale] = useSpring(() => ({
           from: { scale:1 },
      }))
@@ -54,6 +53,9 @@ const ListingCardFree = ({ item, wish,ind,setWish }) => {
           setImageLoading(true);
      }, []);
 
+     const url = new URL(item.detailsLink);
+     const fullFormat = url.host
+     const HypeStatLink = `https://hypestat.com/info/${fullFormat}`
 
      const startDate = new Date(item.projectInformation.created);
      const currentDate = new Date();
