@@ -255,8 +255,8 @@ const Header = () => {
 
                                         {showMenu &&
                                              <div className="panel-menu">
-                                                  <div onClick={goToDashboard}><i className="icon-user"></i>
-                                                       <p>Profile</p></div>
+                                                  <div onClick={goToDashboard}><i className="icon-dashboard"></i>
+                                                       <p>Dashboard</p></div>
                                                   <div onClick={() => setIsLogin(false)}><i className="icon-logout"></i>
                                                        <p>Logout</p></div>
                                              </div>
@@ -303,8 +303,8 @@ const Header = () => {
                          </ul>
                          <div className="line-separator"></div>
                          <ul>
-                              <li><Link href='/'>about us</Link></li>
-                              <li><Link href='/'>support</Link></li>
+                              <li><Link href='/about-us'>about us</Link></li>
+                              <li><Link href='/support'>support</Link></li>
                          </ul>
                          <button onClick={showModal}><Link href='/'> <Image src={buttonIcon} alt="add icon"></Image> Add
                               program</Link>

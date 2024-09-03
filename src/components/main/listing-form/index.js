@@ -22,7 +22,7 @@ import RippleImage from '../../../assets/main/icons/payments-system/ripple.svg';
 import SkrillImage from '../../../assets/main/icons/payments-system/skrill.svg';
 import TetherImage from '../../../assets/main/icons/payments-system/tether.svg';
 import TronImage from '../../../assets/main/icons/payments-system/tron-trx.svg';
-import WebmoneyImage from '../../../assets/main/icons/payments-system/payoneer.svg';
+import WebmoneyImage from '../../../assets/main/icons/payments-system/web-money.svg';
 import CustomTextArea from "@/components/main/cutom-text-area";
 import CustomFrontButton from "@/components/main/cutom_front_button";
 
@@ -311,8 +311,8 @@ const ListingForm = () => {
                                    <CustomFrontInput placeholder={'Enter your link'}/>
                               </label>
                               <label>
-                                   <p>Whois Link</p>
-                                   <CustomFrontInput placeholder={'Enter your link'}/>
+                                   <p>Investment Direction</p>
+                                   <CustomFrontInput placeholder={'Enter your direction'}/>
                               </label>
 
                               <label>
