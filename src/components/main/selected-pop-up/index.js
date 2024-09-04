@@ -11,7 +11,7 @@ import Image from "next/image";
 import CustomModal from "@/components/main/custom_modal";
 import PopUpForm from "@/components/main/pop-up-form";
 import BannerForm from "@/components/main/Banner_form";
-import Link from "next/link";
+import {Link} from '@/i18n/routing.public'
 import CustomToolTop from "@/components/main/tooltip_custom";
 import PinRaiseForm from "@/components/main/pin-raise-form";
 import ArticleForm from "@/components/main/article-form";
@@ -95,9 +95,9 @@ const SelectedPopUp = ({close}) => {
                     </div>
                     <div className="item-selected item-arrow">
                          <Link href="/services" onClick={close}>
-                              <CustomToolTop text={'Services Description'}>
+                              {/*<CustomToolTop text={'Services Description'}>*/}
                          <Image placeholder="blur" priority={true} src={ArrowImage} alt="selected image"/>
-                              </CustomToolTop>
+                              {/*</CustomToolTop>*/}
                          </Link>
                     </div>
                     <div className="bottom-line-items">
