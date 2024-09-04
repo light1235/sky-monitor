@@ -81,7 +81,15 @@
     "description": "Already have account ?",
     "logLink": "Log in"
   },
-  "Register": {},
+  "Register": {
+    "title": "Log in",
+    "description": "Dive into the abyss!",
+    "email": "email",
+    "password": "password",
+    "button": "Get Started",
+    "remember": "Remember me",
+    "link": "Remember me"
+  },
   "Reset": {
     "definition":"Password Reset",
     "email": "Email*",
