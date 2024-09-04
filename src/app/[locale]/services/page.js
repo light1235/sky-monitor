@@ -11,6 +11,7 @@ import listingRaise from '/src/assets/main/icons/services-listing-raise.svg';
 import projectLogo from '/src/assets/main/icons/services-project-icon.svg';
 import Htegs from "@/components/main/hiden-tegs";
 import HidenTegs from "@/components/main/hiden-tegs";
+import {useTranslations} from 'next-intl';
 
 export const metadata = {
      title: 'Sky Finance - Expert in investments',
@@ -18,6 +19,7 @@ export const metadata = {
 };
 
 const Services = () => {
+     const t = useTranslations();
      return (
                <section className="Services-page">
                    <HidenTegs text={'Services Offered: Tailored Financial Solutions for Your Needs'} />
@@ -28,9 +30,9 @@ const Services = () => {
                                         <div className="logo-circle"><Image src={listingLogo} width='40'
                                                                             alt={'listing icon'}/></div>
                                    </div>
-                                   <div className="item-title">Listing Advertising</div>
+                                   <div className="item-title">{t('Services.Listing.title')}</div>
                                    <div className="item-description">
-                                        Description of listing packages
+                                        {t('Services.Listing.description')}
                                    </div>
                                    <div className="item-link"><Image src={linkLogo} alt='link-icon'></Image>
                                    </div>
@@ -42,9 +44,9 @@ const Services = () => {
                                         <div className="logo-circle"><Image src={bannerLogo} width='40'
                                                                             alt={'listing icon'}/></div>
                                    </div>
-                                   <div className="item-title">Banner Advertising</div>
+                                   <div className="item-title">{t('Services.Banner.title')}</div>
                                    <div className="item-description">
-                                        Graphic advertisement on the website
+                                        {t('Services.Banner.description')}
                                    </div>
                                    <div className="item-link"><Image src={linkLogo} alt='link-icon'></Image>
                                    </div>
@@ -56,9 +58,9 @@ const Services = () => {
                                         <div className="logo-circle"><Image src={popLogo} width='40'
                                                                             alt={'listing icon'}/></div>
                                    </div>
-                                   <div className="item-title">Pop-up Advertising</div>
+                                   <div className="item-title">{t('Services.PopUp.title')}</div>
                                    <div className="item-description">
-                                        Advertising pop-up window on top of the main content
+                                        {t('Services.PopUp.description')}
                                    </div>
                                    <div className="item-link"><Image src={linkLogo} alt='link-icon'></Image>
                                    </div>
@@ -70,9 +72,9 @@ const Services = () => {
                                         <div className="logo-circle"><Image src={listingPin} width='40'
                                                                             alt={'listing icon'}/></div>
                                    </div>
-                                   <div className="item-title">Listing pin to top</div>
+                                   <div className="item-title">{t('Services.Pin.title')}</div>
                                    <div className="item-description">
-                                        Anchoring the project in the Overview column
+                                        {t('Services.Pin.description')}
                                    </div>
                                    <div className="item-link"><Image src={linkLogo} alt='link-icon'></Image>
                                    </div>
@@ -84,9 +86,9 @@ const Services = () => {
                                         <div className="logo-circle"><Image src={listingRaise} width='40'
                                                                             alt={'listing icon'}/></div>
                                    </div>
-                                   <div className="item-title">Listing raise to top</div>
+                                   <div className="item-title">{t('Services.Raise.title')}</div>
                                    <div className="item-description">
-                                        Raising the project on the Overview column
+                                        {t('Services.Raise.description')}
                                    </div>
                                    <div className="item-link"><Image src={linkLogo} alt='link-icon'></Image>
                                    </div>
@@ -98,9 +100,9 @@ const Services = () => {
                                         <div className="logo-circle"><Image src={projectLogo} width="40"
                                                                             alt={'listing icon'}/></div>
                                    </div>
-                                   <div className="item-title">Project pin to top</div>
+                                   <div className="item-title"> {t('Services.Project.title')}</div>
                                    <div className="item-description">
-                                        Project Anchoring in projects page
+                                        {t('Services.Project.description')}
                                    </div>
                                    <div className="item-link"><Image src={linkLogo} alt='link-icon'></Image>
                                    </div>

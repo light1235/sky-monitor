@@ -94,5 +94,31 @@
     "definition":"Password Reset",
     "email": "Email*",
     "button": "Continue"
+  },
+  "Services": {
+    "Listing": {
+      "title": "Listing Advertising",
+      "description": "Description of listing packages"
+    },
+    "Banner": {
+      "title": "Banner Advertising",
+      "description": "Graphic advertisement on the website"
+    },
+    "PopUp": {
+      "title": "Pop-up Advertising",
+      "description": "Advertising pop-up window on top of the main content"
+    },
+    "Pin": {
+      "title": "Listing pin to top",
+      "description": "Anchoring the project in the Overview column"
+    },
+    "Raise": {
+      "title": "Listing raise to top",
+      "description": "Raising the project on the Overview column"
+    },
+    "Project": {
+      "title": "Project pin to top",
+      "description": "Project Anchoring in projects page"
+    }
   }
 }
