@@ -139,5 +139,30 @@
     "description4": "Users' non-public data will not be disclosed to third parties with out their consent, besides as required through law.\n\n",
     "title5": "Policy Updates\n",
     "description5": "We regularly update our privacy policy to comply with modifications in the law and our operations.\n\n"
+  },
+  "Support": {
+     "title": "Welcome to Our Support Center\n",
+    "description": "How can I register on your site?\n",
+    "p": "Click the “Registration” button in the upper right corner of the page. Fill in all mandatory fields in the registration form. Confirm your e-mail by clicking on the link sent to your e-mail.\n\n",
+    "title1": "I forgot my password. What do I do?",
+    "description1": "If you have forgotten your password, follow these steps:",
+    "p1": "Click the “Forgot your password?” link on the login page. Enter the e-mail address you provided during registration. Follow the instructions sent to your e-mail address.\n\n",
+    "title2": "How do I contact the support team?\n",
+    "description2": "You can contact our support team using one of the following methods:\n",
+    "p2": "Write us an e-mail\n\n",
+    "p22": "Support@sky-finance.com\n\n",
+    "title3": "Instructions for solving common problems\n",
+    "description3": "Problems logging into the account\n",
+    "p3": "Make sure you enter the correct username and password.",
+    "p33": "Check to see if the Caps Lock key is turned on.",
+    "p333": "Try resetting the password if you can't remember it.",
+    "title4": "Problems with page loading\n",
+    "p4": "Clear your browser's cache and cookies",
+    "p44": "Try opening the site in a different browser.",
+    "p444": "Reboot your device and try again.",
+    "title5": "Technical problems with the site\n",
+    "p5": "Check for updates for your browser.",
+    "p6": "Make sure you have a stable internet connection.If the problem persists, please contact our support team.",
+    "title6": "If you still have questions or need additional assistance, don't hesitate to contact us. We are always ready to help you!\uD83D\uDD90\uD83D\uDD90\uD83D\uDD90"
   }
 }
