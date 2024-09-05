@@ -95,11 +95,6 @@
     "email": "Email*",
     "button": "Continue"
   },
-  "Meta": {
-    "title": "Welcome to our website",
-    "description": "This is the homepage in English",
-    "welcome": "Welcome to our website"
-  },
   "Services": {
     "Listing": {
       "title": "Listing Advertising",
