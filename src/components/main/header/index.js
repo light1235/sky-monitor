@@ -152,6 +152,7 @@ const Header = () => {
      }, [showMessage])
 
 
+
      return (
           <header>
                <div className="navbar">
@@ -176,7 +177,7 @@ const Header = () => {
                                              <div className="panel-notify"><i
                                                   className={showMessage ? 'icon-bell-alt' : 'icon-bell'}
                                                   onClick={() => setShowMessage(!showMessage)}></i>
-                                                  <div className="notify-amount">8</div>
+                                                  <div className="notify-amount">{NotifyData.length}</div>
                                                   {showMessage &&
                                                        <div className="notify-menu">
                                                             {NotifyData.map((item, index) =>
