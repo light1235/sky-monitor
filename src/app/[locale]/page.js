@@ -18,11 +18,29 @@ import getData  from "../../services/projectApi";
 import getListing from '../../services/listingApi'
 import HidenTegs from "@/components/main/hiden-tegs";
 
+// export const metadata = {
+//      title: 'Sky Finance - Expert in investments',
+//      description: "Guiding Your Wealth Journey with Expertise and Insight",
+// };
 
-export const metadata = {
-     title: 'Sky Finance - Expert in investments',
-     description: "Guiding Your Wealth Journey with Expertise and Insight",
-};
+export async function generateMetadata({ params }) {
+     const locale = params?.locale || 'en';
+
+     const title = locale === 'ru' ? 'Добро пожаловать на наш сайт' : 'Sky Finance - Expert in investments';
+     const description = locale === 'ru' ? 'Это главная страница на русском языке' : 'Guiding Your Wealth Journey with Expertise and Insight';
+
+     return {
+          title,
+          description,
+          alternates: {
+               canonical: locale === 'ru' ? 'https://example.com/ru' : 'https://example.com/en',
+               languages: {
+                    'ru': 'https://example.com/ru',
+                    'en': 'https://example.com/en',
+               },
+          },
+     };
+}
 
 const Home = async () => {
 
@@ -58,6 +76,7 @@ const Home = async () => {
      // showSlider ? 1 : 3
 
      return (
+          <>
     <main style={{background:'#F4F6F7'}}>
          <section className="hero-banner">
               <React.Suspense>
@@ -128,6 +147,7 @@ const Home = async () => {
          </section>
 
     </main>
+          </>
   );
 }
 
