@@ -10,8 +10,9 @@ import { getMessages } from 'next-intl/server';
 
 
 export default async function LocaleLayout({ children, params }) {
-     const { locale } = params;
+     const locale = params.locale;
      const messages = await getMessages(locale);
+
      return (
           <>
           <html lang={locale}>

@@ -12,7 +12,6 @@ import {useLocale} from 'next-intl';
 
 
 
-
 const LoginPage = () => {
      const t = useTranslations();
      const locale = useLocale();

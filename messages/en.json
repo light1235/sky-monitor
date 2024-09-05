@@ -120,5 +120,24 @@
       "title": "Project pin to top",
       "description": "Project Anchoring in projects page"
     }
+  },
+  "Contact": {
+    "title": "You can always write to our technical support on questions of interest to you. As well as suggestions for improving our service."
+  },
+  "PrivacyPolicy": {
+    "h1": "Protecting your privates: Our coverage",
+    "h2": "We care approximately your privates\n",
+    "title": "Information Collection\n",
+    "description": "We acquire data about our users for we to operate our platform and enhance the consumer experience. This consists of information along with e mail addresses.\n\n",
+    "title1": "Use of Information\n",
+    "description1": "The records collected is used totally to improve the platform and user revel in. For instance, we might also use this statistics to investigate pastime on the web site and customize services.\n\n",
+    "title2": "Storage of Information\n",
+    "description2": "We are dedicated to storing consumer records securely and according with applicable data protection rules. This includes taking measures to protect against unauthorized access and information leaks.\n\n",
+    "title3": "Information Protection\n",
+    "description3": "We take all important measures to shield customers' private information from security threats.\n\n",
+    "title4": "Publication of Information to Third Parties\n",
+    "description4": "Users' non-public data will not be disclosed to third parties with out their consent, besides as required through law.\n\n",
+    "title5": "Policy Updates\n",
+    "description5": "We regularly update our privacy policy to comply with modifications in the law and our operations.\n\n"
   }
 }
