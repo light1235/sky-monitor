@@ -240,10 +240,10 @@ const ListingCard = ({ item, wish,ind,setWish,registred}) => {
                     </div>
                     <animated.div className="program-favorites" style={...AnimationFavorite} onClick={handleWishClick}>
                          {wish ? <AiFillHeart size="20px" color="#85CE36"/> :
-                              <CustomToolTop text="add to favorites"><AiOutlineHeart color={'#85CE36'} size="20px"/>
+                              <CustomToolTop text={locale === 'en'? 'Add to favorites': 'В избранное'}><AiOutlineHeart color={'#85CE36'} size="20px"/>
                               </CustomToolTop>}
                     </animated.div>
-                              <div className="program_details"><Link rel="nofollow" target="_blank" aria-label="program details" href={item.detailsLink}><CustomToolTop text={'Program details'}> <div className="details-button"><div className="button-circle"><Image src={ArrowTopNextGroup} alt="arrow icon" width="10" height="10" /></div></div></CustomToolTop></Link></div>
+                              <div className="program_details"><Link rel="nofollow" target="_blank" aria-label="program details" href={item.detailsLink}><CustomToolTop text={locale === 'en' ? 'Program details': 'Подробности проекта'}> <div className="details-button"><div className="button-circle"><Image src={ArrowTopNextGroup} alt="arrow icon" width="10" height="10" /></div></div></CustomToolTop></Link></div>
                </div>
                <div className="card-middle_line">
                     <div className="left_side">
