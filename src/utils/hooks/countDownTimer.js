@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-
+import { useLocale } from 'next-intl';
 const CountdownTimer = ({ initialHours, onComplete }) => {
+     const locale = useLocale();
      const initialTime = initialHours * 3600; // Convert hours to seconds
      const [time, setTime] = useState(initialTime);
 
@@ -28,7 +29,7 @@ const CountdownTimer = ({ initialHours, onComplete }) => {
 
      return (
 
-               <>Time left: {formatTime(time)}</>
+               <>{locale === 'en'? 'Time left':'Осталось'}: {formatTime(time)}</>
      );
 };
 

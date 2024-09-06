@@ -343,7 +343,9 @@ const ListingCard = ({ item, wish,ind,setWish,registred}) => {
                          <div className={disableVote? 'button-vote disable-vote' : 'button-vote'}><span>{locale === 'en'? 'Vote now':'Голосуй'}</span>
                               {/*<CustomToolTop  text={'Only for registered users'}>*/}
                               {disableVote ?
-                                   <CustomToolTop  text={<CountdownTimer initialHours={0.005} onComplete={handleComplete}/>}> <Image width="15" src={voteIcon} alt="vote_logo"/></CustomToolTop>
+                                   <>
+                                   <CustomToolTop open={true} text={<CountdownTimer initialHours={0.005} onComplete={handleComplete}/>}> <Image width="15" src={voteIcon} alt="vote_logo"/></CustomToolTop>
+                                   </>
                                    :
                                    <Popover content={VoteMenu} open={popOver} onOpenChange={showPopOver}  trigger="click">
                                         <Image width="15"  src={voteIcon} alt="vote_logo"/>
