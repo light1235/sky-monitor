@@ -35,8 +35,10 @@ import CountdownTimer from "@/utils/hooks/countDownTimer";
 import { useLocale } from 'next-intl';
 
 
+
 const ListingCard = ({ item, wish,ind,setWish,registred}) => {
      const locale = useLocale();
+
 
      const [AnimationFavorite, FastScale] = useSpring(() => ({
           from: { scale:1 },
@@ -159,7 +161,6 @@ const ListingCard = ({ item, wish,ind,setWish,registred}) => {
                // onRest : () => console.log("123"), // onComplete
           })
      };
-
      const [colorYes, setColorYes] = useState(true);
      const [colorNo, setColorNo] = useState(true);
      const [disableVote, setDisableVote] = useState(false);
