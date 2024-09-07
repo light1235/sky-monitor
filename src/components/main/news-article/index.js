@@ -5,10 +5,6 @@ import Link from "next/link";
 import Comments_post from "@/components/main/comments_post";
 import Add_post_form from "@/components/main/add_post_form";
 
-export const metadata = {
-     title: 'Sky Finance - Expert in investments',
-     description: 'Explore our curated selection of tracked investment ventures for informed decision-making',
-};
 const NewsArticle = ({post}) => {
 
      const isLogin = false;

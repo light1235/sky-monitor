@@ -26,7 +26,7 @@ export async function generateMetadata({ params }) {
                site_name: 'Sky Finance',
                images: [
                     {
-                         url: 'https://cdn.discordapp.com/attachments/1276295653558976594/1276295885654855813/087735f272c94962813fcd1eeea01c1c.pngtplv-6bxrjdptv7-image.png?ex=66c902ab&is=66c7b12b&hm=6d7bb6bcb73c581c3546ef524972e724cf733dc06cb383d1e4095a49213d9c56&',
+                         url: 'https://sky-monitor-five.vercel.app/_next/image?url=https%3A%2F%2Fcdn.discordapp.com%2Fattachments%2F1276295653558976594%2F1276295885654855813%2F087735f272c94962813fcd1eeea01c1c.pngtplv-6bxrjdptv7-image.png%3Fex%3D66c902ab%26is%3D66c7b12b%26hm%3D6d7bb6bcb73c581c3546ef524972e724cf733dc06cb383d1e4095a49213d9c56%26&w=1080&q=75',
                          width: 1200,
                          height: 630,
                          alt: 'Sky Finance Logo',
