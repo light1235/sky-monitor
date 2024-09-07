@@ -22,24 +22,24 @@ import HidenTegs from "@/components/main/hiden-tegs";
 //      description: "Guiding Your Wealth Journey with Expertise and Insight",
 // };
 
-export async function generateMetadata({ params }) {
-     const locale = params?.locale || 'en';
-
-     const title = locale === 'ru' ? 'Добро пожаловать на наш сайт' : 'Sky Finance - Expert in investments';
-     const description = locale === 'ru' ? 'Это главная страница на русском языке' : 'Guiding Your Wealth Journey with Expertise and Insight';
-
-     return {
-          title,
-          description,
-          alternates: {
-               canonical: locale === 'ru' ? 'https://example.com/ru' : 'https://example.com/en',
-               languages: {
-                    'ru': 'https://example.com/ru',
-                    'en': 'https://example.com/en',
-               },
-          },
-     };
-}
+// export async function generateMetadata({ params }) {
+//      const locale = params?.locale || 'en';
+//
+//      const title = locale === 'ru' ? 'Добро пожаловать на наш сайт' : 'Sky Finance - Expert in investments';
+//      const description = locale === 'ru' ? 'Это главная страница на русском языке' : 'Guiding Your Wealth Journey with Expertise and Insight';
+//
+//      return {
+//           title,
+//           description,
+//           alternates: {
+//                canonical: locale === 'ru' ? 'https://example.com/ru' : 'https://example.com/en',
+//                languages: {
+//                     'ru': 'https://example.com/ru',
+//                     'en': 'https://example.com/en',
+//                },
+//           },
+//      };
+// }
 
 const Home = async () => {
 

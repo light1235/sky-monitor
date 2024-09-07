@@ -19,10 +19,6 @@ export async function generateMetadata({ params }) {
           description,
           alternates: {
                canonical: locale === 'ru' ? 'https://example.com/ru' : 'https://example.com/en',
-               languages: {
-                    'ru': 'https://example.com/ru',
-                    'en': 'https://example.com/en',
-               },
           },
      };
 }

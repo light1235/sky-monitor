@@ -14,9 +14,6 @@ const Partners = async () => {
 
      return (
           <>
-               <head>
-                    <meta name="description" content="Explore our network of trusted partners driving financial success together"/>
-               </head>
                <section className="partners__page">
                     <div className="partners__page-container">
                          <div className="partners__page-content">

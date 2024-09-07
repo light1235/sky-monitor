@@ -10,6 +10,12 @@ import ReactPlayer from 'react-player/youtube';
 import dynamic from "next/dynamic";
 import YouT from '/src/assets/main/icons/play-you.svg'
 
+
+export const metadata = {
+     title: 'Sky Finance - Expert in investments',
+     description: 'Explore our curated selection of tracked investment ventures for informed decision-making',
+};
+
 const AdvancedArticle = ({post}) => {
 
      const ReactPlayer = dynamic(() => import('react-player/youtube'), { ssr: false });

@@ -6,6 +6,7 @@ import Project_preview from "@/components/main/project_preview";
 import HidenTegs from "@/components/main/hiden-tegs";
 import dataArticle from '../../../db/articleData.json'
 import { useLocale } from 'next-intl';
+
 // export const metadata = {
 //      title: 'Sky Finance - Expert in investments',
 //      description: 'Explore our curated selection of tracked investment ventures for informed decision-making',

@@ -1,12 +1,14 @@
-"use client"
 import React from 'react';
 import './index.scss'
 import Image from "next/image";
 import Link from "next/link";
-import {Progress} from "antd";
 import Comments_post from "@/components/main/comments_post";
 import Add_post_form from "@/components/main/add_post_form";
 
+export const metadata = {
+     title: 'Sky Finance - Expert in investments',
+     description: 'Explore our curated selection of tracked investment ventures for informed decision-making',
+};
 const NewsArticle = ({post}) => {
 
      const isLogin = false;
@@ -19,6 +21,7 @@ const NewsArticle = ({post}) => {
      ]
 
      return (
+          <>
           <div className="news-article__page">
                <div className="article__inner">
                     <Image width="900" height="500" src={post.article.image} alt="article image"></Image>
@@ -32,7 +35,7 @@ const NewsArticle = ({post}) => {
                          <p className="text-description">{post.article.description1}</p>
                          <p className="text-description">{post.article.description2}</p>
                     </div>
-
+1
                     <div className="comments" style={{marginTop: '40px'}}>
 
                          {comments.map((post) =>
@@ -42,6 +45,7 @@ const NewsArticle = ({post}) => {
                     </div>
                </div>
           </div>
+          </>
      );
 };
 
