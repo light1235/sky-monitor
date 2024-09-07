@@ -22,11 +22,10 @@ export async function generateMetadata({ params }) {
                },
           },
                     openGraph: {
-               title:'dora',
                site_name: 'Sky Finance',
                images: [
                     {
-                         url: 'https://sky-monitor-five.vercel.app/_next/image?url=https%3A%2F%2Fcdn.discordapp.com%2Fattachments%2F1276295653558976594%2F1276295885654855813%2F087735f272c94962813fcd1eeea01c1c.pngtplv-6bxrjdptv7-image.png%3Fex%3D66c902ab%26is%3D66c7b12b%26hm%3D6d7bb6bcb73c581c3546ef524972e724cf733dc06cb383d1e4095a49213d9c56%26&w=1080&q=75',
+                         url: 'https://cdn.discordapp.com/attachments/1238847881511829576/1253852834747650119/5dcd4b4694ef4baf9a6c13dcecaa3e52.pngtplv-6bxrjdptv7-image.png?ex=66dd8933&is=66dc37b3&hm=995755e862185c2707b498b0bc49c40fdfc4de0207c8f4498a1d0cdcc13af1f4&',
                          width: 1200,
                          height: 630,
                          alt: 'Sky Finance Logo',
