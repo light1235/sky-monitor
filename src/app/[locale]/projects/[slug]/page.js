@@ -25,7 +25,7 @@ export async function generateMetadata({ params }) {
                site_name: 'Sky Finance',
                images: [
                     {
-                         url: 'https://cdn.discordapp.com/attachments/1276295653558976594/1282032111179665443/5dcd4b4694ef4baf9a6c13dcecaa3e52.pngtplv-6bxrjdptv7-image.png?ex=66dde0f2&is=66dc8f72&hm=d245d7285237c60558f368304123d3527a725eb0c161a11f58505b9c35fb1d72&',
+                         url: 'https://ibb.co/7VRTp6T',
                          width: 1200,
                          height: 630,
                          alt: 'Sky Finance Logo',
