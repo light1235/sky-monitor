@@ -228,6 +228,14 @@ const ListingCard = ({ item, wish,ind,setWish,registred}) => {
                </div>
           </div>
      );
+     const payment = 14;
+     const deposit = 200;
+     const payout = (
+          <div className="payout-hint">
+               <p>Deposit: <span style={{color:'#8bc643'}}>{deposit}$</span></p>
+               <p>Payout: <span style={{color:'#8bc643'}}>{payment}$</span></p>
+          </div>
+     );
      // TODO: доработать логику pop over что бы счетчик активировался сам а не при наведении на него
 
      return (
@@ -284,7 +292,9 @@ const ListingCard = ({ item, wish,ind,setWish,registred}) => {
                                         </div>
                                    }
                               </div>
-                              <div className="content-items">{locale === 'en'? 'Payout rate:':'Уровень выплат:'}<span> {item.projectInformation.payoutRate}</span></div>
+                              <div className="content-items">{locale === 'en'? 'Payout rate:':'Уровень выплат:'}<span className="item-payout">
+                                   <Popover content={payout}> <span className="arrow-pay">&#8594;</span>{item.projectInformation.payoutRate}</Popover></span>
+                              </div>
                               <div className="content-items">{locale === 'en'? 'Last paid: ':'Выплата:'}<span> {item.projectInformation.lastPaid}</span></div>
                               <div className="content-items">{locale === 'en'? 'Created:':'Создан:'}<span> {formattedString}</span></div>
                               <div className="content-items">{locale === 'en'? 'Minimal spend:':'Мин. вклад: '} <span> {item.projectInformation.minimalSpend}</span></div>

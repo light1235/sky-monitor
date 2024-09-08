@@ -309,3 +309,16 @@
 .ant-popover .ant-popover-inner {
    padding: 6px !important;
 }
+.payout-hint {
+   padding: 5px;
+   & p {
+      font-family: var(--Main-front-font);
+      font-weight: bold;
+      font-size: 12px;
+      color: #747474;
+      margin: 0;
+   }
+}
+.item-payout {
+   cursor: pointer;
+}
