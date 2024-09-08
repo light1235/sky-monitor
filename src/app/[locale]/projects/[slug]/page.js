@@ -5,36 +5,7 @@ import AdvancedArticle from "@/components/main/advanced-article";
 import getData from "@/services/projectApi";
 
 
-export async function generateMetadata({ params }) {
-     const locale = params?.locale || 'en';
 
-     const title = locale === 'ru' ? 'Добро пожаловать на наш сайт' : 'Sky Finance - Expert in investments';
-     const description = locale === 'ru' ? 'Это главная страница на русском языке' : 'Guiding Your Wealth Journey with Expertise and Insight';
-
-     return {
-          title,
-          description,
-          alternates: {
-               canonical: locale === 'ru' ? 'https://example.com/ru' : 'https://example.com/en',
-               languages: {
-                    'ru': 'https://example.com/ru',
-                    'en': 'https://example.com/en',
-               },
-          },
-                    openGraph: {
-               site_name: 'Sky Finance',
-               images: [
-                    {
-                         url: 'https://ibb.co/7VRTp6T',
-                         width: 1200,
-                         height: 630,
-                         alt: 'Sky Finance Logo',
-                    }
-               ],
-               type: 'website',
-          }
-     };
-}
 const PostComp = async ({params}) => {
      const projects = await getData();
      const {slug} = params;
