@@ -4,6 +4,7 @@
    width: 85vw;
    background-color: #f0f3f6;
    box-sizing: border-box;
+   border-radius: 20px;
 
    & .ant-steps .ant-steps-item-process .ant-steps-item-icon {
       background-color: #5B5BDF;
@@ -43,13 +44,16 @@
 
 .listing-pop-up {
    width: 85vw;
-   background-color: #F0F3F6;
+   //background-color: #F0F3F6;
    box-sizing: border-box;
    margin: 40px 0;
+   background: white;
+   border-radius: 20px;
    .wrap-bg {
       & img {
          width: 100% !important;
          height: auto;
+         border-radius: 20px;
       }
    }
    & .listing-table {
@@ -174,5 +178,17 @@
             width:65%  !important;
          }
       }
+   }
+   .listing-pop-up .listing-table .listing-content-1 {
+      grid-template-columns: 1fr;
+   }
+   .listing-pop-up .listing-table .listing-content-2 {
+      grid-template-columns: 1fr;
+   }
+   .listing-pop-up .listing-table .listing-content-3 {
+      grid-template-columns: 1fr;
+   }
+   .listing-pop-up .listing-table .listing-block {
+      width: 100%;
    }
 }

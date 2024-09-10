@@ -1,5 +1,8 @@
 
 .article-form {
+
+   margin: 40px 20px;
+   box-sizing: border-box;
    .article-content {
       min-height: 769px;
       border-radius: 10px;
@@ -116,7 +119,13 @@
       border-top-right-radius: 20px;
       border-top-left-radius: 20px;
    }
+   .article-form {
+      width: 85vw;
+   }
    .article-form   .article-content .content-left {
       padding: 40px 15px;
+   }
+   .article-form .article-content .content-left .ant-btn {
+      padding: 0 !important;
    }
 }

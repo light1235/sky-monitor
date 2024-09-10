@@ -1,6 +1,8 @@
 
 
 .Pop-Up-Form {
+   margin: 40px 20px;
+   box-sizing: border-box;
    & .Pop-Up-Form__content {
       min-height: 769px;
       border-radius: 10px;
@@ -109,5 +111,8 @@
    }
    .Pop-Up-Form .Pop-Up-Form__content .content-left {
       padding: 40px 15px;
+   }
+   .Pop-Up-Form .Pop-Up-Form__content .content-left .ant-btn {
+      padding: 0 !important;
    }
 }

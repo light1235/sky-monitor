@@ -1,5 +1,8 @@
 
-
+.pin-raise-form {
+   margin: 40px 20px;
+   box-sizing: border-box;
+}
 
 .pin-raise-form--content {
    min-height: 769px;
@@ -112,5 +115,8 @@
    }
    .pin-raise-form  .pin-raise-form--content .content-left {
       padding: 40px 15px;
+   }
+   .pin-raise-form--content .content-left .ant-btn {
+      padding: 0 !important;
    }
 }
