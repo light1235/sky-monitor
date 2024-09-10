@@ -81,7 +81,8 @@ const ContentBlock = ({items}) => {
                                    item.noFund ? (
                                         <Listing_card_free item={item} registred={isRegistered} wish={wishList[index]} setWish={() => handleWishClick(index)} ind={index} />
                                    ) : (
-                                        <Listing_card item={item} registred={isRegistered} wish={wishList[index]} setWish={() => handleWishClick(index)} ind={index} />
+                                        <div>1</div>
+                                        // <Listing_card item={item} registred={isRegistered} wish={wishList[index]} setWish={() => handleWishClick(index)} ind={index} />
                                    )
                               )}
                          </React.Fragment>
