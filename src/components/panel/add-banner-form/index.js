@@ -22,8 +22,8 @@ const AddBannerForm = ({inner, setInner, click = () => {}, close, onSelect, setC
           <div className="panel-banner-form">
                <h2>Add Banner</h2>
                <label>
-                    <p>Site name</p>
-                    <CustomInput value={inner} change={handleInputChange} placeholder="Enter site name"/>
+                    <p>Site name11</p>
+                    <CustomInput  change={handleInputChange} placeholder="Enter site name"/>
                </label>
                <label>
                     <p>Site url</p>

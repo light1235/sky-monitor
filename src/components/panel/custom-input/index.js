@@ -5,7 +5,7 @@ import './index.scss'
 const CustomInput = ({placeholder = ' ', value= '',change}) => {
      return (
           <div className="adm-input">
-               <Input value={value} onChange={change} placeholder={placeholder} />
+               <Input  onChange={change} placeholder={placeholder} />
           </div>
      );
 };

@@ -2,12 +2,12 @@
 
 .payment-input {
    display: grid;
-   grid-template-columns: min-content min-content;
+   grid-template-columns: min-content min-content min-content;
    grid-gap: 20px;
    & div {
       border: 1px solid #85ce36;
       width: 42px;
-      height: 31px;
+      height: 35px;
       display: grid;
       place-items: center;
       cursor: pointer;
@@ -32,6 +32,10 @@
       }
       &:focus-visible {
          border: 1px dashed var(--Main-color);
+      }
+      &::placeholder {
+         width: 100%;
+         text-align: center;
       }
    }
 }

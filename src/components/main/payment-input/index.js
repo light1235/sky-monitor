@@ -2,7 +2,7 @@
 import React, {useState, useEffect, useRef} from 'react';
 import './index.scss';
 
-const PaymentInput = ({ dataKey, data, onPaymentDataChange }) => {
+const PaymentInput = ({ dataKey, data, onPaymentDataChange,placeholder,daysInput = false,daysPlaceholder }) => {
      const [inputValue, setInputValue] = useState(data);
      const [activeButton, setActiveButton] = useState(true);
      const [activeFocus, setActiveFocus] = useState(false);
@@ -35,10 +35,11 @@ const PaymentInput = ({ dataKey, data, onPaymentDataChange }) => {
                     onChange={handleInputChange}
                     ref={inputRef}
                     className={activeFocus ? 'active' : ''}
-
+                    placeholder={placeholder}
                />
+               {daysInput && <input readOnly={true} type="text" style={{width: '30px'}} placeholder={daysPlaceholder}/>}
                <div onClick={handleButtonClick}>
-                    {activeButton ? <i className="icon-edit"></i> : <i className="icon-ok"></i>}
+               {activeButton ? <i className="icon-edit"></i> : <i className="icon-ok"></i>}
                </div>
           </div>
      );
