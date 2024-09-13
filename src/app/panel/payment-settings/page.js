@@ -52,37 +52,77 @@ const PaymentSettings = () => {
 
      return (
           <div className="payment__page">
-               <div className="panel-block">
-                    <div className="social-name">
-                         <h2>Social Links</h2>
-                         <p>Add links to app</p>
+               <div className="payment__page-row">
+                    <div className="panel-block">
+                         <div className="social-name">
+                              <h2>Social Links</h2>
+                              <p>Add links to app</p>
+                         </div>
+                         <div className="social-line">
+                              <div className="line-circle"><Image src={Telegram} alt="telega"/></div>
+                              <PaymentInput
+                                   dataKey="teleGram"
+                                   data={socialData.teleGram}
+                                   onPaymentDataChange={handleSocialDataChange}
+                              />
+                         </div>
+                         <div className="social-line">
+                              <div className="line-circle"><Image src={YouTube} alt="telega"/></div>
+                              <PaymentInput
+                                   dataKey="youTube"
+                                   data={socialData.youTube}
+                                   onPaymentDataChange={handleSocialDataChange}
+                              />
+                         </div>
+                         <div className="social-line">
+                              <div className="line-circle"><Image src={Tiktok} alt="telega"/></div>
+                              <PaymentInput
+                                   dataKey="TikTok"
+                                   data={socialData.TikTok}
+                                   onPaymentDataChange={handleSocialDataChange}
+                              />
+                         </div>
                     </div>
-                    <div className="social-line">
-                         <div className="line-circle"><Image src={Telegram} alt="telega"/></div>
-                         <PaymentInput
-                              dataKey="teleGram"
-                              data={socialData.teleGram}
-                              onPaymentDataChange={handleSocialDataChange}
-                         />
+                    <div className="panel-block">
+                         <div className="social-name" >
+                              <h2>Banners</h2>
+                         </div>
+                         <div className="items-line">
+                              <p>Header banner</p>
+                              <PaymentInput
+                                   dataKey="headerBanner"
+                                   data={paymentData.headerBanner}
+                                   onPaymentDataChange={handlePaymentDataChange}
+                                   daysInput={true}
+                                   daysPlaceholder={'7'}
+                              />
+                         </div>
+                         <div className="items-line">
+                              <p>Listing banner</p>
+                              <PaymentInput
+                                   dataKey="listingBanner"
+                                   data={paymentData.listingBanner}
+                                   onPaymentDataChange={handlePaymentDataChange}
+                                   daysInput={true}
+                                   daysPlaceholder={'7'}
+                              />
+                         </div>
+                         <div className="social-name" style={{marginTop:'20px'}} >
+                              <h2>Pop up window</h2>
+                         </div>
+                         <div className="items-line">
+                              <p>Advertising popup for all users, one time for days</p>
+                              <PaymentInput
+                                   dataKey="popUp"
+                                   data={paymentData.popUp}
+                                   onPaymentDataChange={handlePaymentDataChange}
+                                   daysInput={true}
+                                   daysPlaceholder={'2'}
+                              />
+                         </div>
                     </div>
-                    <div className="social-line">
-                         <div className="line-circle"><Image src={YouTube} alt="telega"/></div>
-                         <PaymentInput
-                              dataKey="youTube"
-                              data={socialData.youTube}
-                              onPaymentDataChange={handleSocialDataChange}
-                         />
-                    </div>
-                    <div className="social-line">
-                         <div className="line-circle"><Image src={Tiktok} alt="telega"/></div>
-                         <PaymentInput
-                              dataKey="TikTok"
-                              data={socialData.TikTok}
-                              onPaymentDataChange={handleSocialDataChange}
-                         />
-                    </div>
-
                </div>
+
                <div className="panel-block" style={{justifySelf: 'end'}}>
                     <div className="social-name">
                          <h2>Services</h2>
@@ -128,29 +168,7 @@ const PaymentSettings = () => {
                               onPaymentDataChange={handlePaymentDataChange}
                          />
                     </div>
-                    <div className="social-name" style={{marginTop: '40px'}}>
-                         <h2>Banners</h2>
-                    </div>
-                    <div className="items-line">
-                         <p>Header banner</p>
-                         <PaymentInput
-                              dataKey="headerBanner"
-                              data={paymentData.headerBanner}
-                              onPaymentDataChange={handlePaymentDataChange}
-                              daysInput={true}
-                              daysPlaceholder={'7'}
-                         />
-                    </div>
-                    <div className="items-line">
-                         <p>Listing banner</p>
-                         <PaymentInput
-                              dataKey="listingBanner"
-                              data={paymentData.listingBanner}
-                              onPaymentDataChange={handlePaymentDataChange}
-                              daysInput={true}
-                              daysPlaceholder={'7'}
-                         />
-                    </div>
+
                     <div className="social-name" style={{marginTop: '40px'}}>
                          <h2>Advanced services</h2>
                     </div>
@@ -182,19 +200,7 @@ const PaymentSettings = () => {
                               onPaymentDataChange={handlePaymentDataChange}
                          />
                     </div>
-                    <div className="social-name" style={{marginTop: '40px'}}>
-                         <h2>Pop up window</h2>
-                    </div>
-                    <div className="items-line">
-                         <p>Advertising popup for all users, one time for days</p>
-                         <PaymentInput
-                              dataKey="popUp"
-                              data={paymentData.popUp}
-                              onPaymentDataChange={handlePaymentDataChange}
-                              daysInput={true}
-                              daysPlaceholder={'2'}
-                         />
-                    </div>
+
                </div>
 
           </div>
