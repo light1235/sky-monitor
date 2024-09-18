@@ -15,11 +15,14 @@ const PartnersAdm = () => {
      const [siteImage, setSiteImage] = useState('');
 
      const enterData = () => {
-          setContactEmail('')
-          setSiteDescription('')
-          setSiteUrl('')
-          setSiteName('')
-          setPartnersData([...partnersData, { id: Date.now(), name: siteName, url: siteUrl, description: siteDescription, email: contactEmail }])
+
+          if ( siteName && siteDescription && siteUrl && contactEmail ){
+               setPartnersData([...partnersData, { id: Date.now(), name: siteName, url: siteUrl, description: siteDescription, email: contactEmail }])
+               setContactEmail('')
+               setSiteDescription('')
+               setSiteUrl('')
+               setSiteName('')
+          }
      };
 
      const deleteData = (id) => {
