@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import './index.scss';
 import CustomSearch from "@/components/panel/custom-search";
+import CustomPagination from "@/components/panel/pagination";
+import usePagination from "@/utils/hooks/usePagination";
 
 const UserLvl = () => {
      const [userData, setUserData] = useState([
@@ -13,11 +15,13 @@ const UserLvl = () => {
      ]);
 
      const [searchTerm, setSearchTerm] = useState('');
+     const itemsPerPage = 2;
 
-     // Поиск пользователей по имени
      const filteredUsers = userData.filter(user =>
           user.name.toLowerCase().includes(searchTerm.toLowerCase())
      );
+
+     const { currentItems, handlePageChange, currentPage, totalItems } = usePagination(filteredUsers, itemsPerPage, searchTerm);
 
      const handleSearch = (event) => {
           setSearchTerm(event.target.value);
@@ -42,17 +46,14 @@ const UserLvl = () => {
                <div className="page-data-table">
                     <div className="table-top"><p>User Name</p></div>
                     <div className="table-content">
-                         {filteredUsers.map((item) => (
+                         {currentItems.map((item) => (
                               <div
-                                   key={item.name} // Используем имя как уникальный ключ
+                                   key={item.name}
                                    style={{ backgroundColor: userData.indexOf(item) % 2 === 0 ? "" : "#F2F2F2" }}
                                    className="user-table"
                               >
                                    <div className="table-item-name">{item.name}</div>
-                                   <div
-                                        className={item.icon1 ? 'table-item active' : 'table-item'}
-                                        onClick={() => updateData(item.name, 'icon1')}
-                                   >
+                                   <div className={item.icon1 ? 'table-item active' : 'table-item'}>
                                         Watchman
                                    </div>
                                    <div
@@ -76,6 +77,14 @@ const UserLvl = () => {
                               </div>
                          ))}
                     </div>
+               </div>
+               <div className="pagination-wrap">
+                    <CustomPagination
+                         current={currentPage}
+                         total={totalItems}
+                         pageSize={itemsPerPage}
+                         onChange={handlePageChange}
+                    />
                </div>
           </div>
      );
