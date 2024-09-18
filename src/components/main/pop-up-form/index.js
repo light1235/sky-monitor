@@ -101,7 +101,7 @@ not be published"/>
                                                  <label>
                                                       <p>Period</p>
                                                       <Field as={CustomFrontInput} type="text" name="period"
-                                                             placeholder={'Price per 2 days 7$'} dis={true}/>
+                                                             placeholder={'Price per 2 days 30$'} dis={true}/>
                                                  </label>
                                                  <CustomFrontButton disblad={isSubmitting}/>
                                             </>

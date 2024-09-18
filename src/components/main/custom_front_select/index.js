@@ -16,7 +16,7 @@ const CustomFrontSelect = ({ onSelect,placeholder,Data }) => {
                     placeholder={placeholder}
                     style={{ flex: 1 }}
                     options={Data}
-                    defaultValue={placeholder}
+                    value={undefined}
                />
           </div>
      );
