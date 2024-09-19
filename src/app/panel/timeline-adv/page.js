@@ -14,26 +14,28 @@ const TimeLineAdv = () => {
 
      const [activeModal, setActiveModal] = useState(false);
      const [advertisement, setAdvertisement] = useState([
-          {name: 'Razzelton', type: '', from: '', to: '', category: 'Header-banner', status: 'active', start: Date.now(), id: '1'},
-          {name: 'Espino', type: '', from: '', to: '', category: 'Content-banner', status: 'active', start: Date.now(), id: '2'},
-          {name: 'SaveAssets', type: '', from: '', to: '', category: 'Header-banner', status: 'deactivate', start: Date.now(), id: '3'},
-          {name: 'Devor', type: '', from: '', to: '', category: 'Content-banner', status: 'active', start: Date.now(), id: '4'},
+          {name: 'Razzelton', url:'topsas', type: '', from: '', to: '', category: 'Header-banner', status: 'active', start: Date.now(), id: '1'},
+          {name: 'Espino', url:'', type: '', from: '', to: '', category: 'Content-banner', status: 'active', start: Date.now(), id: '2'},
+          {name: 'SaveAssets', url:'', type: '', from: '', to: '', category: 'Header-banner', status: 'deactivate', start: Date.now(), id: '3'},
+          {name: 'Devor', url:'', type: '', from: '', to: '', category: 'Content-banner', status: 'active', start: Date.now(), id: '4'},
      ]);
      const [newBannerText, setNewBannerText] = useState('');
      const [newCategory, setNewCategory] = useState('Header banner');
+     const [newBannerUrl, setNewBannerUrl] = useState('');
 
      const showModal = () => {
           setActiveModal(!activeModal);
      };
 
      useEffect(() => {
-          console.log(newCategory);
-     }, [newCategory]);
+          console.log(advertisement);
+     }, [advertisement]);
 
      const addPost = () => {
-          if (newBannerText.trim() !== '') {
-               setAdvertisement([...advertisement, { id: Date.now(), name: newBannerText, type: '', from: '', to: '', category: newCategory, status: 'active', start: Date.now() }]);
+          if (newBannerText.trim() !== '' && newBannerUrl.trim() !== '') {
+               setAdvertisement([...advertisement, { id: Date.now(), name: newBannerText,url:newBannerUrl, type: '', from: '', to: '', category: newCategory, status: 'active', start: Date.now() }]);
                setNewBannerText('');
+               setNewBannerUrl('');
           }
      };
 
@@ -68,9 +70,12 @@ const TimeLineAdv = () => {
           },
      ];
 
-     const editBanner = (id, newName, newCategory) => {
-          setAdvertisement(advertisement.map(banner => banner.id === id ? { ...banner, name: newName, category: newCategory } : banner));
+     const editBanner = (id, newName, newCategory, newUrl) => {
+          setAdvertisement(advertisement.map(banner =>
+               banner.id === id ? { ...banner, name: newName, category: newCategory, url: newUrl } : banner
+          ));
      };
+
 
      const deleteBanner = (bannerId) => {
           const updatedBanners = advertisement.filter((banner) => banner.id !== bannerId);
@@ -120,8 +125,10 @@ const TimeLineAdv = () => {
                     <AddBannerForm
                          onSelect={handleCategorySelectChange}
                          setCat={setNewCategory}
-                         inner={newBannerText}
-                         setInner={setNewBannerText}
+                         bannerName={newBannerText}
+                         setBannerName={setNewBannerText}
+                         bannerUrl={newBannerUrl}
+                         setBannerUrl={setNewBannerUrl}
                          click={addPost}
                          close={showModal}
                     />

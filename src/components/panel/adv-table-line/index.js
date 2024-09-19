@@ -56,11 +56,14 @@ const AdvTableLine = ({EditeM = 'Edite listing', DeleteM = 'Mark delete', item, 
                     </div>
                </div>
                <Custom_modal open={activeEdit} close={closePopUp}>
+
                     <AddBannerForm
-                         inner={item.name}
-                         setInner={(newName) => editBanner(item.id, newName, item.category)}
+                         bannerName={item.name}
+                         setBannerName={(newName) => editBanner(item.id, newName, item.category, item.url)}
+                         bannerUrl={item.url}
+                         setBannerUrl={(newUrl) => editBanner(item.id, item.name, item.category, newUrl)}
                          click={closePopUp}
-                         setCat={(newCategory) => editBanner(item.id, item.name, newCategory)}
+                         setCat={(newCategory) => editBanner(item.id, item.name, newCategory, item.url)}
                     />
                </Custom_modal>
           </div>

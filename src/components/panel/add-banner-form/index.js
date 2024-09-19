@@ -6,32 +6,34 @@ import {Select} from "antd";
 import CustomUpload from "@/components/panel/custom-upload";
 import CustomButton from "@/components/panel/custom-button";
 
-const AddBannerForm = ({inner, setInner, click = () => {}, close, onSelect, setCat }) => {
+const AddBannerForm = ({bannerName, setBannerName,bannerUrl,setBannerUrl, click = () => {}, close, onSelect, setCat }) => {
      const [selectedCategory, setSelectedCategory] = useState('Header banner');
 
      const handleCategoryChange = (value) => {
-          // setSelectedCategory(value);
-          setCat(value); // Directly updating parent state
+          setCat(value);
      };
 
      const handleInputChange = (e) => {
-          setInner(e.target.value);
+          setBannerName(e.target.value);
+     };
+     const handleInputUrl = (e) => {
+          setBannerUrl(e.target.value);
      };
 
      return (
           <div className="panel-banner-form">
                <h2>Add Banner</h2>
                <label>
-                    <p>Site name11</p>
-                    <CustomInput  change={handleInputChange} placeholder="Enter site name"/>
+                    <p>Site name</p>
+                    <CustomInput value={bannerName}  change={handleInputChange} placeholder="Enter site name"/>
                </label>
                <label>
                     <p>Site url</p>
-                    <CustomInput placeholder="Enter site Url"/>
+                    <CustomInput  value={bannerUrl} change={handleInputUrl}  placeholder="Enter site Url"/>
                </label>
                <p>Category</p>
                <Select
-                    defaultValue="Select category..."
+                    defaultValue="Header banner"
                     style={{
                          width: 120,
                     }}
@@ -78,10 +80,6 @@ const AddBannerForm = ({inner, setInner, click = () => {}, close, onSelect, setC
                     <CustomUpload/>
                </label>
                <div className="bottom-line">
-                    <label>
-                         <p>Image Mobile</p>
-                         <CustomUpload/>
-                    </label>
                     <div onClick={click}><div onClick={close}><CustomButton name="Submit" width="150px" /></div></div>
                </div>
           </div>
