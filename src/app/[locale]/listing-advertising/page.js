@@ -25,8 +25,8 @@ const ListingPackages = () => {
                                    <Image src={EliteImage} alt="elite image"/>
                               </div>
                               <div className="grid">
-                                   <Image src={starIcon} alt='star icon' className="star-icon"/> <p> Баннер 615х90 на 15
-                                   дней и 370x170 на 15 дней</p>
+                                   <Image src={starIcon} alt='star icon' className="star-icon"/> <p> Баннер 615х90 на 21
+                                   день и 370x170 на 21 день</p>
                               </div>
                               <div className="grid">
                                    <Image src={starIcon} alt='star icon' className="star-icon"/> <p> Опубликовать
@@ -89,8 +89,8 @@ const ListingPackages = () => {
                                    <Image src={ExclusiveImage} alt="elite image"/>
                               </div>
                               <div className="grid">
-                                   <Image src={starIcon} alt='star icon' className="star-icon"/> <p> Баннер 615х90 на 15
-                                   дней и 370x170 на 15 дней</p>
+                                   <Image src={starIcon} alt='star icon' className="star-icon"/> <p> Баннер 615х90 на 14
+                                   дней и 370x170 на 14 дней</p>
                               </div>
                               <div className="grid">
                                    <Image src={starIcon} alt='star icon' className="star-icon"/> <p> Опубликовать
@@ -149,8 +149,8 @@ const ListingPackages = () => {
                                    <Image src={PremiumImage} alt="elite image"/>
                               </div>
                               <div className="grid">
-                                   <Image src={starIcon} alt='star icon' className="star-icon"/> <p> Баннер 615х90 на 15
-                                   дней и 370x170 на 15 дней</p>
+                                   <Image src={starIcon} alt='star icon' className="star-icon"/> <p> Баннер 615х90 на 14
+                                   дней и 370x170 на 7 дней</p>
                               </div>
                               <div className="grid">
                                    <Image src={starIcon} alt='star icon' className="star-icon"/> <p> Опубликовать
@@ -201,8 +201,8 @@ const ListingPackages = () => {
                                    <Image src={NormalImage} alt="elite image"/>
                               </div>
                               <div className="grid">
-                                   <Image src={starIcon} alt='star icon' className="star-icon"/> <p> Баннер 615х90 на 15
-                                   дней и 370x170 на 10 дней</p>
+                                   <Image src={starIcon} alt='star icon' className="star-icon"/> <p> Баннер 615х90 на 14
+                                   дней</p>
                               </div>
                               <div className="grid">
                                    <Image src={starIcon} alt='star icon' className="star-icon"/> <p> Опубликовать
@@ -250,7 +250,7 @@ const ListingPackages = () => {
                                    <Image src={TrialImage} alt="elite image"/>
                               </div>
                               <div className="grid">
-                                   <Image src={starIcon} alt='star icon' className="star-icon"/> <p> Баннер 615х90 на 10 дней</p>
+                                   <Image src={starIcon} alt='star icon' className="star-icon"/> <p> Баннер 615х90 на 7 дней</p>
                               </div>
                               <div className="grid">
                                    <Image src={starIcon} alt='star icon' className="star-icon"/> <p> Опубликовать
