@@ -72,9 +72,11 @@
       }
 
    }
+   .pagination-wrap {
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-items: end;
+   }
+
 }
 
-.pagination-wrap {
-   display: grid;
-   justify-items: end;
-}

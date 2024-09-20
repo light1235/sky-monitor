@@ -72,6 +72,12 @@ const UsersComments = () => {
                                    />
                               )}
                          </div>
+                         <CustomPagination
+                              current={currentPageUsers}
+                              total={filteredUsers.length}
+                              pageSize={itemsPerPage}
+                              onChange={handlePageChangeUsers}
+                         />
                     </div>
                     <div>
                          <div className="page-data-table data-comments">
@@ -87,26 +93,21 @@ const UsersComments = () => {
                                                      item={item} key={item.id}/>
                               )}
                          </div>
-
-                    </div>
-
-               </div>
-               <div className="pagination-wrap">
-                    <div>
-                         <CustomPagination
-                              current={currentPageUsers}
-                              total={filteredUsers.length}
-                              pageSize={itemsPerPage}
-                              onChange={handlePageChangeUsers}
-                         />
-                    </div>
-                    <div>
                          <CustomPagination
                               current={currentPageComments}
                               total={totalItems}
                               pageSize={itemsPerPage}
                               onChange={handlePageChangeComments}
                          />
+                    </div>
+
+               </div>
+               <div className="pagination-wrap">
+                    <div>
+
+                    </div>
+                    <div>
+
                     </div>
                </div>
           </div>
