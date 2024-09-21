@@ -34,6 +34,22 @@
     "email": "Email",
     "period": "Period"
   },
+  "bannerWindow":{
+    "h2": "Banner",
+    "h3": "Show yourself among the stars!",
+    "name": "Site name",
+    "url": "Site Url",
+    "email": "Email",
+    "category": "Category",
+    "period": "Period"
+  },
+  "pinRaiseWindow": {
+    "h2": "Pin or Raise Service",
+    "h3": "Become an eternal light for others!",
+    "list": "Your Listing",
+    "service": "Service",
+    "period": "Period"
+  },
   "footer": {
     "footerTop": {
       "navItem1": "Follow us",

@@ -4,8 +4,12 @@ import './index.scss';
 import CustomFrontInput from "@/components/main/custom-front-input";
 import CustomFrontSelect from "@/components/main/custom_front_select";
 import CustomFrontButton from "@/components/main/cutom_front_button";
+import {useTranslations} from 'next-intl';
+import {useLocale} from 'next-intl';
 
 const PinRaiseForm = () => {
+     const t = useTranslations();
+     const locale = useLocale();
      const [period, setPeriod] = useState('7');
      const [category, setCategory] = useState('1');
      const [periodPlaceholder, setPeriodPlaceholder] = useState(''); // State for the placeholder
@@ -24,16 +28,22 @@ const PinRaiseForm = () => {
           setCategory(value);
      };
 
-     const selectPeriod = [
-          { value: '7', label: '1 week' },
-          { value: '14', label: '2 weeks' },
-          { value: '21', label: '3 weeks' },
-          { value: '28', label: '4 weeks' }
+     const selectPeriodOptions = [
+          { value: '7', label: locale === "en" ? '1 week':'1 неделя' },
+          { value: '14', label: locale === "en" ? '2 weeks':'2 недели' },
+          { value: '21', label: locale === "en" ? '3 weeks':'3 недели' },
+          { value: '28', label: locale === "en" ? '4 weeks':'4 недели' }
      ];
 
+     const singlePeriodOption = [
+          { value: '1', label: locale === "en" ? 'One-time raise' : `цена за поднятие ${periodPlaceholder}$` }
+     ];
+
+     const selectPeriod = category === '2' ? singlePeriodOption : selectPeriodOptions;
+
      const selectCategory = [
-          { value: '1', label: 'Pin your listing' },
-          { value: '2', label: 'Raise your listing' }
+          { value: '1', label: locale === "en" ? 'Pin your listing' :'Закрепить вашу рекламу' },
+          { value: '2', label: locale === "en" ? 'Raise your listing':'Поднять ваше объявление' }
      ];
 
      const handleSubmit = (event) => {
@@ -45,48 +55,50 @@ const PinRaiseForm = () => {
           }));
      };
 
-     // Update the period placeholder when the category changes
      useEffect(() => {
           if (category === '1') {
                setPeriodPlaceholder('100');
+               setPeriod(selectPeriodOptions[0].value);
           } else if (category === '2') {
                setPeriodPlaceholder('40');
+               setPeriod(singlePeriodOption[0].value);
           }
-     }, [category]); // Trigger update when category changes
+     }, [category]);
+
+
+     const periodPlaceholderText = locale === "en"
+          ? `price per ${category === '1' ? 'week' : 'one-time raise'} ${periodPlaceholder}$`
+          : `цена за ${category === '1' ? 'неделю' : 'поднятие'} ${periodPlaceholder}$`;
 
      return (
           <div className="pin-raise-form">
                <div className="pin-raise-form--content">
                     <div className="content-left">
                          <div className="left-container">
-                              <>
-                                   <h2>Pin or Raise Service</h2>
-                                   <h3>Become an eternal light for others!</h3>
-                              </>
+                              <h2>{t('pinRaiseWindow.h2')}</h2>
+                              <h3>{t('pinRaiseWindow.h3')}</h3>
                               <form onSubmit={handleSubmit}>
-                                   <>
-                                        <label className="front-dashed front-bold">
-                                             <p>Your Listing</p>
-                                             <CustomFrontInput placeholder={'Razzelton'} name="siteUrl" dis={true} />
-                                        </label>
-                                        <label>
-                                             <p>Service</p>
-                                             <CustomFrontSelect
-                                                  onSelect={handleCategorySelectChange}
-                                                  placeholder="Select Service"
-                                                  Data={selectCategory}
-                                             />
-                                        </label>
-                                        <label>
-                                             <p>Period</p>
-                                             <CustomFrontSelect
-                                                  onSelect={handlePeriodSelectChange}
-                                                  placeholder={`price per week ${periodPlaceholder}`}
-                                                  Data={selectPeriod}
-                                             />
-                                        </label>
-                                        <CustomFrontButton />
-                                   </>
+                                   <label className="front-dashed front-bold">
+                                        <p>{t('pinRaiseWindow.list')}</p>
+                                        <CustomFrontInput placeholder={'Razzelton'} name="siteUrl" dis={true} />
+                                   </label>
+                                   <label>
+                                        <p>{t('pinRaiseWindow.service')}</p>
+                                        <CustomFrontSelect
+                                             onSelect={handleCategorySelectChange}
+                                             placeholder={locale === 'en' ? 'Pin your listing' : 'Закрепить вашу рекламу'}
+                                             Data={selectCategory}
+                                        />
+                                   </label>
+                                   <label>
+                                        <p>{t('pinRaiseWindow.period')}</p>
+                                        <CustomFrontSelect
+                                             onSelect={handlePeriodSelectChange}
+                                             placeholder={periodPlaceholderText}
+                                             Data={selectPeriod}
+                                        />
+                                   </label>
+                                   <CustomFrontButton name={locale === 'en' ? 'Move to payment' : 'К оплате'} />
                               </form>
                          </div>
                     </div>

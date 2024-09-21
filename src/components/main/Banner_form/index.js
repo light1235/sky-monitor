@@ -9,16 +9,17 @@ import LOGO from '/src/assets/logo-2.svg'
 import Image from "next/image";
 import CustomFrontUpload from "@/components/main/custom_front_upload";
 import CustomFrontSelect from "@/components/main/custom_front_select";
+import {useTranslations} from 'next-intl';
+import {useLocale} from 'next-intl';
 
-const validationSchema = Yup.object().shape({
-     siteName: Yup.string().min(8, 'Site name must be at least 8 characters').required("First Name should be required please"),
-     // password: Yup.string().min(6, 'Password must be at least 6 characters long').required('Password is required'),
-     siteUrl:Yup.string().min(8).required("First Name should be required please"),
-     email: Yup.string().email('Invalid email address').required('Email is required'),
-});
+
 
 const BannerForm = () => {
+     const t = useTranslations();
+     const locale = useLocale();
      const [isValid, setIsValid] = useState(false);
+     const [periodPlaceholder, setPeriodPlaceholder] = useState('');
+     const [category, setCategory] = useState('1');
 
      const [formData, setFormData] = useState({
           siteName: '',
@@ -27,6 +28,14 @@ const BannerForm = () => {
           selectedPeriodOption: '7',
           selectedCategoryOption: '1'
      });
+
+     const validationSchema = Yup.object().shape({
+          siteName: Yup.string().min(8,locale === 'en'? 'Site name must be at least 8 characters':'Название сайта должно состоять не менее чем из 6 символов').required(locale === 'en'?"Site name should be required please":'Название сайта обязательно'),
+          // password: Yup.string().min(6, 'Password must be at least 6 characters long').required('Password is required'),
+          siteUrl:Yup.string().min(8).required(locale === 'en' ? "Site url should be required please":'Адрес сайта обязательно'),
+          email: Yup.string().email(locale === 'en' ?'Invalid email address':'Неверный адрес электронной почты').required(locale === 'en' ?'Email is required':'Электронная почта обязательна'),
+     });
+
 
 
      // useEffect(() => {
@@ -44,18 +53,26 @@ const BannerForm = () => {
 
      const handleCategorySelectChange = (value) => {
           setFormData({ ...formData, selectedCategoryOption: value });
+          setCategory(value);
      };
 
      let selectPeriod = [
-          { value: '7', label: '1 week' },
-          { value: '14', label: '2 week' },
-          { value: '21', label: '3 week' },
-          { value: '28', label: '4 week' },
+          { value: '7', label: locale === 'en' ? '1 week' :'1 неделя' },
+          { value: '14', label: locale === 'en' ? '2 week' :'2 недели' },
+          { value: '21', label: locale === 'en' ? '3 week' :'3 недели' },
+          { value: '28', label: locale === 'en' ? '4 week' :'4 недели' },
      ]
      let selectCategory = [
-          { value: '1', label: 'Header Banner' },
-          { value: '2', label: 'Content Banner' },
+          { value: '1', label:locale === 'en' ? 'Header Banner':'Верхний Баннер' },
+          { value: '2', label: locale === 'en' ?'Content Banner':'Контент Баннер' },
      ]
+     useEffect(() => {
+          if (category === '1') {
+               setPeriodPlaceholder('15$');
+          } else if (category === '2') {
+               setPeriodPlaceholder('10$');
+          }
+     }, [category]);
 
      return (
           <div className="Banner-Form">
@@ -64,8 +81,8 @@ const BannerForm = () => {
                          <div className="left-container">
                               {!isValid &&
                                    <>
-                                        <h2>Banner</h2>
-                                        <h3>Show yourself among the stars!</h3>
+                                        <h2>{t('bannerWindow.h2')}</h2>
+                                        <h3>{t('bannerWindow.h3')}</h3>
                                    </>
                               }
                               <Formik
@@ -91,41 +108,42 @@ const BannerForm = () => {
                                              {isValid ? <Image src={LOGO} alt={'logo'} priority={false}></Image> :
                                                   <>
                                                        <label>
-                                                            <p>Site name</p>
+                                                            {/*{t('bannerWindow.name')}*/}
+                                                            <p>{t('bannerWindow.name')}</p>
                                                             <Field as={CustomFrontInput} type="text" name="siteName"
-                                                                   placeholder={'Enter site name'}/>
+                                                                   placeholder={locale === 'en'?'Enter site name':'Введите название сайта'}/>
                                                             <ErrorMessage className="inputError" name="siteName"
                                                                           component="div"></ErrorMessage>
                                                        </label>
                                                        <label>
-                                                            <p>Site Url</p>
+                                                            <p>{t('bannerWindow.url')}</p>
                                                             <Field as={CustomFrontInput} type="text" name="siteUrl"
-                                                                   placeholder={'Enter site url'}/>
+                                                                   placeholder={locale === 'en'?'Enter site url':'Введите адрес сайта'}/>
                                                             <ErrorMessage className="inputError" name="siteUrl"
                                                                           component="div"/>
                                                        </label>
+                                                       {/*{category == 1 ?'369x170' : '615x90'}*/}
                                                        <CustomFrontUpload/>
-
                                                        <label>
-                                                            <p>Email</p>
+                                                            <p>{t('bannerWindow.email')}</p>
                                                             <Field as={CustomFrontInput} type="email" name="email"
-                                                                   placeholder={'Enter your email'}/>
+                                                                   placeholder={locale === 'en'? 'Enter your email' : 'Введите электронную почту'}/>
                                                             <ErrorMessage className="inputError" name="email"
                                                                           component="div"/>
                                                        </label>
                                                        <label>
-                                                            <p>Period</p>
-                                                            <CustomFrontSelect onSelect={handlePeriodSelectChange}
-                                                                               placeholder="Price per week 7$"
-                                                                               Data={selectPeriod}/>
-                                                       </label>
-                                                       <label>
-                                                            <p>Category</p>
+                                                            <p>{t('bannerWindow.category')}</p>
                                                             <CustomFrontSelect onSelect={handleCategorySelectChange}
-                                                                               placeholder="Header banner"
+                                                                               placeholder={locale === 'en'?'Header banner':'Верхний Баннер'}
                                                                                Data={selectCategory}/>
                                                        </label>
-                                                       <CustomFrontButton disblad={isSubmitting}/>
+                                                       <label>
+                                                            <p>{t('bannerWindow.period')}</p>
+                                                            <CustomFrontSelect onSelect={handlePeriodSelectChange}
+                                                                               placeholder={locale === "en" ? `price per week ${periodPlaceholder}`:`цена за неделю ${periodPlaceholder}`}
+                                                                               Data={selectPeriod}/>
+                                                       </label>
+                                                       <CustomFrontButton name={locale === 'en'? 'Move to payment':'К оплате'} disblad={isSubmitting}/>
                                                   </>
                                              }
                                         </Form>
