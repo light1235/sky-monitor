@@ -12,6 +12,7 @@
         "status": {
           "paying":false,
           "untraceable": false,
+          "pending": false,
           "scam": false,
           "announcement":false,
           "launched":true,
@@ -648,7 +649,8 @@
         "status": {
           "paying":true,
           "untraceable": false,
-          "scam": false
+          "scam": false,
+          "pending": false
         },
         "ourInvestments": {
           "our": "120$",

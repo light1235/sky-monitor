@@ -9,16 +9,14 @@ import CustomTextArea from "@/components/main/cutom-text-area";
 import LOGO from '/src/assets/logo-2.svg'
 import Image from "next/image";
 import CustomFrontUpload from "@/components/main/custom_front_upload";
+import {useTranslations} from 'next-intl';
+import {useLocale} from 'next-intl';
 
-const validationSchema = Yup.object().shape({
-     siteName: Yup.string().min(8, 'Site name must be at least 8 characters').required("First Name should be required please"),
-     // password: Yup.string().min(6, 'Password must be at least 6 characters long').required('Password is required'),
-     description: Yup.string().min(8).required("First Name should be required please"),
-     siteUrl:Yup.string().min(8).required("First Name should be required please"),
-     email: Yup.string().email('Invalid email address').required('Email is required'),
-});
+
 
 const PopUpForm = () => {
+     const t = useTranslations();
+     const locale = useLocale();
      const [isValid, setIsValid] = useState(false);
 
      const [formData, setFormData] = useState({
@@ -26,6 +24,16 @@ const PopUpForm = () => {
           description:'',
           siteUrl:'',
      });
+
+
+     const validationSchema = Yup.object().shape({
+          siteName: Yup.string().min(8, locale === 'en' ?'Site name must be at least 8 characters':'Имя сайта должно состоять не менее чем из 8 символов').required(locale === 'en' ?"Site Name should be required please":'Имя сайта обязательно'),
+          // password: Yup.string().min(6, 'Password must be at least 6 characters long').required('Password is required'),
+          description: Yup.string().min(8).required(locale === 'en' ? "Description should be required please":'Описание обязательно'),
+          siteUrl:Yup.string().min(8).required(locale === 'en' ?"Site Url should be required please":'Адрес сайта обязательно'),
+          email: Yup.string().email(locale === 'en' ?'Invalid email address':'Неверный адрес электронной почты').required(locale === 'en' ?'Email is required':'Электронная почта обязательна'),
+     });
+
      const handleFormSubmit = (values,  { setSubmitting }) => {
           setFormData(values);
           setSubmitting(false);
@@ -41,8 +49,8 @@ const PopUpForm = () => {
                          <div className="left-container">
                               {!isValid &&
                                    <>
-                                        <h2>Pop-Up</h2>
-                                        <h3>Show the universe the invisible thread of possibility!</h3>
+                                        <h2>{t('popUp.h2')}</h2>
+                                        <h3>{t('popUp.h3')}</h3>
                                    </>
                               }
                               <Formik
@@ -68,42 +76,40 @@ const PopUpForm = () => {
                                        {isValid ? <Image src={LOGO} alt={'logo'} priority={false}></Image> :
                                             <>
                                                  <label>
-                                                      <p>Site name</p>
+                                                      <p>{t('popUp.name')}</p>
                                                       <Field as={CustomFrontInput} type="text" name="siteName"
-                                                             placeholder={'Enter site name'}/>
+                                                             placeholder={locale === 'en' ?'Enter site name':'Введите имя веб-сайта'}/>
                                                       <ErrorMessage className="inputError" name="siteName"
                                                                     component="div"></ErrorMessage>
                                                  </label>
                                                  <label>
-                                                      <p>Description*</p>
+                                                      <p>{t('popUp.description')}</p>
                                                       <Field as={CustomTextArea} type="text" name="description"
-                                                             placeholder="Advertising will be checked and those news that
-do not relate to the format of the site will
-not be published"/>
+                                                             placeholder={locale === 'en' ?'Advertising will be checked and those news that do not relate to the format of the site will not be published':'Реклама будет проверяться, и те новости, которые не относятся к формату сайта, не будут опубликованы'}/>
                                                       <ErrorMessage className="inputError" name="description"
                                                                     component="div"/>
                                                  </label>
                                                  {/*<CustomFrontUpload />*/}
                                                  <label>
-                                                      <p>Site Url</p>
+                                                      <p>{t('popUp.url')}</p>
                                                       <Field as={CustomFrontInput} type="text" name="siteUrl"
-                                                             placeholder={'Enter site url'}/>
+                                                             placeholder={locale === 'en' ?'Enter site url':'Введите адрес сайта'}/>
                                                       <ErrorMessage className="inputError" name="siteUrl"
                                                                     component="div"/>
                                                  </label>
                                                  <label>
-                                                      <p>Email</p>
+                                                      <p>{t('popUp.email')}</p>
                                                       <Field as={CustomFrontInput} type="email" name="email"
-                                                             placeholder={'Enter site url'}/>
+                                                             placeholder={locale === 'en' ?'Enter email':'Введите электронную почту'}/>
                                                       <ErrorMessage className="inputError" name="email"
                                                                     component="div"/>
                                                  </label>
                                                  <label>
-                                                      <p>Period</p>
+                                                      <p>{t('popUp.period')}</p>
                                                       <Field as={CustomFrontInput} type="text" name="period"
-                                                             placeholder={'Price per 2 days 30$'} dis={true}/>
+                                                             placeholder={locale === 'en' ?'Price per 2 days 30$':'Цена за 2 дня показа - 30$'} dis={true}/>
                                                  </label>
-                                                 <CustomFrontButton disblad={isSubmitting}/>
+                                                 <CustomFrontButton name={locale === 'en' ?'Move to payment':'К оплате'} disblad={isSubmitting}/>
                                             </>
                                        }
                                    </Form>

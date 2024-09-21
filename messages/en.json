@@ -25,6 +25,15 @@
       "article": "Article"
     }
   },
+  "popUp":{
+    "h2": "Pop-Up",
+    "h3": "Show the universe the invisible thread of possibility!",
+    "name": "Site name",
+    "description": "Description*",
+    "url": "Site Url",
+    "email": "Email",
+    "period": "Period"
+  },
   "footer": {
     "footerTop": {
       "navItem1": "Follow us",
