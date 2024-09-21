@@ -232,8 +232,8 @@ const ListingCard = ({ item, wish,ind,setWish,registred}) => {
      const deposit = 200;
      const payout = (
           <div className="payout-hint">
-               <p>Deposit: <span style={{color:'#8bc643'}}>{deposit}$</span></p>
-               <p>Payout: <span style={{color:'#8bc643'}}>{payment}$</span></p>
+               <p>{locale === 'en' ?'Deposit:':'Вклад:' } <span style={{color:'#8bc643'}}>{deposit}$</span></p>
+               <p>{locale === 'en' ?'Payout:':'Выплата:' } <span style={{color:'#8bc643'}}>{payment}$</span></p>
           </div>
      );
      // TODO: доработать логику pop over что бы счетчик активировался сам а не при наведении на него
