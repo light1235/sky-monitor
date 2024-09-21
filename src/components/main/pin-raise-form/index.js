@@ -36,7 +36,7 @@ const PinRaiseForm = () => {
      ];
 
      const singlePeriodOption = [
-          { value: '1', label: locale === "en" ? 'One-time raise' : `цена за поднятие ${periodPlaceholder}$` }
+          { value: '1', label: locale === "en" ? `price per one-time raise ${periodPlaceholder}$` : `цена за поднятие ${periodPlaceholder}$` }
      ];
 
      const selectPeriod = category === '2' ? singlePeriodOption : selectPeriodOptions;
