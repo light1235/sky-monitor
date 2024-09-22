@@ -45,7 +45,7 @@ const AboutUs = () => {
               <h3>{t('About.valueTitle')}</h3>
               <p>{t('About.valueDesc')}</p>
 
-              <h2 style={{
+              <h2  className="border-h2" style={{
                 padding: '40px 40px',
                 border: '1px solid rgb(0 0 0 / 8%)',
                 width: 'max-content',

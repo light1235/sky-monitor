@@ -304,8 +304,8 @@ const Header = () => {
                          </ul>
                          <div className="line-separator"></div>
                          <ul>
-                              <li><Link href='/about-us'>about us</Link></li>
-                              <li><Link href='/support'>support</Link></li>
+                              <li><Link onClick={CloseMenu} href='/about-us'>about us</Link></li>
+                              <li><Link onClick={CloseMenu} href='/support'>support</Link></li>
                          </ul>
                          <button onClick={showModal}><Link href='/'> <Image src={buttonIcon} alt="add icon"></Image> Add
                               program</Link>
