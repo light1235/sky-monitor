@@ -23,7 +23,6 @@ const AboutUs = () => {
               <h3>{t('About.managementTitle')}</h3>
               <p>{t('About.managementDesc')}</p>
 
-              <h2>{t('About.experienceTitle')}</h2>
               <h3>{t('About.separatesTitle')}</h3>
               <p>{t('About.separatesDesc')}</p>
 
