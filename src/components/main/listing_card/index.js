@@ -382,3 +382,4 @@ const ListingCard = ({ item, wish,ind,setWish,registred}) => {
 };
 
 export default ListingCard;
+//sdadsadadad
