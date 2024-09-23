@@ -236,7 +236,7 @@ const ListingCard = ({ item, wish,ind,setWish,registred}) => {
                <p>{locale === 'en' ?'Payout:':'Выплата:' } <span style={{color:'#8bc643'}}>{payment}$</span></p>
           </div>
      );
-     // TODO: доработать логику pop over что бы счетчик активировался сам а не при наведении на него
+     // TODO: доработать логику pop over что бы счетчик активировался сам а не при наведении на него111
 
      return (
           <div className={item.projectInformation.status.scam ? "listing__card-thin scam-status" : 'listing__card-thin'}>
