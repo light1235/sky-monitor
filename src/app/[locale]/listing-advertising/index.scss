@@ -12,7 +12,7 @@
          //grid-template-columns: repeat(auto-fill, minmax( 350px, 1fr));
          grid-template-columns: repeat(auto-fit, minmax( 348px, 1fr));
          justify-items: center;
-         //grid-gap: 20px;
+         grid-gap: 20px;
          & .listing-item {
             box-sizing: border-box;
             border: 2px solid #eaeefa;
