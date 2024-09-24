@@ -23,9 +23,9 @@ const ListingPinPackage = () => {
 
                     <h3>{t('ListingPin.heading4')}</h3>
                     <ul>
-                         <li><p><strong>{t('ListingPin.advantage1')}</strong></p></li>
-                         <li><p><strong>{t('ListingPin.advantage2')}</strong></p></li>
-                         <li><p><strong>{t('ListingPin.advantage3')}</strong></p></li>
+                         <li><p>{t('ListingPin.advantage1')}</p></li>
+                         <li><p>{t('ListingPin.advantage2')}</p></li>
+                         <li><p>{t('ListingPin.advantage3')}</p></li>
                          <li><p>{t('ListingPin.advantage4')}</p></li>
                     </ul>
 
