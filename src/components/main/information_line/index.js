@@ -3,6 +3,7 @@ import React from 'react';
 import './index.scss';
 import Link from "next/link";
 import { useLocale } from 'next-intl';
+import CustomToolTop from "@/components/main/tooltip_custom";
 
 const InformationLine = ({image, items, scam, top}) => {
      const locale = useLocale();
@@ -26,7 +27,7 @@ const InformationLine = ({image, items, scam, top}) => {
                </div>
                <div className="line-items-one">
                     {scam ? <div>{locale === 'en'? 'Warning':'Внимание!'}</div> :
-                         <>{top ? <div>{items && items && items.projectInformation.ourInvestments.our}</div> :
+                         <>{top ?<CustomToolTop text={items.projectInformation.ourInvestments.investDate}> <div>{items && items && items.projectInformation.ourInvestments.TopProjectMaxInvest}</div></CustomToolTop> :
                               <div className="item-numbers"
                                    style={{textDecoration: 'none'}}>{items && items.projectInformation.created}</div>}
 
