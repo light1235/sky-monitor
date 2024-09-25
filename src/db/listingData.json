@@ -647,10 +647,10 @@
       "projectImage": "https://cdn.discordapp.com/attachments/1046398987659395152/1222292450446413854/lapaido120e.gif?ex=66c5afcd&is=66c45e4d&hm=989aa6094d06e21d5033ada5d3e87a50c6138338be20a080e4dc3ec00ff5f641&",
       "projectInformation": {
         "status": {
-          "paying":true,
+          "paying":false,
           "untraceable": false,
           "scam": false,
-          "pending": false
+          "pending": true
         },
         "ourInvestments": {
           "our": "120$",

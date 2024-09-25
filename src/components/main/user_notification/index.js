@@ -34,7 +34,7 @@ const UserNotification = ({item}) => {
                                    item.activity === 'Anchored the project' ? 'Закрепил проект' :
                                         item.activity === 'Published an article' ? 'Опубликовал статью' :
                                              item.activity === 'Published an article' ? 'Опубликовал статью' :
-                                                  item.activity === 'Project added' ? 'Добавил проект' :
+                                                  item.activity === 'Project added' ? 'Проект добавлен' :
                                                   item.activity
                          ) : item.activity
                     )}
