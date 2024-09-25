@@ -20,7 +20,7 @@
    }
    & .table-right {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
       justify-items: center;
       align-items: center;
       & input {
@@ -33,6 +33,7 @@
          font-weight: 600;
          font-size: 14px;
          color: #7e8e9f;
+         text-align: center;
          &:focus {
             border: 1px dashed var(--Main-color);
             outline: none;

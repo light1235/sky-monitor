@@ -8,24 +8,28 @@ import CustomInput from "@/components/panel/custom-input";
 const VoteTableLine = ({ item, back, dataFor, dataAgainst, onPaymentDataChange }) => {
      const inputRef = useRef(null);
      const [activeButton, setActiveButton] = useState(true);
-     const [inputValue, setInputValue] = useState(`${dataFor} - ${dataAgainst}`);
+     const [inputValueFor, setInputValueFor] = useState(dataFor);
+     const [inputValueAgainst, setInputValueAgainst] = useState(dataAgainst);
 
      const handleButtonClick = () => {
           setActiveButton(!activeButton);
           if (activeButton) {
                // Focus input when entering edit mode
                setTimeout(() => {
-                    inputRef.current.focus();
+                    // inputRef.current.focus();
                }, 0);
           } else {
                // Submit changes
-               const [forValue, againstValue] = inputValue.split(" - ");
-               onPaymentDataChange({ for: forValue.trim(), against: againstValue.trim() });
+               // const [forValue, againstValue] = inputValue.split(" - ");
+               onPaymentDataChange({ for: inputValueFor.trim(), against: inputValueAgainst.trim() });
           }
      };
 
      const handleInputChange = (e) => {
-          setInputValue(e.target.value);
+          setInputValueFor(e.target.value);
+     };
+     const handleInputAgainstChange = (e) => {
+          setInputValueAgainst(e.target.value);
      };
 
      return (
@@ -40,9 +44,15 @@ const VoteTableLine = ({ item, back, dataFor, dataAgainst, onPaymentDataChange }
                     <input
                          onChange={handleInputChange}
                          ref={inputRef}
-                         value={inputValue}
+                         value={inputValueFor}
                          readOnly={activeButton}
-                         maxLength="7"
+                         maxLength="3"
+                    />
+                    <input type="text"
+                           onChange={handleInputAgainstChange}
+                           value={inputValueAgainst}
+                           readOnly={activeButton}
+                           maxLength="3"
                     />
                     <p>Premium</p>
                     <p>{item.category}</p>
