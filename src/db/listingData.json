@@ -367,7 +367,9 @@
           "our": "120$",
           "traceable": "",
           "without": "",
-          "anotherInvestment":""
+          "anotherInvestment":"",
+          "TopProjectMaxInvest": "7570$",
+          "investDate": "12.09.2024"
         },
         "payoutRate": "208$",
         "lastPaid":"Mar 26th, 2024",
@@ -415,7 +417,9 @@
           "our": "120$",
           "traceable": "",
           "without": "",
-          "anotherInvestment":""
+          "anotherInvestment":"",
+          "TopProjectMaxInvest": "2570$",
+          "investDate": "22.08.2024"
         },
         "payoutRate": "208$",
         "lastPaid":"Mar 26th, 2024",
@@ -463,7 +467,9 @@
           "our": "250$",
           "traceable": "",
           "without": "",
-          "anotherInvestment":""
+          "anotherInvestment":"",
+          "TopProjectMaxInvest": "1570$",
+          "investDate": "05.08.2024"
         },
         "payoutRate": "208$",
         "lastPaid":"Mar 26th, 2024",
@@ -607,7 +613,9 @@
           "our": "200$",
           "traceable": "",
           "without": "",
-          "anotherInvestment":""
+          "anotherInvestment":"",
+          "TopProjectMaxInvest": "3570$",
+          "investDate": "12.05.2024"
         },
         "payoutRate": "208$",
         "lastPaid":"Mar 26th, 2024",

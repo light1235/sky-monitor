@@ -115,13 +115,13 @@ const Home = async () => {
                    <BlockSlat text={'mainPage.blocks.top'}/>
                    <Info_block>
                         {filteredArrayPremiumSlice.map((itemsTop,index) =>
-                             <Information_line key={index} items={itemsTop} scam={false} top={true} image={<Image src={topProjectLogo} alt="chart icon" height={29}></Image>} />
+                             <Information_line key={index} items={itemsTop} scam={false} top={true} image={<Image src={topProjectLogo} alt="top-project__icon" height={29}></Image>} />
                         )}
                    </Info_block>
                    <BlockSlat text={'mainPage.blocks.new'}/>
                    <Info_block>
                         {items.map((item,index) =>
-                             <Information_line key={index} items={item} scam={false} top={false} image={<Image src={newListingLogo}  alt="leaf icon" height={29}></Image>} />
+                             <Information_line key={index} items={item} scam={false} top={false} image={<Image src={newListingLogo}  alt="new-project__icon" height={29}></Image>} />
                         )}
                    </Info_block>
               </div>
