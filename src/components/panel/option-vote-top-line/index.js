@@ -9,7 +9,7 @@ const OptionVoteTopLine = ({category = 'Category'}) => {
                     <p></p><p className="image-table">Image</p><p>Project Name</p>
                </div>
                <div className="table-right">
-                    <p>User Name</p><p>For</p><p>Against</p><p>Type</p><p>Category</p><p>Confirmation</p>
+                    <p>User Name</p><p style={{color:'#85CE36'}}>For</p><p style={{color:'#f68f8f'}}>Against</p><p>Type</p><p>Category</p><p>Confirmation</p>
                </div>
           </div>
      );
