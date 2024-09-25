@@ -50,6 +50,13 @@
     "service": "Service",
     "period": "Period"
   },
+  "articleWindow": {
+    "h2": "Article Pin Service",
+    "h3": "People need to know about the galaxy!",
+    "list": "Your Listing",
+    "service": "Service",
+    "period": "Period"
+  },
   "footer": {
     "footerTop": {
       "navItem1": "Follow us",

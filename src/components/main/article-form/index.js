@@ -4,11 +4,13 @@ import './index.scss'
 import CustomFrontSelect from "@/components/main/custom_front_select";
 import CustomFrontButton from "@/components/main/cutom_front_button";
 import CustomFrontInput from "@/components/main/custom-front-input";
-
+import {useTranslations} from 'next-intl';
+import {useLocale} from 'next-intl';
 
 
 const ArticleForm = () => {
-
+     const t = useTranslations();
+     const locale = useLocale();
      const [isValid, setIsValid] = useState(false);
      const [period, setPeriod] = useState('');
 
@@ -35,10 +37,10 @@ const ArticleForm = () => {
 
 
      let selectPeriod = [
-          { value: '7', label: '1 week' },
-          { value: '14', label: '2 week' },
-          { value: '21', label: '3 week' },
-          { value: '28', label: '4 week' },
+          { value: '7', label: locale === 'en' ? '1 weeks 70$' : '1 неделя 70$' },
+          { value: '14', label: locale === 'en' ? '2 weeks 140$' : '2 недели 140$' },
+          { value: '21', label:locale === 'en' ? '3 weeks 70$' : '3 недели 210$' },
+          { value: '28', label: locale === 'en' ? '4 weeks 70$' : '4 недели 280$' },
      ]
 
      return (
@@ -48,29 +50,29 @@ const ArticleForm = () => {
                          <div className="left-container">
                               {!isValid &&
                                    <>
-                                        <h2>Article Pin Service</h2>
-                                        <h3>People need to know about the galaxy!</h3>
+                                        <h2>{t('articleWindow.h2')}</h2>
+                                        <h3>{t('articleWindow.h3')}</h3>
                                    </>
                               }
                                         <form onSubmit={handleSubmit}>
                                              <>
                                                   <label className="front-dashed front-bold">
-                                                       <p>Your Listing</p>
-                                                       <CustomFrontInput placeholder={'Razzelton'} name="siteUrl"
+                                                       <p>{t('articleWindow.list')}</p>
+                                                       <CustomFrontInput placeholder={'Razzelton'}
                                                                          dis={true}/>
                                                   </label>
                                                   <label className="front-read-only">
-                                                       <p>Service</p>
-                                                       <CustomFrontInput placeholder={'Pin Article'} name="siteUrl"
+                                                       <p>{t('articleWindow.service')}</p>
+                                                       <CustomFrontInput placeholder={locale === 'en' ? 'Pin article' : 'Закрепить статью'}
                                                                          readonly={false} dis={true}/>
                                                   </label>
                                                   <label>
-                                                       <p>Period</p>
+                                                       <p>{t('articleWindow.period')}</p>
                                                        <CustomFrontSelect onSelect={handlePeriodSelectChange}
-                                                                          placeholder="Price per week 7$"
+                                                                          placeholder={locale === 'en'? 'price per week 70$' : 'цена за неделю 70$'}
                                                                           Data={selectPeriod}/>
                                                   </label>
-                                                  <CustomFrontButton/>
+                                                  <CustomFrontButton name={locale === 'en' ? 'Move to payment' : 'К оплате'}/>
                                              </>
 
                                         </form>

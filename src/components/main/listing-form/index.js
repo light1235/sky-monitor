@@ -28,6 +28,7 @@ import CustomFrontButton from "@/components/main/cutom_front_button";
 
 const ListingForm = () => {
 
+     const [premiumBanner, setPremiumBanner] = useState(false);
      const options = [
           { value: '1',label: (
                     <>
@@ -232,6 +233,7 @@ const ListingForm = () => {
 
      const handleChange = (value) => {
           console.log(`Selected: ${value}`);
+          setPremiumBanner(value);
      };
 
      let selectPeriod = [
@@ -303,10 +305,22 @@ const ListingForm = () => {
                                         options={options}
                                    />
                               </label>
+                              <div className="banner-wrapper">
+                                   <div>
+                                        <p>Listing Banner<br/>615х90px</p>
+                                        <CustomFrontUpload/>
+                                   </div>
+                                   {(premiumBanner === '1' || premiumBanner === '4' || premiumBanner === '5') && (
+                                        <div>
+                                             <p>Header Banner<br/>370x170px</p>
+                                             <CustomFrontUpload/>
+                                        </div>
+                                   )}
 
+                              </div>
                          </div>
                          <div className="listing-block">
-                              <label>
+                         <label>
                                    <p>Project Link</p>
                                    <CustomFrontInput placeholder={'Enter your link'}/>
                               </label>

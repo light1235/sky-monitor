@@ -82,6 +82,10 @@
          grid-gap: 40px;
          background: white !important;
          justify-items: center;
+         & .banner-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+         }
       }
       .listing-content-2{
          display: grid;

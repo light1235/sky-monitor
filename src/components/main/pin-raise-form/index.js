@@ -29,10 +29,10 @@ const PinRaiseForm = () => {
      };
 
      const selectPeriodOptions = [
-          { value: '7', label: locale === "en" ? '1 week':'1 неделя' },
-          { value: '14', label: locale === "en" ? '2 weeks':'2 недели' },
-          { value: '21', label: locale === "en" ? '3 weeks':'3 недели' },
-          { value: '28', label: locale === "en" ? '4 weeks':'4 недели' }
+          { value: '7', label: locale === "en" ? `1 week ${periodPlaceholder === '100' && '100$'}`:`1 неделя ${periodPlaceholder === '100' && '100$'}` },
+          { value: '14', label: locale === "en" ? `2 weeks ${periodPlaceholder === '100' && '200$'}`:`2 недели ${periodPlaceholder === '100' && '200$'}` },
+          { value: '21', label: locale === "en" ? `3 weeks ${periodPlaceholder === '100' && '300$'}`:`3 недели ${periodPlaceholder === '100' && '300$'}` },
+          { value: '28', label: locale === "en" ? `4 weeks ${periodPlaceholder === '100' && '400$'}`:`4 недели ${periodPlaceholder === '100' && '400$'}` }
      ];
 
      const singlePeriodOption = [

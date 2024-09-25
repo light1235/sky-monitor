@@ -57,10 +57,10 @@ const BannerForm = () => {
      };
 
      let selectPeriod = [
-          { value: '7', label: locale === 'en' ? '1 week' :'1 неделя' },
-          { value: '14', label: locale === 'en' ? '2 week' :'2 недели' },
-          { value: '21', label: locale === 'en' ? '3 week' :'3 недели' },
-          { value: '28', label: locale === 'en' ? '4 week' :'4 недели' },
+          { value: '7', label: locale === 'en' ? `1 week ${periodPlaceholder === '15$'?'15$': '10$'}` :`1 неделя ${periodPlaceholder === '15$'?'15$': '10$'}` },
+          { value: '14', label: locale === 'en' ? `2 weeks ${periodPlaceholder === '15$' ?'30$':'20$'}` :`2 недели  ${periodPlaceholder === '15$' ?'30$':'20$'}` },
+          { value: '21', label: locale === 'en' ? `3 weeks ${periodPlaceholder === '15$' ?'45$':'30$'}` :`3 недели ${periodPlaceholder === '15$' ?'45$':'30$'}` },
+          { value: '28', label: locale === 'en' ? `4 weeks ${periodPlaceholder === '15$' ?'60$':'40$'}` :`4 недели ${periodPlaceholder === '15$' ?'60$':'40$'}` },
      ]
      let selectCategory = [
           { value: '1', label:locale === 'en' ? 'Header Banner':'Верхний Баннер' },

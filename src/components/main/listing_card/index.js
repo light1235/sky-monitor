@@ -272,14 +272,19 @@ const ListingCard = ({ item, wish,ind,setWish,registred}) => {
                          {/*<Image src={item.projectImage} width="124" height="124" alt="project-image" ></Image>*/}
                          <div className="content_wrapper">
                               <div className="content-items status">{locale === 'en'? 'Status:':'Статус:'}
-                                   <span style={{color: item.projectInformation.status.untraceable && '#DF5BD2'}}>
+                                   <span style={{color: item.projectInformation.status.untraceable && '#DF5BD2' || item.projectInformation.status.pending && '#FF8C00' }}>
                                      {item.projectInformation.status.paying
-                                          ? (locale === 'en' ? 'Paying' : ' Платит')
+                                          ? (locale === 'en' ? ' Paying' : ' Платит')
                                           : item.projectInformation.status.untraceable
-                                               ? (locale === 'en' ? 'Untraceable' : ' Неотслеживаем')
+                                               ? (locale === 'en' ? ' Untraceable' : ' Неотслеживаем')
                                                : item.projectInformation.status.scam
-                                                    ? (locale === 'en' ? 'Not Paid' : ' Не платит')
-                                                    : null}
+                                                    ? (locale === 'en' ? ' Not Paid' : ' Не платит')
+                                                    : item.projectInformation.status.pending
+                                                         ? (locale === 'en' ? ' Pending' : ' В ожидании')
+                                                         : null
+                                     }
+
+                                        {/*: null}*/}
                                    </span>
                               </div>
                               <div className="content-items">
