@@ -97,11 +97,9 @@ const TimeLineAdv = () => {
                <div className="page-data-table">
                     <div className="table-top">
                          <div className="option-adv-table">
-                              <div className="table-left">
-                                   <CustomCheckBox/><p className="image-table">Image</p><p>Project Name</p>
-                              </div>
-                              <p style={{textAlign:'center'}}>Type</p>
                               <div className="table-right">
+                                   <CustomCheckBox/><p className="image-table">Image</p><p>Project Name</p>
+                                   <p style={{textAlign: 'center'}}>Type</p>
                                    <div className="table-date">
                                         <p>From</p>
                                         <p>Up to</p>

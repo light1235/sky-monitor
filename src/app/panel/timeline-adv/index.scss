@@ -32,7 +32,6 @@
          & .option-adv-table{
             display: grid;
             background-color: #FCFCFD;
-            grid-template-columns: 1fr 1fr 5fr;
             align-items: center;
             padding: 10px 20px 10px 30px;
             & p {
@@ -44,13 +43,13 @@
             }
             & .table-left {
                display: grid;
-               grid-template-columns: max-content 1fr 1fr;
+               //grid-template-columns: max-content 1fr 1fr;
                align-items: center;
                grid-gap: 10px;
             }
             & .table-right {
                display: grid;
-               grid-template-columns: 2fr 1fr 1fr 1fr min-content;
+               grid-template-columns: min-content 2fr 1fr 1fr 1fr 2fr 1fr 1fr;
                justify-items: center;
                & .table-date {
                   display: grid;

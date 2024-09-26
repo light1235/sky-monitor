@@ -1,7 +1,7 @@
 
 .adv-table {
    display: grid;
-   grid-template-columns: 1fr 1fr 5fr;
+   //grid-template-columns: 1fr 1fr 5fr;
    align-items: center;
    padding: 10px 20px 10px 30px;
    background-color: #fff;
@@ -12,24 +12,19 @@
       font-size: 16px;
       color: #999;
    }
-   & .table-left {
+   & .table-right {
       display: grid;
-      grid-template-columns: max-content 1fr 1fr;
+      grid-template-columns: min-content 2fr 1fr 1fr 1fr 2fr 1fr 1fr;
+      justify-items: center;
       align-items: center;
-      grid-gap: 10px;
       .image-block {
-         width: 60px;
+         width: 260px;
          height: 60px;
          background: #efefef;
          border-radius: 3px;
          display: grid;
          justify-self: center;
       }
-   }
-   & .table-right {
-       display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr min-content;
-      justify-items: center;
       & .table-panel {
          display: grid;
          grid-template-columns: 1fr max-content;

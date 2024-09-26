@@ -32,13 +32,11 @@ const AdvTableLine = ({EditeM = 'Edite listing', DeleteM = 'Mark delete', item, 
 
      return (
           <div className="adv-table">
-               <div className="table-left">
+               <div className="table-right">
                     <CustomCheckBox/>
                     <div className="image-block"></div>
                     <p>{item.name}</p>
-               </div>
-               <p style={{textAlign:'center'}}>Admin</p>
-               <div className="table-right">
+                    <p style={{textAlign: 'center'}}>Admin</p>
                     <div className="date-block">
                          <p>21 SEP 10.45</p>
                          <p>21 SEP 10.45</p>
@@ -48,11 +46,13 @@ const AdvTableLine = ({EditeM = 'Edite listing', DeleteM = 'Mark delete', item, 
                     <div className="table-panel">
                          {activeMenu &&
                               <div className="edit-menu">
-                                   <div className="edit" onClick={closePopUp} ><i className="icon-pencil"></i> <p>{EditeM}</p></div>
+                                   <div className="edit" onClick={closePopUp}><i className="icon-pencil"></i>
+                                        <p>{EditeM}</p></div>
                                    <div onClick={handleDelete}><i className="icon-cancel"></i> <p>{DeleteM}</p></div>
                               </div>
                          }
-                         <p>21 SEP 10.45</p><i className="icon-gear-custom" onClick={() => setActiveMenu(!activeMenu)}></i>
+                         <p>21 SEP 10.45</p><i className="icon-gear-custom"
+                                               onClick={() => setActiveMenu(!activeMenu)}></i>
                     </div>
                </div>
                <Custom_modal open={activeEdit} close={closePopUp}>

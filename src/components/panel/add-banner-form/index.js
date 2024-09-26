@@ -6,7 +6,7 @@ import {Select} from "antd";
 import CustomUpload from "@/components/panel/custom-upload";
 import CustomButton from "@/components/panel/custom-button";
 
-const AddBannerForm = ({bannerName, setBannerName,bannerUrl,setBannerUrl, click = () => {}, close, onSelect, setCat }) => {
+const AddBannerForm = ({bannerName, setBannerName,bannerUrl,setBannerUrl, click = () => {}, close, onSelect, setCat}) => {
      const [selectedCategory, setSelectedCategory] = useState('Header banner');
 
      const handleCategoryChange = (value) => {

@@ -116,11 +116,11 @@
   "Register": {
     "title": "Log in",
     "description": "Dive into the abyss!",
-    "email": "email",
-    "password": "password",
+    "email": "Email",
+    "password": "Password",
     "button": "Get Started",
     "remember": "Remember me",
-    "link": "Remember me"
+    "link": "Forgot your password?"
   },
   "Reset": {
     "definition":"Password Reset",
