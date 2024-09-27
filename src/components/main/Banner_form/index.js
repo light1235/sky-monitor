@@ -36,12 +36,6 @@ const BannerForm = () => {
           email: Yup.string().email(locale === 'en' ?'Invalid email address':'Неверный адрес электронной почты').required(locale === 'en' ?'Email is required':'Электронная почта обязательна'),
      });
 
-
-
-     // useEffect(() => {
-     //      console.log(formData, 'formData');
-     // }, [formData]);
-
      const handleFormSubmit = (values, { setSubmitting }) => {
           setFormData({ ...values, selectedPeriodOption: formData.selectedPeriodOption, selectedCategoryOption: formData.selectedCategoryOption });
           setSubmitting(false);

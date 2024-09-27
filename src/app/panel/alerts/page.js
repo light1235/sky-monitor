@@ -37,13 +37,23 @@ const AlertsItem = () => {
      };
 
      const addAlert = () => {
-         setAlertStandardData([...AlertStandardData,{id: Date.now(), type:radioValue, article:articleValue, description:descriptionValue, link:linkValue, hours:hoursValue, image:radioValue}]);
-         setArticleValue('')
-         setDescriptionValue('')
-         setLinkValue('')
+          if (articleValue && descriptionValue && linkValue){
+               setAlertStandardData([...AlertStandardData,{id: Date.now(), type:radioValue, article:articleValue, description:descriptionValue, link:linkValue, hours:hoursValue, image:radioValue}]);
+               setArticleValue('')
+               setDescriptionValue('')
+               setLinkValue('')
+          }
+
      };
      const addSpecialAlert = () => {
           setAlertStandardData([...AlertStandardData,{id: Date.now(), type:'special', title:titleValue,text:textValue, text2:text2Value,button:buttonName,button2:button2Name,url:buttonUrl,gradient:decGradient, hours:'24', image:''}]);
+          setTitleValue('')
+          setTextValue('')
+          setText2Value('')
+          setButtonName('')
+          setButton2Name('')
+          setButtonUrl('')
+          setDecGradient('')
      };
      useEffect(() => {
           console.log(AlertStandardData);
