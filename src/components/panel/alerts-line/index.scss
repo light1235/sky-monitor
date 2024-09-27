@@ -10,7 +10,7 @@
    font-size: 14px;
    color: #7e8e9f;
    display: grid;
-   grid-template-columns:  max-content 1fr 1fr;
+   grid-template-columns: max-content 1fr 1fr 1fr max-content max-content;
    align-items: center;
    grid-gap: 40px;
    & .line-image {

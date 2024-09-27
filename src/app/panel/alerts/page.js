@@ -1,5 +1,5 @@
 "use client"
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './index.scss'
 import CustomButton from "@/components/panel/custom-button";
 import CustomDropDown1 from "@/components/panel/drop-down";
@@ -12,22 +12,45 @@ import { Select, Space } from 'antd';
 
 const AlertsItem = () => {
 
-     const AlertStandardData = {
-          type:'',
-          article:'',
-          description:'',
-          link:'',
-          hours:'',
-          image:''
-     }
+     const [AlertStandardData, setAlertStandardData] = useState([]);
+     const [hoursValue, setHoursValue] = useState('12');
+     const [radioValue, setRadioValue] = useState('news');
+     const [articleValue, setArticleValue] = useState('');
+     const [descriptionValue, setDescriptionValue] = useState('');
+     const [linkValue, setLinkValue] = useState('');
 
-     const [value, setValue] = useState(1);
+     const [titleValue, setTitleValue] = useState('');
+     const [textValue, setTextValue] = useState('');
+     const [text2Value, setText2Value] = useState('');
+     const [buttonName, setButtonName] = useState('');
+     const [buttonUrl, setButtonUrl] = useState('');
+     const [button2Name, setButton2Name] = useState('');
+     const [decGradient, setDecGradient] = useState('');
+
      const onChange = (e) => {
-          console.log('radio checked', e.target.value);
-          setValue(e.target.value);
+          // console.log('radio checked', e.target.value);
+          setRadioValue(e.target.value);
      };
      const handleChange = (value) => {
-          console.log(`selected ${value}`);
+          // console.log(`selected ${value}`);
+          setHoursValue(value)
+     };
+
+     const addAlert = () => {
+         setAlertStandardData([...AlertStandardData,{id: Date.now(), type:radioValue, article:articleValue, description:descriptionValue, link:linkValue, hours:hoursValue, image:radioValue}]);
+         setArticleValue('')
+         setDescriptionValue('')
+         setLinkValue('')
+     };
+     const addSpecialAlert = () => {
+          setAlertStandardData([...AlertStandardData,{id: Date.now(), type:'special', title:titleValue,text:textValue, text2:text2Value,button:buttonName,button2:button2Name,url:buttonUrl,gradient:decGradient, hours:'24', image:''}]);
+     };
+     useEffect(() => {
+          console.log(AlertStandardData);
+     },[AlertStandardData])
+
+     const deleteAlert = (id) => {
+          setAlertStandardData((prevAlerts) => prevAlerts.filter(alert => alert.id !== id))
      };
 
      return (
@@ -40,25 +63,28 @@ const AlertsItem = () => {
                <div className="page-content">
                     <div className="panel-block-form">
                           <div className="form-top-line">
-                               <Radio.Group onChange={onChange} value={value}>
-                                    <Radio value={1}><i className="icon-newspaper"></i> News</Radio>
-                                    <Radio value={2}><i className="icon-audio-description"></i> ADS</Radio>
-                                    <Radio value={3}><i className="icon-edit"></i>Scam</Radio>
+                               <Radio.Group onChange={onChange} value={radioValue}>
+                                    <Radio value={'news'}><i className="icon-newspaper"></i> News</Radio>
+                                    <Radio value={'ads'}><i className="icon-audio-description"></i> ADS</Radio>
+                                    <Radio value={'scam'}><i className="icon-edit"></i>Scam</Radio>
                                </Radio.Group>
-                               <CustomButton name={'Published'} />
+                               <div onClick={addAlert}>
+                                    <CustomButton  name={'Published'} />
+                               </div>
+
                           </div>
                          <div className="form-content">
                               <label>
                                    <p>Article</p>
-                                   <CustomInput value={value === 1 && 'news' || value === 2 && 'ads' || value === 3 && 'Scam detected!' } />
+                                   <CustomInput value={articleValue} change={(e) => setArticleValue(e.target.value)}  />
                               </label>
                               <label>
                                    <p>Description</p>
-                                   <CustomInput/>
+                                   <CustomInput value={descriptionValue} change={(e) => setDescriptionValue(e.target.value)}  />
                               </label>
                               <label>
                                    <p>Link</p>
-                                   <CustomInput/>
+                                   <CustomInput value={linkValue} change={(e) => setLinkValue(e.target.value)} />
                               </label>
                          </div>
                          <div className="content-hours">
@@ -71,19 +97,19 @@ const AlertsItem = () => {
                                    onChange={handleChange}
                                    options={[
                                         {
-                                             value: '12',
+                                             value: '0.01',
                                              label: '12',
                                         },
                                         {
-                                             value: '24',
+                                             value: '0.02',
                                              label: '24',
                                         },
                                         {
-                                             value: '36',
+                                             value: '0.03',
                                              label: '36',
                                         },
                                         {
-                                             value: '48',
+                                             value: '0.04',
                                              label: '48',
                                         },
                                    ]}
@@ -100,41 +126,45 @@ const AlertsItem = () => {
                          <div className="form-top">
                          <p>Active alerts</p> <div className="date-time">to 18.05.2025 15/35</div>
                          </div>
-                        <AlertsLine type="news" content={'22nd opening of a new project'} />
+                         {AlertStandardData.map((item,index) =>
+                              <AlertsLine key={index} item={item} index={index} deleteItem={deleteAlert}  type={item.type}  />
+                         )}
+
                     </div>
                     <div className="panel-block-form">
                          <div className="form-top-line">
                               <div className="top-line-first"><i className="icon-payments"></i> <p>Special</p></div>
-                              <CustomButton name={'Published'}/>
+                              <div onClick={addSpecialAlert}> <CustomButton name={'Published'}/></div>
+
                          </div>
                          <div className="form-content">
                               <label>
                                    <p>Title</p>
-                                   <CustomInput/>
+                                   <CustomInput value={titleValue} change={(e) => setTitleValue(e.target.value)}/>
                               </label>
                               <label>
                                    <p>Text-1</p>
-                                   <CustomInput/>
+                                   <CustomInput value={textValue} change={(e) => setTextValue(e.target.value)}/>
                               </label>
                               <label>
                                    <p>Text-2</p>
-                                   <CustomInput/>
+                                   <CustomInput  value={text2Value} change={(e) => setText2Value(e.target.value)}/>
                               </label>
                               <label>
                                    <p>Button Name</p>
-                                   <CustomInput/>
+                                   <CustomInput value={buttonName} change={(e) => setButtonName(e.target.value)}/>
                               </label>
                               <label>
                                    <p>Button Url</p>
-                                   <CustomInput/>
+                                   <CustomInput  value={buttonUrl} change={(e) => setButtonUrl(e.target.value)}/>
                               </label>
                               <label>
                                    <p>Button2 Name</p>
-                                   <CustomInput/>
+                                   <CustomInput  value={button2Name} change={(e) => setButton2Name(e.target.value)} />
                               </label>
                               <label>
                                    <p>Decoration Gradient</p>
-                                   <CustomInput/>
+                                   <CustomInput value={decGradient} change={(e) => setDecGradient(e.target.value)} />
                               </label>
                          </div>
                          <div className="content-image">

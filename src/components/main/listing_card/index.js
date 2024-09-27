@@ -360,7 +360,7 @@ const ListingCard = ({ item, wish,ind,setWish,registred}) => {
                               {/*<CustomToolTop  text={'Only for registered users'}>*/}
                               {disableVote ?
                                    <>
-                                   <CustomToolTop open={true} text={<CountdownTimer initialHours={0.005} onComplete={handleComplete}/>}> <Image width="15" src={voteIcon} alt="vote_logo"/></CustomToolTop>
+                                   <CustomToolTop open={true} text={<CountdownTimer locale={locale} initialHours={0.005} onComplete={handleComplete}/>}> <Image width="15" src={voteIcon} alt="vote_logo"/></CustomToolTop>
                                    </>
                                    :
                                    <Popover content={VoteMenu} open={popOver} onOpenChange={showPopOver}  trigger="click">
