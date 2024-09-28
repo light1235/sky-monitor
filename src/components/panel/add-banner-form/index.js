@@ -6,8 +6,7 @@ import {Select} from "antd";
 import CustomUpload from "@/components/panel/custom-upload";
 import CustomButton from "@/components/panel/custom-button";
 
-const AddBannerForm = ({bannerName, setBannerName,bannerUrl,setBannerUrl, click = () => {}, close, onSelect, setCat}) => {
-     const [selectedCategory, setSelectedCategory] = useState('Header banner');
+const AddBannerForm = ({bannerName, setBannerName,bannerUrl,setBannerUrl, click = () => {}, close,  setCat,selectTime}) => {
 
      const handleCategoryChange = (value) => {
           setCat(value);
@@ -55,22 +54,22 @@ const AddBannerForm = ({bannerName, setBannerName,bannerUrl,setBannerUrl, click 
                     style={{
                          width: 120,
                     }}
-                    onChange={() => {}}
+                    onChange={selectTime}
                     options={[
                          {
-                              value: '1 week',
+                              value: '1',
                               label: '1',
                          },
                          {
-                              value: '2 weeks',
+                              value: '2',
                               label: '2',
                          },
                          {
-                              value: '3 weeks',
+                              value: '3',
                               label: '3',
                          },
                          {
-                              value: '4 weeks',
+                              value: '4',
                               label: '4',
                          },
                     ]}

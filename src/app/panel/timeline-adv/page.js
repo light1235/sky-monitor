@@ -14,14 +14,15 @@ const TimeLineAdv = () => {
 
      const [activeModal, setActiveModal] = useState(false);
      const [advertisement, setAdvertisement] = useState([
-          {name: 'Razzelton', url:'topsas', type: '', from: '', to: '', category: 'Header-banner', status: 'active', start: Date.now(), id: '1'},
-          {name: 'Espino', url:'', type: '', from: '', to: '', category: 'Content-banner', status: 'active', start: Date.now(), id: '2'},
-          {name: 'SaveAssets', url:'', type: '', from: '', to: '', category: 'Header-banner', status: 'deactivate', start: Date.now(), id: '3'},
-          {name: 'Devor', url:'', type: '', from: '', to: '', category: 'Content-banner', status: 'active', start: Date.now(), id: '4'},
+          {name: 'Razzelton', url:'top', type: '', from: '', to: 1, category: 'Header-banner', status: 'active', start: Date.now(), id: '1'},
+          {name: 'Espino', url:'', type: '', from: '', to: 1, category: 'Content-banner', status: 'active', start: Date.now(), id: '2'},
+          {name: 'SaveAssets', url:'', type: '', from: '', to: 1, category: 'Header-banner', status: 'deactivate', start: Date.now(), id: '3'},
+          {name: 'Devor', url:'', type: '', from: '', to:1, category: 'Content-banner', status: 'active', start: Date.now(), id: '4'},
      ]);
      const [newBannerText, setNewBannerText] = useState('');
      const [newCategory, setNewCategory] = useState('Header banner');
      const [newBannerUrl, setNewBannerUrl] = useState('');
+     const [selectTime, setSelectTime] = useState(1);
 
      const showModal = () => {
           setActiveModal(!activeModal);
@@ -30,10 +31,15 @@ const TimeLineAdv = () => {
      useEffect(() => {
           console.log(advertisement);
      }, [advertisement]);
+     const handleSelectTime = (value) => {
+          console.log(value);
+          setSelectTime(value)
+     };
+     // console.log(formatDate(advertisement[0].start));
 
      const addPost = () => {
           if (newBannerText.trim() !== '' && newBannerUrl.trim() !== '') {
-               setAdvertisement([...advertisement, { id: Date.now(), name: newBannerText,url:newBannerUrl, type: '', from: '', to: '', category: newCategory, status: 'active', start: Date.now() }]);
+               setAdvertisement([...advertisement, { id: Date.now(), name: newBannerText,url:newBannerUrl, type: '', from: Date.now(), to: selectTime, category: newCategory, status: 'active', start: Date.now() }]);
                setNewBannerText('');
                setNewBannerUrl('');
           }
@@ -70,9 +76,9 @@ const TimeLineAdv = () => {
           },
      ];
 
-     const editBanner = (id, newName, newCategory, newUrl) => {
+     const editBanner = (id, newName, newCategory, newUrl, time) => {
           setAdvertisement(advertisement.map(banner =>
-               banner.id === id ? { ...banner, name: newName, category: newCategory, url: newUrl } : banner
+               banner.id === id ? { ...banner, name: newName, category: newCategory, url: newUrl,to:time } : banner
           ));
      };
 
@@ -106,13 +112,13 @@ const TimeLineAdv = () => {
                                    </div>
                                    <p>Category</p>
                                    <p>Status</p>
-                                   <p>Published</p>
+                                   <p>Created</p>
                               </div>
                          </div>
                     </div>
                     <div className="table-content">
                          {advertisement.map((item, index) =>
-                              <AdvTableLine deleteBanner={deleteBanner} editBanner={editBanner} item={item} key={index}/>
+                              <AdvTableLine deleteBanner={deleteBanner} editBanner={editBanner} item={item} key={index}  selectTime={handleSelectTime}/>
                          )}
                     </div>
                </div>
@@ -129,6 +135,7 @@ const TimeLineAdv = () => {
                          setBannerUrl={setNewBannerUrl}
                          click={addPost}
                          close={showModal}
+                         selectTime={handleSelectTime}
                     />
                </Custom_modal>
           </div>
