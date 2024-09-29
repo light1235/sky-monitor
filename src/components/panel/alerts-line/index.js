@@ -9,9 +9,9 @@ const AlertsLine = ({ item, deleteItem, index }) => {
      return (
           <div className="alerts-line">
                <div className="line-image">
-                    {item.type === 'ads' && <i className="icon-audio-description"></i>}
+                    {item.type === 'project' && <i className="icon-audio-description"></i>}
                     {item.type === 'news' && <i className="icon-newspaper"></i>}
-                    {item.type === 'scam' && <i className="icon-edit"></i>}
+                    {item.type === 'alert' && <i className="icon-edit"></i>}
                     {item.type === 'special' && <i className="icon-payments"></i>}
                </div>
                {/*{item.type = 'special' ?*/}
