@@ -9,10 +9,10 @@ import usePagination from "@/utils/hooks/usePagination";
 
 const UsersComments = () => {
      const [users, setUsers] = useState([
-          { id: 1, name: 'John Wick', block: false, registerDate: '18.07.2024' },
-          { id: 2, name: 'Tony Sanders', block: false, registerDate: '12.05.2024' },
-          { id: 3, name: 'Will Smith', block: false, registerDate: '08.03.2024' },
-          { id: 4, name: 'Roger Daily', block: false, registerDate: '22.03.2024' },
+          { id: 1, name: 'John Wick', email:'dora@gmail.com', block: false, registerDate: '18.07.2024' },
+          { id: 2, name: 'Tony Sanders', email:'dora@gmail.com', block: false, registerDate: '12.05.2024' },
+          { id: 3, name: 'Will Smith', email:'dora@gmail.com', block: false, registerDate: '08.03.2024' },
+          { id: 4, name: 'Roger Daily', email:'dora@gmail.com', block: false, registerDate: '22.03.2024' },
      ]);
 
      const [comments, setComments] = useState([
@@ -61,6 +61,7 @@ const UsersComments = () => {
                               </div>
                               <div className="table-top">
                                    <p>User Name</p>
+                                   <p>Email</p>
                                    <p>Register Date</p>
                               </div>
                               {paginatedUsers.map((item, index) =>

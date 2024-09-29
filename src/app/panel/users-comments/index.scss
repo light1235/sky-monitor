@@ -33,9 +33,10 @@
    }
    & .table-top {
       display: grid;
-      grid-template-columns:  1fr 1fr;
+      grid-template-columns:  1fr 1fr 1fr;
       background-color: #FCFCFD;
       padding: 10px 20px 10px 60px;
+      //justify-items: center;
       & p {
          font-family: var(--Panel-font);
          font-weight: 700;
@@ -67,7 +68,7 @@
 
    }
    & .table-users {
-      width: 500px;
+      width: 700px;
       //display: grid;
       //align-items: center;
    }
