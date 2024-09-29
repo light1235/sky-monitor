@@ -14,6 +14,7 @@ const AlertsItem = () => {
 
      const [AlertStandardData, setAlertStandardData] = useState([]);
      const [hoursValue, setHoursValue] = useState('12');
+     const [specialHoursValue, setSpecialHoursValue] = useState('24');
      const [radioValue, setRadioValue] = useState('news');
      const [articleValue, setArticleValue] = useState('');
      const [descriptionValue, setDescriptionValue] = useState('');
@@ -35,6 +36,9 @@ const AlertsItem = () => {
           // console.log(`selected ${value}`);
           setHoursValue(value)
      };
+     const specialHandleChange = (value) => {
+          setSpecialHoursValue(value);
+     };
 
      const addAlert = () => {
           if (articleValue && descriptionValue && linkValue){
@@ -46,7 +50,7 @@ const AlertsItem = () => {
 
      };
      const addSpecialAlert = () => {
-          setAlertStandardData([...AlertStandardData,{id: Date.now(), type:'special', title:titleValue,text:textValue, text2:text2Value,button:buttonName,button2:button2Name,url:buttonUrl,gradient:decGradient, hours:'24', image:''}]);
+          setAlertStandardData([...AlertStandardData,{id: Date.now(), type:'special', title:titleValue,text:textValue, text2:text2Value,button:buttonName,button2:button2Name,url:buttonUrl,gradient:decGradient, hours:specialHoursValue, image:''}]);
           setTitleValue('')
           setTextValue('')
           setText2Value('')
@@ -75,8 +79,8 @@ const AlertsItem = () => {
                           <div className="form-top-line">
                                <Radio.Group onChange={onChange} value={radioValue}>
                                     <Radio value={'news'}><i className="icon-newspaper"></i> News</Radio>
-                                    <Radio value={'ads'}><i className="icon-audio-description"></i> ADS</Radio>
-                                    <Radio value={'scam'}><i className="icon-edit"></i>Scam</Radio>
+                                    <Radio value={'project'}><i className="icon-audio-description"></i> Project</Radio>
+                                    <Radio value={'alert'}><i className="icon-edit"></i> Alert</Radio>
                                </Radio.Group>
                                <div onClick={addAlert}>
                                     <CustomButton  name={'Published'} />
@@ -107,27 +111,23 @@ const AlertsItem = () => {
                                    onChange={handleChange}
                                    options={[
                                         {
-                                             value: '0.01',
+                                             value: '12',
                                              label: '12',
                                         },
                                         {
-                                             value: '0.02',
+                                             value: '24',
                                              label: '24',
                                         },
                                         {
-                                             value: '0.03',
+                                             value: '36',
                                              label: '36',
                                         },
                                         {
-                                             value: '0.04',
+                                             value: '48',
                                              label: '48',
                                         },
                                    ]}
                               />
-                         </div>
-                         <div className="content-image">
-                              <p>Image preview</p>
-                              <CustomUpload />
                          </div>
                     </div>
 
@@ -144,7 +144,7 @@ const AlertsItem = () => {
                     <div className="panel-block-form">
                          <div className="form-top-line">
                               <div className="top-line-first"><i className="icon-payments"></i> <p>Special</p></div>
-                              <div onClick={addSpecialAlert}> <CustomButton name={'Published'}/></div>
+                              <div onClick={addSpecialAlert}><CustomButton name={'Published'}/></div>
 
                          </div>
                          <div className="form-content">
@@ -158,7 +158,7 @@ const AlertsItem = () => {
                               </label>
                               <label>
                                    <p>Text-2</p>
-                                   <CustomInput  value={text2Value} change={(e) => setText2Value(e.target.value)}/>
+                                   <CustomInput value={text2Value} change={(e) => setText2Value(e.target.value)}/>
                               </label>
                               <label>
                                    <p>Button Name</p>
@@ -166,16 +166,56 @@ const AlertsItem = () => {
                               </label>
                               <label>
                                    <p>Button Url</p>
-                                   <CustomInput  value={buttonUrl} change={(e) => setButtonUrl(e.target.value)}/>
+                                   <CustomInput value={buttonUrl} change={(e) => setButtonUrl(e.target.value)}/>
                               </label>
                               <label>
                                    <p>Button2 Name</p>
-                                   <CustomInput  value={button2Name} change={(e) => setButton2Name(e.target.value)} />
+                                   <CustomInput value={button2Name} change={(e) => setButton2Name(e.target.value)}/>
                               </label>
                               <label>
                                    <p>Decoration Gradient</p>
-                                   <CustomInput value={decGradient} change={(e) => setDecGradient(e.target.value)} />
+                                   <CustomInput value={decGradient} change={(e) => setDecGradient(e.target.value)}/>
                               </label>
+                         </div>
+                         <div className="content-hours">
+                              <p>Working hours</p>
+                              <Select
+                                   defaultValue="Select days..."
+                                   style={{
+                                        width: 120,
+                                   }}
+                                   onChange={specialHandleChange}
+                                   options={[
+                                        {
+                                             value: '24',
+                                             label: '1',
+                                        },
+                                        {
+                                             value: '48',
+                                             label: '2',
+                                        },
+                                        {
+                                             value: '72',
+                                             label: '3',
+                                        },
+                                        {
+                                             value: '96',
+                                             label: '4',
+                                        },
+                                        {
+                                             value: '120',
+                                             label: '5',
+                                        },
+                                        {
+                                             value: '144',
+                                             label: '6',
+                                        },
+                                        {
+                                             value: '168',
+                                             label: '7',
+                                        },
+                                   ]}
+                              />
                          </div>
                          <div className="content-image">
                               <p>Image preview</p>
