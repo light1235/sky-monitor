@@ -1,0 +1,25 @@
+
+
+.project-item {
+   width: 200px;
+   height: 40px;
+   display: grid;
+   grid-template-columns: 3fr 1fr;
+   place-items: center;
+   border-radius: 25px;
+   box-shadow: 1px 4px 19px 0 rgba(0, 0, 0, 0.1);
+   background: #fff;
+   font-family: var(--Panel-font);
+   font-weight: 700;
+   font-size: 16px;
+   color: #999;
+   cursor: pointer;
+   padding: 0 15px;
+   box-sizing: border-box;
+   text-transform: capitalize;
+   & .item-icon {
+      font-size: 20px;
+      color: #85CE36;
+   }
+
+}
