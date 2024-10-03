@@ -8,7 +8,7 @@ const nextConfig = {
      reactStrictMode: true,
      swcMinify: true,
      images: {
-          domains: ['cdn.discordapp.com'],
+          domains: ['cdn.discordapp.com','drive.google.com'],
      },
      async redirects() {
           return [
