@@ -104,7 +104,7 @@ const AdvancedArticle = ({post}) => {
                               </div>
                               <div className="article__main-block project-plan">
                                    <h2>Investment plans of the "Lapaido" project </h2>
-                                   <Image  width="1920" height="500" src="https://cdn.discordapp.com/attachments/1046398987659395152/1246066214740955186/lp-plan-101_1.jpg?ex=665b0918&is=6659b798&hm=a3c256c61870e668cab6d34915fbe82079fe3b7c6afe7a0e28f8e312f9fd39e0&" alt="plan image"></Image>
+                                   <Image  width="1920" height="500" src="https://lostpix.com/img/2024-10/04/opu8mfrpvu8vqkck2p9ca7pci.jpg" alt="plan image"></Image>
                               </div>
                               <div className="article__main-block project-description">
                                    <div>Deposit amount: <span>{post.article.amountDeposit}</span></div>
