@@ -42,3 +42,31 @@ export default getRequestConfig(async (params) => {
     return getConfig(locale);
   }
 });
+// !TODO сделать файлы под каждую страницу json (статические данные) а так же динамические данные или динамический json с данными
+
+// async function getConfig(locale, page) {
+//   // Проверяем, что переданный `locale` является допустимым
+//   if (!locales.includes(locale)) notFound();
+//
+//   try {
+//     // Импортируем JSON-файл с сообщениями для локализации
+//     const messages = (await import(`../../messages/${page}/${locale}.json`)).default;
+//
+//     // Получаем динамические данные через fetch
+//     const response = await fetch(`https://example.com/api/${page}/data?locale=${locale}`);
+//
+//     if (!response.ok) {
+//       throw new Error(`Ошибка загрузки данных: ${response.statusText}`);
+//     }
+//
+//     const dynamicData = await response.json(); // Получаем JSON данные с API
+//
+//     return {
+//       messages,
+//       dynamicData
+//     };
+//   } catch (error) {
+//     console.error(`Ошибка при загрузке данных для страницы ${page} и локали ${locale}:`, error);
+//     notFound(); // Если возникла ошибка при загрузке данных или файлов
+//   }
+// }
