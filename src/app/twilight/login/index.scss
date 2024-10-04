@@ -1,0 +1,84 @@
+
+
+.login__page-admin {
+   height: 100vh;
+   background-color: #667380;
+   display: grid;
+   place-items: center;
+   & .login-form-admin {
+      width: 450px;
+      height: 400px;
+      background: #fff;
+      & .form-top {
+         height: 64px;
+         border-bottom: 1px solid #85CE36;
+         display: grid;
+         justify-items: center;
+         & .top-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;
+            align-items: center;
+            justify-items: center;
+            height: 100%;
+            & p {
+               margin: 0;
+               font-family: "Open Sans", sans-serif;
+               font-weight: 700;
+               font-size: 26px;
+               color: #97a4b1;
+            }
+         }
+      }
+      & .form-content {
+         display: grid;
+         justify-items: center;
+         padding: 20px 0;
+         & h3 {
+            font-family: "Open Sans", sans-serif;
+            font-weight: 300;
+            font-size: 26px;
+            color: #4f5f6f;
+            text-align: center;
+            //margin: 5px;
+            margin: 0;
+            margin-bottom: 10px;
+         }
+         & label {
+            font-family: "Open Sans", sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            color: #4f5f6f;
+            & p {
+               font-family: "Open Sans", sans-serif;
+               font-weight: 600;
+               font-size: 16px;
+               color: #4f5f6f;
+            }
+            & input {
+               border: none;
+               border-bottom: 1px solid #d7dde4;
+               outline: none;
+               &::placeholder {
+                  font-family: "Open Sans", sans-serif;
+                  font-style: italic;
+                  font-weight: 400;
+                  font-size: 16px;
+                  color: #d7dde4;
+               }
+               font-family: "Open Sans", sans-serif;
+               font-weight: 600;
+            }
+         }
+         & .login-check {
+            margin-top: 10px;
+            display: inline-flex;
+            grid-gap: 15px;
+            cursor: pointer;
+         }
+         & button {
+            border-radius: 0;
+         }
+      }
+   }
+}

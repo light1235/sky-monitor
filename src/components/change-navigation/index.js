@@ -13,7 +13,7 @@ const ChangeNavigation = ({children}) => {
      const locale = useLocale();
      const pathname = usePathname();
      const isCustomHeaderFooterPage = pathname === '/panel' || pathname === '/panel/seo-statistics' || pathname === '/panel/support' || pathname === '/panel/listing' || pathname === '/panel/partners-adm' || pathname === '/panel/news' || pathname === '/panel/users-comments' || pathname === '/panel/information' || pathname === '/panel/payment-settings' || pathname === '/panel/timeline-adv' || pathname === '/panel/sale-statistics' || pathname === '/panel/alerts' || pathname === '/panel/vote';
-     const isNoHeaderFooterPage  = pathname === `/${locale}/login` || pathname === `/${locale}/reset` || pathname === `/${locale}/sign-up`;
+     const isNoHeaderFooterPage  = pathname === `/${locale}/login` || pathname === `/${locale}/reset` || pathname === `/${locale}/sign-up` || pathname === '/twilight/login';
      const isDashboard = pathname === '/my/dashboard' || pathname === '/my/profile';
 
      return (

@@ -47,8 +47,8 @@ const Add_pop_up = () => {
      return (
           <div className="pop-up__page" style={{padding: '40px 40px'}}>
                <ListingForm />
-               {/*<ArticleForm />*/}
-               {/*<PinRaiseForm />*/}
+               <ArticleForm />
+               <PinRaiseForm />
 
                {/*<button onClick={showModal}>open</button>*/}
 

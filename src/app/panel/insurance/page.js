@@ -6,19 +6,19 @@ import SelectProject from "@/components/panel/select-project";
 
 const Insurance = () => {
      const [projects, setProjects] = useState([
-          {projectName:'Razzelton'},
-          {projectName:'Razzelton'},
-          {projectName:'razzelton'},
-          {projectName:'razzelton'},
-          {projectName:'razzelton'},
-          {projectName:'razzelton'},
-          {projectName:'razzelton'},
-          {projectName:'razzelton'},
-          {projectName:'razzelton'},
-          {projectName:'razzelton'},
-          {projectName:'razzelton'},
-          {projectName:'razzelton'},
-          {projectName:'Razzelton'},
+          {projectName:'Staking',staking:true},
+          {projectName:'Nexora'},
+          {projectName:'Quantix'},
+          {projectName:'Solvion'},
+          {projectName:'Veridex'},
+          {projectName:'Veridex'},
+          {projectName:'Zintor'},
+          {projectName:'Brevia'},
+          {projectName:'Astriv'},
+          {projectName:'Plenox'},
+          {projectName:'Dynor'},
+          {projectName:'Orbion'},
+          {projectName:'Flextar'},
      ]);
      const [selectedProject, setSelectedProject] = useState([]);
 
@@ -32,7 +32,12 @@ const Insurance = () => {
      };
      const handleTransferToBack = (item) => {
           setSelectedProject(selectedProject.filter((el) => el !== item));
-          setProjects([...projects, item]);
+
+          if (item.staking === true) {
+               setProjects([item, ...projects]);
+          } else {
+               setProjects([...projects, item]);
+          }
      };
 
 
