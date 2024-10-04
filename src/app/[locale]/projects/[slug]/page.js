@@ -4,6 +4,10 @@ import NewsArticle from "@/components/main/news-article";
 import AdvancedArticle from "@/components/main/advanced-article";
 import getData from "@/services/projectApi";
 
+// export const metadata = {
+//      title: 'Sky Finance - Expert in investments',
+//      description: 'Explore our curated selection of tracked investment ventures for informed decision-making',
+// };
 
 
 const PostComp = async ({params}) => {

@@ -3,7 +3,6 @@ import React, {useState} from 'react';
 import './index.scss'
 import Image from "next/image";
 import menuLogo from '/src/assets/panel/icons/panel-logo.svg';
-import CustomFrontInput from "@/components/main/custom-front-input";
 import CustomCheckBox from "@/components/panel/check-box";
 import CustomButton from "@/components/panel/custom-button";
 
@@ -12,7 +11,7 @@ const Login = () => {
           {name:'',password:'',remember:false}
      ]);
      const handleForgotChange = (value) => {
-          // setFormData({ ...formData, forgot: value });
+          // setUserData({ ...userData, remember: value });
      };
      
      return (
