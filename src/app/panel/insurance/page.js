@@ -6,7 +6,7 @@ import SelectProject from "@/components/panel/select-project";
 
 const Insurance = () => {
      const [projects, setProjects] = useState([
-          {projectName:'Staking',staking:true},
+          {projectName:'Sky Staking',staking:true},
           {projectName:'Nexora'},
           {projectName:'Quantix'},
           {projectName:'Solvion'},
