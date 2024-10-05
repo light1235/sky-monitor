@@ -142,6 +142,7 @@
       & .user-buttons{
          display: grid;
          justify-self: end;
+         align-items: end;
          & .button-forum{
             display: grid;
             grid-template-columns: 2fr 1fr;

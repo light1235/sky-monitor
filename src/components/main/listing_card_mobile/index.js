@@ -33,8 +33,11 @@ import {Popover} from "antd";
 import CustomModal from "@/components/main/custom_modal";
 import VotePopUp from "@/components/main/vote-pop-up";
 import HypeStat from '/src/assets/main/icons/hypestat.svg';
+import { useLocale } from 'next-intl';
 
 const MobileListing = ({ item, wish,ind,setWish}) => {
+
+     const locale = useLocale();
      const [AnimationFavorite, FastScale] = useSpring(() => ({
           from: { scale:1 },
      }))
@@ -191,6 +194,15 @@ const MobileListing = ({ item, wish,ind,setWish}) => {
           setDisableVote(false)
      };
 
+     const payment = 14;
+     const deposit = 200;
+     const payout = (
+          <div className="payout-hint">
+               <p>{locale === 'en' ?'Deposit:':'Вклад:' } <span style={{color:'#8bc643'}}>{deposit}$</span></p>
+               <p>{locale === 'en' ?'Payout:':'Выплата:' } <span style={{color:'#8bc643'}}>{payment}$</span></p>
+          </div>
+     );
+
      const VoteMenu = (
           <div className="vote__menu">
                <div className="vote-item item-yes" onClick={adVote} >
@@ -238,32 +250,43 @@ const MobileListing = ({ item, wish,ind,setWish}) => {
                     <div className="left_side">
                          <div className="content_wrapper">
                               <div className="content-items status">Status:<span
-                                   style={{color: item.projectInformation.status.untraceable && '#DF5BD2'}}>{item.projectInformation.status.paying && ' Paying' || item.projectInformation.status.untraceable && ' Untraceable' || item.projectInformation.status.scam && ' Not Payed'}</span>
+                                   style={{color: item.projectInformation.status.untraceable && '#DF5BD2' || item.projectInformation.status.pending && '#FF8C00'}}>
+                                   {item.projectInformation.status.paying
+                                        ? (locale === 'en' ? ' Paying' : ' Платит')
+                                        : item.projectInformation.status.untraceable
+                                             ? (locale === 'en' ? ' Untraceable' : ' Неотслеживаем')
+                                             : item.projectInformation.status.scam
+                                                  ? (locale === 'en' ? ' Not Paid' : ' Не платит')
+                                                  : item.projectInformation.status.pending
+                                                       ? (locale === 'en' ? ' Pending' : ' В ожидании')
+                                                       : null}
+                              </span>
                               </div>
                               <div className="content-items">
                                    {!item.projectInformation.ourInvestments.anotherInvestment ?
-                                        <div>Our
-                                             investments:<span> {item.projectInformation.ourInvestments.our || item.projectInformation.ourInvestments.traceable}</span>
+                                        <div>{locale === 'en' ? 'Our investments:' : 'Мы инвестировали:'}<span> {item.projectInformation.ourInvestments.our || item.projectInformation.ourInvestments.traceable}</span>
                                         </div>
                                         :
-                                        <div>Investing<span
+                                        <div>{locale === 'en'? 'Investing':'Вложил'}<span
                                              style={{color: '#8bc643'}}>:{item.projectInformation.ourInvestments.anotherInvestment}</span>
                                         </div>
                                    }
                               </div>
-                              <div className="content-items">Payout
-                                   rate:<span> {item.projectInformation.payoutRate}</span></div>
-                              <div className="content-items">Last paid: <span> {item.projectInformation.lastPaid}</span>
+                              <div className="content-items">{locale === 'en' ? 'Payout rate:' : 'Уровень выплат:'}<span
+                                   className="item-payout">
+                                   <Popover content={payout}> <span
+                                        className="arrow-pay">&#8594;</span>{item.projectInformation.payoutRate}</Popover></span>
                               </div>
-                              <div className="content-items">Created:<span> {formattedString}</span></div>
-                              <div className="content-items">Minimal
-                                   spend: <span> {item.projectInformation.minimalSpend}</span></div>
-                              <div className="content-items">Withdrawal:<span> {item.projectInformation.withdrawal}</span>
+                              <div className="content-items">{locale === 'en' ? 'Last paid: ' : 'Выплата:'}<span> {item.projectInformation.lastPaid}</span>
+                              </div>
+                              <div className="content-items">{locale === 'en' ? 'Created:' : 'Создан:'}<span> {formattedString}</span></div>
+                              <div className="content-items">{locale === 'en'? 'Minimal spend:':'Мин. вклад: '}<span> {item.projectInformation.minimalSpend}</span></div>
+                              <div className="content-items">{locale === 'en'? 'Withdrawal:': 'Вывод:'}<span> {item.projectInformation.withdrawal}</span>
                               </div>
                          </div>
                     </div>
                     <div className="right_side">
-                    <div className="description">Accepted:</div>
+                    <div className="description">{locale === 'en' ? 'Accepted:':'Принимает:'}</div>
                          <div className="payments-system">
                               {displayedPaymentSystems.map(system => (
                                    <div key={system} className="payment-system-icon">
@@ -287,38 +310,34 @@ const MobileListing = ({ item, wish,ind,setWish}) => {
                                    </div>
                               ))}
                          </div>
-                         <div className="info">Info</div>
+                         <div className="info">{locale === 'en'? 'Info': 'Информация'}</div>
                          <div className="project-info">
                               <Link target="_blank" href={HypeStatLink}>
                                    <CustomToolTop text={'Seo information'}>
                                         <Image src={HypeStat} height="20" width="20" alt="simillar_web_logo"/>
                                    </CustomToolTop>
                               </Link>
-                              {/*<Link target="_blank" href="https://whois.domaintools.com/">*/}
-                              {/*     <CustomToolTop text={'Whois information'}>*/}
-                              {/*          <Image src={whoIs} height="15" width="15" alt="who_is_logo"/>*/}
-                              {/*     </CustomToolTop>*/}
-                              {/*</Link>*/}
+
                          </div>
                     </div>
                </div>
                <div className="card-bottom_line">
                     <div className="invested-description">
-                         <div>Invested plans:</div>
+                         <div>{locale === 'en' ? 'Invested plans:':'Инвестиционные планы:'}</div>
                          <div className="plan-description">{truncatedText}</div>
                     </div>
                     <div className="user-buttons">
-                         <div className="button-forum"><span>Forum</span><Link target="_blank" href={item.forum}> <Image
+                         <div className="button-forum"><span>{locale === 'en'? 'Forum':'Форум'}</span><Link target="_blank" href={item.forum}> <Image
                               width="15"
                               src={forumIocn}
                               alt="forum_logo"/></Link>
                          </div>
-                         <div className={disableVote ? 'button-vote disable-vote' : 'button-vote'}><span>Vote now</span>
+                         <div className={disableVote ? 'button-vote disable-vote' : 'button-vote'}><span>{locale === 'en'? 'Vote now':'Голосуй'}</span>
                               {/*<CustomToolTop  text={'Only for registered users'}>*/}
                               {disableVote ?
-                                   <CustomToolTop
-                                        text={<CountdownTimer initialHours={0.005} onComplete={handleComplete}/>}>
-                                        <Image width="15" src={voteIcon} alt="vote_logo"/></CustomToolTop>
+                                   <>
+                                        <CustomToolTop open={true} text={<CountdownTimer locale={locale} initialHours={0.005} onComplete={handleComplete}/>}> <Image width="15" src={voteIcon} alt="vote_logo"/></CustomToolTop>
+                                   </>
                                    :
                                    <Popover content={VoteMenu} open={popOver} onOpenChange={showPopOver}
                                             trigger="click">
