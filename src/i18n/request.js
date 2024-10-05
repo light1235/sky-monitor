@@ -8,8 +8,15 @@ async function getConfig(locale) {
   // Проверяем, что переданный `locale` является допустимым
   if (!locales.includes(locale)) notFound();
 
+  const messages = (await import(`../../messages/${locale}.json`)).default;
+  const additionalMessages = (await import(`../../messages/static-${locale}.json`)).default;
+
+
   return {
-    messages: (await import(`../../messages/${locale}.json`)).default
+    messages: {
+      ...messages,
+      ...additionalMessages
+    }
   };
 }
 
