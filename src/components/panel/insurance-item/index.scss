@@ -1,0 +1,39 @@
+
+
+.insurance-item {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr;
+   //background: #fcfcfd;
+   & .item-block {
+      padding: 16px 20px 16px 30px;
+      border-right: 1px solid #C4C4C4;
+      font-family: "Open Sans", sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      color: rgb(142, 140, 140);
+      display: grid;
+      align-items: center;
+      & span {
+         border:  1px solid #85CE36;
+         padding: 10px 40px;
+         color:  #85CE36;
+      }
+      & .normal {
+         border:  1px solid #85CE36;
+         color:  #85CE36;
+      }
+      & .low {
+         border:  1px solid #edb152;
+         color: #edb152;
+      }
+      & .high-risk {
+         border:  1px solid #e50a44;
+         color:  #e50a44;
+      }
+   }
+   & .item-status {
+      display: grid;
+      justify-items: center;
+      text-transform: capitalize;
+   }
+}
