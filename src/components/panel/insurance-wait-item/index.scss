@@ -1,0 +1,27 @@
+
+
+.wait-item {
+   display: grid;
+   grid-template-columns: 1fr 1fr min-content;
+   grid-gap: 5px;
+   padding: 16px 20px 16px 30px;
+   font-family: "Open Sans", sans-serif;
+   font-weight: 700;
+   font-size: 16px;
+   color: rgb(142, 140, 140);
+   align-items: center;
+   & i {
+      color: #999;
+      cursor: pointer;
+   }
+   & .time-out {
+      text-transform: capitalize;
+      border: 2px solid #DB5132;
+      text-align: center;
+      padding: 10px 0;
+      color: #DB5132;
+   }
+   & .item-filter {
+      cursor: pointer;
+   }
+}

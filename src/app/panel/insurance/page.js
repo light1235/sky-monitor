@@ -6,6 +6,7 @@ import SelectProject from "@/components/panel/select-project";
 import InsuranceItem from "@/components/panel/insurance-item";
 import CustomPagination from "@/components/panel/pagination";
 import usePagination from "@/utils/hooks/usePagination";
+import WaitItem from "@/components/panel/insurance-wait-item";
 
 const Insurance = () => {
      const [projects, setProjects] = useState([
@@ -42,96 +43,115 @@ const Insurance = () => {
                setProjects([...projects, item]);
           }
      };
-
+     const [waitData, setWaitData] = useState([
+          { name: "John Doe",waitStatus:'pending'},
+          { name: "Jane Smith",waitStatus:'pending'},
+          { name: "Benjamin Lewis",waitStatus:'pending'}
+     ]);
      const [userData, setUserData] = useState([
           {
                name: "John Doe",
                email: "john.doe@example.com",
-               data: "2024-10-05",
+               start: "2024-10-05",
+               end: "2024-10-05",
                status: "normal"
           },
           {
                name: "Jane Smith",
                email: "jane.smith@example.com",
-               data: "2024-09-15",
+               start: "2024-09-15",
+               end: "2024-10-05",
                status: "low"
           },
           {
                name: "Alex Johnson",
                email: "alex.johnson@example.com",
-               data: "2024-08-30",
+               start: "2024-08-30",
+               end: "2024-10-05",
                status: "high risk"
           },
           {
                name: "Maria Garcia",
                email: "maria.garcia@example.com",
-               data: "2024-07-20",
+               start: "2024-07-20",
+               end: "2024-10-05",
                status: "normal"
           },
           {
                name: "David Brown",
                email: "david.brown@example.com",
-               data: "2024-06-12",
+               start: "2024-06-12",
+               end: "2024-10-05",
                status: "normal"
           },
           {
                name: "Olivia Williams",
                email: "olivia.williams@example.com",
-               data: "2024-05-18",
+               start: "2024-05-18",
+               end: "2024-10-05",
                status: "normal"
           },
           {
                name: "Liam Davis",
                email: "liam.davis@example.com",
-               data: "2024-04-27",
+               start: "2024-04-27",
+               end: "2024-10-05",
                status: "high risk"
           },
           {
                name: "Sophia Martinez",
                email: "sophia.martinez@example.com",
-               data: "2024-03-12",
+               start: "2024-03-12",
+               end: "2024-10-05",
                status: "low"
           },
           {
                name: "James Anderson",
                email: "james.anderson@example.com",
-               data: "2024-02-10",
+               start: "2024-02-10",
+               end: "2024-10-05",
                status: "normal"
           },
           {
                name: "Emily Taylor",
                email: "emily.taylor@example.com",
-               data: "2024-01-25",
+               start: "2024-01-25",
+               end: "2024-10-05",
                status: "high risk"
           },
           {
                name: "Michael Thomas",
                email: "michael.thomas@example.com",
-               data: "2023-12-15",
+               start: "2023-12-15",
+               end: "2024-10-05",
                status: "low"
           },
           {
                name: "Ava White",
                email: "ava.white@example.com",
-               data: "2023-11-08",
+               start: "2023-11-08",
+               end: "2024-10-05",
                status: "normal"
           },
           {
                name: "William Harris",
                email: "william.harris@example.com",
-               data: "2023-10-20",
+               start: "2023-10-20",
+               end: "2024-10-05",
                status: "high risk"
           },
           {
                name: "Isabella Clark",
                email: "isabella.clark@example.com",
-               data: "2023-09-17",
+               start: "2023-09-17",
+               end: "2024-10-05",
                status: "low"
           },
           {
                name: "Benjamin Lewis",
                email: "benjamin.lewis@example.com",
-               data: "2023-08-05",
+               start: "2023-08-05",
+               end: "2024-10-05",
                status: "normal"
           }
      ]);
@@ -145,6 +165,15 @@ const Insurance = () => {
 
      const { currentItems: paginatedUsers, handlePageChange: handlePageChangeUsers, currentPage: currentPageUsers } = usePagination(filteredUsers, itemsPerPage, searchTerm);
 
+     const handleFilterTable = (name) => {
+         console.log(name);
+          setSearchTerm(name);
+     };
+
+     const handleDelete = (item) => {
+          setWaitData(waitData.filter(el => el !== item))
+
+     };
 
      return (
           <div className="insurance__page">
@@ -171,16 +200,22 @@ const Insurance = () => {
                          <div className="table-content-top">
                               <span className="item-content-top">User  Name</span>
                               <span className="item-content-top">Email</span>
-                              <span className="item-content-top">Investment Date</span>
-                              <span className="item-content-top">Status</span>
+                              <span className="item-content-top">Investment Start</span>
+                              <span className="item-content-top">Investment End</span>
+                              <span className="item-content-top">Project Status</span>
                          </div>
-                         {paginatedUsers.map((item,index) =>
+                         {paginatedUsers.map((item, index) =>
                               <InsuranceItem item={item} key={index}  back={index % 2 === 0 ? " " : "#fcfcfd"} />
                          )}
-
-
                     </div>
-                    <div className="table-wait"></div>
+                    <div className="table-wait">
+                         <div className="table-wait-top">
+                              Wait for Pay
+                         </div>
+                         {waitData.map((item,index) =>
+                              <WaitItem item={item} key={index} deleteItem={handleDelete} filter={handleFilterTable} />
+                         )}
+                    </div>
                     <CustomPagination
                          current={currentPageUsers}
                          total={filteredUsers.length}
