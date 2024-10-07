@@ -24,7 +24,7 @@ const ArticlePage = ({post}) => {
                     <div className="article__content">
                          <div className="content__top">
                               <div className="content__date-published">{post.article.date}</div>
-                              <h1 className="content__title">{post.article.title} {post.article.projectLink && <Link target="_blank" href={post.article.projectLink}>{post.slug}</Link>} </h1>
+                              <h1 className="content__title">{post.article.title} {post.article.projectLink && <Link target="_blank" rel="nofollow" href={post.article.projectLink}>{post.slug}</Link>} </h1>
                               <div className="content__separator"></div>
                          </div>
                          <div className="content__main-block">
