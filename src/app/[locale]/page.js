@@ -44,7 +44,6 @@ export async function generateMetadata({ params }) {
 const Home = async () => {
 
      let listings = await getListing();
-     listings = listings.slice(0,2);
      const projects = await getData();
 
      const items = [...listings].reverse().slice(0,4);
