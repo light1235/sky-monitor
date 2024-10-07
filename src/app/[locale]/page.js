@@ -43,7 +43,8 @@ export async function generateMetadata({ params }) {
 
 const Home = async () => {
 
-     const listings = await getListing();
+     let listings = await getListing();
+     listings = listings.slice(0,6);
      const projects = await getData();
 
      const items = [...listings].reverse().slice(0,4);
@@ -127,7 +128,7 @@ const Home = async () => {
               </div>
               <div className="content__item">
                    <HidenTegs text={'Chartered financial advisor recommending the best investments, including crypto investments, to maximize dividends.'} />
-                   {/*<MainTabs dataListing={listings} />*/}
+                   <MainTabs dataListing={listings} />
               </div>
               <div className="content__item item--bottom">
                    <BlockSlat text={'mainPage.blocks.news'}/>
