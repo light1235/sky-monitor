@@ -39,5 +39,5 @@ const CustomModal = ({open,close,children,width = 'initial',centered = true}) =>
           </>
      );
 };
-
+// console.log("123");
 export default CustomModal;
