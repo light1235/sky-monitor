@@ -149,6 +149,8 @@ const Header = () => {
                     loop: false,
                });
           }
+          console.log(pathname);
+          console.log(`/${locale}/services`);
      }, [showMessage])
 
 
@@ -225,19 +227,19 @@ const Header = () => {
                     <div className="header__bottom">
                     <nav className="navigation">
                               <ul className="navigation__list">
-                                   <li className={`link ${pathname === '/' ? 'active-color' : ''}`}>
+                                   <li className={`link ${pathname === `/${locale}` ? 'active-color' : ''}`}>
                                         <Link href='/'><Image src={monIco} alt={'logo'}></Image> <span>{t('header.menu.menu1')}</span></Link>
                                    </li>
-                                   <li className={`link ${pathname === '/services' ? 'active-color' : ''}`}><Link
+                                   <li className={`link ${pathname === `/${locale}/services` ? 'active-color' : ''}`}><Link
                                         href='/services'><Image src={serviceIcon} alt={'logo'}></Image> {t('header.menu.menu2')} </Link>
                                    </li>
-                                   <li className={`link ${pathname === '/projects' ? 'active-color' : ''}`}><Link
+                                   <li className={`link ${pathname === `/${locale}/projects` ? 'active-color' : ''}`}><Link
                                         href='/projects'><Image src={projectIcon} alt={'logo'}></Image>{t('header.menu.menu3')}</Link>
                                    </li>
-                                   <li className={`link ${pathname === '/contacts' ? 'active-color' : ''}`}><Link
+                                   <li className={`link ${pathname === `/${locale}/contacts` ? 'active-color' : ''}`}><Link
                                         href='/contacts'><Image src={contactIcon} alt={'logo'}></Image>{t('header.menu.menu4')}</Link>
                                    </li>
-                                   <li className={`link ${pathname === '/partners' ? 'active-color' : ''}`}><Link
+                                   <li className={`link ${pathname === `/${locale}/partners` ? 'active-color' : ''}`}><Link
                                         href='/partners'><Image src={partnerIcon} alt={'logo'}></Image>{t('header.menu.menu5')}</Link>
                                    </li>
                               </ul>
