@@ -149,8 +149,6 @@ const Header = () => {
                     loop: false,
                });
           }
-          console.log(pathname);
-          console.log(`/${locale}/services`);
      }, [showMessage])
 
 

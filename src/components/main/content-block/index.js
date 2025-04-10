@@ -36,6 +36,14 @@ const ContentBlock = ({items}) => {
      }, []);
 
 
+     /**
+      * Updates the blocks state with new random banners
+      * It loops through the current blocks state and for each block
+      * it generates a new array of two random banners and updates the state with it
+      */
+
+     // функцию updateBlocks можно вынести в отдельный файл из за нее происходит ререндер а так сам массив блокс
+
      const updateBlocks = () => {
           const newBlocks = blocks.map(block => ({
                id: block.id,
@@ -63,6 +71,7 @@ const ContentBlock = ({items}) => {
      }, []);
 
      const [isRegistered, setIsRegistered] = useState(false);
+
 
 
      return (

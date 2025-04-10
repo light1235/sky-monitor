@@ -91,6 +91,7 @@ const MainTabs = ({dataListing}) => {
      for (let i = 0; i < filteredArrayScam.length; i += chunkSize) {
           chunkedItems4.push(filteredArrayScam.slice(i, i + chunkSize));
      }
+     // console.log("1236");
 
      return (
           <>
